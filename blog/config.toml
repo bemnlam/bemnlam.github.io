@@ -1,6 +1,6 @@
 baseURL = "https://bemnlam.github.io/"
 languageCode = "en-us"
-title = "The Blog"
+title = "dev log"
 theme = "pickles"
 publishDir = ".."
 # Copyright notice. This is displayer in the footer.
@@ -16,3 +16,20 @@ copyright = "&copy; bemnlam"
   # Logo image. This is displayed ogp image.
   logo = "favicon.jpg"
   favicon = "favicon.ico"
+  # Short subtitle/tagline. This is displayed in the header.
+  subtitle = "📝"
+
+[[menu.main]]
+    name = "📖 blog"
+    url = "/"
+    weight = 1
+
+# [[menu.main]]
+#     name = "About"
+#     url = "/about"
+#     weight = 2
+
+[[menu.main]]
+    name = "🏷 tags"
+    url = "/tags"
+    weight = 4  
