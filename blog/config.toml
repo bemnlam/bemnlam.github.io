@@ -14,7 +14,7 @@ copyright = "&copy; bemnlam"
   paginate = 10
   github = "bemnlam"
   # Logo image. This is displayed ogp image.
-  logo = "favicon.jpg"
+  logo = "favicon.png"
   favicon = "favicon.ico"
   # Short subtitle/tagline. This is displayed in the header.
   subtitle = "📝"
