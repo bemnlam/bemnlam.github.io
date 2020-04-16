@@ -1,7 +1,7 @@
 ---
 title: "Welcome"
 date: 2020-04-16T10:55:25+08:00
-draft: true
+draft: false
 ---
 
 # Hello world!
@@ -26,5 +26,7 @@ Change `draft=true` in the blog post and then
 ```bash
 hugo
 ```
+
+Push to remote `master`.
 
 Done.
