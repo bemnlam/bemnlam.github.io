@@ -1,5 +1,18 @@
-baseURL = "https://bemnlam.github.io/"
+baseURL = "https://bemnlam.github.io"
 languageCode = "en-us"
 title = "The Blog"
 theme = "pickles"
 publishDir = ".."
+# Copyright notice. This is displayer in the footer.
+copyright = "&copy; bemnlam"
+# custom_css = "/static/css/custom.css"
+
+# Google Analytics API key.
+# googleAnalytics = "Your Google Analytics tracking id"
+
+[params]
+  paginate = 10
+  github = "bemnlam"
+  # Logo image. This is displayed ogp image.
+  logo = "favicon.jpg"
+  favicon = "favicon.ico"
