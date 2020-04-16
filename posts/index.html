@@ -62,6 +62,31 @@
 
 <article class="c-article p-list-article">
   <header>
+    <h2 class="c-title c-article__title"><a href="https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/">Creating a User With Limited Privileges in Postgres</a></h2>
+    <p class="c-article__meta">
+      Posted on
+      <time datetime="2020-04-16T20:01:15&#43;08:00">
+        Apr 16, 2020
+      </time>
+    </p>
+  </header>
+  <div class="c-article__summary">
+    This post showing how to create a user with limited privileges in PostgreSQL.
+Situation I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.
+Code Let say the user you want to create is webapp_user:
+CREATE USER webapp_user WITH ENCRYPTED PASSWORD &#39;secure_passw0rd&#39;; Grant the right to all public tables:
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO webapp_user; Connect the database using webapp_user in the web app.
+  </div>
+  
+  <a href="https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/" class="c-article__btn p-list-article__btn">Read more</a>
+  
+</article>
+
+
+
+
+<article class="c-article p-list-article">
+  <header>
     <h2 class="c-title c-article__title"><a href="https://bemnlam.github.io/posts/welcome/">Welcome</a></h2>
     <p class="c-article__meta">
       Posted on

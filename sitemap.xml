@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bemnlam.github.io/</loc>
-    <lastmod>2020-04-16T10:55:25+08:00</lastmod>
+    <loc>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</loc>
+    <lastmod>2020-04-16T20:01:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bemnlam.github.io/tags/hugo/</loc>
-    <lastmod>2020-04-16T10:55:25+08:00</lastmod>
+    <loc>https://bemnlam.github.io/</loc>
+    <lastmod>2020-04-16T20:01:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/postgres/</loc>
+    <lastmod>2020-04-16T20:01:15+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/posts/</loc>
-    <lastmod>2020-04-16T10:55:25+08:00</lastmod>
+    <lastmod>2020-04-16T20:01:15+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/tags/</loc>
+    <lastmod>2020-04-16T20:01:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/hugo/</loc>
     <lastmod>2020-04-16T10:55:25+08:00</lastmod>
   </url>
   

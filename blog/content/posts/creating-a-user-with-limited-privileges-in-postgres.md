@@ -1,7 +1,7 @@
 ---
 title: "Creating a User With Limited Privileges in Postgres"
 date: 2020-04-16T20:01:15+08:00
-draft: true
+draft: false
 description: This post showing how to create a user with limited privileges in PostgreSQL.
 tags: ["postgres"]
 cover_image: https://images.pexels.com/photos/4033708/pexels-photo-4033708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=420&w=1000

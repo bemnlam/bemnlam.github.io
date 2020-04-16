@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on dev log</title>
-    <link>https://bemnlam.github.io/posts/</link>
-    <description>Recent content in Posts on dev log</description>
+    <title>postgres on dev log</title>
+    <link>https://bemnlam.github.io/tags/postgres/</link>
+    <description>Recent content in postgres on dev log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Thu, 16 Apr 2020 20:01:15 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bemnlam.github.io/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -23,20 +23,6 @@ Situation I created a web app. It reads data from a PostgreSQL database. I want 
 Code Let say the user you want to create is webapp_user:
 CREATE USER webapp_user WITH ENCRYPTED PASSWORD &amp;#39;secure_passw0rd&amp;#39;; Grant the right to all public tables:
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO webapp_user; Connect the database using webapp_user in the web app.</description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>https://bemnlam.github.io/posts/welcome/</link>
-      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/posts/welcome/</guid>
-      <description>Hello world! How to add a new blog post Go to blog folder
-hugo new posts/name-of-the-new-post.md Write your post. Back to blog folder and then
-hugo server -D Then you can preview your blog locally.
-Deploy production Change draft=true in the blog post and then
-hugo Push to remote master.
-Done.</description>
     </item>
     
   </channel>
