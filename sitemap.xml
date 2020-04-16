@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bemnlam.github.io/</loc>
+    <lastmod>2020-04-16T10:55:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/hugo/</loc>
+    <lastmod>2020-04-16T10:55:25+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bemnlam.github.io/posts/</loc>
     <lastmod>2020-04-16T10:55:25+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bemnlam.github.io/</loc>
+    <loc>https://bemnlam.github.io/tags/</loc>
+    <lastmod>2020-04-16T10:55:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/tutorial/</loc>
     <lastmod>2020-04-16T10:55:25+08:00</lastmod>
   </url>
   
@@ -19,10 +34,6 @@
   
   <url>
     <loc>https://bemnlam.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/tags/</loc>
   </url>
   
 </urlset>

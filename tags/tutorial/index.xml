@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on dev log</title>
-    <link>https://bemnlam.github.io/posts/</link>
-    <description>Recent content in Posts on dev log</description>
+    <title>tutorial on dev log</title>
+    <link>https://bemnlam.github.io/tags/tutorial/</link>
+    <description>Recent content in tutorial on dev log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Thu, 16 Apr 2020 10:55:25 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bemnlam.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
