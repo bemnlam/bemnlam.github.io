@@ -1,4 +1,4 @@
-baseURL = "https://bemnlam.github.io"
+baseURL = "https://bemnlam.github.io/"
 languageCode = "en-us"
 title = "The Blog"
 theme = "pickles"
