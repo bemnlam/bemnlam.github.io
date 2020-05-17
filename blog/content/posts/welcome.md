@@ -1,15 +1,14 @@
 ---
-title: "Welcome"
+title: "How to add a new Hugo blog post"
 date: 2020-04-16T10:55:25+08:00
 draft: false
 tags: ["tutorial", "hugo"]
 ---
 
-# Hello world!
 
-## How to add a new blog post
 
 Go to `blog` folder
+
 ```bash
 hugo new posts/name-of-the-new-post.md
 ```
