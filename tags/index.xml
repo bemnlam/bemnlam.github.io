@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Thu, 16 Apr 2020 20:01:15 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 13:33:52 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>pocket-digest</title>
+      <link>https://bemnlam.github.io/tags/pocket-digest/</link>
+      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/pocket-digest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>self management</title>
+      <link>https://bemnlam.github.io/tags/self-management/</link>
+      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/self-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>work</title>
+      <link>https://bemnlam.github.io/tags/work/</link>
+      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/work/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fredkin&#39;s paradox</title>
+      <link>https://bemnlam.github.io/tags/fredkins-paradox/</link>
+      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/fredkins-paradox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>佛雷德金悖論</title>
+      <link>https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</link>
+      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>選擇困難</title>
+      <link>https://bemnlam.github.io/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</link>
+      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>postgres</title>
