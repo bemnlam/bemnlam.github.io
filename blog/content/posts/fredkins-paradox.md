@@ -2,7 +2,7 @@
 title: 佛雷德金悖論 Fredkin’s paradox
 description: 好多時候難以取捨的選擇本身對自身所帶來的差異沒有想像中的嚴重。因為決策困難而不做決策反而會令自己損失更大。
 date: 2020-05-17T12:41:12+08:00
-draft: true
+draft: false
 tags: ["佛雷德金悖論", "Fredkin's paradox", "選擇困難", "pocket-digest"]
 cover_image: https://images.unsplash.com/photo-1586610795094-20c9b58cd38c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60
 ---
