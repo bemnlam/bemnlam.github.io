@@ -2,7 +2,7 @@
 title: "Fredkins Paradox"
 date: 2020-05-17T12:41:12+08:00
 draft: true
-tags: ["佛雷德金悖論", "Fredkin's paradox", "選擇困難"]
+tags: ["佛雷德金悖論", "Fredkin's paradox", "選擇困難", "pocket-digest"]
 ---
 
 # 佛雷德金悖論 Fredkin's paradox
