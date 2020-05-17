@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Welcome</title>
+      <title>How to add a new Hugo blog post</title>
       <link>https://bemnlam.github.io/posts/welcome/</link>
       <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/welcome/</guid>
-      <description>Hello world! How to add a new blog post Go to blog folder
+      <description>Go to blog folder
 hugo new posts/name-of-the-new-post.md Write your post. Back to blog folder and then
 hugo server -D Then you can preview your blog locally.
 Deploy production Change draft=true in the blog post and then
