@@ -3,8 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bemnlam.github.io/posts/a-note-on-ssl/</loc>
+    <lastmod>2020-05-23T17:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/cryptography/</loc>
+    <lastmod>2020-05-23T17:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bemnlam.github.io/</loc>
-    <lastmod>2020-05-17T13:33:52+08:00</lastmod>
+    <lastmod>2020-05-23T17:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/https/</loc>
+    <lastmod>2020-05-23T17:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/posts/</loc>
+    <lastmod>2020-05-23T17:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/security/</loc>
+    <lastmod>2020-05-23T17:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/ssl/</loc>
+    <lastmod>2020-05-23T17:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/</loc>
+    <lastmod>2020-05-23T17:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/coffee/</loc>
+    <lastmod>2020-05-17T21:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/v60/</loc>
+    <lastmod>2020-05-17T21:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/posts/brewing-coffee/</loc>
+    <lastmod>2020-05-17T21:10:25+08:00</lastmod>
   </url>
   
   <url>
@@ -13,17 +63,7 @@
   </url>
   
   <url>
-    <loc>https://bemnlam.github.io/posts/</loc>
-    <lastmod>2020-05-17T13:33:52+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bemnlam.github.io/tags/self-management/</loc>
-    <lastmod>2020-05-17T13:33:52+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/tags/</loc>
     <lastmod>2020-05-17T13:33:52+08:00</lastmod>
   </url>
   
