@@ -1,6 +1,6 @@
 baseURL = "https://bemnlam.github.io/"
 languageCode = "en-us"
-title = "dev log"
+title = "log from home"
 theme = "pickles"
 publishDir = ".."
 # Copyright notice. This is displayer in the footer.
@@ -13,11 +13,13 @@ copyright = "&copy; bemnlam"
 [params]
   paginate = 10
   github = "bemnlam"
+  gitlab = "bemnlam"
+  linkedin = "bemnlam"
   # Logo image. This is displayed ogp image.
   logo = "favicon.png"
   favicon = "favicon.ico"
   # Short subtitle/tagline. This is displayed in the header.
-  subtitle = "📝"
+  subtitle = "Start blogging in the 2020 lockdown. 🏠"
 
 [[menu.main]]
     name = "📖 blog"
