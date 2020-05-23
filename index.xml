@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>log from home</title>
+    <link>https://bemnlam.github.io/</link>
+    <description>Recent content on log from home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Sat, 23 May 2020 17:10:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://bemnlam.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Note on SSL Certificate</title>
+      <link>https://bemnlam.github.io/posts/a-note-on-ssl/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/a-note-on-ssl/</guid>
+      <description>This is a note about the Linkedin learning course SSL Certificates for Web Developers.
+Certificate and protocol What are SSL/TLS stands for? They stands for Secure Socket Layer and Transport Layer Security. They are the protocol names.
+What is HTTPS, and why we are using it? Https[ecure], a protocol on top of HTTP to secure the integrity of the data sending form the user to server.
+What is a certificate, and what is it for?</description>
+    </item>
+    
+    <item>
+      <title>☕️ Brewing Coffee</title>
+      <link>https://bemnlam.github.io/posts/brewing-coffee/</link>
+      <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/brewing-coffee/</guid>
+      <description>A note on how to brew coffee.
+V60 ☕️ How to Brew V60 with UK Brewers Cup Champion, Sang Ho Park | Comprehensive Guide
+  ☕️ A Coffee Brewing Theory &amp;ldquo;4:6 method&amp;rdquo; Invented by Tetsu Kasuya_ World Brewers Cup 2016 Champion
+  </description>
+    </item>
+    
+    <item>
+      <title>Why You Should Manage Your Energy, Not Your Time</title>
+      <link>https://bemnlam.github.io/posts/why-you-should-manage-your-energy-not-your-time/</link>
+      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/why-you-should-manage-your-energy-not-your-time/</guid>
+      <description>🎯 Summary As a human being, managing our energy is more important because this is a limited resources.
+We may wrongly think that increasing working hours can do more. However, longer working hours leads more unfocus time and brings negative effect to your work.
+Surprisingly, having a monthly plan is better then a detailed daily plan. The later one demotivated people because we face inevitable distractions daily.
+💡 Thoughts  Stay focus on work by taking regular breaks.</description>
+    </item>
+    
+    <item>
+      <title>佛雷德金悖論 Fredkin’s paradox</title>
+      <link>https://bemnlam.github.io/posts/fredkins-paradox/</link>
+      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/fredkins-paradox/</guid>
+      <description>🎯 Summary 好多時候難以取捨的選擇本身對自身所帶來的差異沒有想像中的嚴重。因為決策困難而不做決策反而會令自己損失更大。
+💡 Thoughts 文章的總結提出了面對選擇困難的其中一個解決方向：以後悔/遺憾去做決定的考慮。
+ 在避免後悔的基礎上優化你的決定，而不是基於成功/失敗或快樂/痛苦做出重大決定。
+  當你基於一條讓你最不會後悔的路徑來優化你的生活時，你可以設想未來的自己處於一個模擬未來狀態，並試著感受你可能將經歷哪些遺憾
+ ⭐️ Highlights  兩個選項的吸引力越相似，在二者之間做出選擇的難度越大——儘管在同樣程度上，這個選擇本身並不是太重要。
+  佛雷德金悖論指出:「在必須做出選擇的情況下，隨著兩種選擇的效果越來越接近，決策就會變得更加困難，但結果就更沒那麼重要了。」
+ 🔗 Reference:  佛雷德金悖論：為什麼我們總浪費時間在無關緊要的決定上？  </description>
+    </item>
+    
+    <item>
+      <title>Creating a User With Limited Privileges in Postgres</title>
+      <link>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
+      <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
+      <description>This post showing how to create a user with limited privileges in PostgreSQL.
+Situation I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.
+Code Let say the user you want to create is webapp_user:
+CREATE USER webapp_user WITH ENCRYPTED PASSWORD &amp;#39;secure_passw0rd&amp;#39;; Grant the right to all public tables:
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO webapp_user; Connect the database using webapp_user in the web app.</description>
+    </item>
+    
+    <item>
+      <title>How to add a new Hugo blog post</title>
+      <link>https://bemnlam.github.io/posts/welcome/</link>
+      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/welcome/</guid>
+      <description>Go to blog folder
+hugo new posts/name-of-the-new-post.md Write your post. Back to blog folder and then
+hugo server -D Then you can preview your blog locally.
+Deploy production Change draft=true in the blog post and then
+hugo Push to remote master.
+Done.</description>
+    </item>
+    
+  </channel>
+</rss>
