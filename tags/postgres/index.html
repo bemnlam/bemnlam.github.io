@@ -72,13 +72,9 @@
   </header>
   <div class="c-article__summary">
     This post showing how to create a user with limited privileges in PostgreSQL.
-Situation I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.
-Code Let say the user you want to create is webapp_user:
-CREATE USER webapp_user WITH ENCRYPTED PASSWORD &#39;secure_passw0rd&#39;; Grant the right to all public tables:
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO webapp_user; Connect the database using webapp_user in the web app.
   </div>
-  
   <a href="https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/" class="c-article__btn p-list-article__btn">Read more</a>
+  
   
 </article>
 

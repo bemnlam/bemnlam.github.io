@@ -7,10 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Sun, 17 May 2020 13:33:52 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 17:10:25 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Note on SSL Certificate</title>
+      <link>https://bemnlam.github.io/posts/a-note-on-ssl/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/a-note-on-ssl/</guid>
+      <description>This is a note about the Linkedin learning course SSL Certificates for Web Developers.
+Certificate and protocol What are SSL/TLS stands for? They stands for Secure Socket Layer and Transport Layer Security. They are the protocol names.
+What is HTTPS, and why we are using it? Https[ecure], a protocol on top of HTTP to secure the integrity of the data sending form the user to server.
+What is a certificate, and what is it for?</description>
+    </item>
+    
+    <item>
+      <title>☕️ Brewing Coffee</title>
+      <link>https://bemnlam.github.io/posts/brewing-coffee/</link>
+      <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/brewing-coffee/</guid>
+      <description>A note on how to brew coffee.
+V60 ☕️ How to Brew V60 with UK Brewers Cup Champion, Sang Ho Park | Comprehensive Guide
+  ☕️ A Coffee Brewing Theory &amp;ldquo;4:6 method&amp;rdquo; Invented by Tetsu Kasuya_ World Brewers Cup 2016 Champion
+  </description>
+    </item>
     
     <item>
       <title>Why You Should Manage Your Energy, Not Your Time</title>
