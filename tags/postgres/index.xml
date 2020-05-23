@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postgres on dev log</title>
+    <link>https://bemnlam.github.io/tags/postgres/</link>
+    <description>Recent content in postgres on dev log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Thu, 16 Apr 2020 20:01:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://bemnlam.github.io/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a User With Limited Privileges in Postgres</title>
+      <link>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
+      <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
+      <description>This post showing how to create a user with limited privileges in PostgreSQL.
+Situation I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.
+Code Let say the user you want to create is webapp_user:
+CREATE USER webapp_user WITH ENCRYPTED PASSWORD &amp;#39;secure_passw0rd&amp;#39;; Grant the right to all public tables:
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO webapp_user; Connect the database using webapp_user in the web app.</description>
+    </item>
+    
+  </channel>
+</rss>

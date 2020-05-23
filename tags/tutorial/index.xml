@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tutorial on dev log</title>
+    <link>https://bemnlam.github.io/tags/tutorial/</link>
+    <description>Recent content in tutorial on dev log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Thu, 16 Apr 2020 10:55:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://bemnlam.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to add a new Hugo blog post</title>
+      <link>https://bemnlam.github.io/posts/welcome/</link>
+      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/welcome/</guid>
+      <description>Go to blog folder
+hugo new posts/name-of-the-new-post.md Write your post. Back to blog folder and then
+hugo server -D Then you can preview your blog locally.
+Deploy production Change draft=true in the blog post and then
+hugo Push to remote master.
+Done.</description>
+    </item>
+    
+  </channel>
+</rss>

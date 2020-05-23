@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>佛雷德金悖論 on dev log</title>
+    <link>https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</link>
+    <description>Recent content in 佛雷德金悖論 on dev log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Sun, 17 May 2020 12:41:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>佛雷德金悖論 Fredkin’s paradox</title>
+      <link>https://bemnlam.github.io/posts/fredkins-paradox/</link>
+      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/fredkins-paradox/</guid>
+      <description>🎯 Summary 好多時候難以取捨的選擇本身對自身所帶來的差異沒有想像中的嚴重。因為決策困難而不做決策反而會令自己損失更大。
+💡 Thoughts 文章的總結提出了面對選擇困難的其中一個解決方向：以後悔/遺憾去做決定的考慮。
+ 在避免後悔的基礎上優化你的決定，而不是基於成功/失敗或快樂/痛苦做出重大決定。
+  當你基於一條讓你最不會後悔的路徑來優化你的生活時，你可以設想未來的自己處於一個模擬未來狀態，並試著感受你可能將經歷哪些遺憾
+ ⭐️ Highlights  兩個選項的吸引力越相似，在二者之間做出選擇的難度越大——儘管在同樣程度上，這個選擇本身並不是太重要。
+  佛雷德金悖論指出:「在必須做出選擇的情況下，隨著兩種選擇的效果越來越接近，決策就會變得更加困難，但結果就更沒那麼重要了。」
+ 🔗 Reference:  佛雷德金悖論：為什麼我們總浪費時間在無關緊要的決定上？  </description>
+    </item>
+    
+  </channel>
+</rss>

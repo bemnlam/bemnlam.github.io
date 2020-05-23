@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dev log</title>
-    <link>https://bemnlam.github.io/</link>
-    <description>Recent content on dev log</description>
+    <title>pocket-digest on dev log</title>
+    <link>https://bemnlam.github.io/tags/pocket-digest/</link>
+    <description>Recent content in pocket-digest on dev log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sun, 17 May 2020 13:33:52 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bemnlam.github.io/tags/pocket-digest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -37,33 +37,6 @@ Surprisingly, having a monthly plan is better then a detailed daily plan. The la
  ⭐️ Highlights  兩個選項的吸引力越相似，在二者之間做出選擇的難度越大——儘管在同樣程度上，這個選擇本身並不是太重要。
   佛雷德金悖論指出:「在必須做出選擇的情況下，隨著兩種選擇的效果越來越接近，決策就會變得更加困難，但結果就更沒那麼重要了。」
  🔗 Reference:  佛雷德金悖論：為什麼我們總浪費時間在無關緊要的決定上？  </description>
-    </item>
-    
-    <item>
-      <title>Creating a User With Limited Privileges in Postgres</title>
-      <link>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
-      <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
-      <description>This post showing how to create a user with limited privileges in PostgreSQL.
-Situation I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.
-Code Let say the user you want to create is webapp_user:
-CREATE USER webapp_user WITH ENCRYPTED PASSWORD &amp;#39;secure_passw0rd&amp;#39;; Grant the right to all public tables:
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO webapp_user; Connect the database using webapp_user in the web app.</description>
-    </item>
-    
-    <item>
-      <title>How to add a new Hugo blog post</title>
-      <link>https://bemnlam.github.io/posts/welcome/</link>
-      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/posts/welcome/</guid>
-      <description>Go to blog folder
-hugo new posts/name-of-the-new-post.md Write your post. Back to blog folder and then
-hugo server -D Then you can preview your blog locally.
-Deploy production Change draft=true in the blog post and then
-hugo Push to remote master.
-Done.</description>
     </item>
     
   </channel>
