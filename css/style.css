@@ -1003,7 +1003,7 @@ img {
       position: relative; }
 
 /* external link */
-a[target="_blank"]::after {
+main a[target="_blank"]::after {
   content: url(https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.content.styles.images&image=a.external&format=original&lang=en&skin=minerva&version=1yy2o);
   margin: 0px 3px 0px 5px; }
 
