@@ -2,7 +2,7 @@
 title: "A Note on SSL Certificate"
 description: This is a note about the Linkedin learning course SSL Certificates for Web Developers.
 date: 2020-05-23T17:10:25+08:00
-draft: true
+draft: false
 tags: ["ssl", "cryptography", "https", "security"]
 thumbnail: https://images.unsplash.com/photo-1506967726964-da9127fdec36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60
 ---
