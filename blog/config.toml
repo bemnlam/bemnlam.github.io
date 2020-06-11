@@ -8,7 +8,7 @@ copyright = "&copy; bemnlam"
 # custom_css = "/static/css/custom.css"
 
 # Google Analytics API key.
-# googleAnalytics = "Your Google Analytics tracking id"
+googleAnalytics = "UA-169198494-1"
 
 [markup.goldmark.renderer]
   unsafe= true
