@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Sat, 23 May 2020 17:10:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2020 10:39:39 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fantastic Coffee and Where to Find Them</title>
+      <link>https://bemnlam.github.io/posts/fantastic-coffee-and-where-to-find-them/</link>
+      <pubDate>Thu, 11 Jun 2020 10:39:39 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/fantastic-coffee-and-where-to-find-them/</guid>
+      <description>Background In short: I found a local shop which selling pretty good beans. In Hong Kong.
+During the 2020 pandamic, it&amp;rsquo;s not easy to buy beans overseas. However, it gave me a great opportunity to search for some good beans in Hong Kong. Plus, I have more time to stay at home and brew coffee as the company started the WFH policy from Feb.
+ My Little Coffee 📍: Shop 102, Ho King Shopping Centre, Mong Kok, Kowloon, Hong Kong (map)</description>
+    </item>
     
     <item>
       <title>A Note on SSL Certificate</title>
