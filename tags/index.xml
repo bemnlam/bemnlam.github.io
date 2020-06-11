@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Thu, 11 Jun 2020 10:39:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2020 21:06:59 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.NET Core</title>
+      <link>https://bemnlam.github.io/tags/.net-core/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/.net-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://bemnlam.github.io/tags/c#/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cache</title>
+      <link>https://bemnlam.github.io/tags/cache/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/cache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://bemnlam.github.io/tags/redis/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag-helpers</title>
+      <link>https://bemnlam.github.io/tags/tag-helpers/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/tag-helpers/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>coffee</title>
