@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Thu, 11 Jun 2020 21:06:59 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 19:37:00 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gitlab</title>
+      <link>https://bemnlam.github.io/tags/gitlab/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>how-to</title>
+      <link>https://bemnlam.github.io/tags/how-to/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/how-to/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://bemnlam.github.io/tags/markdown/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mkdocs</title>
+      <link>https://bemnlam.github.io/tags/mkdocs/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/mkdocs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://bemnlam.github.io/tags/python/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>.NET Core</title>

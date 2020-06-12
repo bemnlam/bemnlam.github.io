@@ -3,6 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/gitlab/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/how-to/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/markdown/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/mkdocs/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/posts/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/python/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/</loc>
+    <lastmod>2020-06-12T19:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bemnlam.github.io/tags/.net-core/</loc>
     <lastmod>2020-06-11T21:06:59+08:00</lastmod>
   </url>
@@ -23,27 +68,12 @@
   </url>
   
   <url>
-    <loc>https://bemnlam.github.io/</loc>
-    <lastmod>2020-06-11T21:06:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/posts/</loc>
-    <lastmod>2020-06-11T21:06:59+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bemnlam.github.io/tags/redis/</loc>
     <lastmod>2020-06-11T21:06:59+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/tags/tag-helpers/</loc>
-    <lastmod>2020-06-11T21:06:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/tags/</loc>
     <lastmod>2020-06-11T21:06:59+08:00</lastmod>
   </url>
   

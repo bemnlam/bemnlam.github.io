@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on log from home</title>
+    <link>https://bemnlam.github.io/tags/python/</link>
+    <description>Recent content in python on log from home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Fri, 12 Jun 2020 19:37:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://bemnlam.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Documentation Makes Easy With MkDocs and GitLab Pages</title>
+      <link>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
+      <description>Overview I created a static website using MkDocs and deployed to GitLab Pages. This is what I did: https://bemn-proof-of-concept.gitlab.io/mkdoc/.
+Table of Content  MkDocs  Preparation Up and Run Add a new page Theming Custom Resources   GitLab Pages  .gitlab-ci.yml Build and Deploy   Conclustion   MkDocs From MkDocs&amp;rsquo; official website:
+ MkDocs is a fast, simple and downright gorgeous static site generator that&amp;rsquo;s geared towards building project documentation.</description>
+    </item>
+    
+  </channel>
+</rss>
