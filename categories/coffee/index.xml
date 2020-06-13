@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coffee on log from home</title>
+    <link>https://bemnlam.github.io/categories/coffee/</link>
+    <description>Recent content in Coffee on log from home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Thu, 11 Jun 2020 10:39:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://bemnlam.github.io/categories/coffee/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>☕️ Fantastic Beans and Where to Find Them</title>
+      <link>https://bemnlam.github.io/posts/fantastic-beans-and-where-to-find-them/</link>
+      <pubDate>Thu, 11 Jun 2020 10:39:39 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/fantastic-beans-and-where-to-find-them/</guid>
+      <description>Background In short: I found some local shops which selling pretty good beans. In Hong Kong.
+During the 2020 pandamic, it&amp;rsquo;s not easy to buy beans overseas. However, it gave me a great opportunity to search for some good beans in Hong Kong. Plus, I have more time to stay at home and brew coffee as the company started the WFH policy from Feb.
+Table of content  My Little Coffee  Beans and drip bags Equipments (TBC)   Brew Note Coffee Roaster  Beans Subscription plans    I will keep searching for new beans and new local shops in the coming days.</description>
+    </item>
+    
+    <item>
+      <title>☕️ Brewing Coffee</title>
+      <link>https://bemnlam.github.io/posts/brewing-coffee/</link>
+      <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/brewing-coffee/</guid>
+      <description>A note on how to brew coffee.
+V60 ☕️ How to Brew V60 with UK Brewers Cup Champion, Sang Ho Park | Comprehensive Guide
+  ☕️ A Coffee Brewing Theory &amp;ldquo;4:6 method&amp;rdquo; Invented by Tetsu Kasuya_ World Brewers Cup 2016 Champion
+  </description>
+    </item>
+    
+  </channel>
+</rss>

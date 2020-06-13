@@ -22,15 +22,6 @@
     </item>
     
     <item>
-      <title>how-to</title>
-      <link>https://bemnlam.github.io/tags/how-to/</link>
-      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/tags/how-to/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>markdown</title>
       <link>https://bemnlam.github.io/tags/markdown/</link>
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
@@ -54,6 +45,15 @@
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://bemnlam.github.io/tags/tutorial/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
     
@@ -126,6 +126,15 @@
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linkedin-digest</title>
+      <link>https://bemnlam.github.io/tags/linkedin-digest/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/linkedin-digest/</guid>
       <description></description>
     </item>
     
@@ -225,15 +234,6 @@
       <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tutorial</title>
-      <link>https://bemnlam.github.io/tags/tutorial/</link>
-      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
     

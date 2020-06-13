@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dev on log from home</title>
+    <link>https://bemnlam.github.io/categories/dev/</link>
+    <description>Recent content in Dev on log from home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Fri, 12 Jun 2020 19:37:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://bemnlam.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Documentation Makes Easy With MkDocs and GitLab Pages</title>
+      <link>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
+      <description>Overview I created a static website using MkDocs and deployed to GitLab Pages. This is what I did: https://bemn-proof-of-concept.gitlab.io/mkdoc/.
+Table of Content  MkDocs  Preparation Up and Run Add a new page Theming Custom Resources   GitLab Pages  .gitlab-ci.yml Build and Deploy   Conclustion   MkDocs From MkDocs&amp;rsquo; official website:
+ MkDocs is a fast, simple and downright gorgeous static site generator that&amp;rsquo;s geared towards building project documentation.</description>
+    </item>
+    
+    <item>
+      <title>A Tale of Two Caches: Redis and the cache helper</title>
+      <link>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
+      <description>Background Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.
+I built this MVC web app using .NET Core 3.1 and deploy it as an IIS sub-site under the main website (which is a .NET Framework web app running on the IIS).
+Table of Content  Redis  NuGet package appsettings.</description>
+    </item>
+    
+    <item>
+      <title>A Note on SSL Certificate</title>
+      <link>https://bemnlam.github.io/posts/a-note-on-ssl/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/a-note-on-ssl/</guid>
+      <description>This is a note about the Linkedin learning course SSL Certificates for Web Developers.
+Certificate and protocol What are SSL/TLS stands for? They stands for Secure Socket Layer and Transport Layer Security. They are the protocol names.
+What is HTTPS, and why we are using it? Https[ecure], a protocol on top of HTTP to secure the integrity of the data sending form the user to server.
+What is a certificate, and what is it for?</description>
+    </item>
+    
+    <item>
+      <title>Creating a User With Limited Privileges in Postgres</title>
+      <link>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
+      <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
+      <description>This post showing how to create a user with limited privileges in PostgreSQL.
+Situation I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.
+Code Let say the user you want to create is webapp_user:
+CREATE USER webapp_user WITH ENCRYPTED PASSWORD &amp;#39;secure_passw0rd&amp;#39;; Grant the right to all public tables:
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO webapp_user; Connect the database using webapp_user in the web app.</description>
+    </item>
+    
+    <item>
+      <title>How to add a new Hugo blog post</title>
+      <link>https://bemnlam.github.io/posts/welcome/</link>
+      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/welcome/</guid>
+      <description>Go to blog folder
+hugo new posts/name-of-the-new-post.md Write your post. Back to blog folder and then
+hugo server -D Then you can preview your blog locally.
+Deploy production Change draft=true in the blog post and then
+hugo Push to remote master.
+Done.</description>
+    </item>
+    
+  </channel>
+</rss>
