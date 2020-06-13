@@ -20,7 +20,7 @@ googleAnalytics = "UA-169198494-1"
   gitlab = "bemnlam"
   linkedin = "hmbenlam"
   # Logo image. This is displayed ogp image.
-  logo = "favicon.png"
+  logo = "cover.png"
   favicon = "favicon.ico"
   # Short subtitle/tagline. This is displayed in the header.
   subtitle = "Start blogging in the 2020 lockdown. 🏠"
@@ -36,6 +36,11 @@ googleAnalytics = "UA-169198494-1"
 #     weight = 2
 
 [[menu.main]]
+    name = "🗂 categories"
+    url = "/categories"
+    weight = 3
+
+[[menu.main]]
     name = "🏷 tags"
     url = "/tags"
-    weight = 4  
+    weight = 4
