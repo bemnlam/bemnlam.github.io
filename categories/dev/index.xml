@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Fri, 12 Jun 2020 19:37:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2020 17:10:24 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>🐞 GitVersioning: &#39;ThisAssembly&#39; Is Inaccessible Due to Its Protection Level</title>
+      <link>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
+      <description>😨 Problem After I installed the Nerdbank.GitVersioning Nuget package in my .NET MVC app to get the version using ThisAssembly.AssemblyInformationalVersion, the following error came out when building the app:
+error CS0122: &#39;ThisAssembly&#39; is inaccessible due to its protection level I tried to install the package on all the projects in the same solution. It didn&amp;rsquo;t work.
+I tried to uninstall and re-ininstall the packate. It didn&amp;rsquo;t work.
+😀 Solution .csproj Turns out there is something missing in my .</description>
+    </item>
     
     <item>
       <title>Documentation Makes Easy With MkDocs and GitLab Pages</title>

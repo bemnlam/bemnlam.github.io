@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Fri, 12 Jun 2020 19:37:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2020 17:10:24 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.NET</title>
+      <link>https://bemnlam.github.io/tags/.net/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csharp</title>
+      <link>https://bemnlam.github.io/tags/csharp/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nuget</title>
+      <link>https://bemnlam.github.io/tags/nuget/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/nuget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pest-control</title>
+      <link>https://bemnlam.github.io/tags/pest-control/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/pest-control/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>gitlab</title>
@@ -72,15 +108,6 @@
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/cache/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>csharp</title>
-      <link>https://bemnlam.github.io/tags/csharp/</link>
-      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/tags/csharp/</guid>
       <description></description>
     </item>
     
