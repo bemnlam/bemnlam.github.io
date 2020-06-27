@@ -18,9 +18,197 @@
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
-      <description>Overview I created a static website using MkDocs and deployed to GitLab Pages. This is what I did: https://bemn-proof-of-concept.gitlab.io/mkdoc/.
-Table of Content  MkDocs  Preparation Up and Run Add a new page Theming Custom Resources   GitLab Pages  .gitlab-ci.yml Build and Deploy   Conclustion   MkDocs From MkDocs&amp;rsquo; official website:
- MkDocs is a fast, simple and downright gorgeous static site generator that&amp;rsquo;s geared towards building project documentation.</description>
+      <description>&lt;h2 id=&#34;overview-&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;I created a static website using &lt;strong&gt;MkDocs&lt;/strong&gt; and deployed to &lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;&lt;strong&gt;GitLab Pages&lt;/strong&gt;&lt;/a&gt;. This is what I did: &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/&#34;&gt;https://bemn-proof-of-concept.gitlab.io/mkdoc/&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;table-of-content-&#34;&gt;Table of Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;MkDocs&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#preparation&#34;&gt;Preparation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#up-and-run&#34;&gt;Up and Run&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#add-a-new-page&#34;&gt;Add a new page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#theming&#34;&gt;Theming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#custom-resources&#34;&gt;Custom Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#gitlab-pages&#34;&gt;GitLab Pages&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#gitlab-ci-yml&#34;&gt;.gitlab-ci.yml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#build-and-deploy&#34;&gt;Build and Deploy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclustion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;intro&#34;&gt;MkDocs&lt;/h2&gt;
+&lt;p&gt;From &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&amp;rsquo; official website&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;MkDocs is a &lt;strong&gt;fast&lt;/strong&gt;, &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;downright gorgeous&lt;/strong&gt; static site generator that&amp;rsquo;s geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In my opinion, setting up a static site using MkDocs is really straightforward. It&amp;rsquo;s easy to change the theme and insert custom styles/scripts. &lt;a href=&#34;https://en.m.wikipedia.org/wiki/KISS_principle&#34;&gt;Keep it simple, stupid&lt;/a&gt;. That&amp;rsquo;s what I need.&lt;/p&gt;
+&lt;h3 id=&#34;preparation&#34;&gt;Preparation&lt;/h3&gt;
+&lt;p&gt;Make sure that you have the following tools:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;python 3.x&lt;/strong&gt; and &lt;strong&gt;pip&lt;/strong&gt;. Install it via &lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;executable&lt;/a&gt; from the official website, or using tools like &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ python --version
+Python 3.8.2
+$ pip --version
+pip 20.0.2 from /usr/local/lib/python3.8/site-packages/pip &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;python 3.8&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;a &lt;strong&gt;GitLab&lt;/strong&gt; account. You can use other service like &lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;, Amazon S3, etc.&lt;/li&gt;
+&lt;li&gt;(optional) &lt;a href=&#34;https://www.markdownguide.org/cheat-sheet/&#34;&gt;a markdown cheatsheet&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(For me, the most difficult part is how to get the python and pip versions right. In Mac the built-in python version is 2.7 but we need python 3 to install &lt;code&gt;pip&lt;/code&gt;.)&lt;/p&gt;
+&lt;h3 id=&#34;up-and-run&#34;&gt;Up and Run&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ pip install mkdocs
+$ mkdocs --version
+mkdocs, version 1.1.2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Assuming that your project folder is &lt;code&gt;doc-project&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdocs new doc-project
+$ cd doc-project
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A MkDocs project is then created with the following folder structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;doc-project
+├── docs
+│   └── index.md
+├── img
+│   └── favicon.ico
+└── mkdocs.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let&amp;rsquo;s run the site:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdocs serve
+INFO    -  Building documentation...
+INFO    -  Cleaning site directory
+INFO    -  Documentation built in 1.65 seconds
+&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;I &lt;span style=&#34;color:#ae81ff&#34;&gt;200612&lt;/span&gt; 23:30:19 server:334&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; Serving on http://127.0.0.1:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And check it out at &lt;a href=&#34;http://127.0.0.1:8000&#34;&gt;http://127.0.0.1:8000&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/01_welcome.png&#34; alt=&#34;Running MkDocs&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;add-a-new-page&#34;&gt;Add a new page&lt;/h3&gt;
+&lt;h4 id=&#34;the-content-&#34;&gt;The content&lt;/h4&gt;
+&lt;p&gt;Remember, all the documents should place under &lt;code&gt;docs&lt;/code&gt;. Let&amp;rsquo;s create an Overview page:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cd docs
+$ touch overview.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, add some content to &lt;code&gt;overview.md&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;the-menu-&#34;&gt;The menu&lt;/h4&gt;
+&lt;p&gt;If you want the visitors to reach the overview page, you need to add an url in the menu. Let&amp;rsquo;s edit &lt;code&gt;mkdocs.yml&lt;/code&gt;, the site config file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project &lt;span style=&#34;color:#75715e&#34;&gt;## change your site name here.&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
+  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Overview&lt;/span&gt;: overview.md &lt;span style=&#34;color:#75715e&#34;&gt;## add this line.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will see a new link called &lt;em&gt;Overview&lt;/em&gt; in the menu. If you want to set your site name now, change the value of &lt;code&gt;site_name&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So that&amp;rsquo;s it. That&amp;rsquo;s how to add a new page.&lt;/p&gt;
+&lt;h3 id=&#34;theming&#34;&gt;Theming&lt;/h3&gt;
+&lt;p&gt;You can apply a custom theme to MkDocs. &lt;a href=&#34;https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes&#34;&gt;This page&lt;/a&gt; contains many themes contributed by the community.&lt;/p&gt;
+&lt;p&gt;In this section, I will apply the &lt;a href=&#34;https://github.com/squidfunk/mkdocs-material&#34;&gt;Material Design theme&lt;/a&gt; to my MkDocs site.&lt;/p&gt;
+&lt;p&gt;Stop running your site and install the theme by:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ pip install mkdocs-material
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update the &lt;code&gt;mkdocs.yml&lt;/code&gt; again:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
+  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Overview&lt;/span&gt;: overview.md
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## Add this section&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;theme&lt;/span&gt;:
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: material
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;palette&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;## Add this sub-section if you want to change the theme color&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;scheme&lt;/span&gt;: amber
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;primary&lt;/span&gt;: amber
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;accent&lt;/span&gt;: orange
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the site:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdocs serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will see MkDocs is dressing the amber Material Design theme.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/02_theming.png&#34; alt=&#34;Material Design theme with amber scheme&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;custom-resources&#34;&gt;Custom Resources&lt;/h3&gt;
+&lt;p&gt;Sometimes you may want to add custom CSS or JS. In MkDocs, you can do it by adding &lt;code&gt;extra_css&lt;/code&gt; and &lt;code&gt;extra_javascript&lt;/code&gt; sections in &lt;code&gt;mkdocs.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I created a &lt;code&gt;catalog&lt;/code&gt; page which contains a table written in markdown. Also, I want to apply &lt;a href=&#34;https://www.datatables.net/&#34;&gt;jQuery DataTables&lt;/a&gt; to make the table more interactive. Therefore, I added the related js libraries and related css file to MkDocs. You can see the result &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/catalog/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exercice:&lt;/strong&gt; create a &lt;code&gt;catalog.md&lt;/code&gt; file and add a markdown table in it.&lt;/p&gt;
+&lt;p&gt;Next, add the custom resource sections to the config file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project
+&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
+  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Catalog&lt;/span&gt;: catalog.md &lt;span style=&#34;color:#75715e&#34;&gt;## The catalog page you created in the exercise.&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;theme&lt;/span&gt;:
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: material
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;palette&lt;/span&gt;:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;scheme&lt;/span&gt;: amber
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;primary&lt;/span&gt;: amber
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;accent&lt;/span&gt;: orange
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## Custom js files.&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;extra_javascript&lt;/span&gt;:
+  - https://code.jquery.com/jquery&lt;span style=&#34;color:#ae81ff&#34;&gt;-3.5.1&lt;/span&gt;.min.js
+  - https://cdn.datatables.net/&lt;span style=&#34;color:#ae81ff&#34;&gt;1.10.21&lt;/span&gt;/js/jquery.dataTables.min.js
+  - scripts/site.js
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## Custom css files.&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;extra_css&lt;/span&gt;:
+  - https://cdn.datatables.net/&lt;span style=&#34;color:#ae81ff&#34;&gt;1.10.21&lt;/span&gt;/css/jquery.dataTables.min.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create a custom js file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cd docs
+$ mkdir scripts
+$ cd scripts
+$ touch site.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now in your &lt;code&gt;site.js&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(document).&lt;span style=&#34;color:#a6e22e&#34;&gt;ready&lt;/span&gt;( &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;table&amp;#39;&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;DataTable&lt;/span&gt;();
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Afer that, you should be able to see an interactive table in the catalog page.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/03_with-custom-resources.png&#34; alt=&#34;With jQuery Datatables&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;gitlab-pages&#34;&gt;GitLab Pages&lt;/h2&gt;
+&lt;p&gt;Create a GitLab repository under your personal space or a project group. The url will be something like &lt;code&gt;https://gitlab.com/{username or project group name}/{repo name}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Clone the repo you created and create the following items:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir src
+$ touch .gitlab-ci.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Place your MkDoc items (i.e. the &lt;code&gt;doc-project&lt;/code&gt; folder) under &lt;code&gt;src&lt;/code&gt;. See the following folder structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(root of the repo)
+├── .gitlab-ci.yml
+└── src
+    └── doc-project
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;gitlab-ci-yml&#34;&gt;.gitlab-ci.yml&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; is a GitLab-specific file. GitLab will read and run the steps in the file. We need to tell GitLab how to generate and deploy our static MkDocs website. In this file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In .gitlab-ci.yml...&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;image&lt;/span&gt;: python:&lt;span style=&#34;color:#ae81ff&#34;&gt;3.8&lt;/span&gt;-buster &lt;span style=&#34;color:#75715e&#34;&gt;## MkDocs requies python.&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;pages&lt;/span&gt;:
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;stage&lt;/span&gt;: deploy &lt;span style=&#34;color:#75715e&#34;&gt;## tell GitLab to deploy the website in this step.&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;before_script&lt;/span&gt;:
+    - pip install mkdocs &lt;span style=&#34;color:#75715e&#34;&gt;## install MkDocs.&lt;/span&gt;
+    - pip install mkdocs-material &lt;span style=&#34;color:#75715e&#34;&gt;## install the theme.&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;script&lt;/span&gt;:
+    - cd ./src/doc-project
+    - mkdocs build &lt;span style=&#34;color:#75715e&#34;&gt;## built the site.&lt;/span&gt;
+    - mv site ../../public
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;artifacts&lt;/span&gt;:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;paths&lt;/span&gt;:
+    - public
+  &lt;span style=&#34;color:#75715e&#34;&gt;## Uncomment the following section if you want to run this step under master branch only.&lt;/span&gt;
+  &lt;span style=&#34;color:#75715e&#34;&gt;# only:&lt;/span&gt;
+  &lt;span style=&#34;color:#75715e&#34;&gt;# - master &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So basically it tells GitLab to install the tools required under python 3.8 environment and deploy the website after the site is generated.&lt;/p&gt;
+&lt;p&gt;Try to run the following command if you want to generate the site locally:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdocs build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The generated site is located under  &lt;code&gt;doc-project/site/&lt;/code&gt; .&lt;/p&gt;
+&lt;p&gt;In order to display the website properly, you need to place the generated site under the &lt;code&gt;public&lt;/code&gt; folder and let GitLab knows the &lt;strong&gt;artifact&lt;/strong&gt; inside is the website you want to deploy.&lt;/p&gt;
+&lt;h3 id=&#34;build-and-deploy&#34;&gt;Build and Deploy&lt;/h3&gt;
+&lt;p&gt;Push the code to GitLab and the site should build automatically. Check out the status of the build under &lt;strong&gt;CI/CD&lt;/strong&gt; &amp;ndash;&amp;gt;  &lt;strong&gt;Pipelines&lt;/strong&gt;.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/04_gitlab-ci-cd-panel.png&#34;
+         alt=&#34;CI/CD panel in GitLab&#34;/&gt; &lt;figcaption&gt;
+            &lt;h4&gt;A green tag showing passed for each successfully build.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Check out your website now. The url is &lt;code&gt;https://{username or project group name}.gitlab.io/{repo name}/&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we created a static site with custom theme, styles and js library by using MkDocs. After that, we set up a CI/CD pipeline on GitLab for building and deploying this static site to GitLab Pages.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -29,9 +217,184 @@ Table of Content  MkDocs  Preparation Up and Run Add a new page Theming Custom R
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
-      <description>Background Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.
-I built this MVC web app using .NET Core 3.1 and deploy it as an IIS sub-site under the main website (which is a .NET Framework web app running on the IIS).
-Table of Content  Redis  NuGet package appsettings.</description>
+      <description>&lt;h2 id=&#34;background-&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
+&lt;p&gt;I built this &lt;strong&gt;MVC&lt;/strong&gt; web app using &lt;strong&gt;.NET Core 3.1&lt;/strong&gt; and deploy it as an IIS sub-site under the main website (which is a &lt;strong&gt;.NET Framework&lt;/strong&gt; web app running on the IIS).&lt;/p&gt;
+&lt;h3 id=&#34;table-of-content&#34;&gt;Table of Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#redis&#34;&gt;Redis&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#redis-nuget&#34;&gt;NuGet package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#redis-appsettings&#34;&gt;appsettings.json&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#redis-startup&#34;&gt;Startup.cs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#redis-cache-service&#34;&gt;CacheService&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#redis-controller&#34;&gt;Controller&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cache-tag-helper&#34;&gt;Cache Tag Helper&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#cache-tag-helper-example&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cache-tag-helper-exaplain&#34;&gt;Explaination&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#bonus&#34;&gt;Bonus: A note on @helper and other HTML helpers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;redis&#34;&gt;Redis&lt;/h2&gt;
+&lt;h3 id=&#34;why-&#34;&gt;Why?&lt;/h3&gt;
+&lt;p&gt;We are using &lt;a href=&#34;https://redis.io/&#34;&gt;Redis&lt;/a&gt; because it is simple, fast and we are already using it across all the main websites.&lt;/p&gt;
+&lt;h3 id=&#34;how-&#34;&gt;How?&lt;/h3&gt;
+&lt;p&gt;Here are some highlights:&lt;/p&gt;
+&lt;h4 id=&#34;redis-nuget&#34;&gt;1. NuGet packages&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;PackageReference&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;StackExchange.Redis&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2.1.30&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;PackageReference&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;StackExchange.Redis.Extensions.Core&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;6.1.7&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;PackageReference&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;StackExchange.Redis.Extensions.Newtonsoft&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;6.1.7&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;PackageReference&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;StackExchange.Redis.Extensions.AspNetCore&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;6.1.7&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;StackExchange.Redis.Extensions.Newtonsoft&lt;/code&gt; is optional. &lt;a href=&#34;https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/&#34;&gt;Start from .NET Core 3.0&lt;/a&gt; the default Json serializer will be &lt;code&gt;System.Text.Json&lt;/code&gt;. If you want to use &lt;code&gt;Newtonsoft.Json&lt;/code&gt; then you will need this package in your project.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;StackExchange.Redis.Extensions.Core&lt;/code&gt; and &lt;code&gt;StackExchange.Redis.Extensions.AspNetCore&lt;/code&gt; are the useful package to connect/read/write Redis easier. Read &lt;a href=&#34;https://stackexchange-redis-extensinos.gitbook.io/stackexchange-redis-extensions/&#34;&gt;this documentation&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;h4 id=&#34;redis-appsettings&#34;&gt;2. appsettings.json&lt;/h4&gt;
+&lt;p&gt;A typical .NET Core project there should be a &lt;code&gt;appsettings.json&lt;/code&gt;. Add the following section:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;Redis&amp;#34;&lt;/span&gt;: {
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;AllowAdmin&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;Ssl&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;ConnectTimeout&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;6000&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;ConnectRetry&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;Database&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;Hosts&amp;#34;&lt;/span&gt;: [
+      {
+        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;Host&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;my-secret-redis-host.com&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;Port&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;6379&amp;#34;&lt;/span&gt;
+      }
+    ]
+  } 
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here, &lt;code&gt;my-secret-redis-host.com&lt;/code&gt; is the Redis host and We are using the database no. &lt;code&gt;0&lt;/code&gt;. You can set multiple hosts. You can see a detailed configuration &lt;a href=&#34;https://stackexchange-redis-extensinos.gitbook.io/stackexchange-redis-extensions/configuration/json-configuration&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;redis-startup&#34;&gt;3. Startup.cs&lt;/h4&gt;
+&lt;p&gt;Add the following code in &lt;code&gt;ConfigureServices()&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; redisConfiguration = Configuration.GetSection(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Redis&amp;#34;&lt;/span&gt;).Get&amp;lt;RedisConfiguration&amp;gt;();
+services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(redisConfiguration);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;redis-cache-service&#34;&gt;5. CacheService&lt;/h4&gt;
+&lt;p&gt;I created a &lt;code&gt;CacheService.cs&lt;/code&gt; to help me to read/write data in Redis. In this service:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; CacheService(RedisConfiguration redisConfiguration, ILogger&amp;lt;RedisCacheConnectionPoolManager&amp;gt; poolLogger)
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; connectionPoolManager = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; RedisCacheConnectionPoolManager(redisConfiguration, poolLogger);
+        _redisClient = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; RedisCacheClient(connectionPoolManager, serializer, redisConfiguration);
+    }
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(Exception ex)
+    {
+        &lt;span style=&#34;color:#75715e&#34;&gt;/* something wrong when connection to Redis servers. */&lt;/span&gt;
+    }
+    _cacheDuration = &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// cache period in seconds
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We need a method to write data:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; Task&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;&amp;gt; AddAsync(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; key, &lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;value&lt;/span&gt;)
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; added = &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; _redisClient.GetDbFromConfiguration().AddAsync(key, &lt;span style=&#34;color:#66d9ef&#34;&gt;value&lt;/span&gt;, DateTimeOffset.Now.AddSeconds(_cacheDuration));
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; added;
+    }
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (Exception ex)
+    {
+        &lt;span style=&#34;color:#75715e&#34;&gt;/* something wrong when writing data to Redis */&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we need a method to get cached data:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; Task&amp;lt;T&amp;gt; TryGetAsync&amp;lt;T&amp;gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; key)
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; _redisClient.GetDbFromConfiguration().ExistsAsync(key))
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; _redisClient.GetDbFromConfiguration().GetAsync&amp;lt;T&amp;gt;(key);
+        }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;;
+        }
+    }
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(Exception ex)
+    {
+        &lt;span style=&#34;color:#75715e&#34;&gt;/* something wrong when writing data to Redis */&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I intentionally name this method &lt;code&gt;TryGetAsync()&lt;/code&gt; because the cache may not exist or already expired when you try to get it from Redis.&lt;/p&gt;
+&lt;p&gt;After that, let&amp;rsquo;s go back to &lt;code&gt;Startup.cs&lt;/code&gt; and register this service in &lt;code&gt;ConfigureService()&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;services.AddTransient&amp;lt;CacheService&amp;gt;();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Remember to register this service &lt;strong&gt;after&lt;/strong&gt; &lt;code&gt;services.AddStackExchangeRedisExtensions()&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;redis-controller&#34;&gt;5. Controller&lt;/h4&gt;
+&lt;p&gt;Inject the &lt;code&gt;CacheService&lt;/code&gt; to the controller:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; DemoController(CacheService cacheService)
+{
+    _cacheService = cacheService;
+}
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; Task&amp;lt;IActionResult&amp;gt; Demo(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; name)
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; cacheKey = &lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#34;DemoApp:{name}&amp;#34;&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Try to get cached value from Redis.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; cachedResult = &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; _cacheService.TryGetAsync&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;&amp;gt;(cacheKey);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; != cachedResult)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; View(cachedResult);
+    }
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Add new entry to Redis before returning the message.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; message = &lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#34;Hello, {name}&amp;#34;&lt;/span&gt;;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt; != sections &amp;amp;&amp;amp; sections.Any())
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; _cacheService.AddAsync(cacheKey, message);
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; View(message);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Explain Like I&amp;rsquo;m Five&lt;/strong&gt;:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You ask the shopkeeper in &lt;code&gt;Demo&lt;/code&gt; bookstore do they have a specific book &lt;code&gt;name&lt;/code&gt;. First, the shopkeeper looks for the book on the bookshelf named &lt;code&gt;Redis&lt;/code&gt;. If he found that book, he take it out and give it to you.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If your book does not exist in the &lt;code&gt;Redis&lt;/code&gt; bookstore, he has to go out and buy that book for you. However, he buys 2 identical copied. He gives you one and put the other one on the &lt;code&gt;Redis&lt;/code&gt; bookshelf, just in case another customer want that book later.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;cache-tag-helper&#34;&gt;Cache Tag Helper&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/cache-tag-helper?view=aspnetcore-3.1&#34;&gt;Cache Tag Helper&lt;/a&gt; is a tag that you can use in a &lt;strong&gt;.NET Core MVC&lt;/strong&gt; app. Content encolsed by this &lt;code&gt;&amp;lt;cache&amp;gt;&lt;/code&gt; tag will be cached in the internal cache provider.&lt;/p&gt;
+&lt;h3 id=&#34;cache-tag-helper-example&#34;&gt;Example&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;cache&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;expires-after&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@TimeSpan.FromSeconds(60)&amp;#34;&lt;/span&gt; 
+       &lt;span style=&#34;color:#a6e22e&#34;&gt;vary-by-route&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt; 
+       &lt;span style=&#34;color:#a6e22e&#34;&gt;vary-by-user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt;&amp;gt;
+	@System.DateTime.Now
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;cache&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;cache-tag-helper-exaplain&#34;&gt;Explaination&lt;/h3&gt;
+&lt;p&gt;In the above example, some attributes is set in the &lt;code&gt;&amp;lt;cache&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;expires-after&lt;/code&gt;: how long (in seconds) will this cache last for.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vary-by-route&lt;/code&gt;: different copy will be cached when the route has a different value in the &lt;code&gt;name&lt;/code&gt;param.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vary-by-user&lt;/code&gt;: different user will see different cached copies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;how-can-i-know-if-it-is-working-&#34;&gt;How can I know if it is working?&lt;/h3&gt;
+&lt;p&gt;You will see the value rendered in the above example won&amp;rsquo;t change for 60 seconds even &lt;code&gt;System.DateTime.Now&lt;/code&gt; should show the current time.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;bonus&#34;&gt;Bonus: A note on &lt;code&gt;@helper&lt;/code&gt; and other HTML helpers&lt;/h2&gt;
+&lt;p&gt;In the old days we can define some &lt;code&gt;@helper&lt;/code&gt; functions in the razor view and (re)use it in the view. It&amp;rsquo;s being removed since .NET Core 3.0 because the design of &lt;code&gt;@helper&lt;/code&gt; function does not compatible with async Razor content anymore.&lt;/p&gt;
+&lt;h3 id=&#34;successor-of-the-html-helpers-&#34;&gt;Successor of the HTML helpers?&lt;/h3&gt;
+&lt;p&gt;You can use the &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1&#34;&gt;&lt;strong&gt;Tag Helpers in ASP.NET Core&lt;/strong&gt;&lt;/a&gt;. Yes, the &lt;code&gt;&amp;lt;cache&amp;gt;&lt;/code&gt; Tag Helper is one of the &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1#built-in-aspnet-core-tag-helpers&#34;&gt;built-in Tag Helpers in .NET Core&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition, you can use the &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync?view=aspnetcore-3.1&#34;&gt;&lt;code&gt;PartialAsync()&lt;/code&gt; method&lt;/a&gt;  to render the partial HTML markup &lt;strong&gt;asynchronously&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;@await Html.PartialAsync(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;_PartialName&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;More references on the HTML helpers and Tag Helpers:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/aspnet/Mvc/issues/4127&#34;&gt;What happened to the @helper directive in Razor ?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/aspnet/Razor/issues/281&#34;&gt;Remove the @helper directive from Razor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dannyvanderkraan.wordpress.com/2016/04/19/asp-net-core-1-0-goodbye-html-helpers-and-hello-taghelpers/&#34;&gt;ASP.NET Core 1.0: Goodbye HTML helpers and hello TagHelpers!&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -40,12 +403,17 @@ Table of Content  Redis  NuGet package appsettings.</description>
       <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/welcome/</guid>
-      <description>Go to blog folder
-hugo new posts/name-of-the-new-post.md Write your post. Back to blog folder and then
-hugo server -D Then you can preview your blog locally.
-Deploy production Change draft=true in the blog post and then
-hugo Push to remote master.
-Done.</description>
+      <description>&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/name-of-the-new-post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write your post. Back to &lt;code&gt;blog&lt;/code&gt; folder  and then&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo server -D
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then you can preview your blog locally.&lt;/p&gt;
+&lt;h3 id=&#34;deploy-production&#34;&gt;Deploy production&lt;/h3&gt;
+&lt;p&gt;Change &lt;code&gt;draft=true&lt;/code&gt; in the blog post and then&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Push to remote &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Done.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

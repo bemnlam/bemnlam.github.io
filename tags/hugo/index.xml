@@ -18,12 +18,17 @@
       <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/welcome/</guid>
-      <description>Go to blog folder
-hugo new posts/name-of-the-new-post.md Write your post. Back to blog folder and then
-hugo server -D Then you can preview your blog locally.
-Deploy production Change draft=true in the blog post and then
-hugo Push to remote master.
-Done.</description>
+      <description>&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/name-of-the-new-post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write your post. Back to &lt;code&gt;blog&lt;/code&gt; folder  and then&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo server -D
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then you can preview your blog locally.&lt;/p&gt;
+&lt;h3 id=&#34;deploy-production&#34;&gt;Deploy production&lt;/h3&gt;
+&lt;p&gt;Change &lt;code&gt;draft=true&lt;/code&gt; in the blog post and then&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Push to remote &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Done.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
