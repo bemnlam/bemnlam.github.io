@@ -199,12 +199,8 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Explain Like I&amp;rsquo;m Five&lt;/strong&gt;:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You ask the shopkeeper in &lt;code&gt;Demo&lt;/code&gt; bookstore do they have a specific book &lt;code&gt;name&lt;/code&gt;. First, the shopkeeper looks for the book on the bookshelf named &lt;code&gt;Redis&lt;/code&gt;. If he found that book, he take it out and give it to you.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If your book does not exist in the &lt;code&gt;Redis&lt;/code&gt; bookstore, he has to go out and buy that book for you. However, he buys 2 identical copied. He gives you one and put the other one on the &lt;code&gt;Redis&lt;/code&gt; bookshelf, just in case another customer want that book later.&lt;/p&gt;
+&lt;p&gt;You ask the shopkeeper in &lt;code&gt;Demo&lt;/code&gt; bookstore do they have a specific book &lt;code&gt;name&lt;/code&gt;. First, the shopkeeper looks for the book on the bookshelf named &lt;code&gt;Redis&lt;/code&gt;. If he finds that book, he takes it out and gives it to you.&lt;/p&gt;
+&lt;p&gt;If your book does not exist in the &lt;code&gt;Redis&lt;/code&gt; bookstore, he has to go out and buy that book for you(!). However, he buys 2 identical copies. He gives you one and puts the other one on the &lt;code&gt;Redis&lt;/code&gt; bookshelf, just in case another customer want that book later.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;cache-tag-helper&#34;&gt;Cache Tag Helper&lt;/h2&gt;
