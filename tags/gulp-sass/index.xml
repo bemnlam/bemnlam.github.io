@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gulp-sass on log from home</title>
+    <link>https://bemnlam.github.io/tags/gulp-sass/</link>
+    <description>Recent content in gulp-sass on log from home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Sat, 27 Jun 2020 16:03:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://bemnlam.github.io/tags/gulp-sass/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🐞 Battling With Gulp and Node</title>
+      <link>https://bemnlam.github.io/posts/battling-with-gulp-and-node/</link>
+      <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/battling-with-gulp-and-node/</guid>
+      <description>😨 Problem When I was building a website using gulp@^3.9.0 to compile sass on the build server with Node.js v12 installed, it failed.
+Here are (part of) the errors shown in the console:
+error	26-Jun-2020 08:35:02	gyp ERR! node -v v12.18.0 error	26-Jun-2020 08:35:02	gyp ERR! node-gyp -v v3.8.0 error	26-Jun-2020 08:35:02	gyp ERR! not ok error	26-Jun-2020 08:35:02	Build failed with error code: 1 error	26-Jun-2020 08:35:05	error	26-Jun-2020 08:35:05	npm ERR!</description>
+    </item>
+    
+  </channel>
+</rss>
