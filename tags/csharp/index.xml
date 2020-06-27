@@ -95,7 +95,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;StackExchange.Redis.Extensions.Newtonsoft&lt;/code&gt; is optional. &lt;a href=&#34;https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/&#34;&gt;Start from .NET Core 3.0&lt;/a&gt; the default Json serializer will be &lt;code&gt;System.Text.Json&lt;/code&gt;. If you want to use &lt;code&gt;Newtonsoft.Json&lt;/code&gt; then you will need this package in your project.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;StackExchange.Redis.Extensions.Core&lt;/code&gt; and &lt;code&gt;StackExchange.Redis.Extensions.AspNetCore&lt;/code&gt; are the useful package to connect/read/write Redis easier. Read &lt;a href=&#34;https://stackexchange-redis-extensinos.gitbook.io/stackexchange-redis-extensions/&#34;&gt;this documentation&lt;/a&gt; for more details.&lt;/p&gt;
 &lt;h4 id=&#34;redis-appsettings&#34;&gt;2. appsettings.json&lt;/h4&gt;
-&lt;p&gt;A typical .NET Core project there should be a &lt;code&gt;appsettings.json&lt;/code&gt;. Add the following section:&lt;/p&gt;
+&lt;p&gt;A typical .NET Core project should have an &lt;code&gt;appsettings.json&lt;/code&gt;. Add the following section:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
   &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;Redis&amp;#34;&lt;/span&gt;: {
     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;AllowAdmin&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
@@ -117,7 +117,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; redisConfiguration = Configuration.GetSection(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Redis&amp;#34;&lt;/span&gt;).Get&amp;lt;RedisConfiguration&amp;gt;();
 services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(redisConfiguration);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;redis-cache-service&#34;&gt;5. CacheService&lt;/h4&gt;
-&lt;p&gt;I created a &lt;code&gt;CacheService.cs&lt;/code&gt; to help me to read/write data in Redis. In this service:&lt;/p&gt;
+&lt;p&gt;I created a &lt;code&gt;CacheService.cs&lt;/code&gt; to help me reading/writing data in Redis. In this service:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; CacheService(RedisConfiguration redisConfiguration, ILogger&amp;lt;RedisCacheConnectionPoolManager&amp;gt; poolLogger)
 {
     &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;
@@ -188,7 +188,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; View(cachedResult);
     }
 
-    &lt;span style=&#34;color:#75715e&#34;&gt;// Add new entry to Redis before returning the message.
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Add a new entry to Redis before returning the message.
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; message = &lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#34;Hello, {name}&amp;#34;&lt;/span&gt;;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt; != sections &amp;amp;&amp;amp; sections.Any())
     {

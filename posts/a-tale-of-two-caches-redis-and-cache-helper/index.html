@@ -142,7 +142,7 @@ if (!doNotTrack) {
 </code></pre></div><p><code>StackExchange.Redis.Extensions.Newtonsoft</code> is optional. <a href="https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/">Start from .NET Core 3.0</a> the default Json serializer will be <code>System.Text.Json</code>. If you want to use <code>Newtonsoft.Json</code> then you will need this package in your project.</p>
 <p><code>StackExchange.Redis.Extensions.Core</code> and <code>StackExchange.Redis.Extensions.AspNetCore</code> are the useful package to connect/read/write Redis easier. Read <a href="https://stackexchange-redis-extensinos.gitbook.io/stackexchange-redis-extensions/">this documentation</a> for more details.</p>
 <h4 id="redis-appsettings">2. appsettings.json</h4>
-<p>A typical .NET Core project there should be a <code>appsettings.json</code>. Add the following section:</p>
+<p>A typical .NET Core project should have an <code>appsettings.json</code>. Add the following section:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;Redis&#34;</span>: {
     <span style="color:#f92672">&#34;AllowAdmin&#34;</span>: <span style="color:#66d9ef">false</span>,
@@ -164,7 +164,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">var</span> redisConfiguration = Configuration.GetSection(<span style="color:#e6db74">&#34;Redis&#34;</span>).Get&lt;RedisConfiguration&gt;();
 services.AddStackExchangeRedisExtensions&lt;NewtonsoftSerializer&gt;(redisConfiguration);
 </code></pre></div><h4 id="redis-cache-service">5. CacheService</h4>
-<p>I created a <code>CacheService.cs</code> to help me to read/write data in Redis. In this service:</p>
+<p>I created a <code>CacheService.cs</code> to help me reading/writing data in Redis. In this service:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> CacheService(RedisConfiguration redisConfiguration, ILogger&lt;RedisCacheConnectionPoolManager&gt; poolLogger)
 {
     <span style="color:#66d9ef">try</span>
@@ -235,7 +235,7 @@ services.AddStackExchangeRedisExtensions&lt;NewtonsoftSerializer&gt;(redisConfig
         <span style="color:#66d9ef">return</span> View(cachedResult);
     }
 
-    <span style="color:#75715e">// Add new entry to Redis before returning the message.
+    <span style="color:#75715e">// Add a new entry to Redis before returning the message.
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> message = <span style="color:#e6db74">$&#34;Hello, {name}&#34;</span>;
     <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">null</span> != sections &amp;&amp; sections.Any())
     {
