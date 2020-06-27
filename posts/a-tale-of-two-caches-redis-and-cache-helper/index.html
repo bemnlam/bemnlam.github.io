@@ -272,7 +272,7 @@ services.AddStackExchangeRedisExtensions&lt;NewtonsoftSerializer&gt;(redisConfig
 <h3 id="how-can-i-know-if-it-is-working-">How can I know if it is working?</h3>
 <p>You will see the value rendered in the above example won&rsquo;t change for 60 seconds even <code>System.DateTime.Now</code> should show the current time.</p>
 <hr>
-<h2 id="bonus">Bonus: A note on <strong>@helper</strong> and other HTML helpers</h2>
+<h2 id="bonus">Bonus: A note on <code>@helper</code> and other HTML helpers</h2>
 <p>In the old days we can define some <code>@helper</code> functions in the razor view and (re)use it in the view. It&rsquo;s being removed since .NET Core 3.0 because the design of <code>@helper</code> function does not compatible with async Razor content anymore.</p>
 <h3 id="successor-of-the-html-helpers-">Successor of the HTML helpers?</h3>
 <p>You can use the <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1"><strong>Tag Helpers in ASP.NET Core</strong></a>. Yes, the <code>&lt;cache&gt;</code> Tag Helper is one of the <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1#built-in-aspnet-core-tag-helpers">built-in Tag Helpers in .NET Core</a>.</p>
