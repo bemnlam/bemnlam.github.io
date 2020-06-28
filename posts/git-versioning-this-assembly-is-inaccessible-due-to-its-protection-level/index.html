@@ -103,25 +103,25 @@ if (!doNotTrack) {
   
   <section id="js-article" class="p-article__body">
     <h2 id="-problem">😨 Problem</h2>
-<p>After I installed the <strong><a href="https://www.nuget.org/packages/Nerdbank.GitVersioning">Nerdbank.GitVersioning</a></strong> Nuget package in my .NET MVC app to get the version using <code>ThisAssembly.AssemblyInformationalVersion</code>, the following error came out when building the app:</p>
-<pre><code>error CS0122: 'ThisAssembly' is inaccessible due to its protection level
-</code></pre><p>I tried to install the package on all the projects in the same solution. It didn&rsquo;t work.</p>
-<p>I tried to uninstall and re-ininstall the packate. It didn&rsquo;t work.</p>
+<p>After I installed the <strong><a href="https://www.nuget.org/packages/Nerdbank.GitVersioning">Nerdbank.GitVersioning</a></strong> Nuget package in my .NET MVC app, the following error came out when building the app when I want to get the version using <code>ThisAssembly.AssemblyInformationalVersion</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">error CS0122: <span style="color:#e6db74">&#39;ThisAssembly&#39;</span> is inaccessible due to its protection level
+</code></pre></div><p>I tried to install the package across all the projects in the same solution. It didn&rsquo;t work.</p>
+<p>I tried to uninstall and re-ininstall the package. It didn&rsquo;t work.</p>
 <h2 id="-solution">😀 Solution</h2>
 <h3 id="csproj">.csproj</h3>
-<p>Turns out there is something missing in my <code>.csproj</code> file. Some code is missing at the end of the file, just before the <code>&lt;/Target&gt;</code> tag:</p>
+<p>Turns out there is something missing in my <code>.csproj</code> file. I missed an <code>&lt;Import&gt;</code> tag at the end of the file, just before the <code>&lt;/Target&gt;</code> tag:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Import</span> <span style="color:#a6e22e">Project=</span><span style="color:#e6db74">&#34;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&#34;</span> <span style="color:#a6e22e">Condition=</span><span style="color:#e6db74">&#34;Exists(&#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
 </code></pre></div><p>And in the <code>EnsureNuGetPackageBuildImports</code> target, add the following line</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Error</span> <span style="color:#a6e22e">Condition=</span><span style="color:#e6db74">&#34;!Exists(&#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&#39;)&#34;</span> <span style="color:#a6e22e">Text=</span><span style="color:#e6db74">&#34;$([System.String]::Format(&#39;$(ErrorText)&#39;, &#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&#39;))&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div><p>In addition, the 1st <code>&lt;PropertyGroup&gt;</code> should contains a pair of  <code>NuGetPackageImportStamp</code> tag:</p>
+</code></pre></div><p>In addition, the 1st <code>&lt;PropertyGroup&gt;</code> should contain a pair of  <code>NuGetPackageImportStamp</code> tag:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;NuGetPackageImportStamp&gt;</span>
 <span style="color:#f92672">&lt;/NuGetPackageImportStamp&gt;</span>
-</code></pre></div><h3 id="assemblyinfo">AssemblyInfo</h3>
-<p>I also remove the following lines in <code>Properties/AssemblyInfo.cs</code>:</p>
+</code></pre></div><h3 id="assemblyinfocs"><code>AssemblyInfo.cs</code></h3>
+<p>I also removed the following lines in <code>Properties/AssemblyInfo.cs</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#a6e22e">[assembly: AssemblyVersion(&#34;1.0.0.0&#34;)]</span>
 <span style="color:#a6e22e">[assembly: AssemblyFileVersion(&#34;1.0.0.0&#34;)]</span>
-</code></pre></div><h3 id="versionjson">version.json</h3>
-<p>At the root directory of the <strong>project</strong> file, I added a <code>version.json</code> file with the following content:</p>
+</code></pre></div><h3 id="versionjson"><code>version.json</code></h3>
+<p>At the root directory of the <strong>project</strong>, I added a <code>version.json</code> file with the following content:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;$schema&#34;</span>: <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/master/src/NerdBank.GitVersioning/version.schema.json&#34;</span>,
   <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0.0&#34;</span>
