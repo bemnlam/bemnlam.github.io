@@ -19,7 +19,7 @@
       
       <guid>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
       <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
-&lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when building the app when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error CS0122: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ThisAssembly&amp;#39;&lt;/span&gt; is inaccessible due to its protection level
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I tried to install the package across all the projects in the same solution. It didn&amp;rsquo;t work.&lt;/p&gt;
 &lt;p&gt;I tried to uninstall and re-ininstall the package. It didn&amp;rsquo;t work.&lt;/p&gt;

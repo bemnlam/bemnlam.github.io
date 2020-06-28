@@ -103,7 +103,7 @@ if (!doNotTrack) {
   
   <section id="js-article" class="p-article__body">
     <h2 id="-problem">😨 Problem</h2>
-<p>After I installed the <strong><a href="https://www.nuget.org/packages/Nerdbank.GitVersioning">Nerdbank.GitVersioning</a></strong> Nuget package in my .NET MVC app, the following error came out when building the app when I want to get the version using <code>ThisAssembly.AssemblyInformationalVersion</code>:</p>
+<p>After I installed the <strong><a href="https://www.nuget.org/packages/Nerdbank.GitVersioning">Nerdbank.GitVersioning</a></strong> Nuget package in my .NET MVC app, the following error came out when I want to get the version using <code>ThisAssembly.AssemblyInformationalVersion</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">error CS0122: <span style="color:#e6db74">&#39;ThisAssembly&#39;</span> is inaccessible due to its protection level
 </code></pre></div><p>I tried to install the package across all the projects in the same solution. It didn&rsquo;t work.</p>
 <p>I tried to uninstall and re-ininstall the package. It didn&rsquo;t work.</p>
