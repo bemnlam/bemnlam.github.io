@@ -26,10 +26,10 @@
 &lt;li&gt;&lt;a href=&#34;#misc-file&#34;&gt;Misc. files of the OS&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#meaning-of-flowers&#34;&gt;The meaning of flowers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#the-bday-guide&#34;&gt;The Birthday Present Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-bday-guide&#34;&gt;The birthday present guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#mac-is-a-secret-fan-of&#34;&gt;Mac is a Secret Fan of&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mac-is-a-secret-fan-of&#34;&gt;Mac is a secret fan of&amp;hellip;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#bonus-recipe&#34;&gt;Bonus: the missing recipe&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
@@ -123,7 +123,7 @@ December:Turquoise:Narcissus
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;mac-is-a-secret-fan-of&#34;&gt;Mac is a Secret Fan of&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;/usr/share/calendar&lt;/code&gt; folder contains some useful calendars but this one really catches my eye:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel   1.4K Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; calendar.lotr
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a timeline of the important events happened in The Lord Of The Rings&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a timeline of the important events happened in &lt;em&gt;The Lord Of The Rings&lt;/em&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;/*
  * Lord Of The Rings
  *
@@ -175,7 +175,7 @@ December:Turquoise:Narcissus
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;bonus-recipe&#34;&gt;Bonus: the missing recipe&lt;/h2&gt;
 &lt;p&gt;In the eariler versions of the macOS, &lt;strong&gt;a hidden cookie recipe&lt;/strong&gt; can be found by typing this command in the Terminal:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Open /usr/share/emacs/22.1/etc/COOKIES
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Unforrunately in the latest macOS this file is gone (together with &lt;code&gt;/usr/share/emacs&lt;/code&gt;). We can only check this out &lt;a href=&#34;https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html&#34;&gt;on the apple opensource website&lt;/a&gt;&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Unforrunately in the latest macOS this file is gone (together with &lt;code&gt;/usr/share/emacs&lt;/code&gt;). We can only check this out &lt;a href=&#34;https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html&#34;&gt;on the Apple Open Source website&lt;/a&gt;&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
