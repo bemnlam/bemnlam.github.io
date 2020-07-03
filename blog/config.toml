@@ -10,8 +10,14 @@ copyright = "&copy; bemnlam"
 # Google Analytics API key.
 googleAnalytics = "UA-169198494-1"
 
-[markup.goldmark.renderer]
-  unsafe= true
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+  
+  [markup.goldmark.renderer]
+    unsafe= true
 
 [params]
   env = "production"
