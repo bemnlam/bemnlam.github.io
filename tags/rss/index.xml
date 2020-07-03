@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on log from home</title>
-    <link>https://bemnlam.github.io/tags/hugo/</link>
-    <description>Recent content in hugo on log from home</description>
+    <title>rss on log from home</title>
+    <link>https://bemnlam.github.io/tags/rss/</link>
+    <description>Recent content in rss on log from home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Fri, 03 Jul 2020 09:53:38 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bemnlam.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -82,25 +82,6 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In other words, that&amp;rsquo;s the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim&#34;&gt;&lt;code&gt;trim()&lt;/code&gt;&lt;/a&gt; in JavaScript. That&amp;rsquo;s the &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/system.string.trim&#34;&gt;&lt;code&gt;String.Trim()&lt;/code&gt;&lt;/a&gt; in C#.&lt;/p&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;The default RSS feed in Hugo site shows &lt;em&gt;article abstract&lt;/em&gt; only. By defining a custom &lt;code&gt;rss.xml&lt;/code&gt; template and replacing &lt;code&gt;{{ .Summary | html }}&lt;/code&gt; with &lt;code&gt;{{- .Content | html -}}&lt;/code&gt; in the &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; tag you will get the article&amp;rsquo;s full content in the re-generated RSS xml files.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to add a new Hugo blog post</title>
-      <link>https://bemnlam.github.io/posts/welcome/</link>
-      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/posts/welcome/</guid>
-      <description>&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/name-of-the-new-post.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write your post. Back to &lt;code&gt;blog&lt;/code&gt; folder  and then&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo server -D
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then you can preview your blog locally.&lt;/p&gt;
-&lt;h3 id=&#34;deploy-production&#34;&gt;Deploy production&lt;/h3&gt;
-&lt;p&gt;Change &lt;code&gt;draft=true&lt;/code&gt; in the blog post and then&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Push to remote &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Done.&lt;/p&gt;
 </description>
     </item>
     

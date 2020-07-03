@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Sun, 28 Jun 2020 12:28:38 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 09:53:38 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dev</title>
+      <link>https://bemnlam.github.io/categories/dev/</link>
+      <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/categories/dev/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Leisure</title>
@@ -18,15 +27,6 @@
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/categories/leisure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dev</title>
-      <link>https://bemnlam.github.io/categories/dev/</link>
-      <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/categories/dev/</guid>
       <description></description>
     </item>
     
