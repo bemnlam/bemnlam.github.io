@@ -28,12 +28,14 @@ googleAnalytics = "UA-169198494-1"
   author = "Bemn"
   authorwebsite = "https://bemnlam.github.io/"
   avatar = "https://gravatar.com/avatar/8bf6ec6cd4cfd1821fe3fbf507913faa?s=100"
-  bio = "From Hong Kong."
+  bio = "A HongKonger."
   # Logo image. This is displayed ogp image.
   logo = "cover.png"
   favicon = "favicon.ico"
   # Short subtitle/tagline. This is displayed in the header.
-  subtitle = "Start blogging in the 2020 lockdown. 🏠"
+  subtitle = "Start blogging in the 2020 lockdown. "
+  icon_dark = "🌌"
+  icon_light = "🌅"
 
 [[menu.main]]
     name = "📖 blog"
