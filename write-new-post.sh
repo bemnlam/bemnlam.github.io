@@ -1,4 +1,8 @@
 #!/bin/zsh
+COLOR='\033[90;106m' # https://en.wikipedia.org/wiki/ANSI_escape_code
+HINT='\033[93;90m'
+NC='\033[0m' # No Color
+
 read -p "Create a new post (e.g. hello-world): "  filename
 
 if [ -z "$filename" ]
@@ -10,16 +14,16 @@ else
 
     cd ./blog
 
-    echo ">> 1. Creating new post..."
-    hugo new posts/${filename}.md
+    echo "${COLOR}   1. Creating new post...    ${NC}"
+    # hugo new posts/${filename}.md
 
-    echo ">> 2. Launching Typora..."
-    open -a Typora ./content/posts/${filename}.md &
+    echo "${COLOR}   2. Launching Typora...     ${NC}"
+    # open -a Typora ./content/posts/${filename}.md &
 
-    echo ">> 3. Launching browser..."
-    open http://localhost:1313/posts/${filename}
+    echo "${COLOR}   3. Launching browser...    ${NC}"
+    # open http://localhost:1313/posts/${filename}
 
-    echo ">> 4. Starting dev server..."
-    hugo serve -D
+    echo "${COLOR}   4. Starting dev server...  ${NC}"
+    # hugo serve -D
 
 fi
