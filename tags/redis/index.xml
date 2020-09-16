@@ -18,7 +18,7 @@
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
-      <description>&lt;h2 id=&#34;background-&#34;&gt;Background&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
 &lt;p&gt;I built this &lt;strong&gt;MVC&lt;/strong&gt; web app using &lt;strong&gt;.NET Core 3.1&lt;/strong&gt; and deploy it as an IIS sub-site under the main website (which is a &lt;strong&gt;.NET Framework&lt;/strong&gt; web app running on the IIS).&lt;/p&gt;
 &lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
@@ -42,9 +42,9 @@
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;redis&#34;&gt;Redis&lt;/h2&gt;
-&lt;h3 id=&#34;why-&#34;&gt;Why?&lt;/h3&gt;
+&lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;
 &lt;p&gt;We are using &lt;a href=&#34;https://redis.io/&#34;&gt;Redis&lt;/a&gt; because it is simple, fast and we are already using it across all the main websites.&lt;/p&gt;
-&lt;h3 id=&#34;how-&#34;&gt;How?&lt;/h3&gt;
+&lt;h3 id=&#34;how&#34;&gt;How?&lt;/h3&gt;
 &lt;p&gt;Here are some highlights:&lt;/p&gt;
 &lt;h4 id=&#34;redis-nuget&#34;&gt;1. NuGet packages&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;PackageReference&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;StackExchange.Redis&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2.1.30&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
@@ -177,12 +177,12 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;li&gt;&lt;code&gt;vary-by-route&lt;/code&gt;: different copy will be cached when the route has a different value in the &lt;code&gt;name&lt;/code&gt;param.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;vary-by-user&lt;/code&gt;: different user will see different cached copies.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;how-can-i-know-if-it-is-working-&#34;&gt;How can I know if it is working?&lt;/h3&gt;
+&lt;h3 id=&#34;how-can-i-know-if-it-is-working&#34;&gt;How can I know if it is working?&lt;/h3&gt;
 &lt;p&gt;You will see the value rendered in the above example won&amp;rsquo;t change for 60 seconds even &lt;code&gt;System.DateTime.Now&lt;/code&gt; should show the current time.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;bonus&#34;&gt;Bonus: A note on &lt;code&gt;@helper&lt;/code&gt; and other HTML helpers&lt;/h2&gt;
 &lt;p&gt;In the old days we can define some &lt;code&gt;@helper&lt;/code&gt; functions in the razor view and (re)use it in the view. It&amp;rsquo;s being removed since .NET Core 3.0 because the design of &lt;code&gt;@helper&lt;/code&gt; function does not compatible with async Razor content anymore.&lt;/p&gt;
-&lt;h3 id=&#34;successor-of-the-html-helpers-&#34;&gt;Successor of the HTML helpers?&lt;/h3&gt;
+&lt;h3 id=&#34;successor-of-the-html-helpers&#34;&gt;Successor of the HTML helpers?&lt;/h3&gt;
 &lt;p&gt;You can use the &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1&#34;&gt;&lt;strong&gt;Tag Helpers in ASP.NET Core&lt;/strong&gt;&lt;/a&gt;. Yes, the &lt;code&gt;&amp;lt;cache&amp;gt;&lt;/code&gt; Tag Helper is one of the &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1#built-in-aspnet-core-tag-helpers&#34;&gt;built-in Tag Helpers in .NET Core&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In addition, you can use the &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync?view=aspnetcore-3.1&#34;&gt;&lt;code&gt;PartialAsync()&lt;/code&gt; method&lt;/a&gt;  to render the partial HTML markup &lt;strong&gt;asynchronously&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;@await Html.PartialAsync(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;_PartialName&amp;#34;&lt;/span&gt;)

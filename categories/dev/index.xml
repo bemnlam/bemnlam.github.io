@@ -7,10 +7,139 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Sat, 18 Jul 2020 12:01:56 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2020 08:40:48 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ruby Cheatsheet</title>
+      <link>https://bemnlam.github.io/posts/ruby-cheatsheet/</link>
+      <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/posts/ruby-cheatsheet/</guid>
+      <description>&lt;p&gt;This post contains many useful snippets for me when writing &lt;strong&gt;Ruby&lt;/strong&gt; scripts. I will keep updating this note in the future.&lt;/p&gt;
+&lt;aside class=&#34;c-toc&#34;&gt;
+  &lt;details open&gt;
+    &lt;summary title=&#34;click to toggle table of contents.&#34;&gt;Table of Contents&lt;/summary&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#-about-file&#34;&gt;🏷 About File&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#absolute-path&#34;&gt;Absolute Path&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#read--write-a-file&#34;&gt;Read / Write a file&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#-about-string&#34;&gt;🏷 About String&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#string-template&#34;&gt;String template&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#string-interpolation&#34;&gt;String Interpolation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#trim-a-string&#34;&gt;Trim a String&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#null-or-empty&#34;&gt;Null Or Empty&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#titlecase--uppercase--lowercase--capitalize&#34;&gt;Titlecase / UPPERCASE / lowercase / Capitalize&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#-about-input&#34;&gt;🏷 About Input&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#console-input&#34;&gt;Console Input&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#-about-regex&#34;&gt;🏷 About Regex&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#named-regex-capturing-group&#34;&gt;Named regex capturing group&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#-about-bundler-and-gemfile&#34;&gt;🏷 About Bundler and Gemfile&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#install-bundler&#34;&gt;Install bundler&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#setup-and-restore-dependencies&#34;&gt;Setup and restore dependencies&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#check-the-info-of-a-installed-gem&#34;&gt;Check the info of a installed gem&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+  &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;-about-file&#34;&gt;🏷 About File&lt;/h2&gt;
+&lt;h3 id=&#34;absolute-path&#34;&gt;Absolute Path&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;__dir__&lt;/code&gt; returns the current path.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(__dir__, file_name_no_path )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;read--write-a-file&#34;&gt;Read / Write a file&lt;/h3&gt;
+&lt;p&gt;Read the content of &lt;code&gt;file_name&lt;/code&gt; to &lt;code&gt;buffer&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;buffer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read( file_name )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write &lt;code&gt;content&lt;/code&gt; to &lt;code&gt;file_name&lt;/code&gt;. File will be created when it does not exist.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;open( file_name , &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;w&amp;#34;&lt;/span&gt;) { &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;f&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write( content ) }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-about-string&#34;&gt;🏷 About String&lt;/h2&gt;
+&lt;h3 id=&#34;string-template&#34;&gt;String template&lt;/h3&gt;
+&lt;p&gt;To create a multiline string template:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;template &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;&amp;lt;-EOCONTENT
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Your
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Multiline
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Text
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Content
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;EOCONTENT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;string-interpolation&#34;&gt;String Interpolation&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;str &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;This is a string with &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;variable_name&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;trim-a-string&#34;&gt;Trim a String&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;    Hello James &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip  &lt;span style=&#34;color:#75715e&#34;&gt;#=&amp;gt; &amp;#34;Hello James&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;null-or-empty&#34;&gt;Null Or Empty&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;str&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;nil? ? &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;null&amp;#34;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;not_null&amp;#34;&lt;/span&gt;
+str&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;empty? ? &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;empty&amp;#34;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;not_empty&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;titlecase--uppercase--lowercase--capitalize&#34;&gt;Titlecase / UPPERCASE / lowercase / Capitalize&lt;/h3&gt;
+&lt;p&gt;All returns a new copy. Examples from &lt;a href=&#34;https://stackoverflow.com/a/1020571/13742790&#34;&gt;this answer in StackOverflow&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello James&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;titleize    &lt;span style=&#34;color:#75715e&#34;&gt;#=&amp;gt; &amp;#34;Hello James&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello James&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;upcase      &lt;span style=&#34;color:#75715e&#34;&gt;#=&amp;gt; &amp;#34;HELLO JAMES&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello James&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;downcase    &lt;span style=&#34;color:#75715e&#34;&gt;#=&amp;gt; &amp;#34;hello james&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello James&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;capitalize  &lt;span style=&#34;color:#75715e&#34;&gt;#=&amp;gt; &amp;#34;Hello james&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note: &lt;strong&gt;Alter the original string&lt;/strong&gt; by adding &lt;code&gt;!&lt;/code&gt; right after the method.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello James&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;downcase!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-about-input&#34;&gt;🏷 About Input&lt;/h2&gt;
+&lt;h3 id=&#34;console-input&#34;&gt;Console Input&lt;/h3&gt;
+&lt;p&gt;Ask a question and wait for user input:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;print &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Your question: &amp;#34;&lt;/span&gt;
+user_input &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gets
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(you may need to &lt;code&gt;strip&lt;/code&gt; the &lt;code&gt;user_input&lt;/code&gt; to ger rid of a tailing newline.)&lt;/p&gt;
+&lt;h2 id=&#34;-about-regex&#34;&gt;🏷 About Regex&lt;/h2&gt;
+&lt;p&gt;Test a ruby regex: &lt;a href=&#34;https://rubular.com/&#34;&gt;https://rubular.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;named-regex-capturing-group&#34;&gt;Named regex capturing group&lt;/h3&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Prepare the regex: &lt;code&gt;^(\w+)(Query|Command)$&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;?&amp;lt;named_group&amp;gt;&lt;/code&gt; at the beginning &lt;strong&gt;inside&lt;/strong&gt; that capturing group.&lt;/li&gt;
+&lt;li&gt;Do the regex &lt;code&gt;match()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Retrieve the named group: &lt;code&gt;[:named_group]&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## name: SomeStuffQuery ; result: SomeStuff&lt;/span&gt;
+result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/^(?&amp;lt;named_group&amp;gt;\w+)(Query|Command)$/&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;match(name)&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;:named_group&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If your regex is valid, you should be able to see the captured group and related content:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/image-20200915091031591.png&#34; alt=&#34;image-20200915091031591&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;-about-bundler-and-gemfile&#34;&gt;🏷 About Bundler and Gemfile&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://bundler.io/&#34;&gt;Bundler&lt;/a&gt; helps you to manage gem denendencies in your project.&lt;/p&gt;
+&lt;h3 id=&#34;install-bundler&#34;&gt;Install bundler&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;gem install bundler
+bundler -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;setup-and-restore-dependencies&#34;&gt;Setup and restore dependencies&lt;/h3&gt;
+&lt;p&gt;Create a &lt;code&gt;Gemfile&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-gemfile&#34; data-lang=&#34;gemfile&#34;&gt;source &#39;https://rubygems.org&#39;
+gem &#39;dotenv&#39;, &#39;~&amp;gt; 2.7&#39;, &#39;&amp;gt;= 2.7.5&#39;
+gem &amp;quot;mustache&amp;quot;, &amp;quot;~&amp;gt; 1.0&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;globally&#34;&gt;Globally&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;bundle &lt;span style=&#34;color:#75715e&#34;&gt;# may requires sudo&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;locally&#34;&gt;Locally&lt;/h4&gt;
+&lt;p&gt;To install gems at a relative path e.g. at the &lt;code&gt;lib&lt;/code&gt; folder:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;bundle install --path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;./lib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;a &lt;code&gt;.bundle&lt;/code&gt; folder will be generated, together with your &lt;code&gt;Gemfile.lock&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;check-the-info-of-a-installed-gem&#34;&gt;Check the info of a installed gem&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;❯ bundle info ruby_http_client
+  * ruby_http_client &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;3.5.1&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+        Summary: A simple REST client
+        Homepage: http://github.com/sendgrid/ruby-http-client
+        Path: ~/git/my-folder/lib/ruby/2.6.0/gems/ruby_http_client-3.5.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;(cover image from &lt;a href=&#34;https://dribbble.com/shots/2232375-Ruby&#34;&gt;this dribble&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Use Gravatar Everywhere</title>
@@ -263,9 +392,9 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
-      <description>&lt;h2 id=&#34;overview-&#34;&gt;Overview&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;I created a static website using &lt;strong&gt;MkDocs&lt;/strong&gt; and deployed to &lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;&lt;strong&gt;GitLab Pages&lt;/strong&gt;&lt;/a&gt;. This is what I did: &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/&#34;&gt;https://bemn-proof-of-concept.gitlab.io/mkdoc/&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;table-of-contents-&#34;&gt;Table of Contents&lt;/h3&gt;
+&lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;MkDocs&lt;/a&gt;
 &lt;ul&gt;
@@ -285,8 +414,8 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
 &lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclustion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;intro&#34;&gt;MkDocs&lt;/h2&gt;
-&lt;p&gt;From &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&amp;rsquo; official website&lt;/a&gt;:&lt;/p&gt;
+&lt;h2 id=&#34;mkdocs-intro&#34;&gt;MkDocs {#intro}##&lt;/h2&gt;
+&lt;p&gt;From &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&#39; official website&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MkDocs is a &lt;strong&gt;fast&lt;/strong&gt;, &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;downright gorgeous&lt;/strong&gt; static site generator that&amp;rsquo;s geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -328,18 +457,18 @@ INFO    -  Documentation built in 1.65 seconds
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And check it out at &lt;a href=&#34;http://127.0.0.1:8000&#34;&gt;http://127.0.0.1:8000&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/01_welcome.png&#34; alt=&#34;Running MkDocs&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;add-a-new-page&#34;&gt;Add a new page&lt;/h3&gt;
-&lt;h4 id=&#34;the-content-&#34;&gt;The content&lt;/h4&gt;
+&lt;h4 id=&#34;the-content&#34;&gt;The content&lt;/h4&gt;
 &lt;p&gt;Remember, all the documents should place under &lt;code&gt;docs&lt;/code&gt;. Let&amp;rsquo;s create an Overview page:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cd docs
 $ touch overview.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, add some content to &lt;code&gt;overview.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h4 id=&#34;the-menu-&#34;&gt;The menu&lt;/h4&gt;
+&lt;h4 id=&#34;the-menu&#34;&gt;The menu&lt;/h4&gt;
 &lt;p&gt;If you want the visitors to reach the overview page, you need to add an url in the menu. Let&amp;rsquo;s edit &lt;code&gt;mkdocs.yml&lt;/code&gt;, the site config file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project &lt;span style=&#34;color:#75715e&#34;&gt;## change your site name here.&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Overview&lt;/span&gt;: overview.md &lt;span style=&#34;color:#75715e&#34;&gt;## add this line.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;site_name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Doc Project ## change your site name here.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Home&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;index.md&lt;/span&gt;
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Overview&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;overview.md ## add this line.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will see a new link called &lt;em&gt;Overview&lt;/em&gt; in the menu. If you want to set your site name now, change the value of &lt;code&gt;site_name&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;So that&amp;rsquo;s it. That&amp;rsquo;s how to add a new page.&lt;/p&gt;
 &lt;h3 id=&#34;theming&#34;&gt;Theming&lt;/h3&gt;
@@ -349,19 +478,19 @@ $ touch overview.md
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ pip install mkdocs-material
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update the &lt;code&gt;mkdocs.yml&lt;/code&gt; again:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project
+&lt;span style=&#34;color:#f92672&#34;&gt;site_name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Doc Project&lt;/span&gt;
 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Overview&lt;/span&gt;: overview.md
+&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Home&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;index.md&lt;/span&gt;
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Overview&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;overview.md&lt;/span&gt;
 
 &lt;span style=&#34;color:#75715e&#34;&gt;## Add this section&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;theme&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: material
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;palette&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;## Add this sub-section if you want to change the theme color&lt;/span&gt;
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;scheme&lt;/span&gt;: amber
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;primary&lt;/span&gt;: amber
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;accent&lt;/span&gt;: orange
+&lt;span style=&#34;color:#f92672&#34;&gt;theme&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;material&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;palette&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;## Add this sub-section if you want to change the theme color&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;scheme&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;amber&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;primary&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;amber&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;accent&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;orange&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the site:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdocs serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will see MkDocs is dressing the amber Material Design theme.&lt;/p&gt;
@@ -372,27 +501,27 @@ $ touch overview.md
 &lt;p&gt;&lt;strong&gt;Exercice:&lt;/strong&gt; create a &lt;code&gt;catalog.md&lt;/code&gt; file and add a markdown table in it.&lt;/p&gt;
 &lt;p&gt;Next, add the custom resource sections to the config file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project
-&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Catalog&lt;/span&gt;: catalog.md &lt;span style=&#34;color:#75715e&#34;&gt;## The catalog page you created in the exercise.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;site_name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Doc Project&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Home&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;index.md&lt;/span&gt;
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Catalog&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;catalog.md ## The catalog page you created in the exercise.&lt;/span&gt;
 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;theme&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: material
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;palette&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;scheme&lt;/span&gt;: amber
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;primary&lt;/span&gt;: amber
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;accent&lt;/span&gt;: orange
+&lt;span style=&#34;color:#f92672&#34;&gt;theme&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;material&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;palette&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;scheme&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;amber&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;primary&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;amber&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;accent&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;orange&lt;/span&gt;
 
 &lt;span style=&#34;color:#75715e&#34;&gt;## Custom js files.&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;extra_javascript&lt;/span&gt;:
-  - https://code.jquery.com/jquery&lt;span style=&#34;color:#ae81ff&#34;&gt;-3.5.1&lt;/span&gt;.min.js
-  - https://cdn.datatables.net/&lt;span style=&#34;color:#ae81ff&#34;&gt;1.10.21&lt;/span&gt;/js/jquery.dataTables.min.js
-  - scripts/site.js
+&lt;span style=&#34;color:#f92672&#34;&gt;extra_javascript&lt;/span&gt;:
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;https://code.jquery.com/jquery-3.5.1.min.js&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;scripts/site.js&lt;/span&gt;
 
 &lt;span style=&#34;color:#75715e&#34;&gt;## Custom css files.&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;extra_css&lt;/span&gt;:
-  - https://cdn.datatables.net/&lt;span style=&#34;color:#ae81ff&#34;&gt;1.10.21&lt;/span&gt;/css/jquery.dataTables.min.css
+&lt;span style=&#34;color:#f92672&#34;&gt;extra_css&lt;/span&gt;:
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create a custom js file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cd docs
 $ mkdir scripts
@@ -418,20 +547,20 @@ $ touch .gitlab-ci.yml
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;gitlab-ci-yml&#34;&gt;.gitlab-ci.yml&lt;/h3&gt;
 &lt;p&gt;The &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; is a GitLab-specific file. GitLab will read and run the steps in the file. We need to tell GitLab how to generate and deploy our static MkDocs website. In this file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In .gitlab-ci.yml...&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;image&lt;/span&gt;: python:&lt;span style=&#34;color:#ae81ff&#34;&gt;3.8&lt;/span&gt;-buster &lt;span style=&#34;color:#75715e&#34;&gt;## MkDocs requies python.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;python:3.8-buster ## MkDocs requies python.&lt;/span&gt;
 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;pages&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;stage&lt;/span&gt;: deploy &lt;span style=&#34;color:#75715e&#34;&gt;## tell GitLab to deploy the website in this step.&lt;/span&gt;
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;before_script&lt;/span&gt;:
-    - pip install mkdocs &lt;span style=&#34;color:#75715e&#34;&gt;## install MkDocs.&lt;/span&gt;
-    - pip install mkdocs-material &lt;span style=&#34;color:#75715e&#34;&gt;## install the theme.&lt;/span&gt;
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;script&lt;/span&gt;:
-    - cd ./src/doc-project
-    - mkdocs build &lt;span style=&#34;color:#75715e&#34;&gt;## built the site.&lt;/span&gt;
-    - mv site ../../public
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;artifacts&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;paths&lt;/span&gt;:
-    - public
+&lt;span style=&#34;color:#f92672&#34;&gt;pages&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;stage&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;deploy ## tell GitLab to deploy the website in this step.&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;before_script&lt;/span&gt;:
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;pip install mkdocs ## install MkDocs.&lt;/span&gt;
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;pip install mkdocs-material ## install the theme.&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;:
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;cd ./src/doc-project&lt;/span&gt;
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;mkdocs build ## built the site.&lt;/span&gt;
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;mv site ../../public&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;artifacts&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;paths&lt;/span&gt;:
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;public&lt;/span&gt;
   &lt;span style=&#34;color:#75715e&#34;&gt;## Uncomment the following section if you want to run this step under master branch only.&lt;/span&gt;
   &lt;span style=&#34;color:#75715e&#34;&gt;# only:&lt;/span&gt;
   &lt;span style=&#34;color:#75715e&#34;&gt;# - master &lt;/span&gt;
@@ -462,7 +591,7 @@ $ touch .gitlab-ci.yml
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
-      <description>&lt;h2 id=&#34;background-&#34;&gt;Background&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
 &lt;p&gt;I built this &lt;strong&gt;MVC&lt;/strong&gt; web app using &lt;strong&gt;.NET Core 3.1&lt;/strong&gt; and deploy it as an IIS sub-site under the main website (which is a &lt;strong&gt;.NET Framework&lt;/strong&gt; web app running on the IIS).&lt;/p&gt;
 &lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
@@ -486,9 +615,9 @@ $ touch .gitlab-ci.yml
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;redis&#34;&gt;Redis&lt;/h2&gt;
-&lt;h3 id=&#34;why-&#34;&gt;Why?&lt;/h3&gt;
+&lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;
 &lt;p&gt;We are using &lt;a href=&#34;https://redis.io/&#34;&gt;Redis&lt;/a&gt; because it is simple, fast and we are already using it across all the main websites.&lt;/p&gt;
-&lt;h3 id=&#34;how-&#34;&gt;How?&lt;/h3&gt;
+&lt;h3 id=&#34;how&#34;&gt;How?&lt;/h3&gt;
 &lt;p&gt;Here are some highlights:&lt;/p&gt;
 &lt;h4 id=&#34;redis-nuget&#34;&gt;1. NuGet packages&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;PackageReference&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;StackExchange.Redis&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2.1.30&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
@@ -621,12 +750,12 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;li&gt;&lt;code&gt;vary-by-route&lt;/code&gt;: different copy will be cached when the route has a different value in the &lt;code&gt;name&lt;/code&gt;param.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;vary-by-user&lt;/code&gt;: different user will see different cached copies.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;how-can-i-know-if-it-is-working-&#34;&gt;How can I know if it is working?&lt;/h3&gt;
+&lt;h3 id=&#34;how-can-i-know-if-it-is-working&#34;&gt;How can I know if it is working?&lt;/h3&gt;
 &lt;p&gt;You will see the value rendered in the above example won&amp;rsquo;t change for 60 seconds even &lt;code&gt;System.DateTime.Now&lt;/code&gt; should show the current time.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;bonus&#34;&gt;Bonus: A note on &lt;code&gt;@helper&lt;/code&gt; and other HTML helpers&lt;/h2&gt;
 &lt;p&gt;In the old days we can define some &lt;code&gt;@helper&lt;/code&gt; functions in the razor view and (re)use it in the view. It&amp;rsquo;s being removed since .NET Core 3.0 because the design of &lt;code&gt;@helper&lt;/code&gt; function does not compatible with async Razor content anymore.&lt;/p&gt;
-&lt;h3 id=&#34;successor-of-the-html-helpers-&#34;&gt;Successor of the HTML helpers?&lt;/h3&gt;
+&lt;h3 id=&#34;successor-of-the-html-helpers&#34;&gt;Successor of the HTML helpers?&lt;/h3&gt;
 &lt;p&gt;You can use the &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1&#34;&gt;&lt;strong&gt;Tag Helpers in ASP.NET Core&lt;/strong&gt;&lt;/a&gt;. Yes, the &lt;code&gt;&amp;lt;cache&amp;gt;&lt;/code&gt; Tag Helper is one of the &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1#built-in-aspnet-core-tag-helpers&#34;&gt;built-in Tag Helpers in .NET Core&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In addition, you can use the &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync?view=aspnetcore-3.1&#34;&gt;&lt;code&gt;PartialAsync()&lt;/code&gt; method&lt;/a&gt;  to render the partial HTML markup &lt;strong&gt;asynchronously&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;@await Html.PartialAsync(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;_PartialName&amp;#34;&lt;/span&gt;)

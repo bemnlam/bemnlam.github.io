@@ -15,15 +15,15 @@ else
     cd ./blog
 
     echo "${COLOR}   1. Creating new post...    ${NC}"
-    # hugo new posts/${filename}.md
+    hugo new posts/${filename}.md
 
     echo "${COLOR}   2. Launching Typora...     ${NC}"
-    # open -a Typora ./content/posts/${filename}.md &
+    open -a Typora ./content/posts/${filename}.md &
 
     echo "${COLOR}   3. Launching browser...    ${NC}"
-    # open http://localhost:1313/posts/${filename}
+    open http://localhost:1313/posts/${filename}
 
     echo "${COLOR}   4. Starting dev server...  ${NC}"
-    # hugo serve -D
+    hugo serve -D
 
 fi

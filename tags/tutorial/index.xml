@@ -119,9 +119,9 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
-      <description>&lt;h2 id=&#34;overview-&#34;&gt;Overview&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;I created a static website using &lt;strong&gt;MkDocs&lt;/strong&gt; and deployed to &lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;&lt;strong&gt;GitLab Pages&lt;/strong&gt;&lt;/a&gt;. This is what I did: &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/&#34;&gt;https://bemn-proof-of-concept.gitlab.io/mkdoc/&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;table-of-contents-&#34;&gt;Table of Contents&lt;/h3&gt;
+&lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;MkDocs&lt;/a&gt;
 &lt;ul&gt;
@@ -141,8 +141,8 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
 &lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclustion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;intro&#34;&gt;MkDocs&lt;/h2&gt;
-&lt;p&gt;From &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&amp;rsquo; official website&lt;/a&gt;:&lt;/p&gt;
+&lt;h2 id=&#34;mkdocs-intro&#34;&gt;MkDocs {#intro}##&lt;/h2&gt;
+&lt;p&gt;From &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&#39; official website&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MkDocs is a &lt;strong&gt;fast&lt;/strong&gt;, &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;downright gorgeous&lt;/strong&gt; static site generator that&amp;rsquo;s geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -184,18 +184,18 @@ INFO    -  Documentation built in 1.65 seconds
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And check it out at &lt;a href=&#34;http://127.0.0.1:8000&#34;&gt;http://127.0.0.1:8000&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/01_welcome.png&#34; alt=&#34;Running MkDocs&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;add-a-new-page&#34;&gt;Add a new page&lt;/h3&gt;
-&lt;h4 id=&#34;the-content-&#34;&gt;The content&lt;/h4&gt;
+&lt;h4 id=&#34;the-content&#34;&gt;The content&lt;/h4&gt;
 &lt;p&gt;Remember, all the documents should place under &lt;code&gt;docs&lt;/code&gt;. Let&amp;rsquo;s create an Overview page:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cd docs
 $ touch overview.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, add some content to &lt;code&gt;overview.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h4 id=&#34;the-menu-&#34;&gt;The menu&lt;/h4&gt;
+&lt;h4 id=&#34;the-menu&#34;&gt;The menu&lt;/h4&gt;
 &lt;p&gt;If you want the visitors to reach the overview page, you need to add an url in the menu. Let&amp;rsquo;s edit &lt;code&gt;mkdocs.yml&lt;/code&gt;, the site config file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project &lt;span style=&#34;color:#75715e&#34;&gt;## change your site name here.&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Overview&lt;/span&gt;: overview.md &lt;span style=&#34;color:#75715e&#34;&gt;## add this line.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;site_name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Doc Project ## change your site name here.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Home&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;index.md&lt;/span&gt;
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Overview&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;overview.md ## add this line.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will see a new link called &lt;em&gt;Overview&lt;/em&gt; in the menu. If you want to set your site name now, change the value of &lt;code&gt;site_name&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;So that&amp;rsquo;s it. That&amp;rsquo;s how to add a new page.&lt;/p&gt;
 &lt;h3 id=&#34;theming&#34;&gt;Theming&lt;/h3&gt;
@@ -205,19 +205,19 @@ $ touch overview.md
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ pip install mkdocs-material
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update the &lt;code&gt;mkdocs.yml&lt;/code&gt; again:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project
+&lt;span style=&#34;color:#f92672&#34;&gt;site_name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Doc Project&lt;/span&gt;
 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Overview&lt;/span&gt;: overview.md
+&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Home&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;index.md&lt;/span&gt;
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Overview&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;overview.md&lt;/span&gt;
 
 &lt;span style=&#34;color:#75715e&#34;&gt;## Add this section&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;theme&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: material
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;palette&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;## Add this sub-section if you want to change the theme color&lt;/span&gt;
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;scheme&lt;/span&gt;: amber
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;primary&lt;/span&gt;: amber
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;accent&lt;/span&gt;: orange
+&lt;span style=&#34;color:#f92672&#34;&gt;theme&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;material&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;palette&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;## Add this sub-section if you want to change the theme color&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;scheme&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;amber&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;primary&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;amber&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;accent&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;orange&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the site:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdocs serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will see MkDocs is dressing the amber Material Design theme.&lt;/p&gt;
@@ -228,27 +228,27 @@ $ touch overview.md
 &lt;p&gt;&lt;strong&gt;Exercice:&lt;/strong&gt; create a &lt;code&gt;catalog.md&lt;/code&gt; file and add a markdown table in it.&lt;/p&gt;
 &lt;p&gt;Next, add the custom resource sections to the config file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In mkdocs.yml...&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;site_name&lt;/span&gt;: Doc Project
-&lt;span style=&#34;color:#66d9ef&#34;&gt;nav&lt;/span&gt;:
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Home&lt;/span&gt;: index.md
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;Catalog&lt;/span&gt;: catalog.md &lt;span style=&#34;color:#75715e&#34;&gt;## The catalog page you created in the exercise.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;site_name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Doc Project&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;:
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Home&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;index.md&lt;/span&gt;
+  - &lt;span style=&#34;color:#f92672&#34;&gt;Catalog&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;catalog.md ## The catalog page you created in the exercise.&lt;/span&gt;
 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;theme&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;name&lt;/span&gt;: material
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;palette&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;scheme&lt;/span&gt;: amber
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;primary&lt;/span&gt;: amber
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;accent&lt;/span&gt;: orange
+&lt;span style=&#34;color:#f92672&#34;&gt;theme&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;material&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;palette&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;scheme&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;amber&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;primary&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;amber&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;accent&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;orange&lt;/span&gt;
 
 &lt;span style=&#34;color:#75715e&#34;&gt;## Custom js files.&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;extra_javascript&lt;/span&gt;:
-  - https://code.jquery.com/jquery&lt;span style=&#34;color:#ae81ff&#34;&gt;-3.5.1&lt;/span&gt;.min.js
-  - https://cdn.datatables.net/&lt;span style=&#34;color:#ae81ff&#34;&gt;1.10.21&lt;/span&gt;/js/jquery.dataTables.min.js
-  - scripts/site.js
+&lt;span style=&#34;color:#f92672&#34;&gt;extra_javascript&lt;/span&gt;:
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;https://code.jquery.com/jquery-3.5.1.min.js&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;scripts/site.js&lt;/span&gt;
 
 &lt;span style=&#34;color:#75715e&#34;&gt;## Custom css files.&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;extra_css&lt;/span&gt;:
-  - https://cdn.datatables.net/&lt;span style=&#34;color:#ae81ff&#34;&gt;1.10.21&lt;/span&gt;/css/jquery.dataTables.min.css
+&lt;span style=&#34;color:#f92672&#34;&gt;extra_css&lt;/span&gt;:
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create a custom js file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cd docs
 $ mkdir scripts
@@ -274,20 +274,20 @@ $ touch .gitlab-ci.yml
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;gitlab-ci-yml&#34;&gt;.gitlab-ci.yml&lt;/h3&gt;
 &lt;p&gt;The &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; is a GitLab-specific file. GitLab will read and run the steps in the file. We need to tell GitLab how to generate and deploy our static MkDocs website. In this file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In .gitlab-ci.yml...&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;image&lt;/span&gt;: python:&lt;span style=&#34;color:#ae81ff&#34;&gt;3.8&lt;/span&gt;-buster &lt;span style=&#34;color:#75715e&#34;&gt;## MkDocs requies python.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;python:3.8-buster ## MkDocs requies python.&lt;/span&gt;
 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;pages&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;stage&lt;/span&gt;: deploy &lt;span style=&#34;color:#75715e&#34;&gt;## tell GitLab to deploy the website in this step.&lt;/span&gt;
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;before_script&lt;/span&gt;:
-    - pip install mkdocs &lt;span style=&#34;color:#75715e&#34;&gt;## install MkDocs.&lt;/span&gt;
-    - pip install mkdocs-material &lt;span style=&#34;color:#75715e&#34;&gt;## install the theme.&lt;/span&gt;
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;script&lt;/span&gt;:
-    - cd ./src/doc-project
-    - mkdocs build &lt;span style=&#34;color:#75715e&#34;&gt;## built the site.&lt;/span&gt;
-    - mv site ../../public
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;artifacts&lt;/span&gt;:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;paths&lt;/span&gt;:
-    - public
+&lt;span style=&#34;color:#f92672&#34;&gt;pages&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;stage&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;deploy ## tell GitLab to deploy the website in this step.&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;before_script&lt;/span&gt;:
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;pip install mkdocs ## install MkDocs.&lt;/span&gt;
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;pip install mkdocs-material ## install the theme.&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;:
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;cd ./src/doc-project&lt;/span&gt;
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;mkdocs build ## built the site.&lt;/span&gt;
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;mv site ../../public&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;artifacts&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;paths&lt;/span&gt;:
+    - &lt;span style=&#34;color:#ae81ff&#34;&gt;public&lt;/span&gt;
   &lt;span style=&#34;color:#75715e&#34;&gt;## Uncomment the following section if you want to run this step under master branch only.&lt;/span&gt;
   &lt;span style=&#34;color:#75715e&#34;&gt;# only:&lt;/span&gt;
   &lt;span style=&#34;color:#75715e&#34;&gt;# - master &lt;/span&gt;
@@ -318,7 +318,7 @@ $ touch .gitlab-ci.yml
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
-      <description>&lt;h2 id=&#34;background-&#34;&gt;Background&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
 &lt;p&gt;I built this &lt;strong&gt;MVC&lt;/strong&gt; web app using &lt;strong&gt;.NET Core 3.1&lt;/strong&gt; and deploy it as an IIS sub-site under the main website (which is a &lt;strong&gt;.NET Framework&lt;/strong&gt; web app running on the IIS).&lt;/p&gt;
 &lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
@@ -342,9 +342,9 @@ $ touch .gitlab-ci.yml
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;redis&#34;&gt;Redis&lt;/h2&gt;
-&lt;h3 id=&#34;why-&#34;&gt;Why?&lt;/h3&gt;
+&lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;
 &lt;p&gt;We are using &lt;a href=&#34;https://redis.io/&#34;&gt;Redis&lt;/a&gt; because it is simple, fast and we are already using it across all the main websites.&lt;/p&gt;
-&lt;h3 id=&#34;how-&#34;&gt;How?&lt;/h3&gt;
+&lt;h3 id=&#34;how&#34;&gt;How?&lt;/h3&gt;
 &lt;p&gt;Here are some highlights:&lt;/p&gt;
 &lt;h4 id=&#34;redis-nuget&#34;&gt;1. NuGet packages&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;PackageReference&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;StackExchange.Redis&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2.1.30&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
@@ -477,12 +477,12 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;li&gt;&lt;code&gt;vary-by-route&lt;/code&gt;: different copy will be cached when the route has a different value in the &lt;code&gt;name&lt;/code&gt;param.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;vary-by-user&lt;/code&gt;: different user will see different cached copies.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;how-can-i-know-if-it-is-working-&#34;&gt;How can I know if it is working?&lt;/h3&gt;
+&lt;h3 id=&#34;how-can-i-know-if-it-is-working&#34;&gt;How can I know if it is working?&lt;/h3&gt;
 &lt;p&gt;You will see the value rendered in the above example won&amp;rsquo;t change for 60 seconds even &lt;code&gt;System.DateTime.Now&lt;/code&gt; should show the current time.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;bonus&#34;&gt;Bonus: A note on &lt;code&gt;@helper&lt;/code&gt; and other HTML helpers&lt;/h2&gt;
 &lt;p&gt;In the old days we can define some &lt;code&gt;@helper&lt;/code&gt; functions in the razor view and (re)use it in the view. It&amp;rsquo;s being removed since .NET Core 3.0 because the design of &lt;code&gt;@helper&lt;/code&gt; function does not compatible with async Razor content anymore.&lt;/p&gt;
-&lt;h3 id=&#34;successor-of-the-html-helpers-&#34;&gt;Successor of the HTML helpers?&lt;/h3&gt;
+&lt;h3 id=&#34;successor-of-the-html-helpers&#34;&gt;Successor of the HTML helpers?&lt;/h3&gt;
 &lt;p&gt;You can use the &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1&#34;&gt;&lt;strong&gt;Tag Helpers in ASP.NET Core&lt;/strong&gt;&lt;/a&gt;. Yes, the &lt;code&gt;&amp;lt;cache&amp;gt;&lt;/code&gt; Tag Helper is one of the &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1#built-in-aspnet-core-tag-helpers&#34;&gt;built-in Tag Helpers in .NET Core&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In addition, you can use the &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync?view=aspnetcore-3.1&#34;&gt;&lt;code&gt;PartialAsync()&lt;/code&gt; method&lt;/a&gt;  to render the partial HTML markup &lt;strong&gt;asynchronously&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;@await Html.PartialAsync(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;_PartialName&amp;#34;&lt;/span&gt;)
