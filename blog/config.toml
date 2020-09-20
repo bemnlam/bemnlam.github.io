@@ -36,6 +36,9 @@ googleAnalytics = "UA-169198494-1"
   subtitle = "Start blogging in the 2020 lockdown. "
   icon_dark = "🌌"
   icon_light = "🌅"
+  # Version for static resources
+  # ver="20200920"
+  ver="1600574898"
 
 [[menu.main]]
     name = "📖 blog"

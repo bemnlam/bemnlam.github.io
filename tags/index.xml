@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Tue, 15 Sep 2020 08:40:48 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2020 14:45:18 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bamboo</title>
+      <link>https://bemnlam.github.io/tags/bamboo/</link>
+      <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/bamboo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>continuous delivery</title>
+      <link>https://bemnlam.github.io/tags/continuous-delivery/</link>
+      <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/continuous-delivery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>continuous integration</title>
+      <link>https://bemnlam.github.io/tags/continuous-integration/</link>
+      <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/continuous-integration/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cheatsheet</title>
