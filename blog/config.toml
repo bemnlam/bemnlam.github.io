@@ -32,13 +32,13 @@ googleAnalytics = "UA-169198494-1"
   # Logo image. This is displayed ogp image.
   logo = "cover.png"
   favicon = "favicon.ico"
+  favicon512 = "android-chrome-512x512.png"
   # Short subtitle/tagline. This is displayed in the header.
   subtitle = "Start blogging in the 2020 lockdown. "
   icon_dark = "🌌"
   icon_light = "🌅"
   # Version for static resources
-  # ver="20200920"
-  ver="1600574898"
+  ver="20200920"
 
 [[menu.main]]
     name = "📖 blog"
