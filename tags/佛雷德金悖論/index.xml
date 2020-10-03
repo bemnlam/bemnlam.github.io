@@ -19,7 +19,9 @@
       
       <guid>https://bemnlam.github.io/posts/fredkins-paradox/</guid>
       
-      <description>&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
 &lt;p&gt;好多時候難以取捨的選擇本身對自身所帶來的差異沒有想像中的嚴重。因為決策困難而不做決策反而會令自己損失更大。&lt;/p&gt;
 &lt;h2 id=&#34;-thoughts&#34;&gt;💡 Thoughts&lt;/h2&gt;
 &lt;p&gt;文章的總結提出了面對選擇困難的其中一個解決方向：以後悔/遺憾去做決定的考慮。&lt;/p&gt;
@@ -40,7 +42,10 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.techbang.com/posts/78437-fredkin-paradox-why-do-we-always-waste-time-on-inconsequential-decisions&#34;&gt;佛雷德金悖論：為什麼我們總浪費時間在無關緊要的決定上？&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
   </channel>

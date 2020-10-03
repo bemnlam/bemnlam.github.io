@@ -19,7 +19,9 @@
       
       <guid>https://bemnlam.github.io/posts/battling-with-gulp-and-node/</guid>
       
-      <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;When I was building a website using &lt;code&gt;gulp@^3.9.0&lt;/code&gt; to compile sass on the build server with Node.js v12 installed, it failed.&lt;/p&gt;
 &lt;p&gt;Here are (part of) the errors shown in the console:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-systemverilog&#34; data-lang=&#34;systemverilog&#34;&gt;error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt;	gyp ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; node &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;v v12&lt;span style=&#34;color:#ae81ff&#34;&gt;.18.0&lt;/span&gt;
@@ -113,7 +115,10 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
   </channel>

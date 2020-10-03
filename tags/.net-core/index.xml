@@ -19,7 +19,9 @@
       
       <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
       
-      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
 &lt;p&gt;I built this &lt;strong&gt;MVC&lt;/strong&gt; web app using &lt;strong&gt;.NET Core 3.1&lt;/strong&gt; and deploy it as an IIS sub-site under the main website (which is a &lt;strong&gt;.NET Framework&lt;/strong&gt; web app running on the IIS).&lt;/p&gt;
 &lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
@@ -192,7 +194,10 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;p&gt;&lt;a href=&#34;https://github.com/aspnet/Mvc/issues/4127&#34;&gt;What happened to the @helper directive in Razor ?&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/aspnet/Razor/issues/281&#34;&gt;Remove the @helper directive from Razor&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://dannyvanderkraan.wordpress.com/2016/04/19/asp-net-core-1-0-goodbye-html-helpers-and-hello-taghelpers/&#34;&gt;ASP.NET Core 1.0: Goodbye HTML helpers and hello TagHelpers!&lt;/a&gt;&lt;/p&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
   </channel>

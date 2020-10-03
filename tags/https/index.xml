@@ -19,7 +19,9 @@
       
       <guid>https://bemnlam.github.io/posts/a-note-on-ssl/</guid>
       
-      <description>&lt;p&gt;This is a note about the Linkedin learning course &lt;a href=&#34;https://www.linkedin.com/learning/ssl-certificates-for-web-developers&#34;&gt;SSL Certificates for Web Developers&lt;/a&gt;.&lt;/p&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;p&gt;This is a note about the Linkedin learning course &lt;a href=&#34;https://www.linkedin.com/learning/ssl-certificates-for-web-developers&#34;&gt;SSL Certificates for Web Developers&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;certificate-and-protocol&#34;&gt;Certificate and protocol&lt;/h2&gt;
 &lt;h3 id=&#34;what-are-ssltls-stands-for&#34;&gt;What are SSL/TLS stands for?&lt;/h3&gt;
 &lt;p&gt;They stands for &lt;em&gt;Secure Socket Layer&lt;/em&gt; and &lt;em&gt;Transport Layer Security&lt;/em&gt;. They are the protocol names.&lt;/p&gt;
@@ -104,7 +106,10 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
   </channel>

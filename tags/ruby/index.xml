@@ -24,7 +24,9 @@
         
         </media:content>
       
-      <description>&lt;p&gt;This post contains many useful snippets for me when writing &lt;strong&gt;Ruby&lt;/strong&gt; scripts. I will keep updating this note in the future.&lt;/p&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;img src=&#34;https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png&#34; /&gt;&lt;p&gt;This post contains many useful snippets for me when writing &lt;strong&gt;Ruby&lt;/strong&gt; scripts. I will keep updating this note in the future.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
   &lt;details open&gt;
     &lt;summary title=&#34;click to toggle table of contents.&#34;&gt;Table of Contents&lt;/summary&gt;
@@ -144,7 +146,10 @@ gem &amp;quot;mustache&amp;quot;, &amp;quot;~&amp;gt; 1.0&amp;quot;
         Path: ~/git/my-folder/lib/ruby/2.6.0/gems/ruby_http_client-3.5.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;p&gt;&lt;em&gt;(cover image from &lt;a href=&#34;https://dribbble.com/shots/2232375-Ruby&#34;&gt;this dribble&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
   </channel>

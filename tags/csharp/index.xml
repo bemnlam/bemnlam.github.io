@@ -19,7 +19,9 @@
       
       <guid>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
       
-      <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error CS0122: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ThisAssembly&amp;#39;&lt;/span&gt; is inaccessible due to its protection level
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I tried to install the package across all the projects in the same solution. It didn&amp;rsquo;t work.&lt;/p&gt;
@@ -51,7 +53,10 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/Nerdbank.GitVersioning/issues/404&#34;&gt;https://github.com/dotnet/Nerdbank.GitVersioning/issues/404&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h6 id=&#34;-cover-image-grace-hoppers-operational-logbook-for-the-harvard-mark-ii-computerhttpswwwbusinessinsidercomauharvard-mark-i-grace-hopper-bug-2015-7&#34;&gt;🖼 cover image: &lt;a href=&#34;https://www.businessinsider.com.au/harvard-mark-i-grace-hopper-bug-2015-7&#34;&gt;Grace Hopper’s operational logbook for the Harvard Mark II computer&lt;/a&gt;&lt;/h6&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
     <item>
@@ -61,7 +66,9 @@
       
       <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
       
-      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
 &lt;p&gt;I built this &lt;strong&gt;MVC&lt;/strong&gt; web app using &lt;strong&gt;.NET Core 3.1&lt;/strong&gt; and deploy it as an IIS sub-site under the main website (which is a &lt;strong&gt;.NET Framework&lt;/strong&gt; web app running on the IIS).&lt;/p&gt;
 &lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
@@ -234,7 +241,10 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;p&gt;&lt;a href=&#34;https://github.com/aspnet/Mvc/issues/4127&#34;&gt;What happened to the @helper directive in Razor ?&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/aspnet/Razor/issues/281&#34;&gt;Remove the @helper directive from Razor&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://dannyvanderkraan.wordpress.com/2016/04/19/asp-net-core-1-0-goodbye-html-helpers-and-hello-taghelpers/&#34;&gt;ASP.NET Core 1.0: Goodbye HTML helpers and hello TagHelpers!&lt;/a&gt;&lt;/p&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
   </channel>

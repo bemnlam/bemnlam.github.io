@@ -26,7 +26,9 @@
         
         </media:content>
       
-      <description>&lt;blockquote&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;img src=&#34;https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;blockquote&gt;
 &lt;p&gt;This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;preface&#34;&gt;Preface&lt;/h1&gt;
@@ -84,11 +86,11 @@
 &lt;li&gt;&lt;em&gt;Build&lt;/em&gt; and&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Deploy&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200913141147305.png&#34; alt=&#34;Build dropdown menu&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200913141246490.png&#34; alt=&#34;Deploy dropdown menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913141147305.png&#34; alt=&#34;Build dropdown menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913141246490.png&#34; alt=&#34;Deploy dropdown menu&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;deployment-cd&#34;&gt;Deployment (CD)&lt;/h2&gt;
 &lt;p&gt;Here is a typical &lt;strong&gt;deployment project summary&lt;/strong&gt; looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200913132645203.png&#34; alt=&#34;A typical deployment project&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913132645203.png&#34; alt=&#34;A typical deployment project&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You can check this out by clicking &lt;strong&gt;Deploy&lt;/strong&gt; &amp;gt; &lt;strong&gt;All Deployment Projects&lt;/strong&gt;. After that, choose one of the item on the list.&lt;/p&gt;
 &lt;h3 id=&#34;glossary&#34;&gt;Glossary&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Artifact&lt;/em&gt;: The content built in the CI part.&lt;/p&gt;
@@ -97,7 +99,7 @@
 &lt;p&gt;&lt;em&gt;Deployment Project&lt;/em&gt;: A collection of build plans.&lt;/p&gt;
 &lt;h2 id=&#34;build-ci&#34;&gt;Build (CI)&lt;/h2&gt;
 &lt;p&gt;Here is a typical build dashboard:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200913130048805.png&#34; alt=&#34;A typical build dashboard&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913130048805.png&#34; alt=&#34;A typical build dashboard&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This is the default front page of Bamboo. You can also check this out by clicking &lt;strong&gt;Build&lt;/strong&gt; &amp;gt; &lt;strong&gt;All Build Plans&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;glossary-1&#34;&gt;Glossary&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Build&lt;/em&gt;: The build result of the default plan.&lt;/p&gt;
@@ -121,11 +123,11 @@
 &lt;p&gt;&lt;em&gt;Build branch&lt;/em&gt;: All the other git&amp;rsquo;s branches, including &lt;code&gt;feature/*&lt;/code&gt;, &lt;code&gt;release/*&lt;/code&gt;, &lt;code&gt;hotfix/*&lt;/code&gt;, &lt;code&gt;master&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Master branch&lt;/em&gt;: git&amp;rsquo;s &lt;code&gt;master&lt;/code&gt; branch&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Linked Repository&lt;/em&gt;: Store all the git repository connection setups for later user in CI/CD steps. It&amp;rsquo;s under &lt;strong&gt;⚙️ (Bamboo Administration)&lt;/strong&gt; &amp;gt; &lt;strong&gt;Linked repositories&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200919094705047.png&#34; alt=&#34;Bamboo Administration &gt; Linked repositories&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200919094705047.png&#34; alt=&#34;Bamboo Administration &gt; Linked repositories&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This is an example for a class library:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200919093103200.png&#34; alt=&#34;Plan branches in a class library build plan&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200919093103200.png&#34; alt=&#34;Plan branches in a class library build plan&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And this is an example for website:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200919093317277.png&#34; alt=&#34;Plan branches in a website build plan&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200919093317277.png&#34; alt=&#34;Plan branches in a website build plan&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Next, I will talk about how to &lt;strong&gt;design&lt;/strong&gt; a CD flow, then a CI flow.&lt;/p&gt;
 &lt;h1 id=&#34;designing-a-cicd-workflow&#34;&gt;Designing a CI/CD workflow&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -151,9 +153,9 @@
 &lt;p&gt;All the deployments in my team can be categorized in to 2 types: either a &lt;strong&gt;library&lt;/strong&gt; (i.e. a nuget package) or a &lt;strong&gt;website&lt;/strong&gt; (i.e. an IIS website).&lt;/p&gt;
 &lt;h3 id=&#34;nuget-packages&#34;&gt;Nuget Packages&lt;/h3&gt;
 &lt;p&gt;My team is using &lt;a href=&#34;https://myget.org/&#34;&gt;MyGet&lt;/a&gt; to host private packages. So, there is only 1 destination for my &lt;em&gt;artifact&lt;/em&gt; goes.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200913153116958.png&#34; alt=&#34;Bamboo class library CD flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913153116958.png&#34; alt=&#34;Bamboo class library CD flow&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This is how I organize the &lt;em&gt;deployment project&lt;/em&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200913154357682.png&#34; alt=&#34;Class library deployment project setup&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913154357682.png&#34; alt=&#34;Class library deployment project setup&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Deployment Project
 ├── Production environment: for builds from master
 └── Pre-release environment: all other branches
@@ -161,7 +163,7 @@
 &lt;p&gt;We have 2 web servers for production and other environments has a corresponding web server. All running IIS. On the other hand, some of the websites are hosting under a sub-directory (as a sub-site).&lt;/p&gt;
 &lt;p&gt;Therefore, an &lt;em&gt;artifact&lt;/em&gt; may goes to multiple destinations.&lt;/p&gt;
 &lt;p&gt;In my design, 1 &lt;em&gt;deployment environment&lt;/em&gt; responsibles for 1 destination (i.e. 1 IIS web server).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200913190536806.png&#34; alt=&#34;Bamboo website CD flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913190536806.png&#34; alt=&#34;Bamboo website CD flow&#34;&gt;&lt;/p&gt;
 &lt;p&gt;So you may ask: why not 1 deployment environment for 1 environment? Here&amp;rsquo;s why:&lt;/p&gt;
 &lt;h4 id=&#34;1-to-1-mapping-of-deployment-environment-and-iis-website&#34;&gt;1-to-1 mapping of &lt;em&gt;deployment environment&lt;/em&gt; and &lt;em&gt;IIS website&lt;/em&gt;&lt;/h4&gt;
 &lt;h5 id=&#34;the-bad&#34;&gt;The bad&lt;/h5&gt;
@@ -189,7 +191,7 @@
 &lt;p&gt;(I am not sure about the above observation and please do let me know if I got something wrong or there are any better solutions.)&lt;/p&gt;
 &lt;h5 id=&#34;my-decision&#34;&gt;My decision&lt;/h5&gt;
 &lt;p&gt;This is how I organize the &lt;em&gt;deployment project&lt;/em&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200913154337848.png&#34; alt=&#34;Website deployment project setup&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913154337848.png&#34; alt=&#34;Website deployment project setup&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Deployment Project
 ├── Production (A) environment: for builds from master / release
 ├── Production (B) environment: for builds from master / release
@@ -206,7 +208,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;planbranch-configurations&#34;&gt;Plan/Branch configurations&lt;/h4&gt;
 &lt;p&gt;(See the &lt;a href=&#34;#default-configurations-develop&#34;&gt;Websites&lt;/a&gt; section.)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/ci-cd-CI-Nuget.png&#34; alt=&#34;Bamboo class library CI flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/ci-cd-CI-Nuget.png&#34; alt=&#34;Bamboo class library CI flow&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;websites-1&#34;&gt;Websites&lt;/h3&gt;
 &lt;p&gt;I need to build 2-3 kinds of &lt;em&gt;artifacts&lt;/em&gt;:&lt;/p&gt;
 &lt;ul&gt;
@@ -214,7 +216,7 @@
 &lt;li&gt;For &lt;strong&gt;Staging&lt;/strong&gt; environment (this environment is not 24/7 and will be set up when necessary);&lt;/li&gt;
 &lt;li&gt;For &lt;strong&gt;Production&lt;/strong&gt; environment.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/ci-cd-CI-IIS.png&#34; alt=&#34;Bamboo website CI flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/ci-cd-CI-IIS.png&#34; alt=&#34;Bamboo website CI flow&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;default-configurations-develop&#34;&gt;Default configurations: &lt;code&gt;develop&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;For the default settings in a &lt;em&gt;build plan&lt;/em&gt;, always choose the &lt;code&gt;develop&lt;/code&gt; as the main branch and allow Bamboo to create/remove all the &lt;code&gt;feature/*&lt;/code&gt;, &lt;code&gt;hotfix/*&lt;/code&gt; branches.&lt;/p&gt;
 &lt;h4 id=&#34;production-configurations-master&#34;&gt;Production configurations: &lt;code&gt;master&lt;/code&gt;&lt;/h4&gt;
@@ -223,11 +225,14 @@
 &lt;p&gt;I ususlly not using &lt;code&gt;release&lt;/code&gt; branch. When I use that, I will set up a build branch &lt;strong&gt;manually&lt;/strong&gt;, just like the &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;staging-configurations-staging&#34;&gt;Staging configurations: &lt;code&gt;staging&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;Just like the set up of &lt;strong&gt;production configurations&lt;/strong&gt;. However, change the variables for the staging environment.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200920110535916.png&#34; alt=&#34;Build branch configuration - Branch details&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200920110535916.png&#34; alt=&#34;Build branch configuration - Branch details&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You may also need to override the &lt;em&gt;default branch configurations&lt;/em&gt; under the &lt;strong&gt;Variables&lt;/strong&gt; tab.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/img/notes-on-atlassian-bamboo/image-20200920110548520.png&#34; alt=&#34;Build branch configuration - Variables&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200920110548520.png&#34; alt=&#34;Build branch configuration - Variables&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You can find these tabs under form the top menu: &lt;strong&gt;Build&lt;/strong&gt; &amp;gt; &lt;strong&gt;All build plans&lt;/strong&gt; &amp;gt; &lt;strong&gt;🖋&lt;/strong&gt; (right end of the plan) &amp;gt; (Choose the plan branch name).&lt;/p&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
   </channel>

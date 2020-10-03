@@ -19,7 +19,9 @@
       
       <guid>https://bemnlam.github.io/posts/fantastic-beans-and-where-to-find-them/</guid>
       
-      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;In short: I found some local shops which selling pretty good beans. In Hong Kong.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;During the 2020 pandamic, it&amp;rsquo;s not easy to buy beans overseas. However, it gave me a great opportunity to search for some good beans in Hong Kong. Plus, I have more time to stay at home and brew coffee as the company started the WFH policy from Feb.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
@@ -134,7 +136,10 @@
 
 &lt;h3 id=&#34;subscription-plans&#34;&gt;Subscription plans&lt;/h3&gt;
 &lt;p&gt;It also provides different coffee subscription plans. The &lt;a href=&#34;https://brewnotecoffee.com/&#34;&gt;website&lt;/a&gt; shows the details of the beans and the plans.&lt;/p&gt;
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
     <item>
@@ -144,7 +149,9 @@
       
       <guid>https://bemnlam.github.io/posts/brewing-coffee/</guid>
       
-      <description>&lt;p&gt;A note on how to brew coffee.&lt;/p&gt;
+      
+        <description>
+          &lt;![CDATA[&lt;p&gt;A note on how to brew coffee.&lt;/p&gt;
 &lt;h2 id=&#34;v60&#34;&gt;V60&lt;/h2&gt;
 &lt;p&gt;☕️ &lt;a href=&#34;https://www.youtube.com/watch?v=LmGKqzV7hQE&#34;&gt;How to Brew V60 with UK Brewers Cup Champion, Sang Ho Park | Comprehensive Guide&lt;/a&gt;&lt;/p&gt;
 
@@ -158,7 +165,10 @@
   &lt;iframe src=&#34;https://www.youtube.com/embed/wmCW8xSWGZY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-</description>
+]]&gt;
+        </description>
+      
+      
     </item>
     
   </channel>
