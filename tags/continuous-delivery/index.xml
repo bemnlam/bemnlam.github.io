@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>continuous delivery on log from home</title>
     <link>https://bemnlam.github.io/tags/continuous-delivery/</link>
@@ -18,6 +18,14 @@
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</guid>
+      
+        <media:thumbnail url="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />
+        <media:content url="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" medium="image">
+        
+            <media:title type="html">Photo by Jordan Merrick: https://unsplash.com/photos/gPEMUZHwal4</media:title>
+        
+        </media:content>
+      
       <description>&lt;blockquote&gt;
 &lt;p&gt;This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p&gt;
 &lt;/blockquote&gt;

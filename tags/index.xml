@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Tags on log from home</title>
     <link>https://bemnlam.github.io/tags/</link>
@@ -18,6 +18,7 @@
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/aws/</guid>
+      
       <description></description>
     </item>
     
@@ -27,6 +28,7 @@
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/ec2/</guid>
+      
       <description></description>
     </item>
     
@@ -36,6 +38,7 @@
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/ovpn/</guid>
+      
       <description></description>
     </item>
     
@@ -45,6 +48,7 @@
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/rdp/</guid>
+      
       <description></description>
     </item>
     
@@ -54,6 +58,7 @@
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/tutorial/</guid>
+      
       <description></description>
     </item>
     
@@ -63,6 +68,7 @@
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/bamboo/</guid>
+      
       <description></description>
     </item>
     
@@ -72,6 +78,7 @@
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/continuous-delivery/</guid>
+      
       <description></description>
     </item>
     
@@ -81,6 +88,7 @@
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/continuous-integration/</guid>
+      
       <description></description>
     </item>
     
@@ -90,6 +98,7 @@
       <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/cheatsheet/</guid>
+      
       <description></description>
     </item>
     
@@ -99,6 +108,7 @@
       <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/ruby/</guid>
+      
       <description></description>
     </item>
     
@@ -108,6 +118,7 @@
       <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/gravatar/</guid>
+      
       <description></description>
     </item>
     
@@ -117,6 +128,7 @@
       <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/hugo/</guid>
+      
       <description></description>
     </item>
     
@@ -126,6 +138,7 @@
       <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/rss/</guid>
+      
       <description></description>
     </item>
     
@@ -135,6 +148,7 @@
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/easter-egg/</guid>
+      
       <description></description>
     </item>
     
@@ -144,6 +158,7 @@
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/mac/</guid>
+      
       <description></description>
     </item>
     
@@ -153,6 +168,7 @@
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/gulp/</guid>
+      
       <description></description>
     </item>
     
@@ -162,6 +178,7 @@
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/gulp-sass/</guid>
+      
       <description></description>
     </item>
     
@@ -171,6 +188,7 @@
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/node-sass/</guid>
+      
       <description></description>
     </item>
     
@@ -180,6 +198,7 @@
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/nodejs/</guid>
+      
       <description></description>
     </item>
     
@@ -189,6 +208,7 @@
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/pest-control/</guid>
+      
       <description></description>
     </item>
     
@@ -198,6 +218,7 @@
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/.net/</guid>
+      
       <description></description>
     </item>
     
@@ -207,6 +228,7 @@
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/csharp/</guid>
+      
       <description></description>
     </item>
     
@@ -216,6 +238,7 @@
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/nuget/</guid>
+      
       <description></description>
     </item>
     
@@ -225,6 +248,7 @@
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/gitlab/</guid>
+      
       <description></description>
     </item>
     
@@ -234,6 +258,7 @@
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/markdown/</guid>
+      
       <description></description>
     </item>
     
@@ -243,6 +268,7 @@
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/mkdocs/</guid>
+      
       <description></description>
     </item>
     
@@ -252,6 +278,7 @@
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/python/</guid>
+      
       <description></description>
     </item>
     
@@ -261,6 +288,7 @@
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/.net-core/</guid>
+      
       <description></description>
     </item>
     
@@ -270,6 +298,7 @@
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/cache/</guid>
+      
       <description></description>
     </item>
     
@@ -279,6 +308,7 @@
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/redis/</guid>
+      
       <description></description>
     </item>
     
@@ -288,6 +318,7 @@
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/tag-helpers/</guid>
+      
       <description></description>
     </item>
     
@@ -297,6 +328,7 @@
       <pubDate>Thu, 11 Jun 2020 10:39:39 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/coffee/</guid>
+      
       <description></description>
     </item>
     
@@ -306,6 +338,7 @@
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/cryptography/</guid>
+      
       <description></description>
     </item>
     
@@ -315,6 +348,7 @@
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/https/</guid>
+      
       <description></description>
     </item>
     
@@ -324,6 +358,7 @@
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/linkedin-digest/</guid>
+      
       <description></description>
     </item>
     
@@ -333,6 +368,7 @@
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/security/</guid>
+      
       <description></description>
     </item>
     
@@ -342,6 +378,7 @@
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/ssl/</guid>
+      
       <description></description>
     </item>
     
@@ -351,6 +388,7 @@
       <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/v60/</guid>
+      
       <description></description>
     </item>
     
@@ -360,6 +398,7 @@
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/pocket-digest/</guid>
+      
       <description></description>
     </item>
     
@@ -369,6 +408,7 @@
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/self-management/</guid>
+      
       <description></description>
     </item>
     
@@ -378,6 +418,7 @@
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/work/</guid>
+      
       <description></description>
     </item>
     
@@ -387,6 +428,7 @@
       <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/fredkins-paradox/</guid>
+      
       <description></description>
     </item>
     
@@ -396,6 +438,7 @@
       <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</guid>
+      
       <description></description>
     </item>
     
@@ -405,6 +448,7 @@
       <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</guid>
+      
       <description></description>
     </item>
     
@@ -414,6 +458,7 @@
       <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/postgres/</guid>
+      
       <description></description>
     </item>
     

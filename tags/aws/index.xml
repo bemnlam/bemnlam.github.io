@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>aws on log from home</title>
     <link>https://bemnlam.github.io/tags/aws/</link>
@@ -18,6 +18,12 @@
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid>
+      
+        <media:thumbnail url="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />
+        <media:content url="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" medium="image">
+        
+        </media:content>
+      
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p&gt;
 &lt;p&gt;You need to create a AWS account: &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup&#34;&gt;https://portal.aws.amazon.com/billing/signup&lt;/a&gt;. You may need to provide your credit card information during the signup process.&lt;/p&gt;
@@ -258,8 +264,8 @@ New clients can be added by running this script again.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Use another Terminal to download the &lt;code&gt;.ovpn&lt;/code&gt; file. Assuming that the machine name is &lt;code&gt;ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com&lt;/code&gt; and the generated &lt;code&gt;.ovpn&lt;/code&gt; file is place under &lt;code&gt;~/&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;scp -i sparkle.pem ubuntu@ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com:~/demo-ec2-client.ovpn ~/Downloads/demo-ec2-client.ovpn
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;connect-to-the-vpn&#34;&gt;Connect to the VPN&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://client.pritunl.com/&#34;&gt;Pritunl Client&lt;/a&gt; is a easy-to-use OpenVPN client. Downlaod and install it:&lt;/p&gt;
-&lt;p&gt;Click &lt;strong&gt;Import Profile&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://client.pritunl.com/&#34;&gt;Pritunl Client&lt;/a&gt; is a easy-to-use OpenVPN client. Downlaod and install it.&lt;/p&gt;
+&lt;p&gt;Launch the client and click &lt;strong&gt;Import Profile&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../static/img/screenshot.png&#34; alt=&#34;Import ovpn profile&#34;&gt;&lt;/p&gt;
 &lt;p&gt;After that, click the burger menu of the profile and &lt;strong&gt;Connect&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;

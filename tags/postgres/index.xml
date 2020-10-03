@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>postgres on log from home</title>
     <link>https://bemnlam.github.io/tags/postgres/</link>
@@ -18,6 +18,7 @@
       <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
+      
       <description>&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
 &lt;h2 id=&#34;situation&#34;&gt;Situation&lt;/h2&gt;
 &lt;p&gt;I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.&lt;/p&gt;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Readings on log from home</title>
     <link>https://bemnlam.github.io/categories/readings/</link>
@@ -18,6 +18,7 @@
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/why-you-should-manage-your-energy-not-your-time/</guid>
+      
       <description>&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
 &lt;p&gt;As a human being, &lt;strong&gt;managing our energy is more important&lt;/strong&gt; because this is a limited resources.&lt;/p&gt;
 &lt;p&gt;We may wrongly think that increasing working hours can do more. However, longer working hours leads more &lt;strong&gt;unfocus&lt;/strong&gt; time and brings negative effect to your work.&lt;/p&gt;
@@ -52,6 +53,7 @@
       <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/fredkins-paradox/</guid>
+      
       <description>&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
 &lt;p&gt;好多時候難以取捨的選擇本身對自身所帶來的差異沒有想像中的嚴重。因為決策困難而不做決策反而會令自己損失更大。&lt;/p&gt;
 &lt;h2 id=&#34;-thoughts&#34;&gt;💡 Thoughts&lt;/h2&gt;

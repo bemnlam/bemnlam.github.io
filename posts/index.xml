@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Posts on log from home</title>
     <link>https://bemnlam.github.io/posts/</link>
@@ -18,6 +18,12 @@
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid>
+      
+        <media:thumbnail url="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />
+        <media:content url="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" medium="image">
+        
+        </media:content>
+      
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p&gt;
 &lt;p&gt;You need to create a AWS account: &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup&#34;&gt;https://portal.aws.amazon.com/billing/signup&lt;/a&gt;. You may need to provide your credit card information during the signup process.&lt;/p&gt;
@@ -258,8 +264,8 @@ New clients can be added by running this script again.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Use another Terminal to download the &lt;code&gt;.ovpn&lt;/code&gt; file. Assuming that the machine name is &lt;code&gt;ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com&lt;/code&gt; and the generated &lt;code&gt;.ovpn&lt;/code&gt; file is place under &lt;code&gt;~/&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;scp -i sparkle.pem ubuntu@ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com:~/demo-ec2-client.ovpn ~/Downloads/demo-ec2-client.ovpn
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;connect-to-the-vpn&#34;&gt;Connect to the VPN&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://client.pritunl.com/&#34;&gt;Pritunl Client&lt;/a&gt; is a easy-to-use OpenVPN client. Downlaod and install it:&lt;/p&gt;
-&lt;p&gt;Click &lt;strong&gt;Import Profile&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://client.pritunl.com/&#34;&gt;Pritunl Client&lt;/a&gt; is a easy-to-use OpenVPN client. Downlaod and install it.&lt;/p&gt;
+&lt;p&gt;Launch the client and click &lt;strong&gt;Import Profile&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../static/img/screenshot.png&#34; alt=&#34;Import ovpn profile&#34;&gt;&lt;/p&gt;
 &lt;p&gt;After that, click the burger menu of the profile and &lt;strong&gt;Connect&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -274,6 +280,14 @@ New clients can be added by running this script again.
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</guid>
+      
+        <media:thumbnail url="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />
+        <media:content url="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" medium="image">
+        
+            <media:title type="html">Photo by Jordan Merrick: https://unsplash.com/photos/gPEMUZHwal4</media:title>
+        
+        </media:content>
+      
       <description>&lt;blockquote&gt;
 &lt;p&gt;This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -484,6 +498,12 @@ New clients can be added by running this script again.
       <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/ruby-cheatsheet/</guid>
+      
+        <media:thumbnail url="https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png" />
+        <media:content url="https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png" medium="image">
+        
+        </media:content>
+      
       <description>&lt;p&gt;This post contains many useful snippets for me when writing &lt;strong&gt;Ruby&lt;/strong&gt; scripts. I will keep updating this note in the future.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
   &lt;details open&gt;
@@ -613,6 +633,7 @@ gem &amp;quot;mustache&amp;quot;, &amp;quot;~&amp;gt; 1.0&amp;quot;
       <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/use-gravatar-everywhere/</guid>
+      
       <description>&lt;h3 id=&#34;what-is-gravatar&#34;&gt;What is Gravatar&lt;/h3&gt;
 &lt;p&gt;Your public profile on the internet, provided by Wordpress. See &lt;a href=&#34;https://en.gravatar.com/&#34;&gt;https://en.gravatar.com/&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;1-upload-an-image-to-your-gravatar-account&#34;&gt;1. Upload an image to your gravatar account&lt;/h3&gt;
@@ -641,6 +662,7 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
       <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
+      
       <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently I created a hugo blog and started writing articles (yes, that&amp;rsquo;s the blog you are reading). Later, I found that dev.to can &lt;a href=&#34;https://dev.to/settings/publishing-from-rss&#34;&gt;publish articles (as draft) from a RSS feed&lt;/a&gt;. In that way I don&amp;rsquo;t have to copy-and-paste my articles manually in order to publish the same item on dev.to!&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
@@ -714,6 +736,7 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid>
+      
       <description>&lt;blockquote&gt;
 &lt;p&gt;🚨 Note: This is not a technical reading. If you want to have some fun and practice your &lt;code&gt;ls&lt;/code&gt; and &lt;code&gt;cat&lt;/code&gt; skills, this article may suit you.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -898,6 +921,7 @@ December:Turquoise:Narcissus
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/battling-with-gulp-and-node/</guid>
+      
       <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;When I was building a website using &lt;code&gt;gulp@^3.9.0&lt;/code&gt; to compile sass on the build server with Node.js v12 installed, it failed.&lt;/p&gt;
 &lt;p&gt;Here are (part of) the errors shown in the console:&lt;/p&gt;
@@ -1001,6 +1025,7 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
+      
       <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error CS0122: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ThisAssembly&amp;#39;&lt;/span&gt; is inaccessible due to its protection level
@@ -1042,6 +1067,7 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
+      
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;I created a static website using &lt;strong&gt;MkDocs&lt;/strong&gt; and deployed to &lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;&lt;strong&gt;GitLab Pages&lt;/strong&gt;&lt;/a&gt;. This is what I did: &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/&#34;&gt;https://bemn-proof-of-concept.gitlab.io/mkdoc/&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
@@ -1241,6 +1267,7 @@ $ touch .gitlab-ci.yml
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
+      
       <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
 &lt;p&gt;I built this &lt;strong&gt;MVC&lt;/strong&gt; web app using &lt;strong&gt;.NET Core 3.1&lt;/strong&gt; and deploy it as an IIS sub-site under the main website (which is a &lt;strong&gt;.NET Framework&lt;/strong&gt; web app running on the IIS).&lt;/p&gt;
@@ -1423,6 +1450,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       <pubDate>Thu, 11 Jun 2020 10:39:39 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/fantastic-beans-and-where-to-find-them/</guid>
+      
       <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;In short: I found some local shops which selling pretty good beans. In Hong Kong.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;During the 2020 pandamic, it&amp;rsquo;s not easy to buy beans overseas. However, it gave me a great opportunity to search for some good beans in Hong Kong. Plus, I have more time to stay at home and brew coffee as the company started the WFH policy from Feb.&lt;/p&gt;
@@ -1547,6 +1575,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/a-note-on-ssl/</guid>
+      
       <description>&lt;p&gt;This is a note about the Linkedin learning course &lt;a href=&#34;https://www.linkedin.com/learning/ssl-certificates-for-web-developers&#34;&gt;SSL Certificates for Web Developers&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;certificate-and-protocol&#34;&gt;Certificate and protocol&lt;/h2&gt;
 &lt;h3 id=&#34;what-are-ssltls-stands-for&#34;&gt;What are SSL/TLS stands for?&lt;/h3&gt;
@@ -1641,6 +1670,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/brewing-coffee/</guid>
+      
       <description>&lt;p&gt;A note on how to brew coffee.&lt;/p&gt;
 &lt;h2 id=&#34;v60&#34;&gt;V60&lt;/h2&gt;
 &lt;p&gt;☕️ &lt;a href=&#34;https://www.youtube.com/watch?v=LmGKqzV7hQE&#34;&gt;How to Brew V60 with UK Brewers Cup Champion, Sang Ho Park | Comprehensive Guide&lt;/a&gt;&lt;/p&gt;
@@ -1664,6 +1694,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/why-you-should-manage-your-energy-not-your-time/</guid>
+      
       <description>&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
 &lt;p&gt;As a human being, &lt;strong&gt;managing our energy is more important&lt;/strong&gt; because this is a limited resources.&lt;/p&gt;
 &lt;p&gt;We may wrongly think that increasing working hours can do more. However, longer working hours leads more &lt;strong&gt;unfocus&lt;/strong&gt; time and brings negative effect to your work.&lt;/p&gt;
@@ -1698,6 +1729,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/fredkins-paradox/</guid>
+      
       <description>&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
 &lt;p&gt;好多時候難以取捨的選擇本身對自身所帶來的差異沒有想像中的嚴重。因為決策困難而不做決策反而會令自己損失更大。&lt;/p&gt;
 &lt;h2 id=&#34;-thoughts&#34;&gt;💡 Thoughts&lt;/h2&gt;
@@ -1728,6 +1760,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
+      
       <description>&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
 &lt;h2 id=&#34;situation&#34;&gt;Situation&lt;/h2&gt;
 &lt;p&gt;I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.&lt;/p&gt;
@@ -1765,6 +1798,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/posts/welcome/</guid>
+      
       <description>&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/name-of-the-new-post.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write your post. Back to &lt;code&gt;blog&lt;/code&gt; folder  and then&lt;/p&gt;
