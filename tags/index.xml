@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Sun, 20 Sep 2020 14:45:18 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2020 13:40:48 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>aws</title>
+      <link>https://bemnlam.github.io/tags/aws/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ec2</title>
+      <link>https://bemnlam.github.io/tags/ec2/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ovpn</title>
+      <link>https://bemnlam.github.io/tags/ovpn/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/ovpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rdp</title>
+      <link>https://bemnlam.github.io/tags/rdp/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/rdp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://bemnlam.github.io/tags/tutorial/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/tutorial/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bamboo</title>
@@ -63,15 +108,6 @@
       <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/gravatar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tutorial</title>
-      <link>https://bemnlam.github.io/tags/tutorial/</link>
-      <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
     

@@ -117,8 +117,11 @@ if (!doNotTrack) {
     
   
   <section id="js-article" class="p-article__body">
-    <h2 id="preface">Preface</h2>
-<p>This is an article talking about <strong>my experience (≠ 100% solution. ≠ tenet on CI/CD)</strong> on using <a href="https://www.atlassian.com/software/bamboo">Atlassian Bamboo</a>. It is <strong>a tool for continuous integration, deployment, and delivery</strong>. I use this tool for all the <strong>.NET-based web applications running on the Windows ecosystem</strong>.</p>
+    <blockquote>
+<p>This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.</p>
+</blockquote>
+<h1 id="preface">Preface</h1>
+<p>This is an article talking about <strong>my experience (≠ 100% solution. ≠ golden rule on CI/CD)</strong> on using <a href="https://www.atlassian.com/software/bamboo">Atlassian Bamboo</a>. It is <strong>a tool for <a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">continuous integration, deployment, and delivery</a></strong>. I use this tool for all the <strong>.NET-based web applications running on the Windows ecosystem</strong>.</p>
 <blockquote>
 <p>Note on 2020: <a href="https://bitbucket.org/product/features/pipelines">Bitbucket Pipelines</a> is a newer service created by Atlassian. If you are building applications other then <a href="https://bitbucket.org/site/master/issues/13452/support-for-native-windows-net-builds-on">Windows</a>, <a href="https://bitbucket.org/site/master/issues/13719/support-for-macos-ios-in-pipelines">macOS, or iOS</a> applications then I strongly recommend you to use this instead of Bamboo.</p>
 </blockquote>
@@ -127,17 +130,17 @@ if (!doNotTrack) {
     <summary title="click to toggle table of contents.">Table of Contents</summary>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#preface">Preface</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#fundamentals-in-bamboo">Fundamentals in Bamboo</a>
+    <li><a href="#deployment-cd">Deployment (CD)</a>
       <ul>
-        <li><a href="#deployment-cd">Deployment (CD)</a></li>
-        <li><a href="#build-ci">Build (CI)</a></li>
-        <li><a href="#git">Git</a></li>
+        <li><a href="#glossary">Glossary</a></li>
       </ul>
     </li>
+    <li><a href="#build-ci">Build (CI)</a>
+      <ul>
+        <li><a href="#glossary-1">Glossary</a></li>
+      </ul>
+    </li>
+    <li><a href="#git">Git</a></li>
   </ul>
 
   <ul>
@@ -158,34 +161,39 @@ if (!doNotTrack) {
   </details>
 </aside>
 
-<h1 id="principles-of-a-cicd-workflow">Principles of a CI/CD workflow</h1>
-<p>In my opinion, when you start designing your CI/CS workflow:</p>
+<h1 id="cicd-principles">CI/CD principles</h1>
+<p><strong>In my opinion</strong>, when you start designing your CI/CD workflows:</p>
 <ol>
 <li>Make things <strong>predictable</strong>.</li>
-<li>You should think of the <strong>deployment (CD) first</strong>, then work backward to the integration (CI) part.</li>
+<li>Think of the <strong>deployment (CD) first</strong>, then work backward to the <strong>integration (CI)</strong> part.</li>
 <li>Use <em><strong>Gitflow</strong></em> in your source code.</li>
 </ol>
-<h2 id="fundamentals-in-bamboo">Fundamentals in Bamboo</h2>
-<p>The menu in Bamboo (version 6.5.0) contains 3 parts: The <em>Projects</em>, the <em>Build</em> and <em>Deploy</em>.</p>
+<h1 id="fundamentals-of-bamboo">Fundamentals of Bamboo</h1>
+<p>The menu in Bamboo (version 6.5.0) contains 3 parts:</p>
+<ul>
+<li><em>Projects</em>,</li>
+<li><em>Build</em> and</li>
+<li><em>Deploy</em>.</li>
+</ul>
 <p><img src="/img/notes-on-atlassian-bamboo/image-20200913141147305.png" alt="Build dropdown menu"></p>
 <p><img src="/img/notes-on-atlassian-bamboo/image-20200913141246490.png" alt="Deploy dropdown menu"></p>
-<h3 id="deployment-cd">Deployment (CD)</h3>
+<h2 id="deployment-cd">Deployment (CD)</h2>
 <p>Here is a typical <strong>deployment project summary</strong> looks like:</p>
 <p><img src="/img/notes-on-atlassian-bamboo/image-20200913132645203.png" alt="A typical deployment project"></p>
 <p>You can check this out by clicking <strong>Deploy</strong> &gt; <strong>All Deployment Projects</strong>. After that, choose one of the item on the list.</p>
-<h4 id="glossary">Glossary</h4>
+<h3 id="glossary">Glossary</h3>
 <p><em>Artifact</em>: The content built in the CI part.</p>
 <p><em>Deployment Environment</em>: The place the <em>artifacts</em> should go to.</p>
 <p><em>Release</em>: A unique (and usually auto-increment) identifier of this deployment.</p>
 <p><em>Deployment Project</em>: A collection of build plans.</p>
-<h3 id="build-ci">Build (CI)</h3>
+<h2 id="build-ci">Build (CI)</h2>
 <p>Here is a typical build dashboard:</p>
 <p><img src="/img/notes-on-atlassian-bamboo/image-20200913130048805.png" alt="A typical build dashboard"></p>
 <p>This is the default front page of Bamboo. You can also check this out by clicking <strong>Build</strong> &gt; <strong>All Build Plans</strong>.</p>
-<h4 id="glossary-1">Glossary</h4>
+<h3 id="glossary-1">Glossary</h3>
 <p><em>Build</em>: The build result of the default plan.</p>
 <p><em>Build Plan</em>: Usually it refers to the definitions of all build-related configuratoins. However, sometimes it <em>also</em> refers to the <strong>default build barnch</strong> or the <strong>default branch configurations</strong>.</p>
-<p>I will try to avoid using <em>build plan</em> in this article as it is a bit confusing. I will use :</p>
+<p>I will try to avoid using the term <em>build plan</em> in this article as it is a bit confusing. I will use :</p>
 <ul>
 <li>
 <p><em>default branch configuratoins</em> to indicate the default settings of a <em>build plan</em>;</p>
@@ -198,8 +206,8 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p><em>Build Project</em>: Similar to <em>Deployment Project</em>, it&rsquo;s a collection of <em>build plans</em>.</p>
-<h3 id="git">Git</h3>
-<p>From the basic assumption in pt. 3, all the repositories are using <a href="https://nvie.com/posts/a-successful-git-branching-model/">Gitflow</a>. I will use the following conventions when talking about the CI settings.</p>
+<h2 id="git">Git</h2>
+<p>From the basic assumption in the <a href="#cicd-principles">CI/CD principles, pt. 3</a> all the repositories are using <a href="https://nvie.com/posts/a-successful-git-branching-model/">Gitflow</a>. I will use the following conventions when talking about the CI settings.</p>
 <p><em>Default build branch</em>: git&rsquo;s <code>develop</code> branch.</p>
 <p><em>Build branch</em>: All the other git&rsquo;s branches, including <code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code>, <code>master</code></p>
 <p><em>Master branch</em>: git&rsquo;s <code>master</code> branch</p>
@@ -241,7 +249,7 @@ if (!doNotTrack) {
 ├── Production environment: for builds from master
 └── Pre-release environment: all other branches
 </code></pre><h3 id="websites">Websites</h3>
-<p>We have 2 web servers for production and other environments has a corresponding web server. All running IIS. On the other hand, some of the website are hosting under a sub-directory (as a sub-site).</p>
+<p>We have 2 web servers for production and other environments has a corresponding web server. All running IIS. On the other hand, some of the websites are hosting under a sub-directory (as a sub-site).</p>
 <p>Therefore, an <em>artifact</em> may goes to multiple destinations.</p>
 <p>In my design, 1 <em>deployment environment</em> responsibles for 1 destination (i.e. 1 IIS web server).</p>
 <p><img src="/img/notes-on-atlassian-bamboo/image-20200913190536806.png" alt="Bamboo website CD flow"></p>
@@ -269,6 +277,7 @@ if (!doNotTrack) {
 <li>Plus, I can just re-deploy to that particuler web server</li>
 </ul>
 <p>You can create a new <em>deployment environment</em> by cloning an existing one (from the same <em>deployment project</em> or from another one). Thus, this is not a tedious task.</p>
+<p>(I am not sure about the above observation and please do let me know if I got something wrong or there are any better solutions.)</p>
 <h5 id="my-decision">My decision</h5>
 <p>This is how I organize the <em>deployment project</em>:</p>
 <p><img src="/img/notes-on-atlassian-bamboo/image-20200913154337848.png" alt="Website deployment project setup"></p>
@@ -304,7 +313,7 @@ if (!doNotTrack) {
 <h5 id="note-on-release-branches">Note on <code>release</code> branches</h5>
 <p>I ususlly not using <code>release</code> branch. When I use that, I will set up a build branch <strong>manually</strong>, just like the <code>master</code>.</p>
 <h4 id="staging-configurations-staging">Staging configurations: <code>staging</code></h4>
-<p>Similar to the set up of <strong>production configurations</strong>. However, change the variables for the staging environment.</p>
+<p>Just like the set up of <strong>production configurations</strong>. However, change the variables for the staging environment.</p>
 <p><img src="/img/notes-on-atlassian-bamboo/image-20200920110535916.png" alt="Build branch configuration - Branch details"></p>
 <p>You may also need to override the <em>default branch configurations</em> under the <strong>Variables</strong> tab.</p>
 <p><img src="/img/notes-on-atlassian-bamboo/image-20200920110548520.png" alt="Build branch configuration - Variables"></p>
@@ -317,6 +326,7 @@ if (!doNotTrack) {
       <div class="c-pagination__ctrl">
         <div class="c-pagination__newer">
           
+          <a href="https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/">Newer</a>
           
         </div>
         <div class="c-pagination__older">

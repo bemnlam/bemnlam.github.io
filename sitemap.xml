@@ -3,48 +3,78 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bemnlam.github.io/tags/bamboo/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
+    <loc>https://bemnlam.github.io/tags/aws/</loc>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/categories/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/tags/continuous-delivery/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/tags/continuous-integration/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/categories/dev/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/ec2/</loc>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
+    <loc>https://bemnlam.github.io/tags/ovpn/</loc>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/posts/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/rdp/</loc>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</loc>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/tags/</loc>
-    <lastmod>2020-09-20T14:45:18+08:00</lastmod>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/tutorial/</loc>
+    <lastmod>2020-10-03T13:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/bamboo/</loc>
+    <lastmod>2020-10-03T12:06:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/continuous-delivery/</loc>
+    <lastmod>2020-10-03T12:06:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/continuous-integration/</loc>
+    <lastmod>2020-10-03T12:06:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</loc>
+    <lastmod>2020-10-03T12:06:24+08:00</lastmod>
   </url>
   
   <url>
@@ -64,11 +94,6 @@
   
   <url>
     <loc>https://bemnlam.github.io/tags/gravatar/</loc>
-    <lastmod>2020-07-18T12:01:56+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/tags/tutorial/</loc>
     <lastmod>2020-07-18T12:01:56+08:00</lastmod>
   </url>
   
