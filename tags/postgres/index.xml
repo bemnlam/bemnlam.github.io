@@ -19,9 +19,7 @@
       
       <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
+        <description>&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
 &lt;h2 id=&#34;situation&#34;&gt;Situation&lt;/h2&gt;
 &lt;p&gt;I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.&lt;/p&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
@@ -49,9 +47,7 @@
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;(this blog post also available on &lt;a href=&#34;https://dev.to/bemnlam/creating-a-user-with-limited-privileges-in-postgres-5ee7/edit&#34;&gt;dev.to&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     

@@ -19,9 +19,7 @@
       
       <guid>https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently I created a hugo blog and started writing articles (yes, that&amp;rsquo;s the blog you are reading). Later, I found that dev.to can &lt;a href=&#34;https://dev.to/settings/publishing-from-rss&#34;&gt;publish articles (as draft) from a RSS feed&lt;/a&gt;. In that way I don&amp;rsquo;t have to copy-and-paste my articles manually in order to publish the same item on dev.to!&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
   &lt;details open&gt;
@@ -85,9 +83,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In other words, that&amp;rsquo;s the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim&#34;&gt;&lt;code&gt;trim()&lt;/code&gt;&lt;/a&gt; in JavaScript. That&amp;rsquo;s the &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/system.string.trim&#34;&gt;&lt;code&gt;String.Trim()&lt;/code&gt;&lt;/a&gt; in C#.&lt;/p&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;The default RSS feed in Hugo site shows &lt;em&gt;article abstract&lt;/em&gt; only. By defining a custom &lt;code&gt;rss.xml&lt;/code&gt; template and replacing &lt;code&gt;{{ .Summary | html }}&lt;/code&gt; with &lt;code&gt;{{- .Content | html -}}&lt;/code&gt; in the &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; tag you will get the article&amp;rsquo;s full content in the re-generated RSS xml files.&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -98,9 +94,7 @@
       
       <guid>https://bemnlam.github.io/posts/welcome/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
+        <description>&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/name-of-the-new-post.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write your post. Back to &lt;code&gt;blog&lt;/code&gt; folder  and then&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo server -D
@@ -110,9 +104,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Push to remote &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Done.&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     

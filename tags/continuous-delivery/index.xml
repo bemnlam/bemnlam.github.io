@@ -19,16 +19,7 @@
       
       <guid>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</guid>
       
-        <media:thumbnail url="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />
-        <media:content url="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" medium="image">
-        
-            <media:title type="html">Photo by Jordan Merrick: https://unsplash.com/photos/gPEMUZHwal4</media:title>
-        
-        </media:content>
-      
-      
-        <description>
-          &lt;![CDATA[&lt;img src=&#34;https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;blockquote&gt;
+        <description>&lt;img src=&#34;https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;blockquote&gt;
 &lt;p&gt;This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;preface&#34;&gt;Preface&lt;/h1&gt;
@@ -229,9 +220,7 @@
 &lt;p&gt;You may also need to override the &lt;em&gt;default branch configurations&lt;/em&gt; under the &lt;strong&gt;Variables&lt;/strong&gt; tab.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200920110548520.png&#34; alt=&#34;Build branch configuration - Variables&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You can find these tabs under form the top menu: &lt;strong&gt;Build&lt;/strong&gt; &amp;gt; &lt;strong&gt;All build plans&lt;/strong&gt; &amp;gt; &lt;strong&gt;🖋&lt;/strong&gt; (right end of the plan) &amp;gt; (Choose the plan branch name).&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     

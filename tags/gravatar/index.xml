@@ -19,9 +19,7 @@
       
       <guid>https://bemnlam.github.io/posts/use-gravatar-everywhere/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h3 id=&#34;what-is-gravatar&#34;&gt;What is Gravatar&lt;/h3&gt;
+        <description>&lt;h3 id=&#34;what-is-gravatar&#34;&gt;What is Gravatar&lt;/h3&gt;
 &lt;p&gt;Your public profile on the internet, provided by Wordpress. See &lt;a href=&#34;https://en.gravatar.com/&#34;&gt;https://en.gravatar.com/&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;1-upload-an-image-to-your-gravatar-account&#34;&gt;1. Upload an image to your gravatar account&lt;/h3&gt;
 &lt;p&gt;If you don&amp;rsquo;t have the gravatar account, create one. Make sure that the email you used to create the account will be the email account you want to link your profile picture.&lt;/p&gt;
@@ -40,9 +38,7 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
 &lt;p&gt;use this image url in &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://gravatar.com/avatar/ca49930cff2f87bd37bfe71ce21467f?s=200&amp;#34;&lt;/span&gt; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And you are good to go!&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     

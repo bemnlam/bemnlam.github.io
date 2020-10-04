@@ -19,14 +19,7 @@
       
       <guid>https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid>
       
-        <media:thumbnail url="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />
-        <media:content url="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" medium="image">
-        
-        </media:content>
-      
-      
-        <description>
-          &lt;![CDATA[&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        <description>&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p&gt;
 &lt;p&gt;You need to create a AWS account: &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup&#34;&gt;https://portal.aws.amazon.com/billing/signup&lt;/a&gt;. You may need to provide your credit card information during the signup process.&lt;/p&gt;
 &lt;p&gt;Sign in to your AWS Account and go to the AWS EC2 Console: &lt;a href=&#34;https://aws.amazon.com/console/&#34;&gt;https://aws.amazon.com/console/&lt;/a&gt;&lt;/p&gt;
@@ -273,9 +266,7 @@ New clients can be added by running this script again.
 &lt;hr&gt;
 &lt;p&gt;Reference:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html&#34;&gt;https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html&lt;/a&gt;&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     

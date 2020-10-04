@@ -19,14 +19,7 @@
       
       <guid>https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid>
       
-        <media:thumbnail url="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />
-        <media:content url="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" medium="image">
-        
-        </media:content>
-      
-      
-        <description>
-          &lt;![CDATA[&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        <description>&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p&gt;
 &lt;p&gt;You need to create a AWS account: &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup&#34;&gt;https://portal.aws.amazon.com/billing/signup&lt;/a&gt;. You may need to provide your credit card information during the signup process.&lt;/p&gt;
 &lt;p&gt;Sign in to your AWS Account and go to the AWS EC2 Console: &lt;a href=&#34;https://aws.amazon.com/console/&#34;&gt;https://aws.amazon.com/console/&lt;/a&gt;&lt;/p&gt;
@@ -273,9 +266,7 @@ New clients can be added by running this script again.
 &lt;hr&gt;
 &lt;p&gt;Reference:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html&#34;&gt;https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html&lt;/a&gt;&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -286,16 +277,7 @@ New clients can be added by running this script again.
       
       <guid>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</guid>
       
-        <media:thumbnail url="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />
-        <media:content url="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" medium="image">
-        
-            <media:title type="html">Photo by Jordan Merrick: https://unsplash.com/photos/gPEMUZHwal4</media:title>
-        
-        </media:content>
-      
-      
-        <description>
-          &lt;![CDATA[&lt;img src=&#34;https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;blockquote&gt;
+        <description>&lt;img src=&#34;https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;blockquote&gt;
 &lt;p&gt;This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;preface&#34;&gt;Preface&lt;/h1&gt;
@@ -496,9 +478,7 @@ New clients can be added by running this script again.
 &lt;p&gt;You may also need to override the &lt;em&gt;default branch configurations&lt;/em&gt; under the &lt;strong&gt;Variables&lt;/strong&gt; tab.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200920110548520.png&#34; alt=&#34;Build branch configuration - Variables&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You can find these tabs under form the top menu: &lt;strong&gt;Build&lt;/strong&gt; &amp;gt; &lt;strong&gt;All build plans&lt;/strong&gt; &amp;gt; &lt;strong&gt;🖋&lt;/strong&gt; (right end of the plan) &amp;gt; (Choose the plan branch name).&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -509,14 +489,7 @@ New clients can be added by running this script again.
       
       <guid>https://bemnlam.github.io/posts/ruby-cheatsheet/</guid>
       
-        <media:thumbnail url="https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png" />
-        <media:content url="https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png" medium="image">
-        
-        </media:content>
-      
-      
-        <description>
-          &lt;![CDATA[&lt;img src=&#34;https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png&#34; /&gt;&lt;p&gt;This post contains many useful snippets for me when writing &lt;strong&gt;Ruby&lt;/strong&gt; scripts. I will keep updating this note in the future.&lt;/p&gt;
+        <description>&lt;img src=&#34;https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png&#34; /&gt;&lt;p&gt;This post contains many useful snippets for me when writing &lt;strong&gt;Ruby&lt;/strong&gt; scripts. I will keep updating this note in the future.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
   &lt;details open&gt;
     &lt;summary title=&#34;click to toggle table of contents.&#34;&gt;Table of Contents&lt;/summary&gt;
@@ -636,9 +609,7 @@ gem &amp;quot;mustache&amp;quot;, &amp;quot;~&amp;gt; 1.0&amp;quot;
         Path: ~/git/my-folder/lib/ruby/2.6.0/gems/ruby_http_client-3.5.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;p&gt;&lt;em&gt;(cover image from &lt;a href=&#34;https://dribbble.com/shots/2232375-Ruby&#34;&gt;this dribble&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -649,9 +620,7 @@ gem &amp;quot;mustache&amp;quot;, &amp;quot;~&amp;gt; 1.0&amp;quot;
       
       <guid>https://bemnlam.github.io/posts/use-gravatar-everywhere/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h3 id=&#34;what-is-gravatar&#34;&gt;What is Gravatar&lt;/h3&gt;
+        <description>&lt;h3 id=&#34;what-is-gravatar&#34;&gt;What is Gravatar&lt;/h3&gt;
 &lt;p&gt;Your public profile on the internet, provided by Wordpress. See &lt;a href=&#34;https://en.gravatar.com/&#34;&gt;https://en.gravatar.com/&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;1-upload-an-image-to-your-gravatar-account&#34;&gt;1. Upload an image to your gravatar account&lt;/h3&gt;
 &lt;p&gt;If you don&amp;rsquo;t have the gravatar account, create one. Make sure that the email you used to create the account will be the email account you want to link your profile picture.&lt;/p&gt;
@@ -670,9 +639,7 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
 &lt;p&gt;use this image url in &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://gravatar.com/avatar/ca49930cff2f87bd37bfe71ce21467f?s=200&amp;#34;&lt;/span&gt; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And you are good to go!&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -683,9 +650,7 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
       
       <guid>https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently I created a hugo blog and started writing articles (yes, that&amp;rsquo;s the blog you are reading). Later, I found that dev.to can &lt;a href=&#34;https://dev.to/settings/publishing-from-rss&#34;&gt;publish articles (as draft) from a RSS feed&lt;/a&gt;. In that way I don&amp;rsquo;t have to copy-and-paste my articles manually in order to publish the same item on dev.to!&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
   &lt;details open&gt;
@@ -749,9 +714,7 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In other words, that&amp;rsquo;s the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim&#34;&gt;&lt;code&gt;trim()&lt;/code&gt;&lt;/a&gt; in JavaScript. That&amp;rsquo;s the &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/system.string.trim&#34;&gt;&lt;code&gt;String.Trim()&lt;/code&gt;&lt;/a&gt; in C#.&lt;/p&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;The default RSS feed in Hugo site shows &lt;em&gt;article abstract&lt;/em&gt; only. By defining a custom &lt;code&gt;rss.xml&lt;/code&gt; template and replacing &lt;code&gt;{{ .Summary | html }}&lt;/code&gt; with &lt;code&gt;{{- .Content | html -}}&lt;/code&gt; in the &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; tag you will get the article&amp;rsquo;s full content in the re-generated RSS xml files.&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -762,9 +725,7 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
       
       <guid>https://bemnlam.github.io/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;blockquote&gt;
+        <description>&lt;blockquote&gt;
 &lt;p&gt;🚨 Note: This is not a technical reading. If you want to have some fun and practice your &lt;code&gt;ls&lt;/code&gt; and &lt;code&gt;cat&lt;/code&gt; skills, this article may suit you.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
@@ -939,9 +900,7 @@ December:Turquoise:Narcissus
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -952,9 +911,7 @@ December:Turquoise:Narcissus
       
       <guid>https://bemnlam.github.io/posts/battling-with-gulp-and-node/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;When I was building a website using &lt;code&gt;gulp@^3.9.0&lt;/code&gt; to compile sass on the build server with Node.js v12 installed, it failed.&lt;/p&gt;
 &lt;p&gt;Here are (part of) the errors shown in the console:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-systemverilog&#34; data-lang=&#34;systemverilog&#34;&gt;error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt;	gyp ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; node &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;v v12&lt;span style=&#34;color:#ae81ff&#34;&gt;.18.0&lt;/span&gt;
@@ -1048,9 +1005,7 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1061,9 +1016,7 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
       
       <guid>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error CS0122: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ThisAssembly&amp;#39;&lt;/span&gt; is inaccessible due to its protection level
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I tried to install the package across all the projects in the same solution. It didn&amp;rsquo;t work.&lt;/p&gt;
@@ -1095,9 +1048,7 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
 &lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/Nerdbank.GitVersioning/issues/404&#34;&gt;https://github.com/dotnet/Nerdbank.GitVersioning/issues/404&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h6 id=&#34;-cover-image-grace-hoppers-operational-logbook-for-the-harvard-mark-ii-computerhttpswwwbusinessinsidercomauharvard-mark-i-grace-hopper-bug-2015-7&#34;&gt;🖼 cover image: &lt;a href=&#34;https://www.businessinsider.com.au/harvard-mark-i-grace-hopper-bug-2015-7&#34;&gt;Grace Hopper’s operational logbook for the Harvard Mark II computer&lt;/a&gt;&lt;/h6&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1108,9 +1059,7 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
       
       <guid>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;I created a static website using &lt;strong&gt;MkDocs&lt;/strong&gt; and deployed to &lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;&lt;strong&gt;GitLab Pages&lt;/strong&gt;&lt;/a&gt;. This is what I did: &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/&#34;&gt;https://bemn-proof-of-concept.gitlab.io/mkdoc/&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
 &lt;ul&gt;
@@ -1300,9 +1249,7 @@ $ touch .gitlab-ci.yml
 &lt;hr&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;In this tutorial, we created a static site with custom theme, styles and js library by using MkDocs. After that, we set up a CI/CD pipeline on GitLab for building and deploying this static site to GitLab Pages.&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1313,9 +1260,7 @@ $ touch .gitlab-ci.yml
       
       <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
 &lt;p&gt;I built this &lt;strong&gt;MVC&lt;/strong&gt; web app using &lt;strong&gt;.NET Core 3.1&lt;/strong&gt; and deploy it as an IIS sub-site under the main website (which is a &lt;strong&gt;.NET Framework&lt;/strong&gt; web app running on the IIS).&lt;/p&gt;
 &lt;h3 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h3&gt;
@@ -1488,9 +1433,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;p&gt;&lt;a href=&#34;https://github.com/aspnet/Mvc/issues/4127&#34;&gt;What happened to the @helper directive in Razor ?&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/aspnet/Razor/issues/281&#34;&gt;Remove the @helper directive from Razor&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://dannyvanderkraan.wordpress.com/2016/04/19/asp-net-core-1-0-goodbye-html-helpers-and-hello-taghelpers/&#34;&gt;ASP.NET Core 1.0: Goodbye HTML helpers and hello TagHelpers!&lt;/a&gt;&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1501,9 +1444,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       
       <guid>https://bemnlam.github.io/posts/fantastic-beans-and-where-to-find-them/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;In short: I found some local shops which selling pretty good beans. In Hong Kong.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;During the 2020 pandamic, it&amp;rsquo;s not easy to buy beans overseas. However, it gave me a great opportunity to search for some good beans in Hong Kong. Plus, I have more time to stay at home and brew coffee as the company started the WFH policy from Feb.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
@@ -1618,9 +1559,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 
 &lt;h3 id=&#34;subscription-plans&#34;&gt;Subscription plans&lt;/h3&gt;
 &lt;p&gt;It also provides different coffee subscription plans. The &lt;a href=&#34;https://brewnotecoffee.com/&#34;&gt;website&lt;/a&gt; shows the details of the beans and the plans.&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1631,9 +1570,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       
       <guid>https://bemnlam.github.io/posts/a-note-on-ssl/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;p&gt;This is a note about the Linkedin learning course &lt;a href=&#34;https://www.linkedin.com/learning/ssl-certificates-for-web-developers&#34;&gt;SSL Certificates for Web Developers&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;This is a note about the Linkedin learning course &lt;a href=&#34;https://www.linkedin.com/learning/ssl-certificates-for-web-developers&#34;&gt;SSL Certificates for Web Developers&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;certificate-and-protocol&#34;&gt;Certificate and protocol&lt;/h2&gt;
 &lt;h3 id=&#34;what-are-ssltls-stands-for&#34;&gt;What are SSL/TLS stands for?&lt;/h3&gt;
 &lt;p&gt;They stands for &lt;em&gt;Secure Socket Layer&lt;/em&gt; and &lt;em&gt;Transport Layer Security&lt;/em&gt;. They are the protocol names.&lt;/p&gt;
@@ -1718,9 +1655,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1731,9 +1666,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       
       <guid>https://bemnlam.github.io/posts/brewing-coffee/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;p&gt;A note on how to brew coffee.&lt;/p&gt;
+        <description>&lt;p&gt;A note on how to brew coffee.&lt;/p&gt;
 &lt;h2 id=&#34;v60&#34;&gt;V60&lt;/h2&gt;
 &lt;p&gt;☕️ &lt;a href=&#34;https://www.youtube.com/watch?v=LmGKqzV7hQE&#34;&gt;How to Brew V60 with UK Brewers Cup Champion, Sang Ho Park | Comprehensive Guide&lt;/a&gt;&lt;/p&gt;
 
@@ -1747,9 +1680,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
   &lt;iframe src=&#34;https://www.youtube.com/embed/wmCW8xSWGZY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1760,9 +1691,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       
       <guid>https://bemnlam.github.io/posts/why-you-should-manage-your-energy-not-your-time/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
 &lt;p&gt;As a human being, &lt;strong&gt;managing our energy is more important&lt;/strong&gt; because this is a limited resources.&lt;/p&gt;
 &lt;p&gt;We may wrongly think that increasing working hours can do more. However, longer working hours leads more &lt;strong&gt;unfocus&lt;/strong&gt; time and brings negative effect to your work.&lt;/p&gt;
 &lt;p&gt;Surprisingly, having a monthly plan is better then a detailed daily plan. The later one demotivated people because we face &lt;strong&gt;inevitable distractions&lt;/strong&gt; daily.&lt;/p&gt;
@@ -1787,9 +1716,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;/blockquote&gt;
 &lt;h6 id=&#34;-reference&#34;&gt;🔗 reference:&lt;/h6&gt;
 &lt;p&gt;&lt;a href=&#34;https://getpocket.com/explore/item/why-you-should-manage-your-energy-not-your-time&#34;&gt;Why You Should Manage Your Energy, Not Your Time&lt;/a&gt;&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1800,9 +1727,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       
       <guid>https://bemnlam.github.io/posts/fredkins-paradox/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;-summary&#34;&gt;🎯 Summary&lt;/h2&gt;
 &lt;p&gt;好多時候難以取捨的選擇本身對自身所帶來的差異沒有想像中的嚴重。因為決策困難而不做決策反而會令自己損失更大。&lt;/p&gt;
 &lt;h2 id=&#34;-thoughts&#34;&gt;💡 Thoughts&lt;/h2&gt;
 &lt;p&gt;文章的總結提出了面對選擇困難的其中一個解決方向：以後悔/遺憾去做決定的考慮。&lt;/p&gt;
@@ -1823,9 +1748,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.techbang.com/posts/78437-fredkin-paradox-why-do-we-always-waste-time-on-inconsequential-decisions&#34;&gt;佛雷德金悖論：為什麼我們總浪費時間在無關緊要的決定上？&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1836,9 +1759,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       
       <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
+        <description>&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
 &lt;h2 id=&#34;situation&#34;&gt;Situation&lt;/h2&gt;
 &lt;p&gt;I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.&lt;/p&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
@@ -1866,9 +1787,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;(this blog post also available on &lt;a href=&#34;https://dev.to/bemnlam/creating-a-user-with-limited-privileges-in-postgres-5ee7/edit&#34;&gt;dev.to&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
@@ -1879,9 +1798,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
       
       <guid>https://bemnlam.github.io/posts/welcome/</guid>
       
-      
-        <description>
-          &lt;![CDATA[&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
+        <description>&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/name-of-the-new-post.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write your post. Back to &lt;code&gt;blog&lt;/code&gt; folder  and then&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo server -D
@@ -1891,9 +1808,7 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Push to remote &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Done.&lt;/p&gt;
-]]&gt;
-        </description>
-      
+</description>
       
     </item>
     
