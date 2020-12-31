@@ -38,7 +38,7 @@ googleAnalytics = "UA-169198494-1"
   icon_dark = "🌌"
   icon_light = "🌅"
   # Version for static resources
-  ver="20200920"
+  ver="20201231"
 
 [[menu.main]]
     name = "📖 blog"
