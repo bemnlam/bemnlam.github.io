@@ -14,10 +14,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 17:46:38 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 20:58:21 +0800</lastBuildDate>
     
 	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>barista</title>
+      <link>https://bemnlam.github.io/tags/barista/</link>
+      <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/barista/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>city-n-guilds</title>
+      <link>https://bemnlam.github.io/tags/city-n-guilds/</link>
+      <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/city-n-guilds/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>coffee</title>
+      <link>https://bemnlam.github.io/tags/coffee/</link>
+      <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
+      
+      <guid>https://bemnlam.github.io/tags/coffee/</guid>
+      
+        <description></description>
+      
+    </item>
     
     <item>
       <title>aws</title>
@@ -377,17 +410,6 @@
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
       <guid>https://bemnlam.github.io/tags/tag-helpers/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>coffee</title>
-      <link>https://bemnlam.github.io/tags/coffee/</link>
-      <pubDate>Thu, 11 Jun 2020 10:39:39 +0800</pubDate>
-      
-      <guid>https://bemnlam.github.io/tags/coffee/</guid>
       
         <description></description>
       
