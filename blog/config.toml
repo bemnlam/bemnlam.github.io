@@ -59,3 +59,8 @@ googleAnalytics = "UA-169198494-1"
     name = "🏷 tags"
     url = "/tags"
     weight = 4
+
+[[menu.main]]
+    name = "☕️ coffee lab"
+    url = "https://bemnlam.gitlab.io/coffee-lab/"
+    weight = 10
