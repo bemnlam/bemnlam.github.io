@@ -457,6 +457,98 @@ if (!doNotTrack) {
     </p>
   </footer>
 
+<div id="fastSearch">
+    <input id="searchInput" tabindex="0">
+    <ul id="searchResults">
+    </ul>
+</div>
+
+<script src="/js/fuse.js"></script> 
+<script src="/js/fastsearch.js"></script>
+
+<style>
+    #fastSearch {
+        visibility: hidden;
+        position: fixed;
+         
+        display: inline-block;
+         
+        padding: 15rem 5rem 5rem 5rem;
+        width: 100%;
+        top: 0;
+        opacity: 0.9;
+    }
+
+    #fastSearch input {
+        padding: 4px 10px;
+        width: 100%;
+        height: 2em;
+        font-size: 1.6rem;
+        font-weight: lighter;
+        outline: none;
+        border: none;
+        color: var(--bg-color);
+        background-color: var(--color-text);
+        text-align: left;
+        display: inline-block;
+    }
+
+    #searchResults li {
+        list-style: none;
+        margin-left: 0em;
+        background-color: var(--color-text);
+        color: var(--bg-color);
+        border-bottom: 1px dotted #000000cc;
+    }
+
+    #searchResults {
+        font-size: 0.8em;
+        visibility: inherit;
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+    }
+
+    #searchResults a {
+        color: var(--bg-color);
+        text-decoration: none !important;
+        padding: 10px;
+        display: inline-block;
+        width: 100%;
+    }
+
+    #searchResults a:hover,
+    a:focus {
+        outline: 0;
+        background-color: #666;
+        color: #fff;
+    }
+
+    #searchResults li .title {
+        display: inline-block;
+    }
+
+    #searchResults li .tag {
+        display: inline-block;
+        font-size: 0.9rem;
+        border: 1px solid var(--bg-color);
+        border-radius: .5rem;
+        margin-right: 0.25rem;
+        padding: .15rem;
+        vertical-align: text-bottom;
+        opacity: 0.9;
+    }
+
+    #searchResults .sc {
+        font-weight: lighter;
+        font-style: italic;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.9em;
+        opacity: 0.9;
+    }
+</style>
 </body>
 </html>
 

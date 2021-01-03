@@ -40,6 +40,9 @@ googleAnalytics = "UA-169198494-1"
   # Version for static resources
   ver="20201231"
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [[menu.main]]
     name = "📖 blog"
     url = "/"
