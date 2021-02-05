@@ -45,10 +45,10 @@
 &lt;li&gt;&lt;a href=&#34;#build-and-deploy&#34;&gt;Build and Deploy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclustion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;mkdocs-intro&#34;&gt;MkDocs {#intro}##&lt;/h2&gt;
+&lt;h2 id=&#34;intro&#34;&gt;MkDocs&lt;/h2&gt;
 &lt;p&gt;From &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&#39; official website&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MkDocs is a &lt;strong&gt;fast&lt;/strong&gt;, &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;downright gorgeous&lt;/strong&gt; static site generator that&amp;rsquo;s geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file.&lt;/p&gt;
@@ -89,7 +89,7 @@ INFO    -  Cleaning site directory
 INFO    -  Documentation built in 1.65 seconds
 &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;I &lt;span style=&#34;color:#ae81ff&#34;&gt;200612&lt;/span&gt; 23:30:19 server:334&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; Serving on http://127.0.0.1:8000
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And check it out at &lt;a href=&#34;http://127.0.0.1:8000&#34;&gt;http://127.0.0.1:8000&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/01_welcome.png&#34; alt=&#34;Running MkDocs&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/01_welcome.png&#34; alt=&#34;Running MkDocs&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;add-a-new-page&#34;&gt;Add a new page&lt;/h3&gt;
 &lt;h4 id=&#34;the-content&#34;&gt;The content&lt;/h4&gt;
 &lt;p&gt;Remember, all the documents should place under &lt;code&gt;docs&lt;/code&gt;. Let&amp;rsquo;s create an Overview page:&lt;/p&gt;
@@ -128,7 +128,7 @@ $ touch overview.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the site:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdocs serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will see MkDocs is dressing the amber Material Design theme.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/02_theming.png&#34; alt=&#34;Material Design theme with amber scheme&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/02_theming.png&#34; alt=&#34;Material Design theme with amber scheme&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;custom-resources&#34;&gt;Custom Resources&lt;/h3&gt;
 &lt;p&gt;Sometimes you may want to add custom CSS or JS. In MkDocs, you can do it by adding &lt;code&gt;extra_css&lt;/code&gt; and &lt;code&gt;extra_javascript&lt;/code&gt; sections in &lt;code&gt;mkdocs.yml&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;I created a &lt;code&gt;catalog&lt;/code&gt; page which contains a table written in markdown. Also, I want to apply &lt;a href=&#34;https://www.datatables.net/&#34;&gt;jQuery DataTables&lt;/a&gt; to make the table more interactive. Therefore, I added the related js libraries and related css file to MkDocs. You can see the result &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/catalog/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -166,7 +166,7 @@ $ touch site.js
     &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;table&amp;#39;&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;DataTable&lt;/span&gt;();
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Afer that, you should be able to see an interactive table in the catalog page.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/03_with-custom-resources.png&#34; alt=&#34;With jQuery Datatables&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/03_with-custom-resources.png&#34; alt=&#34;With jQuery Datatables&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;gitlab-pages&#34;&gt;GitLab Pages&lt;/h2&gt;
 &lt;p&gt;Create a GitLab repository under your personal space or a project group. The url will be something like &lt;code&gt;https://gitlab.com/{username or project group name}/{repo name}&lt;/code&gt;.&lt;/p&gt;
@@ -206,7 +206,7 @@ $ touch .gitlab-ci.yml
 &lt;h3 id=&#34;build-and-deploy&#34;&gt;Build and Deploy&lt;/h3&gt;
 &lt;p&gt;Push the code to GitLab and the site should build automatically. Check out the status of the build under &lt;strong&gt;CI/CD&lt;/strong&gt; &amp;ndash;&amp;gt;  &lt;strong&gt;Pipelines&lt;/strong&gt;.&lt;/p&gt;
 &lt;figure&gt;
-    &lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/04_gitlab-ci-cd-panel.png&#34;
+    &lt;img src=&#34;./img/04_gitlab-ci-cd-panel.png&#34;
          alt=&#34;CI/CD panel in GitLab&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;A green tag showing passed for each successfully build.&lt;/h4&gt;
         &lt;/figcaption&gt;

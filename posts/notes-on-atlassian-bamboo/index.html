@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>Notes on Atlassian Bamboo</title>
-  <meta property="og:title" content="Notes on Atlassian Bamboo" />
-  <meta name="twitter:title" content="Notes on Atlassian Bamboo" />
+  <title>Atlassian Bamboo: an Opinionated Approach</title>
+  <meta property="og:title" content="Atlassian Bamboo: an Opinionated Approach" />
+  <meta name="twitter:title" content="Atlassian Bamboo: an Opinionated Approach" />
   
 
   
@@ -81,7 +81,7 @@ if (!doNotTrack) {
 
 <article class="p-article">
   <header>
-    <h1>Notes on Atlassian Bamboo</h1>
+    <h1>Atlassian Bamboo: an Opinionated Approach</h1>
     <div>
       <div class="c-time">
         Posted on
@@ -175,11 +175,11 @@ if (!doNotTrack) {
 <li><em>Build</em> and</li>
 <li><em>Deploy</em>.</li>
 </ul>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200913141147305.png" alt="Build dropdown menu"></p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200913141246490.png" alt="Deploy dropdown menu"></p>
+<p><img src="./img/image-20200913141147305.png" alt="Build dropdown menu"></p>
+<p><img src="./img/image-20200913141246490.png" alt="Deploy dropdown menu"></p>
 <h2 id="deployment-cd">Deployment (CD)</h2>
 <p>Here is a typical <strong>deployment project summary</strong> looks like:</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200913132645203.png" alt="A typical deployment project"></p>
+<p><img src="./img/image-20200913132645203.png" alt="A typical deployment project"></p>
 <p>You can check this out by clicking <strong>Deploy</strong> &gt; <strong>All Deployment Projects</strong>. After that, choose one of the item on the list.</p>
 <h3 id="glossary">Glossary</h3>
 <p><em>Artifact</em>: The content built in the CI part.</p>
@@ -188,7 +188,7 @@ if (!doNotTrack) {
 <p><em>Deployment Project</em>: A collection of build plans.</p>
 <h2 id="build-ci">Build (CI)</h2>
 <p>Here is a typical build dashboard:</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200913130048805.png" alt="A typical build dashboard"></p>
+<p><img src="./img/image-20200913130048805.png" alt="A typical build dashboard"></p>
 <p>This is the default front page of Bamboo. You can also check this out by clicking <strong>Build</strong> &gt; <strong>All Build Plans</strong>.</p>
 <h3 id="glossary-1">Glossary</h3>
 <p><em>Build</em>: The build result of the default plan.</p>
@@ -212,11 +212,11 @@ if (!doNotTrack) {
 <p><em>Build branch</em>: All the other git&rsquo;s branches, including <code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code>, <code>master</code></p>
 <p><em>Master branch</em>: git&rsquo;s <code>master</code> branch</p>
 <p><em>Linked Repository</em>: Store all the git repository connection setups for later user in CI/CD steps. It&rsquo;s under <strong>⚙️ (Bamboo Administration)</strong> &gt; <strong>Linked repositories</strong>.</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200919094705047.png" alt="Bamboo Administration > Linked repositories"></p>
+<p><img src="./img/image-20200919094705047.png" alt="Bamboo Administration > Linked repositories"></p>
 <p>This is an example for a class library:</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200919093103200.png" alt="Plan branches in a class library build plan"></p>
+<p><img src="./img/image-20200919093103200.png" alt="Plan branches in a class library build plan"></p>
 <p>And this is an example for website:</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200919093317277.png" alt="Plan branches in a website build plan"></p>
+<p><img src="./img/image-20200919093317277.png" alt="Plan branches in a website build plan"></p>
 <p>Next, I will talk about how to <strong>design</strong> a CD flow, then a CI flow.</p>
 <h1 id="designing-a-cicd-workflow">Designing a CI/CD workflow</h1>
 <blockquote>
@@ -242,9 +242,9 @@ if (!doNotTrack) {
 <p>All the deployments in my team can be categorized in to 2 types: either a <strong>library</strong> (i.e. a nuget package) or a <strong>website</strong> (i.e. an IIS website).</p>
 <h3 id="nuget-packages">Nuget Packages</h3>
 <p>My team is using <a href="https://myget.org/">MyGet</a> to host private packages. So, there is only 1 destination for my <em>artifact</em> goes.</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200913153116958.png" alt="Bamboo class library CD flow"></p>
+<p><img src="./img/image-20200913153116958.png" alt="Bamboo class library CD flow"></p>
 <p>This is how I organize the <em>deployment project</em>:</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200913154357682.png" alt="Class library deployment project setup"></p>
+<p><img src="./img/image-20200913154357682.png" alt="Class library deployment project setup"></p>
 <pre><code>Deployment Project
 ├── Production environment: for builds from master
 └── Pre-release environment: all other branches
@@ -252,7 +252,7 @@ if (!doNotTrack) {
 <p>We have 2 web servers for production and other environments has a corresponding web server. All running IIS. On the other hand, some of the websites are hosting under a sub-directory (as a sub-site).</p>
 <p>Therefore, an <em>artifact</em> may goes to multiple destinations.</p>
 <p>In my design, 1 <em>deployment environment</em> responsibles for 1 destination (i.e. 1 IIS web server).</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200913190536806.png" alt="Bamboo website CD flow"></p>
+<p><img src="./img/image-20200913190536806.png" alt="Bamboo website CD flow"></p>
 <p>So you may ask: why not 1 deployment environment for 1 environment? Here&rsquo;s why:</p>
 <h4 id="1-to-1-mapping-of-deployment-environment-and-iis-website">1-to-1 mapping of <em>deployment environment</em> and <em>IIS website</em></h4>
 <h5 id="the-bad">The bad</h5>
@@ -280,7 +280,7 @@ if (!doNotTrack) {
 <p>(I am not sure about the above observation and please do let me know if I got something wrong or there are any better solutions.)</p>
 <h5 id="my-decision">My decision</h5>
 <p>This is how I organize the <em>deployment project</em>:</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200913154337848.png" alt="Website deployment project setup"></p>
+<p><img src="./img/image-20200913154337848.png" alt="Website deployment project setup"></p>
 <pre><code>Deployment Project
 ├── Production (A) environment: for builds from master / release
 ├── Production (B) environment: for builds from master / release
@@ -297,7 +297,7 @@ if (!doNotTrack) {
 </ul>
 <h4 id="planbranch-configurations">Plan/Branch configurations</h4>
 <p>(See the <a href="#default-configurations-develop">Websites</a> section.)</p>
-<p><img src="/img/notes-on-atlassian-bamboo/ci-cd-CI-Nuget.png" alt="Bamboo class library CI flow"></p>
+<p><img src="./img/ci-cd-CI-Nuget.png" alt="Bamboo class library CI flow"></p>
 <h3 id="websites-1">Websites</h3>
 <p>I need to build 2-3 kinds of <em>artifacts</em>:</p>
 <ul>
@@ -305,7 +305,7 @@ if (!doNotTrack) {
 <li>For <strong>Staging</strong> environment (this environment is not 24/7 and will be set up when necessary);</li>
 <li>For <strong>Production</strong> environment.</li>
 </ul>
-<p><img src="/img/notes-on-atlassian-bamboo/ci-cd-CI-IIS.png" alt="Bamboo website CI flow"></p>
+<p><img src="./img/ci-cd-CI-IIS.png" alt="Bamboo website CI flow"></p>
 <h4 id="default-configurations-develop">Default configurations: <code>develop</code></h4>
 <p>For the default settings in a <em>build plan</em>, always choose the <code>develop</code> as the main branch and allow Bamboo to create/remove all the <code>feature/*</code>, <code>hotfix/*</code> branches.</p>
 <h4 id="production-configurations-master">Production configurations: <code>master</code></h4>
@@ -314,9 +314,9 @@ if (!doNotTrack) {
 <p>I ususlly not using <code>release</code> branch. When I use that, I will set up a build branch <strong>manually</strong>, just like the <code>master</code>.</p>
 <h4 id="staging-configurations-staging">Staging configurations: <code>staging</code></h4>
 <p>Just like the set up of <strong>production configurations</strong>. However, change the variables for the staging environment.</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200920110535916.png" alt="Build branch configuration - Branch details"></p>
+<p><img src="./img/image-20200920110535916.png" alt="Build branch configuration - Branch details"></p>
 <p>You may also need to override the <em>default branch configurations</em> under the <strong>Variables</strong> tab.</p>
-<p><img src="/img/notes-on-atlassian-bamboo/image-20200920110548520.png" alt="Build branch configuration - Variables"></p>
+<p><img src="./img/image-20200920110548520.png" alt="Build branch configuration - Variables"></p>
 <p>You can find these tabs under form the top menu: <strong>Build</strong> &gt; <strong>All build plans</strong> &gt; <strong>🖋</strong> (right end of the plan) &gt; (Choose the plan branch name).</p>
 
   </section>

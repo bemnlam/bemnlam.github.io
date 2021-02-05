@@ -20,8 +20,8 @@
   <meta property="og:url" content="https://bemnlam.github.io/posts/set-up-cloudflare-for-route53-domains/" />
 
   
-  <meta property="og:image" content="https://bemnlam.github.io/img/set-up-cloudflare-for-route53-domains/thumbnail.jpg" />
-  <meta name="twitter:image" content="https://bemnlam.github.io/img/set-up-cloudflare-for-route53-domains/thumbnail.jpg" />
+  <meta property="og:image" content="https://bemnlam.github.io/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg" />
+  <meta name="twitter:image" content="https://bemnlam.github.io/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   
 
@@ -105,7 +105,7 @@ if (!doNotTrack) {
     </div>
   </header>
   
-    <img loading="lazy" src="/img/set-up-cloudflare-for-route53-domains/thumbnail.jpg" alt="thumbnail" class="p-article__thumbnail">
+    <img loading="lazy" src="/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg" alt="thumbnail" class="p-article__thumbnail">
   
   <section id="js-article" class="p-article__body">
     <h2 id="overview">Overview</h2>
@@ -142,7 +142,7 @@ if (!doNotTrack) {
 
 <h2 id="domain-registrar">Domain Registrar</h2>
 <p>In my opinion, <strong>domain registrar is the most confusing part when you configure Cloudflare</strong>. To check the details of your domain, use the <a href="https://lookup.icann.org/lookup"><strong>Domain Name Registration Data Lookup</strong></a>. Here is the lookup result of <code>gitlab.com</code>:</p>
-<p><img src="/img/set-up-cloudflare-for-route53-domains/image-20201231180715529.png" alt="image-20201231180715529"></p>
+<p><img src="./img/image-20201231180715529.png" alt="image-20201231180715529"></p>
 <p>The Registrar Information section contains the information where you should change the nameservers in the next step.</p>
 <h3 id="what-about-aws-route53">What about AWS Route53?</h3>
 <p>Route53 can be a domain registrar OR just managing the hosted zone. If you see AWS is the Registrar in this lookup, then you should update the config in AWS Route53.</p>
@@ -161,8 +161,8 @@ if (!doNotTrack) {
 <h2 id="cloudflare-account">Cloudflare Account</h2>
 <h3 id="add-a-domain">Add a domain</h3>
 <p>It&rsquo;s free to create a Cloudflare account: <a href="https://dash.cloudflare.com/sign-up">https://dash.cloudflare.com/sign-up</a>. Cloudflare also offer paid plans and I won&rsquo;t discuss them in this article.</p>
-<p><img src="/img/set-up-cloudflare-for-route53-domains/image-20201231175523687.png" alt="image-20201231175523687"></p>
-<p><img src="/img/set-up-cloudflare-for-route53-domains/image-20201231175540349.png" alt="image-20201231175540349"></p>
+<p><img src="./img/image-20201231175523687.png" alt="image-20201231175523687"></p>
+<p><img src="./img/image-20201231175540349.png" alt="image-20201231175540349"></p>
 <p>Choose the free plan and then click <strong>Continue</strong></p>
 <p>After that, Cloudflare will do a DNS scan for the domain you&rsquo;ve entered. Click <strong>Continue</strong>.</p>
 <blockquote>
@@ -170,7 +170,7 @@ if (!doNotTrack) {
 </blockquote>
 <h3 id="change-your-nameservers">Change your nameservers</h3>
 <p>The last step of setup is changing the nameservers. You will see the following instruction:</p>
-<p><img src="/img/set-up-cloudflare-for-route53-domains/image-20201231182416379.png" alt="image-20201231182416379"></p>
+<p><img src="./img/image-20201231182416379.png" alt="image-20201231182416379"></p>
 <h4 id="1-log-in-to-your-registrar-account">1. Log in to your registrar account</h4>
 <p>In the previous section, you should know which service provider is your domain registrar. Login to your domain registrar and find out the nameserver config. Then, remove the existing nameservers (the entries shown in step 1). For example:</p>
 <pre><code>ns1.mydomain.com
@@ -238,7 +238,7 @@ hans.ns.cloudflare.com
     <li class="p-related__item js-related__item">
       <a href="/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/"
         
-          style="background-image: url(https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg);"
+          style="background-image: url(https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg);"
         >
         <span>Set Up an AWS EC2 with Ubuntu GUI, RDP and more</span>
       </a>
@@ -247,7 +247,7 @@ hans.ns.cloudflare.com
     <li class="p-related__item js-related__item">
       <a href="/posts/use-gravatar-everywhere/"
         
-          style="background-image: url(https://bemnlam.github.io/img/use-gravatar-everywhere/cover-images.001.jpg);"
+          style="background-image: url(https://bemnlam.github.io/posts/use-gravatar-everywhere/cover-images.001.jpg);"
         >
         <span>Use Gravatar Everywhere</span>
       </a>
@@ -256,7 +256,7 @@ hans.ns.cloudflare.com
     <li class="p-related__item js-related__item">
       <a href="/posts/displaying-the-full-content-in-hugo-rss-feed/"
         
-          style="background-image: url(https://bemnlam.github.io/img/displaying-the-full-content-in-hugo-rss-feed/cover-images/cover-images.001.png);"
+          style="background-image: url(https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/cover-images/cover-images.001.png);"
         >
         <span>Displaying the Full Content in Hugo&#39;s RSS feed</span>
       </a>
@@ -274,7 +274,7 @@ hans.ns.cloudflare.com
     <li class="p-related__item js-related__item">
       <a href="/posts/a-tale-of-two-caches-redis-and-cache-helper/"
         
-          style="background-image: url(https://bemnlam.github.io/img/a-tale-of-two-caches-redis-and-cache-helper/thumbnail.png);"
+          style="background-image: url(https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/thumbnail.png);"
         >
         <span>A Tale of Two Caches: Redis and the cache helper</span>
       </a>

@@ -20,8 +20,8 @@
   <meta property="og:url" content="https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/" />
 
   
-  <meta property="og:image" content="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />
-  <meta name="twitter:image" content="https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />
+  <meta property="og:image" content="https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />
+  <meta name="twitter:image" content="https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   
 
@@ -107,7 +107,7 @@ if (!doNotTrack) {
     </div>
   </header>
   
-    <img loading="lazy" src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" alt="thumbnail" class="p-article__thumbnail">
+    <img loading="lazy" src="/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" alt="thumbnail" class="p-article__thumbnail">
   
   <section id="js-article" class="p-article__body">
     <h2 id="overview">Overview</h2>
@@ -160,18 +160,18 @@ if (!doNotTrack) {
 <h3 id="choose-the-os-instance-type-and-storage">Choose the OS, instance type and storage</h3>
 <p>Choose <strong>Services</strong> &gt; <strong>EC2</strong> from the menu. At the <strong>EC2 Dashboard</strong>, choose <strong>Instances</strong>.</p>
 <p>Click the <strong>Launch Instance</strong> and choose the suitable AMI (Amazon Machine Image). Here I choose a <code>t2.micro</code> instance with <code>Ubuntu Server 18.04 LTS</code> image. <strong>Remember also choose the suitable Storage</strong> as not all kinds of storage are free. In this example I set up a <code>30GB General Purpose</code> storage.</p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702183719536.png" alt="Image: Ubuntu Server 18.04 LTS"></p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702183754512.png" alt="Instance Type: t2.micro"></p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702183909326.png" alt="Click Review and Launch"></p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702183922739.png" alt="Storage: 30GB General Purpose"></p>
+<p><img src="./img/image-20200702183719536.png" alt="Image: Ubuntu Server 18.04 LTS"></p>
+<p><img src="./img/image-20200702183754512.png" alt="Instance Type: t2.micro"></p>
+<p><img src="./img/image-20200702183909326.png" alt="Click Review and Launch"></p>
+<p><img src="./img/image-20200702183922739.png" alt="Storage: 30GB General Purpose"></p>
 <h4 id="allow-ssh-and-rdp-connections">Allow SSH and RDP connections</h4>
 <p>Choose the security groups created in the previous step:</p>
-<p><img src="/img/image-20200702184007198.png" alt="Security Group: allow SSH and RDP"></p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702184046233.png" alt="image-20200702184046233"></p>
+<p><img src="./img/image-20200702184007198.png" alt="Security Group: allow SSH and RDP"></p>
+<p><img src="./img/image-20200702184046233.png" alt="image-20200702184046233"></p>
 <h3 id="create-and-download-a-pem-key-file">Create and download a <code>.pem</code> key file</h3>
 <p>You should create this key file. If you don&rsquo;t create this and link it to the instance, you will not be able to connect to the instance via SSH or RDP. Here we create a new key file named <code>ssh_private_key</code>.</p>
 <p>After that, click <strong>Download Key Pair</strong> and keep the key file save.</p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702184135610.png" alt="image-20200702184135610"></p>
+<p><img src="./img/image-20200702184135610.png" alt="image-20200702184135610"></p>
 <h5 id="do-a-chmod-on-the-key-file">Do a <code>chmod</code> on the key file</h5>
 <p>You need to make sure that the <code>ssh_private_key.pem</code> downloaded is able to execute. Run <code>chmod</code> to change the permission:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">❯ ll ~/Downloads/ | grep <span style="color:#e6db74">&#34;ssh_private_key.pem&#34;</span>
@@ -236,12 +236,12 @@ sudo apt-get install xrdp -y
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo passwd ubuntu
 </code></pre></div><h3 id="connect-to-ec2-via-remote-desktop">Connect to EC2 via remote desktop</h3>
 <p>For mac user, you need to download the <a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12">Microsoft Remote Desktop</a>. If you are using Windows, you should already have the Remote Desktop application preinstalled.</p>
-<p><a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12"><img src="/img/image-20201003143752732.png" alt="Download Microsoft Remote Desktop"></a>
-Launch the app and click <strong>Add PC</strong>:</p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702192027044.png" alt="Add PC in Microsoft Remote Desktop"></p>
-<p>Set the PC name (i.e. the DNS name of your machine):<img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702192128973.png" alt="Set PC name"></p>
+<p><a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12"><img src="./img/image-20201003143752732.png" alt="Download Microsoft Remote Desktop"></a></p>
+<p>Launch the app and click <strong>Add PC</strong>:</p>
+<p><img src="./img/image-20200702192027044.png" alt="Add PC in Microsoft Remote Desktop"></p>
+<p>Set the PC name (i.e. the DNS name of your machine):<img src="./img/image-20200702192128973.png" alt="Set PC name"></p>
 <p>Login with user <code>ubuntu</code> and the password you set in the previous step.</p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702192239827.png" alt="Connect"></p>
+<p><img src="./img/image-20200702192239827.png" alt="Connect"></p>
 <hr>
 <h2 id="bonus-materials">Bonus Materials</h2>
 <h3 id="1-install-additional-ibus-input-method">1. Install additional IBus input method</h3>
@@ -298,8 +298,8 @@ ubuntu@ip-172-31-4-8:~$
 </code></pre></div><p>After that, reboot the machine.</p>
 <h3 id="4-use-ec2-as-a-vpn-server">4. Use EC2 as a VPN server</h3>
 <p>Create a new security group allows all TCP and UDP inbound connections and add this security group to the EC2 instance:</p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702200459525.png" alt="EC2 instance inbound rules"></p>
-<p><img src="/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702200555846.png" alt="Assign a security group"></p>
+<p><img src="./img/image-20200702200459525.png" alt="EC2 instance inbound rules"></p>
+<p><img src="./img/image-20200702200555846.png" alt="Assign a security group"></p>
 <h4 id="install-openvpn-scripts">Install openvpn scripts</h4>
 <p><a href="https://github.com/Nyr/openvpn-install">This repo</a> contains scripts for VPN server set up and profile management. Install it into your EC2:</p>
 <p>Download the script:</p>
@@ -352,7 +352,7 @@ New clients can be added by running this script again.
 </code></pre></div><h4 id="connect-to-the-vpn">Connect to the VPN</h4>
 <p><a href="https://client.pritunl.com/">Pritunl Client</a> is a easy-to-use OpenVPN client. Downlaod and install it.</p>
 <p>Launch the client and click <strong>Import Profile</strong>:</p>
-<p><img src="/img/screenshot.png" alt="Import ovpn profile"></p>
+<p><img src="./img/screenshot.png" alt="Import ovpn profile"></p>
 <p>After that, click the burger menu of the profile and <strong>Connect</strong>.</p>
 <hr>
 <p>Reference:</p>
@@ -384,7 +384,7 @@ New clients can be added by running this script again.
     <li class="p-related__item js-related__item">
       <a href="/posts/use-gravatar-everywhere/"
         
-          style="background-image: url(https://bemnlam.github.io/img/use-gravatar-everywhere/cover-images.001.jpg);"
+          style="background-image: url(https://bemnlam.github.io/posts/use-gravatar-everywhere/cover-images.001.jpg);"
         >
         <span>Use Gravatar Everywhere</span>
       </a>
@@ -393,7 +393,7 @@ New clients can be added by running this script again.
     <li class="p-related__item js-related__item">
       <a href="/posts/displaying-the-full-content-in-hugo-rss-feed/"
         
-          style="background-image: url(https://bemnlam.github.io/img/displaying-the-full-content-in-hugo-rss-feed/cover-images/cover-images.001.png);"
+          style="background-image: url(https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/cover-images/cover-images.001.png);"
         >
         <span>Displaying the Full Content in Hugo&#39;s RSS feed</span>
       </a>
@@ -411,7 +411,7 @@ New clients can be added by running this script again.
     <li class="p-related__item js-related__item">
       <a href="/posts/a-tale-of-two-caches-redis-and-cache-helper/"
         
-          style="background-image: url(https://bemnlam.github.io/img/a-tale-of-two-caches-redis-and-cache-helper/thumbnail.png);"
+          style="background-image: url(https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/thumbnail.png);"
         >
         <span>A Tale of Two Caches: Redis and the cache helper</span>
       </a>

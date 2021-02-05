@@ -26,7 +26,7 @@
       
       <guid>https://bemnlam.github.io/posts/set-up-cloudflare-for-route53-domains/</guid>
       
-        <description>&lt;img src=&#34;https://bemnlam.github.io/img/set-up-cloudflare-for-route53-domains/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        <description>&lt;img src=&#34;https://bemnlam.github.io/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This article shows how to configure Cloudflare for an existing website using AWS Route53.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
   &lt;details open&gt;
@@ -60,7 +60,7 @@
 
 &lt;h2 id=&#34;domain-registrar&#34;&gt;Domain Registrar&lt;/h2&gt;
 &lt;p&gt;In my opinion, &lt;strong&gt;domain registrar is the most confusing part when you configure Cloudflare&lt;/strong&gt;. To check the details of your domain, use the &lt;a href=&#34;https://lookup.icann.org/lookup&#34;&gt;&lt;strong&gt;Domain Name Registration Data Lookup&lt;/strong&gt;&lt;/a&gt;. Here is the lookup result of &lt;code&gt;gitlab.com&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-cloudflare-for-route53-domains/image-20201231180715529.png&#34; alt=&#34;image-20201231180715529&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20201231180715529.png&#34; alt=&#34;image-20201231180715529&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The Registrar Information section contains the information where you should change the nameservers in the next step.&lt;/p&gt;
 &lt;h3 id=&#34;what-about-aws-route53&#34;&gt;What about AWS Route53?&lt;/h3&gt;
 &lt;p&gt;Route53 can be a domain registrar OR just managing the hosted zone. If you see AWS is the Registrar in this lookup, then you should update the config in AWS Route53.&lt;/p&gt;
@@ -79,8 +79,8 @@
 &lt;h2 id=&#34;cloudflare-account&#34;&gt;Cloudflare Account&lt;/h2&gt;
 &lt;h3 id=&#34;add-a-domain&#34;&gt;Add a domain&lt;/h3&gt;
 &lt;p&gt;It&amp;rsquo;s free to create a Cloudflare account: &lt;a href=&#34;https://dash.cloudflare.com/sign-up&#34;&gt;https://dash.cloudflare.com/sign-up&lt;/a&gt;. Cloudflare also offer paid plans and I won&amp;rsquo;t discuss them in this article.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-cloudflare-for-route53-domains/image-20201231175523687.png&#34; alt=&#34;image-20201231175523687&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-cloudflare-for-route53-domains/image-20201231175540349.png&#34; alt=&#34;image-20201231175540349&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20201231175523687.png&#34; alt=&#34;image-20201231175523687&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20201231175540349.png&#34; alt=&#34;image-20201231175540349&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Choose the free plan and then click &lt;strong&gt;Continue&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;After that, Cloudflare will do a DNS scan for the domain you&amp;rsquo;ve entered. Click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -88,7 +88,7 @@
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;change-your-nameservers&#34;&gt;Change your nameservers&lt;/h3&gt;
 &lt;p&gt;The last step of setup is changing the nameservers. You will see the following instruction:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-cloudflare-for-route53-domains/image-20201231182416379.png&#34; alt=&#34;image-20201231182416379&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20201231182416379.png&#34; alt=&#34;image-20201231182416379&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;1-log-in-to-your-registrar-account&#34;&gt;1. Log in to your registrar account&lt;/h4&gt;
 &lt;p&gt;In the previous section, you should know which service provider is your domain registrar. Login to your domain registrar and find out the nameserver config. Then, remove the existing nameservers (the entries shown in step 1). For example:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ns1.mydomain.com
@@ -140,7 +140,7 @@ hans.ns.cloudflare.com
       
       <guid>https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid>
       
-        <description>&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        <description>&lt;img src=&#34;https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p&gt;
 &lt;p&gt;You need to create a AWS account: &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup&#34;&gt;https://portal.aws.amazon.com/billing/signup&lt;/a&gt;. You may need to provide your credit card information during the signup process.&lt;/p&gt;
 &lt;p&gt;Sign in to your AWS Account and go to the AWS EC2 Console: &lt;a href=&#34;https://aws.amazon.com/console/&#34;&gt;https://aws.amazon.com/console/&lt;/a&gt;&lt;/p&gt;
@@ -190,18 +190,18 @@ hans.ns.cloudflare.com
 &lt;h3 id=&#34;choose-the-os-instance-type-and-storage&#34;&gt;Choose the OS, instance type and storage&lt;/h3&gt;
 &lt;p&gt;Choose &lt;strong&gt;Services&lt;/strong&gt; &amp;gt; &lt;strong&gt;EC2&lt;/strong&gt; from the menu. At the &lt;strong&gt;EC2 Dashboard&lt;/strong&gt;, choose &lt;strong&gt;Instances&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Click the &lt;strong&gt;Launch Instance&lt;/strong&gt; and choose the suitable AMI (Amazon Machine Image). Here I choose a &lt;code&gt;t2.micro&lt;/code&gt; instance with &lt;code&gt;Ubuntu Server 18.04 LTS&lt;/code&gt; image. &lt;strong&gt;Remember also choose the suitable Storage&lt;/strong&gt; as not all kinds of storage are free. In this example I set up a &lt;code&gt;30GB General Purpose&lt;/code&gt; storage.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702183719536.png&#34; alt=&#34;Image: Ubuntu Server 18.04 LTS&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702183754512.png&#34; alt=&#34;Instance Type: t2.micro&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702183909326.png&#34; alt=&#34;Click Review and Launch&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702183922739.png&#34; alt=&#34;Storage: 30GB General Purpose&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702183719536.png&#34; alt=&#34;Image: Ubuntu Server 18.04 LTS&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702183754512.png&#34; alt=&#34;Instance Type: t2.micro&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702183909326.png&#34; alt=&#34;Click Review and Launch&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702183922739.png&#34; alt=&#34;Storage: 30GB General Purpose&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;allow-ssh-and-rdp-connections&#34;&gt;Allow SSH and RDP connections&lt;/h4&gt;
 &lt;p&gt;Choose the security groups created in the previous step:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/image-20200702184007198.png&#34; alt=&#34;Security Group: allow SSH and RDP&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702184046233.png&#34; alt=&#34;image-20200702184046233&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702184007198.png&#34; alt=&#34;Security Group: allow SSH and RDP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702184046233.png&#34; alt=&#34;image-20200702184046233&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;create-and-download-a-pem-key-file&#34;&gt;Create and download a &lt;code&gt;.pem&lt;/code&gt; key file&lt;/h3&gt;
 &lt;p&gt;You should create this key file. If you don&amp;rsquo;t create this and link it to the instance, you will not be able to connect to the instance via SSH or RDP. Here we create a new key file named &lt;code&gt;ssh_private_key&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;After that, click &lt;strong&gt;Download Key Pair&lt;/strong&gt; and keep the key file save.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702184135610.png&#34; alt=&#34;image-20200702184135610&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702184135610.png&#34; alt=&#34;image-20200702184135610&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;do-a-chmod-on-the-key-file&#34;&gt;Do a &lt;code&gt;chmod&lt;/code&gt; on the key file&lt;/h5&gt;
 &lt;p&gt;You need to make sure that the &lt;code&gt;ssh_private_key.pem&lt;/code&gt; downloaded is able to execute. Run &lt;code&gt;chmod&lt;/code&gt; to change the permission:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;❯ ll ~/Downloads/ | grep &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span&gt;
@@ -266,12 +266,12 @@ sudo apt-get install xrdp -y
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo passwd ubuntu
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;connect-to-ec2-via-remote-desktop&#34;&gt;Connect to EC2 via remote desktop&lt;/h3&gt;
 &lt;p&gt;For mac user, you need to download the &lt;a href=&#34;https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12&#34;&gt;Microsoft Remote Desktop&lt;/a&gt;. If you are using Windows, you should already have the Remote Desktop application preinstalled.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12&#34;&gt;&lt;img src=&#34;https://bemnlam.github.io/img/image-20201003143752732.png&#34; alt=&#34;Download Microsoft Remote Desktop&#34;&gt;&lt;/a&gt;
-Launch the app and click &lt;strong&gt;Add PC&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702192027044.png&#34; alt=&#34;Add PC in Microsoft Remote Desktop&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Set the PC name (i.e. the DNS name of your machine):&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702192128973.png&#34; alt=&#34;Set PC name&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12&#34;&gt;&lt;img src=&#34;./img/image-20201003143752732.png&#34; alt=&#34;Download Microsoft Remote Desktop&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Launch the app and click &lt;strong&gt;Add PC&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702192027044.png&#34; alt=&#34;Add PC in Microsoft Remote Desktop&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Set the PC name (i.e. the DNS name of your machine):&lt;img src=&#34;./img/image-20200702192128973.png&#34; alt=&#34;Set PC name&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Login with user &lt;code&gt;ubuntu&lt;/code&gt; and the password you set in the previous step.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702192239827.png&#34; alt=&#34;Connect&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702192239827.png&#34; alt=&#34;Connect&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;bonus-materials&#34;&gt;Bonus Materials&lt;/h2&gt;
 &lt;h3 id=&#34;1-install-additional-ibus-input-method&#34;&gt;1. Install additional IBus input method&lt;/h3&gt;
@@ -328,8 +328,8 @@ ubuntu@ip-172-31-4-8:~$
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, reboot the machine.&lt;/p&gt;
 &lt;h3 id=&#34;4-use-ec2-as-a-vpn-server&#34;&gt;4. Use EC2 as a VPN server&lt;/h3&gt;
 &lt;p&gt;Create a new security group allows all TCP and UDP inbound connections and add this security group to the EC2 instance:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702200459525.png&#34; alt=&#34;EC2 instance inbound rules&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/image-20200702200555846.png&#34; alt=&#34;Assign a security group&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702200459525.png&#34; alt=&#34;EC2 instance inbound rules&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702200555846.png&#34; alt=&#34;Assign a security group&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;install-openvpn-scripts&#34;&gt;Install openvpn scripts&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/Nyr/openvpn-install&#34;&gt;This repo&lt;/a&gt; contains scripts for VPN server set up and profile management. Install it into your EC2:&lt;/p&gt;
 &lt;p&gt;Download the script:&lt;/p&gt;
@@ -382,7 +382,7 @@ New clients can be added by running this script again.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;connect-to-the-vpn&#34;&gt;Connect to the VPN&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://client.pritunl.com/&#34;&gt;Pritunl Client&lt;/a&gt; is a easy-to-use OpenVPN client. Downlaod and install it.&lt;/p&gt;
 &lt;p&gt;Launch the client and click &lt;strong&gt;Import Profile&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/screenshot.png&#34; alt=&#34;Import ovpn profile&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/screenshot.png&#34; alt=&#34;Import ovpn profile&#34;&gt;&lt;/p&gt;
 &lt;p&gt;After that, click the burger menu of the profile and &lt;strong&gt;Connect&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Reference:&lt;/p&gt;
@@ -392,7 +392,7 @@ New clients can be added by running this script again.
     </item>
     
     <item>
-      <title>Notes on Atlassian Bamboo</title>
+      <title>Atlassian Bamboo: an Opinionated Approach</title>
       <link>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</link>
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
@@ -456,11 +456,11 @@ New clients can be added by running this script again.
 &lt;li&gt;&lt;em&gt;Build&lt;/em&gt; and&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Deploy&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913141147305.png&#34; alt=&#34;Build dropdown menu&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913141246490.png&#34; alt=&#34;Deploy dropdown menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200913141147305.png&#34; alt=&#34;Build dropdown menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200913141246490.png&#34; alt=&#34;Deploy dropdown menu&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;deployment-cd&#34;&gt;Deployment (CD)&lt;/h2&gt;
 &lt;p&gt;Here is a typical &lt;strong&gt;deployment project summary&lt;/strong&gt; looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913132645203.png&#34; alt=&#34;A typical deployment project&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200913132645203.png&#34; alt=&#34;A typical deployment project&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You can check this out by clicking &lt;strong&gt;Deploy&lt;/strong&gt; &amp;gt; &lt;strong&gt;All Deployment Projects&lt;/strong&gt;. After that, choose one of the item on the list.&lt;/p&gt;
 &lt;h3 id=&#34;glossary&#34;&gt;Glossary&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Artifact&lt;/em&gt;: The content built in the CI part.&lt;/p&gt;
@@ -469,7 +469,7 @@ New clients can be added by running this script again.
 &lt;p&gt;&lt;em&gt;Deployment Project&lt;/em&gt;: A collection of build plans.&lt;/p&gt;
 &lt;h2 id=&#34;build-ci&#34;&gt;Build (CI)&lt;/h2&gt;
 &lt;p&gt;Here is a typical build dashboard:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913130048805.png&#34; alt=&#34;A typical build dashboard&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200913130048805.png&#34; alt=&#34;A typical build dashboard&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This is the default front page of Bamboo. You can also check this out by clicking &lt;strong&gt;Build&lt;/strong&gt; &amp;gt; &lt;strong&gt;All Build Plans&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;glossary-1&#34;&gt;Glossary&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Build&lt;/em&gt;: The build result of the default plan.&lt;/p&gt;
@@ -493,11 +493,11 @@ New clients can be added by running this script again.
 &lt;p&gt;&lt;em&gt;Build branch&lt;/em&gt;: All the other git&amp;rsquo;s branches, including &lt;code&gt;feature/*&lt;/code&gt;, &lt;code&gt;release/*&lt;/code&gt;, &lt;code&gt;hotfix/*&lt;/code&gt;, &lt;code&gt;master&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Master branch&lt;/em&gt;: git&amp;rsquo;s &lt;code&gt;master&lt;/code&gt; branch&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Linked Repository&lt;/em&gt;: Store all the git repository connection setups for later user in CI/CD steps. It&amp;rsquo;s under &lt;strong&gt;⚙️ (Bamboo Administration)&lt;/strong&gt; &amp;gt; &lt;strong&gt;Linked repositories&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200919094705047.png&#34; alt=&#34;Bamboo Administration &gt; Linked repositories&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200919094705047.png&#34; alt=&#34;Bamboo Administration &gt; Linked repositories&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This is an example for a class library:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200919093103200.png&#34; alt=&#34;Plan branches in a class library build plan&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200919093103200.png&#34; alt=&#34;Plan branches in a class library build plan&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And this is an example for website:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200919093317277.png&#34; alt=&#34;Plan branches in a website build plan&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200919093317277.png&#34; alt=&#34;Plan branches in a website build plan&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Next, I will talk about how to &lt;strong&gt;design&lt;/strong&gt; a CD flow, then a CI flow.&lt;/p&gt;
 &lt;h1 id=&#34;designing-a-cicd-workflow&#34;&gt;Designing a CI/CD workflow&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -523,9 +523,9 @@ New clients can be added by running this script again.
 &lt;p&gt;All the deployments in my team can be categorized in to 2 types: either a &lt;strong&gt;library&lt;/strong&gt; (i.e. a nuget package) or a &lt;strong&gt;website&lt;/strong&gt; (i.e. an IIS website).&lt;/p&gt;
 &lt;h3 id=&#34;nuget-packages&#34;&gt;Nuget Packages&lt;/h3&gt;
 &lt;p&gt;My team is using &lt;a href=&#34;https://myget.org/&#34;&gt;MyGet&lt;/a&gt; to host private packages. So, there is only 1 destination for my &lt;em&gt;artifact&lt;/em&gt; goes.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913153116958.png&#34; alt=&#34;Bamboo class library CD flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200913153116958.png&#34; alt=&#34;Bamboo class library CD flow&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This is how I organize the &lt;em&gt;deployment project&lt;/em&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913154357682.png&#34; alt=&#34;Class library deployment project setup&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200913154357682.png&#34; alt=&#34;Class library deployment project setup&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Deployment Project
 ├── Production environment: for builds from master
 └── Pre-release environment: all other branches
@@ -533,7 +533,7 @@ New clients can be added by running this script again.
 &lt;p&gt;We have 2 web servers for production and other environments has a corresponding web server. All running IIS. On the other hand, some of the websites are hosting under a sub-directory (as a sub-site).&lt;/p&gt;
 &lt;p&gt;Therefore, an &lt;em&gt;artifact&lt;/em&gt; may goes to multiple destinations.&lt;/p&gt;
 &lt;p&gt;In my design, 1 &lt;em&gt;deployment environment&lt;/em&gt; responsibles for 1 destination (i.e. 1 IIS web server).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913190536806.png&#34; alt=&#34;Bamboo website CD flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200913190536806.png&#34; alt=&#34;Bamboo website CD flow&#34;&gt;&lt;/p&gt;
 &lt;p&gt;So you may ask: why not 1 deployment environment for 1 environment? Here&amp;rsquo;s why:&lt;/p&gt;
 &lt;h4 id=&#34;1-to-1-mapping-of-deployment-environment-and-iis-website&#34;&gt;1-to-1 mapping of &lt;em&gt;deployment environment&lt;/em&gt; and &lt;em&gt;IIS website&lt;/em&gt;&lt;/h4&gt;
 &lt;h5 id=&#34;the-bad&#34;&gt;The bad&lt;/h5&gt;
@@ -561,7 +561,7 @@ New clients can be added by running this script again.
 &lt;p&gt;(I am not sure about the above observation and please do let me know if I got something wrong or there are any better solutions.)&lt;/p&gt;
 &lt;h5 id=&#34;my-decision&#34;&gt;My decision&lt;/h5&gt;
 &lt;p&gt;This is how I organize the &lt;em&gt;deployment project&lt;/em&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200913154337848.png&#34; alt=&#34;Website deployment project setup&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200913154337848.png&#34; alt=&#34;Website deployment project setup&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Deployment Project
 ├── Production (A) environment: for builds from master / release
 ├── Production (B) environment: for builds from master / release
@@ -578,7 +578,7 @@ New clients can be added by running this script again.
 &lt;/ul&gt;
 &lt;h4 id=&#34;planbranch-configurations&#34;&gt;Plan/Branch configurations&lt;/h4&gt;
 &lt;p&gt;(See the &lt;a href=&#34;#default-configurations-develop&#34;&gt;Websites&lt;/a&gt; section.)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/ci-cd-CI-Nuget.png&#34; alt=&#34;Bamboo class library CI flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/ci-cd-CI-Nuget.png&#34; alt=&#34;Bamboo class library CI flow&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;websites-1&#34;&gt;Websites&lt;/h3&gt;
 &lt;p&gt;I need to build 2-3 kinds of &lt;em&gt;artifacts&lt;/em&gt;:&lt;/p&gt;
 &lt;ul&gt;
@@ -586,7 +586,7 @@ New clients can be added by running this script again.
 &lt;li&gt;For &lt;strong&gt;Staging&lt;/strong&gt; environment (this environment is not 24/7 and will be set up when necessary);&lt;/li&gt;
 &lt;li&gt;For &lt;strong&gt;Production&lt;/strong&gt; environment.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/ci-cd-CI-IIS.png&#34; alt=&#34;Bamboo website CI flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/ci-cd-CI-IIS.png&#34; alt=&#34;Bamboo website CI flow&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;default-configurations-develop&#34;&gt;Default configurations: &lt;code&gt;develop&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;For the default settings in a &lt;em&gt;build plan&lt;/em&gt;, always choose the &lt;code&gt;develop&lt;/code&gt; as the main branch and allow Bamboo to create/remove all the &lt;code&gt;feature/*&lt;/code&gt;, &lt;code&gt;hotfix/*&lt;/code&gt; branches.&lt;/p&gt;
 &lt;h4 id=&#34;production-configurations-master&#34;&gt;Production configurations: &lt;code&gt;master&lt;/code&gt;&lt;/h4&gt;
@@ -595,9 +595,9 @@ New clients can be added by running this script again.
 &lt;p&gt;I ususlly not using &lt;code&gt;release&lt;/code&gt; branch. When I use that, I will set up a build branch &lt;strong&gt;manually&lt;/strong&gt;, just like the &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;staging-configurations-staging&#34;&gt;Staging configurations: &lt;code&gt;staging&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;Just like the set up of &lt;strong&gt;production configurations&lt;/strong&gt;. However, change the variables for the staging environment.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200920110535916.png&#34; alt=&#34;Build branch configuration - Branch details&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200920110535916.png&#34; alt=&#34;Build branch configuration - Branch details&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You may also need to override the &lt;em&gt;default branch configurations&lt;/em&gt; under the &lt;strong&gt;Variables&lt;/strong&gt; tab.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/notes-on-atlassian-bamboo/image-20200920110548520.png&#34; alt=&#34;Build branch configuration - Variables&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200920110548520.png&#34; alt=&#34;Build branch configuration - Variables&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You can find these tabs under form the top menu: &lt;strong&gt;Build&lt;/strong&gt; &amp;gt; &lt;strong&gt;All build plans&lt;/strong&gt; &amp;gt; &lt;strong&gt;🖋&lt;/strong&gt; (right end of the plan) &amp;gt; (Choose the plan branch name).&lt;/p&gt;
 </description>
       
@@ -1013,10 +1013,10 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
 &lt;li&gt;&lt;a href=&#34;#build-and-deploy&#34;&gt;Build and Deploy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclustion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;mkdocs-intro&#34;&gt;MkDocs {#intro}##&lt;/h2&gt;
+&lt;h2 id=&#34;intro&#34;&gt;MkDocs&lt;/h2&gt;
 &lt;p&gt;From &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&#39; official website&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MkDocs is a &lt;strong&gt;fast&lt;/strong&gt;, &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;downright gorgeous&lt;/strong&gt; static site generator that&amp;rsquo;s geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file.&lt;/p&gt;
@@ -1057,7 +1057,7 @@ INFO    -  Cleaning site directory
 INFO    -  Documentation built in 1.65 seconds
 &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;I &lt;span style=&#34;color:#ae81ff&#34;&gt;200612&lt;/span&gt; 23:30:19 server:334&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; Serving on http://127.0.0.1:8000
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And check it out at &lt;a href=&#34;http://127.0.0.1:8000&#34;&gt;http://127.0.0.1:8000&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/01_welcome.png&#34; alt=&#34;Running MkDocs&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/01_welcome.png&#34; alt=&#34;Running MkDocs&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;add-a-new-page&#34;&gt;Add a new page&lt;/h3&gt;
 &lt;h4 id=&#34;the-content&#34;&gt;The content&lt;/h4&gt;
 &lt;p&gt;Remember, all the documents should place under &lt;code&gt;docs&lt;/code&gt;. Let&amp;rsquo;s create an Overview page:&lt;/p&gt;
@@ -1096,7 +1096,7 @@ $ touch overview.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the site:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdocs serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will see MkDocs is dressing the amber Material Design theme.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/02_theming.png&#34; alt=&#34;Material Design theme with amber scheme&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/02_theming.png&#34; alt=&#34;Material Design theme with amber scheme&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;custom-resources&#34;&gt;Custom Resources&lt;/h3&gt;
 &lt;p&gt;Sometimes you may want to add custom CSS or JS. In MkDocs, you can do it by adding &lt;code&gt;extra_css&lt;/code&gt; and &lt;code&gt;extra_javascript&lt;/code&gt; sections in &lt;code&gt;mkdocs.yml&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;I created a &lt;code&gt;catalog&lt;/code&gt; page which contains a table written in markdown. Also, I want to apply &lt;a href=&#34;https://www.datatables.net/&#34;&gt;jQuery DataTables&lt;/a&gt; to make the table more interactive. Therefore, I added the related js libraries and related css file to MkDocs. You can see the result &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/catalog/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -1134,7 +1134,7 @@ $ touch site.js
     &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;table&amp;#39;&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;DataTable&lt;/span&gt;();
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Afer that, you should be able to see an interactive table in the catalog page.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/03_with-custom-resources.png&#34; alt=&#34;With jQuery Datatables&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/03_with-custom-resources.png&#34; alt=&#34;With jQuery Datatables&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;gitlab-pages&#34;&gt;GitLab Pages&lt;/h2&gt;
 &lt;p&gt;Create a GitLab repository under your personal space or a project group. The url will be something like &lt;code&gt;https://gitlab.com/{username or project group name}/{repo name}&lt;/code&gt;.&lt;/p&gt;
@@ -1174,7 +1174,7 @@ $ touch .gitlab-ci.yml
 &lt;h3 id=&#34;build-and-deploy&#34;&gt;Build and Deploy&lt;/h3&gt;
 &lt;p&gt;Push the code to GitLab and the site should build automatically. Check out the status of the build under &lt;strong&gt;CI/CD&lt;/strong&gt; &amp;ndash;&amp;gt;  &lt;strong&gt;Pipelines&lt;/strong&gt;.&lt;/p&gt;
 &lt;figure&gt;
-    &lt;img src=&#34;https://bemnlam.github.io/img/documentation-makes-easy-with-mkdocs/04_gitlab-ci-cd-panel.png&#34;
+    &lt;img src=&#34;./img/04_gitlab-ci-cd-panel.png&#34;
          alt=&#34;CI/CD panel in GitLab&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;A green tag showing passed for each successfully build.&lt;/h4&gt;
         &lt;/figcaption&gt;
