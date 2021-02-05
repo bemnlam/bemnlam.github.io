@@ -3,13 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bemnlam.github.io/tags/barista/</loc>
-    <lastmod>2020-12-31T20:58:21+08:00</lastmod>
+    <loc>https://bemnlam.github.io/categories/</loc>
+    <lastmod>2021-02-05T21:33:03+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bemnlam.github.io/categories/</loc>
-    <lastmod>2021-02-05T21:06:24+08:00</lastmod>
+    <loc>https://bemnlam.github.io/tags/hugo/</loc>
+    <lastmod>2021-02-05T21:33:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/posts/improving-my-blogging-workflow/</loc>
+    <lastmod>2021-02-05T21:33:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/categories/leisure/</loc>
+    <lastmod>2021-02-05T21:33:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/</loc>
+    <lastmod>2021-02-05T21:33:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/posts/</loc>
+    <lastmod>2021-02-05T21:33:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/</loc>
+    <lastmod>2021-02-05T21:33:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bemnlam.github.io/tags/barista/</loc>
+    <lastmod>2020-12-31T20:58:21+08:00</lastmod>
   </url>
   
   <url>
@@ -25,21 +55,6 @@
   <url>
     <loc>https://bemnlam.github.io/tags/coffee/</loc>
     <lastmod>2020-12-31T20:58:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/</loc>
-    <lastmod>2021-02-05T21:06:24+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/posts/</loc>
-    <lastmod>2021-02-05T21:06:24+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/tags/</loc>
-    <lastmod>2021-02-05T21:06:24+08:00</lastmod>
   </url>
   
   <url>
@@ -148,22 +163,12 @@
   </url>
   
   <url>
-    <loc>https://bemnlam.github.io/tags/hugo/</loc>
-    <lastmod>2020-07-03T09:53:38+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bemnlam.github.io/tags/rss/</loc>
     <lastmod>2020-07-03T09:53:38+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bemnlam.github.io/tags/easter-egg/</loc>
-    <lastmod>2020-06-28T22:30:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bemnlam.github.io/categories/leisure/</loc>
     <lastmod>2020-06-28T22:30:38+08:00</lastmod>
   </url>
   
