@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Categories on log from home</title>
-    <link>https://bemnlam.github.io/categories/</link>
+    <link>https://blog.eternalrecurrence.space/categories/</link>
     <description>Recent content in Categories on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of Categories on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Fri, 05 Feb 2021 21:33:03 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Leisure</title>
-      <link>https://bemnlam.github.io/categories/leisure/</link>
+      <link>https://blog.eternalrecurrence.space/categories/leisure/</link>
       <pubDate>Fri, 05 Feb 2021 21:33:03 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/categories/leisure/</guid>
+      <guid>https://blog.eternalrecurrence.space/categories/leisure/</guid>
       
         <description></description>
       
@@ -32,10 +32,10 @@
     
     <item>
       <title>Coffee</title>
-      <link>https://bemnlam.github.io/categories/coffee/</link>
+      <link>https://blog.eternalrecurrence.space/categories/coffee/</link>
       <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/categories/coffee/</guid>
+      <guid>https://blog.eternalrecurrence.space/categories/coffee/</guid>
       
         <description></description>
       
@@ -43,10 +43,10 @@
     
     <item>
       <title>Dev</title>
-      <link>https://bemnlam.github.io/categories/dev/</link>
+      <link>https://blog.eternalrecurrence.space/categories/dev/</link>
       <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/categories/dev/</guid>
+      <guid>https://blog.eternalrecurrence.space/categories/dev/</guid>
       
         <description></description>
       
@@ -54,10 +54,10 @@
     
     <item>
       <title>Readings</title>
-      <link>https://bemnlam.github.io/categories/readings/</link>
+      <link>https://blog.eternalrecurrence.space/categories/readings/</link>
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/categories/readings/</guid>
+      <guid>https://blog.eternalrecurrence.space/categories/readings/</guid>
       
         <description></description>
       

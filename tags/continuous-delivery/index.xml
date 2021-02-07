@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>continuous delivery on log from home</title>
-    <link>https://bemnlam.github.io/tags/continuous-delivery/</link>
+    <link>https://blog.eternalrecurrence.space/tags/continuous-delivery/</link>
     <description>Recent content in continuous delivery on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of continuous delivery on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sun, 20 Sep 2020 14:45:18 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Atlassian Bamboo: an Opinionated Approach</title>
-      <link>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</link>
+      <link>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</link>
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</guid>
       
         <description>&lt;img src=&#34;https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;blockquote&gt;
 &lt;p&gt;This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p&gt;

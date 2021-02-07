@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>postgres on log from home</title>
-    <link>https://bemnlam.github.io/tags/postgres/</link>
+    <link>https://blog.eternalrecurrence.space/tags/postgres/</link>
     <description>Recent content in postgres on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of postgres on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Thu, 16 Apr 2020 20:01:15 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating a User With Limited Privileges in Postgres</title>
-      <link>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
+      <link>https://blog.eternalrecurrence.space/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
       <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
       
         <description>&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
 &lt;h2 id=&#34;situation&#34;&gt;Situation&lt;/h2&gt;

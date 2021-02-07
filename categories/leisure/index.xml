@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Leisure on log from home</title>
-    <link>https://bemnlam.github.io/categories/leisure/</link>
+    <link>https://blog.eternalrecurrence.space/categories/leisure/</link>
     <description>Recent content in Leisure on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of Leisure on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Fri, 05 Feb 2021 21:33:03 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/categories/leisure/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/categories/leisure/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Improving My Blogging Workflow</title>
-      <link>https://bemnlam.github.io/posts/improving-my-blogging-workflow/</link>
+      <link>https://blog.eternalrecurrence.space/posts/improving-my-blogging-workflow/</link>
       <pubDate>Fri, 05 Feb 2021 21:33:03 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/improving-my-blogging-workflow/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/improving-my-blogging-workflow/</guid>
       
         <description>&lt;img src=&#34;https://images.unsplash.com/photo-1578861377460-c4536383d637?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
@@ -125,10 +125,10 @@
     
     <item>
       <title>The Perks of Being a Mac (or FreeBSD) user</title>
-      <link>https://bemnlam.github.io/posts/the-perks-of-being-a-mac-or-freebsd-user/</link>
+      <link>https://blog.eternalrecurrence.space/posts/the-perks-of-being-a-mac-or-freebsd-user/</link>
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid>
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;🚨 Note: This is not a technical reading. If you want to have some fun and practice your &lt;code&gt;ls&lt;/code&gt; and &lt;code&gt;cat&lt;/code&gt; skills, this article may suit you.&lt;/p&gt;

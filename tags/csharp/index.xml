@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>csharp on log from home</title>
-    <link>https://bemnlam.github.io/tags/csharp/</link>
+    <link>https://blog.eternalrecurrence.space/tags/csharp/</link>
     <description>Recent content in csharp on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of csharp on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Thu, 25 Jun 2020 17:10:24 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>🐞 GitVersioning: &#39;ThisAssembly&#39; Is Inaccessible Due to Its Protection Level</title>
-      <link>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</link>
+      <link>https://blog.eternalrecurrence.space/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</link>
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
       
         <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
@@ -64,10 +64,10 @@
     
     <item>
       <title>A Tale of Two Caches: Redis and the cache helper</title>
-      <link>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</link>
+      <link>https://blog.eternalrecurrence.space/posts/a-tale-of-two-caches-redis-and-cache-helper/</link>
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
       
         <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;

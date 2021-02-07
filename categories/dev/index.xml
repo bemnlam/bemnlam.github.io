@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Dev on log from home</title>
-    <link>https://bemnlam.github.io/categories/dev/</link>
+    <link>https://blog.eternalrecurrence.space/categories/dev/</link>
     <description>Recent content in Dev on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of Dev on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Thu, 31 Dec 2020 17:46:38 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Set Up Cloudflare for AWS Route 53 Domains</title>
-      <link>https://bemnlam.github.io/posts/set-up-cloudflare-for-route53-domains/</link>
+      <link>https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/</link>
       <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/set-up-cloudflare-for-route53-domains/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/</guid>
       
-        <description>&lt;img src=&#34;https://bemnlam.github.io/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        <description>&lt;img src=&#34;https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This article shows how to configure Cloudflare for an existing website using AWS Route53.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
   &lt;details open&gt;
@@ -135,12 +135,12 @@ hans.ns.cloudflare.com
     
     <item>
       <title>Set Up an AWS EC2 with Ubuntu GUI, RDP and more</title>
-      <link>https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</link>
+      <link>https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</link>
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid>
       
-        <description>&lt;img src=&#34;https://bemnlam.github.io/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        <description>&lt;img src=&#34;https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p&gt;
 &lt;p&gt;You need to create a AWS account: &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup&#34;&gt;https://portal.aws.amazon.com/billing/signup&lt;/a&gt;. You may need to provide your credit card information during the signup process.&lt;/p&gt;
 &lt;p&gt;Sign in to your AWS Account and go to the AWS EC2 Console: &lt;a href=&#34;https://aws.amazon.com/console/&#34;&gt;https://aws.amazon.com/console/&lt;/a&gt;&lt;/p&gt;
@@ -393,10 +393,10 @@ New clients can be added by running this script again.
     
     <item>
       <title>Atlassian Bamboo: an Opinionated Approach</title>
-      <link>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</link>
+      <link>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</link>
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/notes-on-atlassian-bamboo/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</guid>
       
         <description>&lt;img src=&#34;https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;blockquote&gt;
 &lt;p&gt;This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p&gt;
@@ -605,10 +605,10 @@ New clients can be added by running this script again.
     
     <item>
       <title>Ruby Cheatsheet</title>
-      <link>https://bemnlam.github.io/posts/ruby-cheatsheet/</link>
+      <link>https://blog.eternalrecurrence.space/posts/ruby-cheatsheet/</link>
       <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/ruby-cheatsheet/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/ruby-cheatsheet/</guid>
       
         <description>&lt;img src=&#34;https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png&#34; /&gt;&lt;p&gt;This post contains many useful snippets for me when writing &lt;strong&gt;Ruby&lt;/strong&gt; scripts. I will keep updating this note in the future.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
@@ -705,7 +705,7 @@ user_input &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gets
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## name: SomeStuffQuery ; result: SomeStuff&lt;/span&gt;
 result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/^(?&amp;lt;named_group&amp;gt;\w+)(Query|Command)$/&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;match(name)&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;:named_group&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If your regex is valid, you should be able to see the captured group and related content:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bemnlam.github.io/img/image-20200915091031591.png&#34; alt=&#34;image-20200915091031591&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.eternalrecurrence.space/img/image-20200915091031591.png&#34; alt=&#34;image-20200915091031591&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;-about-bundler-and-gemfile&#34;&gt;🏷 About Bundler and Gemfile&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://bundler.io/&#34;&gt;Bundler&lt;/a&gt; helps you to manage gem denendencies in your project.&lt;/p&gt;
 &lt;h3 id=&#34;install-bundler&#34;&gt;Install bundler&lt;/h3&gt;
@@ -736,10 +736,10 @@ gem &amp;quot;mustache&amp;quot;, &amp;quot;~&amp;gt; 1.0&amp;quot;
     
     <item>
       <title>Use Gravatar Everywhere</title>
-      <link>https://bemnlam.github.io/posts/use-gravatar-everywhere/</link>
+      <link>https://blog.eternalrecurrence.space/posts/use-gravatar-everywhere/</link>
       <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/use-gravatar-everywhere/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/use-gravatar-everywhere/</guid>
       
         <description>&lt;h3 id=&#34;what-is-gravatar&#34;&gt;What is Gravatar&lt;/h3&gt;
 &lt;p&gt;Your public profile on the internet, provided by Wordpress. See &lt;a href=&#34;https://en.gravatar.com/&#34;&gt;https://en.gravatar.com/&lt;/a&gt;.&lt;/p&gt;
@@ -766,10 +766,10 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
     
     <item>
       <title>Displaying the Full Content in Hugo&#39;s RSS feed</title>
-      <link>https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/</link>
+      <link>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</link>
       <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
       
         <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently I created a hugo blog and started writing articles (yes, that&amp;rsquo;s the blog you are reading). Later, I found that dev.to can &lt;a href=&#34;https://dev.to/settings/publishing-from-rss&#34;&gt;publish articles (as draft) from a RSS feed&lt;/a&gt;. In that way I don&amp;rsquo;t have to copy-and-paste my articles manually in order to publish the same item on dev.to!&lt;/p&gt;
@@ -841,10 +841,10 @@ MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;
     
     <item>
       <title>🐞 Battling With Gulp and Node</title>
-      <link>https://bemnlam.github.io/posts/battling-with-gulp-and-node/</link>
+      <link>https://blog.eternalrecurrence.space/posts/battling-with-gulp-and-node/</link>
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/battling-with-gulp-and-node/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/battling-with-gulp-and-node/</guid>
       
         <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;When I was building a website using &lt;code&gt;gulp@^3.9.0&lt;/code&gt; to compile sass on the build server with Node.js v12 installed, it failed.&lt;/p&gt;
@@ -946,10 +946,10 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
     
     <item>
       <title>🐞 GitVersioning: &#39;ThisAssembly&#39; Is Inaccessible Due to Its Protection Level</title>
-      <link>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</link>
+      <link>https://blog.eternalrecurrence.space/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</link>
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
       
         <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
 &lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
@@ -989,10 +989,10 @@ error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#
     
     <item>
       <title>Documentation Makes Easy With MkDocs and GitLab Pages</title>
-      <link>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</link>
+      <link>https://blog.eternalrecurrence.space/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</link>
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid>
       
         <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;I created a static website using &lt;strong&gt;MkDocs&lt;/strong&gt; and deployed to &lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;&lt;strong&gt;GitLab Pages&lt;/strong&gt;&lt;/a&gt;. This is what I did: &lt;a href=&#34;https://bemn-proof-of-concept.gitlab.io/mkdoc/&#34;&gt;https://bemn-proof-of-concept.gitlab.io/mkdoc/&lt;/a&gt;.&lt;/p&gt;
@@ -1190,10 +1190,10 @@ $ touch .gitlab-ci.yml
     
     <item>
       <title>A Tale of Two Caches: Redis and the cache helper</title>
-      <link>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</link>
+      <link>https://blog.eternalrecurrence.space/posts/a-tale-of-two-caches-redis-and-cache-helper/</link>
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid>
       
         <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p&gt;
@@ -1374,10 +1374,10 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
     
     <item>
       <title>A Note on SSL Certificate</title>
-      <link>https://bemnlam.github.io/posts/a-note-on-ssl/</link>
+      <link>https://blog.eternalrecurrence.space/posts/a-note-on-ssl/</link>
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/a-note-on-ssl/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/a-note-on-ssl/</guid>
       
         <description>&lt;p&gt;This is a note about the Linkedin learning course &lt;a href=&#34;https://www.linkedin.com/learning/ssl-certificates-for-web-developers&#34;&gt;SSL Certificates for Web Developers&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;certificate-and-protocol&#34;&gt;Certificate and protocol&lt;/h2&gt;
@@ -1470,10 +1470,10 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
     
     <item>
       <title>Creating a User With Limited Privileges in Postgres</title>
-      <link>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
+      <link>https://blog.eternalrecurrence.space/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
       <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
       
         <description>&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
 &lt;h2 id=&#34;situation&#34;&gt;Situation&lt;/h2&gt;
@@ -1509,10 +1509,10 @@ services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(red
     
     <item>
       <title>How to add a new Hugo blog post</title>
-      <link>https://bemnlam.github.io/posts/welcome/</link>
+      <link>https://blog.eternalrecurrence.space/posts/welcome/</link>
       <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/welcome/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/welcome/</guid>
       
         <description>&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/name-of-the-new-post.md

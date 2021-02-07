@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>v60 on log from home</title>
-    <link>https://bemnlam.github.io/tags/v60/</link>
+    <link>https://blog.eternalrecurrence.space/tags/v60/</link>
     <description>Recent content in v60 on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of v60 on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sun, 17 May 2020 21:10:25 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/v60/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/tags/v60/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>☕️ Brewing Coffee</title>
-      <link>https://bemnlam.github.io/posts/brewing-coffee/</link>
+      <link>https://blog.eternalrecurrence.space/posts/brewing-coffee/</link>
       <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/brewing-coffee/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/brewing-coffee/</guid>
       
         <description>&lt;p&gt;A note on how to brew coffee.&lt;/p&gt;
 &lt;h2 id=&#34;v60&#34;&gt;V60&lt;/h2&gt;

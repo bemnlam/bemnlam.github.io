@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>gravatar on log from home</title>
-    <link>https://bemnlam.github.io/tags/gravatar/</link>
+    <link>https://blog.eternalrecurrence.space/tags/gravatar/</link>
     <description>Recent content in gravatar on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of gravatar on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sat, 18 Jul 2020 12:01:56 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/gravatar/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/tags/gravatar/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Use Gravatar Everywhere</title>
-      <link>https://bemnlam.github.io/posts/use-gravatar-everywhere/</link>
+      <link>https://blog.eternalrecurrence.space/posts/use-gravatar-everywhere/</link>
       <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/use-gravatar-everywhere/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/use-gravatar-everywhere/</guid>
       
         <description>&lt;h3 id=&#34;what-is-gravatar&#34;&gt;What is Gravatar&lt;/h3&gt;
 &lt;p&gt;Your public profile on the internet, provided by Wordpress. See &lt;a href=&#34;https://en.gravatar.com/&#34;&gt;https://en.gravatar.com/&lt;/a&gt;.&lt;/p&gt;

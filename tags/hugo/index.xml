@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>hugo on log from home</title>
-    <link>https://bemnlam.github.io/tags/hugo/</link>
+    <link>https://blog.eternalrecurrence.space/tags/hugo/</link>
     <description>Recent content in hugo on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of hugo on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Fri, 05 Feb 2021 21:33:03 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Improving My Blogging Workflow</title>
-      <link>https://bemnlam.github.io/posts/improving-my-blogging-workflow/</link>
+      <link>https://blog.eternalrecurrence.space/posts/improving-my-blogging-workflow/</link>
       <pubDate>Fri, 05 Feb 2021 21:33:03 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/improving-my-blogging-workflow/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/improving-my-blogging-workflow/</guid>
       
         <description>&lt;img src=&#34;https://images.unsplash.com/photo-1578861377460-c4536383d637?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
@@ -125,10 +125,10 @@
     
     <item>
       <title>Displaying the Full Content in Hugo&#39;s RSS feed</title>
-      <link>https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/</link>
+      <link>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</link>
       <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
       
         <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently I created a hugo blog and started writing articles (yes, that&amp;rsquo;s the blog you are reading). Later, I found that dev.to can &lt;a href=&#34;https://dev.to/settings/publishing-from-rss&#34;&gt;publish articles (as draft) from a RSS feed&lt;/a&gt;. In that way I don&amp;rsquo;t have to copy-and-paste my articles manually in order to publish the same item on dev.to!&lt;/p&gt;
@@ -200,10 +200,10 @@
     
     <item>
       <title>How to add a new Hugo blog post</title>
-      <link>https://bemnlam.github.io/posts/welcome/</link>
+      <link>https://blog.eternalrecurrence.space/posts/welcome/</link>
       <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/welcome/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/welcome/</guid>
       
         <description>&lt;p&gt;Go to &lt;code&gt;blog&lt;/code&gt; folder&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/name-of-the-new-post.md

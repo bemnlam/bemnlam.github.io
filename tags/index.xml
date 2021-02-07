@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Tags on log from home</title>
-    <link>https://bemnlam.github.io/tags/</link>
+    <link>https://blog.eternalrecurrence.space/tags/</link>
     <description>Recent content in Tags on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of Tags on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Fri, 05 Feb 2021 21:33:03 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hugo</title>
-      <link>https://bemnlam.github.io/tags/hugo/</link>
+      <link>https://blog.eternalrecurrence.space/tags/hugo/</link>
       <pubDate>Fri, 05 Feb 2021 21:33:03 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/hugo/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/hugo/</guid>
       
         <description></description>
       
@@ -32,10 +32,10 @@
     
     <item>
       <title>barista</title>
-      <link>https://bemnlam.github.io/tags/barista/</link>
+      <link>https://blog.eternalrecurrence.space/tags/barista/</link>
       <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/barista/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/barista/</guid>
       
         <description></description>
       
@@ -43,10 +43,10 @@
     
     <item>
       <title>city-n-guilds</title>
-      <link>https://bemnlam.github.io/tags/city-n-guilds/</link>
+      <link>https://blog.eternalrecurrence.space/tags/city-n-guilds/</link>
       <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/city-n-guilds/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/city-n-guilds/</guid>
       
         <description></description>
       
@@ -54,10 +54,10 @@
     
     <item>
       <title>coffee</title>
-      <link>https://bemnlam.github.io/tags/coffee/</link>
+      <link>https://blog.eternalrecurrence.space/tags/coffee/</link>
       <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/coffee/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/coffee/</guid>
       
         <description></description>
       
@@ -65,10 +65,10 @@
     
     <item>
       <title>aws</title>
-      <link>https://bemnlam.github.io/tags/aws/</link>
+      <link>https://blog.eternalrecurrence.space/tags/aws/</link>
       <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/aws/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/aws/</guid>
       
         <description></description>
       
@@ -76,10 +76,10 @@
     
     <item>
       <title>cloudflare</title>
-      <link>https://bemnlam.github.io/tags/cloudflare/</link>
+      <link>https://blog.eternalrecurrence.space/tags/cloudflare/</link>
       <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/cloudflare/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/cloudflare/</guid>
       
         <description></description>
       
@@ -87,10 +87,10 @@
     
     <item>
       <title>route53</title>
-      <link>https://bemnlam.github.io/tags/route53/</link>
+      <link>https://blog.eternalrecurrence.space/tags/route53/</link>
       <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/route53/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/route53/</guid>
       
         <description></description>
       
@@ -98,10 +98,10 @@
     
     <item>
       <title>tutorial</title>
-      <link>https://bemnlam.github.io/tags/tutorial/</link>
+      <link>https://blog.eternalrecurrence.space/tags/tutorial/</link>
       <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/tutorial/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/tutorial/</guid>
       
         <description></description>
       
@@ -109,10 +109,10 @@
     
     <item>
       <title>ec2</title>
-      <link>https://bemnlam.github.io/tags/ec2/</link>
+      <link>https://blog.eternalrecurrence.space/tags/ec2/</link>
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/ec2/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/ec2/</guid>
       
         <description></description>
       
@@ -120,10 +120,10 @@
     
     <item>
       <title>ovpn</title>
-      <link>https://bemnlam.github.io/tags/ovpn/</link>
+      <link>https://blog.eternalrecurrence.space/tags/ovpn/</link>
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/ovpn/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/ovpn/</guid>
       
         <description></description>
       
@@ -131,10 +131,10 @@
     
     <item>
       <title>rdp</title>
-      <link>https://bemnlam.github.io/tags/rdp/</link>
+      <link>https://blog.eternalrecurrence.space/tags/rdp/</link>
       <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/rdp/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/rdp/</guid>
       
         <description></description>
       
@@ -142,10 +142,10 @@
     
     <item>
       <title>Bamboo</title>
-      <link>https://bemnlam.github.io/tags/bamboo/</link>
+      <link>https://blog.eternalrecurrence.space/tags/bamboo/</link>
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/bamboo/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/bamboo/</guid>
       
         <description></description>
       
@@ -153,10 +153,10 @@
     
     <item>
       <title>continuous delivery</title>
-      <link>https://bemnlam.github.io/tags/continuous-delivery/</link>
+      <link>https://blog.eternalrecurrence.space/tags/continuous-delivery/</link>
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/continuous-delivery/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/continuous-delivery/</guid>
       
         <description></description>
       
@@ -164,10 +164,10 @@
     
     <item>
       <title>continuous integration</title>
-      <link>https://bemnlam.github.io/tags/continuous-integration/</link>
+      <link>https://blog.eternalrecurrence.space/tags/continuous-integration/</link>
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/continuous-integration/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/continuous-integration/</guid>
       
         <description></description>
       
@@ -175,10 +175,10 @@
     
     <item>
       <title>cheatsheet</title>
-      <link>https://bemnlam.github.io/tags/cheatsheet/</link>
+      <link>https://blog.eternalrecurrence.space/tags/cheatsheet/</link>
       <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/cheatsheet/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/cheatsheet/</guid>
       
         <description></description>
       
@@ -186,10 +186,10 @@
     
     <item>
       <title>ruby</title>
-      <link>https://bemnlam.github.io/tags/ruby/</link>
+      <link>https://blog.eternalrecurrence.space/tags/ruby/</link>
       <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/ruby/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/ruby/</guid>
       
         <description></description>
       
@@ -197,10 +197,10 @@
     
     <item>
       <title>gravatar</title>
-      <link>https://bemnlam.github.io/tags/gravatar/</link>
+      <link>https://blog.eternalrecurrence.space/tags/gravatar/</link>
       <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/gravatar/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/gravatar/</guid>
       
         <description></description>
       
@@ -208,10 +208,10 @@
     
     <item>
       <title>rss</title>
-      <link>https://bemnlam.github.io/tags/rss/</link>
+      <link>https://blog.eternalrecurrence.space/tags/rss/</link>
       <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/rss/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/rss/</guid>
       
         <description></description>
       
@@ -219,10 +219,10 @@
     
     <item>
       <title>easter-egg</title>
-      <link>https://bemnlam.github.io/tags/easter-egg/</link>
+      <link>https://blog.eternalrecurrence.space/tags/easter-egg/</link>
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/easter-egg/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/easter-egg/</guid>
       
         <description></description>
       
@@ -230,10 +230,10 @@
     
     <item>
       <title>mac</title>
-      <link>https://bemnlam.github.io/tags/mac/</link>
+      <link>https://blog.eternalrecurrence.space/tags/mac/</link>
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/mac/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/mac/</guid>
       
         <description></description>
       
@@ -241,10 +241,10 @@
     
     <item>
       <title>gulp</title>
-      <link>https://bemnlam.github.io/tags/gulp/</link>
+      <link>https://blog.eternalrecurrence.space/tags/gulp/</link>
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/gulp/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/gulp/</guid>
       
         <description></description>
       
@@ -252,10 +252,10 @@
     
     <item>
       <title>gulp-sass</title>
-      <link>https://bemnlam.github.io/tags/gulp-sass/</link>
+      <link>https://blog.eternalrecurrence.space/tags/gulp-sass/</link>
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/gulp-sass/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/gulp-sass/</guid>
       
         <description></description>
       
@@ -263,10 +263,10 @@
     
     <item>
       <title>node-sass</title>
-      <link>https://bemnlam.github.io/tags/node-sass/</link>
+      <link>https://blog.eternalrecurrence.space/tags/node-sass/</link>
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/node-sass/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/node-sass/</guid>
       
         <description></description>
       
@@ -274,10 +274,10 @@
     
     <item>
       <title>nodejs</title>
-      <link>https://bemnlam.github.io/tags/nodejs/</link>
+      <link>https://blog.eternalrecurrence.space/tags/nodejs/</link>
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/nodejs/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/nodejs/</guid>
       
         <description></description>
       
@@ -285,10 +285,10 @@
     
     <item>
       <title>pest-control</title>
-      <link>https://bemnlam.github.io/tags/pest-control/</link>
+      <link>https://blog.eternalrecurrence.space/tags/pest-control/</link>
       <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/pest-control/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/pest-control/</guid>
       
         <description></description>
       
@@ -296,10 +296,10 @@
     
     <item>
       <title>.NET</title>
-      <link>https://bemnlam.github.io/tags/.net/</link>
+      <link>https://blog.eternalrecurrence.space/tags/.net/</link>
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/.net/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/.net/</guid>
       
         <description></description>
       
@@ -307,10 +307,10 @@
     
     <item>
       <title>csharp</title>
-      <link>https://bemnlam.github.io/tags/csharp/</link>
+      <link>https://blog.eternalrecurrence.space/tags/csharp/</link>
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/csharp/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/csharp/</guid>
       
         <description></description>
       
@@ -318,10 +318,10 @@
     
     <item>
       <title>nuget</title>
-      <link>https://bemnlam.github.io/tags/nuget/</link>
+      <link>https://blog.eternalrecurrence.space/tags/nuget/</link>
       <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/nuget/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/nuget/</guid>
       
         <description></description>
       
@@ -329,10 +329,10 @@
     
     <item>
       <title>gitlab</title>
-      <link>https://bemnlam.github.io/tags/gitlab/</link>
+      <link>https://blog.eternalrecurrence.space/tags/gitlab/</link>
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/gitlab/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/gitlab/</guid>
       
         <description></description>
       
@@ -340,10 +340,10 @@
     
     <item>
       <title>markdown</title>
-      <link>https://bemnlam.github.io/tags/markdown/</link>
+      <link>https://blog.eternalrecurrence.space/tags/markdown/</link>
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/markdown/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/markdown/</guid>
       
         <description></description>
       
@@ -351,10 +351,10 @@
     
     <item>
       <title>mkdocs</title>
-      <link>https://bemnlam.github.io/tags/mkdocs/</link>
+      <link>https://blog.eternalrecurrence.space/tags/mkdocs/</link>
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/mkdocs/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/mkdocs/</guid>
       
         <description></description>
       
@@ -362,10 +362,10 @@
     
     <item>
       <title>python</title>
-      <link>https://bemnlam.github.io/tags/python/</link>
+      <link>https://blog.eternalrecurrence.space/tags/python/</link>
       <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/python/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/python/</guid>
       
         <description></description>
       
@@ -373,10 +373,10 @@
     
     <item>
       <title>.NET Core</title>
-      <link>https://bemnlam.github.io/tags/.net-core/</link>
+      <link>https://blog.eternalrecurrence.space/tags/.net-core/</link>
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/.net-core/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/.net-core/</guid>
       
         <description></description>
       
@@ -384,10 +384,10 @@
     
     <item>
       <title>cache</title>
-      <link>https://bemnlam.github.io/tags/cache/</link>
+      <link>https://blog.eternalrecurrence.space/tags/cache/</link>
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/cache/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/cache/</guid>
       
         <description></description>
       
@@ -395,10 +395,10 @@
     
     <item>
       <title>redis</title>
-      <link>https://bemnlam.github.io/tags/redis/</link>
+      <link>https://blog.eternalrecurrence.space/tags/redis/</link>
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/redis/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/redis/</guid>
       
         <description></description>
       
@@ -406,10 +406,10 @@
     
     <item>
       <title>tag-helpers</title>
-      <link>https://bemnlam.github.io/tags/tag-helpers/</link>
+      <link>https://blog.eternalrecurrence.space/tags/tag-helpers/</link>
       <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/tag-helpers/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/tag-helpers/</guid>
       
         <description></description>
       
@@ -417,10 +417,10 @@
     
     <item>
       <title>cryptography</title>
-      <link>https://bemnlam.github.io/tags/cryptography/</link>
+      <link>https://blog.eternalrecurrence.space/tags/cryptography/</link>
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/cryptography/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/cryptography/</guid>
       
         <description></description>
       
@@ -428,10 +428,10 @@
     
     <item>
       <title>https</title>
-      <link>https://bemnlam.github.io/tags/https/</link>
+      <link>https://blog.eternalrecurrence.space/tags/https/</link>
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/https/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/https/</guid>
       
         <description></description>
       
@@ -439,10 +439,10 @@
     
     <item>
       <title>linkedin-digest</title>
-      <link>https://bemnlam.github.io/tags/linkedin-digest/</link>
+      <link>https://blog.eternalrecurrence.space/tags/linkedin-digest/</link>
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/linkedin-digest/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/linkedin-digest/</guid>
       
         <description></description>
       
@@ -450,10 +450,10 @@
     
     <item>
       <title>security</title>
-      <link>https://bemnlam.github.io/tags/security/</link>
+      <link>https://blog.eternalrecurrence.space/tags/security/</link>
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/security/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/security/</guid>
       
         <description></description>
       
@@ -461,10 +461,10 @@
     
     <item>
       <title>ssl</title>
-      <link>https://bemnlam.github.io/tags/ssl/</link>
+      <link>https://blog.eternalrecurrence.space/tags/ssl/</link>
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/ssl/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/ssl/</guid>
       
         <description></description>
       
@@ -472,10 +472,10 @@
     
     <item>
       <title>v60</title>
-      <link>https://bemnlam.github.io/tags/v60/</link>
+      <link>https://blog.eternalrecurrence.space/tags/v60/</link>
       <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/v60/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/v60/</guid>
       
         <description></description>
       
@@ -483,10 +483,10 @@
     
     <item>
       <title>pocket-digest</title>
-      <link>https://bemnlam.github.io/tags/pocket-digest/</link>
+      <link>https://blog.eternalrecurrence.space/tags/pocket-digest/</link>
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/pocket-digest/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/pocket-digest/</guid>
       
         <description></description>
       
@@ -494,10 +494,10 @@
     
     <item>
       <title>self management</title>
-      <link>https://bemnlam.github.io/tags/self-management/</link>
+      <link>https://blog.eternalrecurrence.space/tags/self-management/</link>
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/self-management/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/self-management/</guid>
       
         <description></description>
       
@@ -505,10 +505,10 @@
     
     <item>
       <title>work</title>
-      <link>https://bemnlam.github.io/tags/work/</link>
+      <link>https://blog.eternalrecurrence.space/tags/work/</link>
       <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/work/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/work/</guid>
       
         <description></description>
       
@@ -516,10 +516,10 @@
     
     <item>
       <title>Fredkin&#39;s paradox</title>
-      <link>https://bemnlam.github.io/tags/fredkins-paradox/</link>
+      <link>https://blog.eternalrecurrence.space/tags/fredkins-paradox/</link>
       <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/fredkins-paradox/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/fredkins-paradox/</guid>
       
         <description></description>
       
@@ -527,10 +527,10 @@
     
     <item>
       <title>佛雷德金悖論</title>
-      <link>https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</link>
+      <link>https://blog.eternalrecurrence.space/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</link>
       <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</guid>
       
         <description></description>
       
@@ -538,10 +538,10 @@
     
     <item>
       <title>選擇困難</title>
-      <link>https://bemnlam.github.io/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</link>
+      <link>https://blog.eternalrecurrence.space/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</link>
       <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</guid>
       
         <description></description>
       
@@ -549,10 +549,10 @@
     
     <item>
       <title>postgres</title>
-      <link>https://bemnlam.github.io/tags/postgres/</link>
+      <link>https://blog.eternalrecurrence.space/tags/postgres/</link>
       <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/postgres/</guid>
+      <guid>https://blog.eternalrecurrence.space/tags/postgres/</guid>
       
         <description></description>
       

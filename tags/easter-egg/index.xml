@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>easter-egg on log from home</title>
-    <link>https://bemnlam.github.io/tags/easter-egg/</link>
+    <link>https://blog.eternalrecurrence.space/tags/easter-egg/</link>
     <description>Recent content in easter-egg on log from home</description>
     <image>
       
-      <url>https://bemnlam.github.io/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of easter-egg on log from home</title>
-      <link>https://bemnlam.github.io/</link>
+      <link>https://blog.eternalrecurrence.space/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sun, 28 Jun 2020 12:28:38 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/easter-egg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.eternalrecurrence.space/tags/easter-egg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Perks of Being a Mac (or FreeBSD) user</title>
-      <link>https://bemnlam.github.io/posts/the-perks-of-being-a-mac-or-freebsd-user/</link>
+      <link>https://blog.eternalrecurrence.space/posts/the-perks-of-being-a-mac-or-freebsd-user/</link>
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid>
+      <guid>https://blog.eternalrecurrence.space/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid>
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;🚨 Note: This is not a technical reading. If you want to have some fun and practice your &lt;code&gt;ls&lt;/code&gt; and &lt;code&gt;cat&lt;/code&gt; skills, this article may suit you.&lt;/p&gt;
