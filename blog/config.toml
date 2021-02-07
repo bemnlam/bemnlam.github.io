@@ -1,4 +1,5 @@
-baseURL = "https://bemnlam.github.io/"
+# baseURL = "https://bemnlam.github.io/"
+baseURL = "https://blog.eternalrecurrence.space/"
 languageCode = "en-us"
 title = "log from home"
 theme = "pickles"
