@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>AjaxControlToolkit on log from home</title><link>https://blog.eternalrecurrence.space/tags/ajaxcontroltoolkit/</link><description>Recent content in AjaxControlToolkit on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of AjaxControlToolkit on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Fri, 12 Feb 2021 12:44:24 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/ajaxcontroltoolkit/index.xml" rel="self" type="application/rss+xml"/><item><title>🐞 Fixing AjaxControlTookit Unexpected Page Reload in ASP.NET Web Form Application</title><link>https://blog.eternalrecurrence.space/posts/fixing-ajaxcontroltoolkit-unexpected-page-reload-in-aspnet-webform-application/</link><pubDate>Fri, 12 Feb 2021 12:44:24 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/fixing-ajaxcontroltoolkit-unexpected-page-reload-in-aspnet-webform-application/</guid><description>&lt;img src="https://blog.eternalrecurrence.space/posts/fixing-ajaxcontroltoolkit-unexpected-page-reload-in-aspnet-webform-application/thumbnail.jpg" />&lt;h2 id="background">Background&lt;/h2>
+&lt;aside class="c-toc">
+&lt;details open>
+&lt;summary title="click to toggle table of contents.">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#background">Background&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#expected-vs-actual-behavior">Expected vs Actual Behavior&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#expected">Expected&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#actual">Actual&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#ajaxcontroltoolkit">&lt;code>AjaxControlToolkit&lt;/code>&lt;/a>
+&lt;ul>
+&lt;li>&lt;/li>
+&lt;li>&lt;a href="#different-__dopostback-in-firefox">Different &lt;code>__doPostBack()&lt;/code> in Firefox&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#the-verdict">The Verdict&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#adding--aspasyncpostbacktrigger">Adding &lt;code>&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code>&lt;/a>
+&lt;ul>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#summary">Summary&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;/aside>
+&lt;p>TR;DR: see &lt;a href="#summary">Summary&lt;/a> and &lt;a href="#the-complete-code">the Complete code&lt;/a>.&lt;/p>
+&lt;p>In my company there was a old Web Form Website running .NET Framework 3.5. I migrate it to an ASP .NET Web Form Application running .NET Framework 4.7.2 few months ago. The website is running just like the old one but recently a user reported that &lt;strong>a &lt;code>&amp;lt;select&amp;gt;&lt;/code> list which suppose triggers an ajax call and refresh part of the page does not work. Instead, the page is reloaded every time when the item in the &lt;code>&amp;lt;select&amp;gt;&lt;/code> list is changed.&lt;/strong>&lt;/p>
+&lt;p>I used almost a day to figure out what&amp;rsquo;s (probably) happened and I hope that this post will be helpgul to someone in the future who (still) encounter this problem.&lt;/p>
+&lt;h2 id="expected-vs-actual-behavior">Expected vs Actual Behavior&lt;/h2>
+&lt;p>There is a &lt;code>&amp;lt;form&amp;gt;&lt;/code> contains a &lt;code>&amp;lt;select&amp;gt;&lt;/code> list created by &lt;a href="https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.dropdownlist?view=netframework-4.8"> &lt;code>&amp;lt;asp:DropDownList&amp;gt;&lt;/code>&lt;/a>. When the selected option is changed, an AJAX call will be fired and new items will be fetched. Besides. there is a text area for user to input remarks. A submit button will submit the data in the form.&lt;/p>
+&lt;p>&lt;img src="img/image-20210212150215986.png" alt="image-20210212150215986">&lt;/p>
+&lt;h3 id="expected">Expected&lt;/h3>
+&lt;p>Page will not be reloaded when the selected option is changed. The content in text area will be there.&lt;/p>
+&lt;h3 id="actual">Actual&lt;/h3>
+&lt;p>Once the selected option is changed, a form POST is fired (instead of an AJAX POST). The content in text area is therefore being cleaned.&lt;/p>
+&lt;p>This is related to ajax calls so the first thing I try is searching for how the ajax call is being triggered.&lt;/p>
+&lt;h2 id="ajaxcontroltoolkit">&lt;code>AjaxControlToolkit&lt;/code>&lt;/h2>
+&lt;p>In the &lt;code>.aspx&lt;/code> file I saw a &lt;code>&amp;lt;asp:UpdatePanel&amp;gt;&lt;/code> and a &lt;code>&amp;lt;asp:DropDownList&amp;gt;&lt;/code>. This is the simplified structure of that part:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;asp:UpdatePanel&lt;/span> &lt;span style="color:#a6e22e">runat=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;server&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">ID=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UpdatePanel2&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">UpdateMode=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Conditional&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">ChildrenAsTriggers=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;ContentTemplate&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;asp:DropDownList&lt;/span> &lt;span style="color:#a6e22e">runat=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;server&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">ID=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ddItemTypes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">AutoPostBack=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">OnSelectedIndexChanged=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ddItemTypes_OnSelectedIndexChanged&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/ContentTemplate&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/asp:UpdatePanel&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>AutoPostBack&lt;/code> is there so the app should use &lt;code>AjaxControlToolkit&lt;/code> to make ajax calls (I guess that&amp;rsquo;s the standard right?).&lt;/p>
+&lt;h4 id="update-nuget-package">Update Nuget Package&lt;/h4>
+&lt;p>I checked the &lt;code>package.config&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;package&lt;/span> &lt;span style="color:#a6e22e">id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;AjaxControlToolkit&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;4.1.50508&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">targetFramework=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;net35&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Looks like the &lt;code>targetFramework&lt;/code> is not right. And maybe it&amp;rsquo;s time to update the package too.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;package&lt;/span> &lt;span style="color:#a6e22e">id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;AjaxControlToolkit&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;20.1.0&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">targetFramework=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;net472&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="migration-guide">Migration Guide&lt;/h4>
+&lt;p>&lt;a href="https://github.com/DevExpress/AjaxControlToolkit">AjaxControlToolkit&lt;/a> has some breaking changes since version 15+. In short, you need to:&lt;/p>
+&lt;ul>
+&lt;li>Uninstall the old version and install the new version of &lt;a href="https://www.nuget.org/packages/AjaxControlToolkit">&lt;code>AjaxControlToolkit&lt;/code>&lt;/a>.&lt;/li>
+&lt;li>Change &lt;code>&amp;lt;asp:ToolkitScriptManager&amp;gt;&lt;/code> into &lt;code>&amp;lt;asp:ScriptManager&amp;gt;&lt;/code>&lt;/li>
+&lt;li>Remove some unused configs in &lt;code>web.config&lt;/code> (see &lt;a href="https://github.com/DevExpress/AjaxControlToolkit/wiki/Upgrading-from-v7.x-and-below#3---clean-up-webconfig">this&lt;/a>)&lt;/li>
+&lt;li>[Optional] Install &lt;a href="https://www.nuget.org/packages/AjaxControlToolkit.HtmlEditor.Sanitizer/">&lt;code>AjaxControlToolkit.HtmlEditor.Sanitizer&lt;/code>&lt;/a>
+&lt;ul>
+&lt;li>Change namespace from &lt;code>AjaxControlToolkit.HTMLEditor&lt;/code> to &lt;code>AjaxControlToolkit.HtmlEditor&lt;/code>&lt;/li>
+&lt;li>Change namespace from &lt;code>AjaxControlToolkit.HTMLEditor.ToolbarButton&lt;/code> to &lt;code>AjaxControlToolkit.HtmlEditor.ToolbarButtons&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://github.com/DevExpress/AjaxControlToolkit/wiki/Upgrading-from-v7.x-and-below#3---clean-up-webconfig">Here&lt;/a> is the complete migration guide.&lt;/p>
+&lt;p>After I upgrade the Nuget package, the ajax partially works. It only works on Chromium-base browsers like Chrome and Edge. However, &lt;strong>it does not work on Firefox (85.0) and Safari (14.0.1)&lt;/strong>.&lt;/p>
+&lt;h3 id="different-__dopostback-in-firefox">Different &lt;code>__doPostBack()&lt;/code> in Firefox&lt;/h3>
+&lt;p>This is what I got from Firefox&amp;rsquo;s dev tool:&lt;/p>
+&lt;p>&lt;img src="img/image-20210212140706748.png" alt="image-20210212140706748">&lt;/p>
+&lt;p>The initiator is form &lt;code>__doPostBack()&lt;/code> in &lt;code>.aspx&lt;/code> page. In Chrome, it&amp;rsquo;s from &lt;code>ScriptResource.axd&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="img/image-20210212141300293.png" alt="image-20210212141300293">&lt;/p>
+&lt;p>So this is the expected call stack: the call is an XHR fired from &lt;code>ScriptResource.axd&lt;/code>.&lt;/p>
+&lt;p>Looks like the items from bottom to &lt;code>_doPostBack()&lt;/code> are the same, so I dig deeper to &lt;code>_doPostBack()&lt;/code> and eventually found this piece of code in &lt;code>ScriptResource.axd&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">_postBackSettings&lt;/span>.&lt;span style="color:#66d9ef">async&lt;/span>) {
+&lt;span style="color:#a6e22e">form&lt;/span>.&lt;span style="color:#a6e22e">onsubmit&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">_onsubmit&lt;/span>;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">_originalDoPostBack&lt;/span>(&lt;span style="color:#a6e22e">eventTarget&lt;/span>, &lt;span style="color:#a6e22e">eventArgument&lt;/span>);
+&lt;span style="color:#a6e22e">form&lt;/span>.&lt;span style="color:#a6e22e">onsubmit&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>if &lt;code>this._postBackSettings.async&lt;/code> is &lt;code>false&lt;/code>, &lt;code>_originaldoPostBack()&lt;/code> will be called and that is the &lt;code>__doPostBack()&lt;/code> function defined in the &lt;code>.aspx&lt;/code> page. This will trigger a page reload instead of an AJAX call.&lt;/p>
+&lt;p>Furthermore, I found that the &lt;code>asyncTarget&lt;/code> in &lt;code>_postBackSettings &lt;/code> is &lt;code>null&lt;/code> but in Chrome that target is the &lt;code>&amp;lt;select&amp;gt;&lt;/code> list.&lt;/p>
+&lt;h3 id="the-verdict">The Verdict&lt;/h3>
+&lt;p>The javascript event somehow keep propagating to a higher level than the &lt;code>&amp;lt;select&amp;gt;&lt;/code> list (probably the form level) and therefore being treated as a form POST instead of an AJAX call.&lt;/p>
+&lt;h2 id="adding--aspasyncpostbacktrigger">Adding &lt;code>&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code>&lt;/h2>
+&lt;p>I did some research related to the Firefox-specific page reload and seems none of them are talking about the issue I met. Therefore I tried to study the fundamentals of this &lt;strong>PostBack&lt;/strong> behaviour.&lt;/p>
+&lt;p>This post &lt;a href="https://www.aspsnippets.com/Articles/Avoid-Prevent-Page-refresh-PostBack-after-SelectedIndexChanged-is-fired-in-ASPNet-DropDownList.aspx">&lt;strong>Avoid (Prevent) Page refresh (PostBack) after SelectedIndexChanged is fired in ASP.Net DropDownList&lt;/strong>&lt;/a> shows what I am missing: an &lt;code>asp:AsyncPostBackTrigger&lt;/code>.&lt;/p>
+&lt;p>Also, &lt;a href="https://stackoverflow.com/questions/728043/how-to-stop-updatepanel-from-causing-whole-page-postback/728061#728061">this StackOverflow answer&lt;/a> also mention the &lt;code>asp:AsyncPostBackTrigger&lt;/code> thing.&lt;/p>
+&lt;p>&lt;strong>When using the &lt;code>ScriptManager&lt;/code> (i.e. the one we introduced when updating the &lt;code>AjaxControlToolkit&lt;/code>), we need to define an &lt;code>asp:AsyncPostBackTrigger&lt;/code> &lt;code>Trigger&lt;/code> in order to make the call AJAX.&lt;/strong>&lt;/p>
+&lt;p>Therefore, I try to add a &lt;code>Trigger&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;Triggers&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;asp:AsyncPostBackTrigger&lt;/span> &lt;span style="color:#a6e22e">ControlID=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ddItemTypes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">EventName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;SelectedIndexChanged&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/Triggers&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This &lt;code>Trigger&lt;/code> section should be placed under the same &lt;code>&amp;lt;asp:UpdatePanel&amp;gt;&lt;/code> with the &lt;code>&amp;lt;asp:DropDownList&amp;gt;&lt;/code>. Here is the complete snippet:&lt;/p>
+&lt;h4 id="the-complete-code">The complete code&lt;/h4>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;asp:UpdatePanel&lt;/span> &lt;span style="color:#a6e22e">runat=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;server&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">ID=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UpdatePanel2&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">UpdateMode=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Conditional&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">ChildrenAsTriggers=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;ContentTemplate&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;asp:DropDownList&lt;/span> &lt;span style="color:#a6e22e">runat=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;server&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">ID=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ddItemTypes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">AutoPostBack=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">OnSelectedIndexChanged=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ddItemTypes_OnSelectedIndexChanged&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/ContentTemplate&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;Triggers&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;asp:AsyncPostBackTrigger&lt;/span> &lt;span style="color:#a6e22e">ControlID=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ddItemTypes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">EventName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;SelectedIndexChanged&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/Triggers&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/asp:UpdatePanel&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>EventName&lt;/code> should be optional but here I want to specify this trigger only listen to the &lt;code>SelectedIndexChanged&lt;/code> event. The &lt;code>ControlID&lt;/code> has to be an exact match with the &lt;code>ID&lt;/code> of &lt;code>&amp;lt;asp:DropDownList&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>After I added the &lt;code>&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code>, all the browsers including Chrome, Edge, Firefox (85.0) and Safari (14.0.1) are working.&lt;/p>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>When your .NET 4.5+ ASP.NET Web Form Application using &lt;code>AjaxControlToolkit&lt;/code> does not work as expected and cause the controls like &lt;code>&amp;lt;asp:DropDownList&amp;gt;&lt;/code> cannot fire AJAX call (but triggers a form POST), make sure that:&lt;/p>
+&lt;ol>
+&lt;li>The &lt;code>AjaxControlToolkit&lt;/code> Nuget package is up to date (and did the proper migration steps &lt;a href="https://github.com/DevExpress/AjaxControlToolkit/wiki/Upgrading-from-v7.x-and-below#3---clean-up-webconfig">here&lt;/a>).&lt;/li>
+&lt;li>The &lt;code>&amp;lt;asp:UpdatePanel&amp;gt;&lt;/code> section should contain a &lt;code>&amp;lt;Triggers&amp;gt;&lt;/code> section. In that section there is an &lt;code>&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code> with correct &lt;code>ControlID&lt;/code> same as the &lt;code>ID&lt;/code> of your control (which is also placed under the same UpdatePanel section).&lt;/li>
+&lt;/ol></description></item></channel></rss>

@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on The Blog</title>
-    <link>https://bemnlam.github.io/categories/</link>
-    <description>Recent content in Categories on The Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; bemnlam</copyright>
-    
-	<atom:link href="https://bemnlam.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Categories on log from home</title><link>https://blog.eternalrecurrence.space/categories/</link><description>Recent content in Categories on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of Categories on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Fri, 12 Feb 2021 12:44:24 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Dev</title><link>https://blog.eternalrecurrence.space/categories/dev/</link><pubDate>Fri, 12 Feb 2021 12:44:24 +0800</pubDate><guid>https://blog.eternalrecurrence.space/categories/dev/</guid><description/></item><item><title>Leisure</title><link>https://blog.eternalrecurrence.space/categories/leisure/</link><pubDate>Fri, 05 Feb 2021 21:33:03 +0800</pubDate><guid>https://blog.eternalrecurrence.space/categories/leisure/</guid><description/></item><item><title>Coffee</title><link>https://blog.eternalrecurrence.space/categories/coffee/</link><pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate><guid>https://blog.eternalrecurrence.space/categories/coffee/</guid><description/></item><item><title>Readings</title><link>https://blog.eternalrecurrence.space/categories/readings/</link><pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate><guid>https://blog.eternalrecurrence.space/categories/readings/</guid><description/></item></channel></rss>
