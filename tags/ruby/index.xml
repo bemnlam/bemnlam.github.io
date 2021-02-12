@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>ruby on log from home</title><link>https://blog.eternalrecurrence.space/tags/ruby/</link><description>Recent content in ruby on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of ruby on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Tue, 15 Sep 2020 08:40:48 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/ruby/index.xml" rel="self" type="application/rss+xml"/><item><title>Ruby Cheatsheet</title><link>https://blog.eternalrecurrence.space/posts/ruby-cheatsheet/</link><pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/ruby-cheatsheet/</guid><description>&lt;img src="https://static.dribbble.com/users/79571/screenshots/2232375/ruby.png" />&lt;p>This post contains many useful snippets for me when writing &lt;strong>Ruby&lt;/strong> scripts. I will keep updating this note in the future.&lt;/p>
+&lt;aside class="c-toc">
+&lt;details open>
+&lt;summary title="click to toggle table of contents.">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#-about-file">🏷 About File&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#absolute-path">Absolute Path&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#read--write-a-file">Read / Write a file&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#-about-string">🏷 About String&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#string-template">String template&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#string-interpolation">String Interpolation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#trim-a-string">Trim a String&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#null-or-empty">Null Or Empty&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#titlecase--uppercase--lowercase--capitalize">Titlecase / UPPERCASE / lowercase / Capitalize&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#-about-input">🏷 About Input&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#console-input">Console Input&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#-about-regex">🏷 About Regex&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#named-regex-capturing-group">Named regex capturing group&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#-about-bundler-and-gemfile">🏷 About Bundler and Gemfile&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#install-bundler">Install bundler&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#setup-and-restore-dependencies">Setup and restore dependencies&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#check-the-info-of-a-installed-gem">Check the info of a installed gem&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;/aside>
+&lt;h2 id="-about-file">🏷 About File&lt;/h2>
+&lt;h3 id="absolute-path">Absolute Path&lt;/h3>
+&lt;p>&lt;code>__dir__&lt;/code> returns the current path.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#66d9ef">File&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(__dir__, file_name_no_path )
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="read--write-a-file">Read / Write a file&lt;/h3>
+&lt;p>Read the content of &lt;code>file_name&lt;/code> to &lt;code>buffer&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">buffer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">File&lt;/span>&lt;span style="color:#f92672">.&lt;/span>read( file_name )
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Write &lt;code>content&lt;/code> to &lt;code>file_name&lt;/code>. File will be created when it does not exist.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#66d9ef">File&lt;/span>&lt;span style="color:#f92672">.&lt;/span>open( file_name , &lt;span style="color:#e6db74">&amp;#34;w&amp;#34;&lt;/span>) { &lt;span style="color:#f92672">|&lt;/span>f&lt;span style="color:#f92672">|&lt;/span> f&lt;span style="color:#f92672">.&lt;/span>write( content ) }
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-about-string">🏷 About String&lt;/h2>
+&lt;h3 id="string-template">String template&lt;/h3>
+&lt;p>To create a multiline string template:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">template &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;lt;&amp;lt;-EOCONTENT
+&lt;/span>&lt;span style="color:#e6db74">Your
+&lt;/span>&lt;span style="color:#e6db74">Multiline
+&lt;/span>&lt;span style="color:#e6db74">Text
+&lt;/span>&lt;span style="color:#e6db74">Content
+&lt;/span>&lt;span style="color:#e6db74">EOCONTENT&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="string-interpolation">String Interpolation&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">str &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;This is a string with &lt;/span>&lt;span style="color:#e6db74">#{&lt;/span>variable_name&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="trim-a-string">Trim a String&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#e6db74">&amp;#34; Hello James &amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>strip &lt;span style="color:#75715e">#=&amp;gt; &amp;#34;Hello James&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="null-or-empty">Null Or Empty&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">str&lt;span style="color:#f92672">.&lt;/span>nil? ? &lt;span style="color:#e6db74">&amp;#34;null&amp;#34;&lt;/span> : &lt;span style="color:#e6db74">&amp;#34;not_null&amp;#34;&lt;/span>
+str&lt;span style="color:#f92672">.&lt;/span>empty? ? &lt;span style="color:#e6db74">&amp;#34;empty&amp;#34;&lt;/span> : &lt;span style="color:#e6db74">&amp;#34;not_empty&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="titlecase--uppercase--lowercase--capitalize">Titlecase / UPPERCASE / lowercase / Capitalize&lt;/h3>
+&lt;p>All returns a new copy. Examples from &lt;a href="https://stackoverflow.com/a/1020571/13742790">this answer in StackOverflow&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#e6db74">&amp;#34;hello James&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>titleize &lt;span style="color:#75715e">#=&amp;gt; &amp;#34;Hello James&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;hello James&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>upcase &lt;span style="color:#75715e">#=&amp;gt; &amp;#34;HELLO JAMES&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;hello James&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>downcase &lt;span style="color:#75715e">#=&amp;gt; &amp;#34;hello james&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;hello James&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>capitalize &lt;span style="color:#75715e">#=&amp;gt; &amp;#34;Hello james&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note: &lt;strong>Alter the original string&lt;/strong> by adding &lt;code>!&lt;/code> right after the method.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#e6db74">&amp;#34;hello James&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>downcase!
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-about-input">🏷 About Input&lt;/h2>
+&lt;h3 id="console-input">Console Input&lt;/h3>
+&lt;p>Ask a question and wait for user input:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">print &lt;span style="color:#e6db74">&amp;#34;Your question: &amp;#34;&lt;/span>
+user_input &lt;span style="color:#f92672">=&lt;/span> gets
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>(you may need to &lt;code>strip&lt;/code> the &lt;code>user_input&lt;/code> to ger rid of a tailing newline.)&lt;/p>
+&lt;h2 id="-about-regex">🏷 About Regex&lt;/h2>
+&lt;p>Test a ruby regex: &lt;a href="https://rubular.com/">https://rubular.com/&lt;/a>&lt;/p>
+&lt;h3 id="named-regex-capturing-group">Named regex capturing group&lt;/h3>
+&lt;p>Steps:&lt;/p>
+&lt;ol>
+&lt;li>Prepare the regex: &lt;code>^(\w+)(Query|Command)$&lt;/code>.&lt;/li>
+&lt;li>Add &lt;code>?&amp;lt;named_group&amp;gt;&lt;/code> at the beginning &lt;strong>inside&lt;/strong> that capturing group.&lt;/li>
+&lt;li>Do the regex &lt;code>match()&lt;/code>&lt;/li>
+&lt;li>Retrieve the named group: &lt;code>[:named_group]&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#75715e">## name: SomeStuffQuery ; result: SomeStuff&lt;/span>
+result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">/^(?&amp;lt;named_group&amp;gt;\w+)(Query|Command)$/&lt;/span>&lt;span style="color:#f92672">.&lt;/span>match(name)&lt;span style="color:#f92672">[&lt;/span>&lt;span style="color:#e6db74">:named_group&lt;/span>&lt;span style="color:#f92672">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If your regex is valid, you should be able to see the captured group and related content:&lt;/p>
+&lt;p>&lt;img src="https://blog.eternalrecurrence.space/img/image-20200915091031591.png" alt="image-20200915091031591">&lt;/p>
+&lt;h2 id="-about-bundler-and-gemfile">🏷 About Bundler and Gemfile&lt;/h2>
+&lt;p>&lt;a href="https://bundler.io/">Bundler&lt;/a> helps you to manage gem denendencies in your project.&lt;/p>
+&lt;h3 id="install-bundler">Install bundler&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-zsh" data-lang="zsh">gem install bundler
+bundler -v
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="setup-and-restore-dependencies">Setup and restore dependencies&lt;/h3>
+&lt;p>Create a &lt;code>Gemfile&lt;/code>:&lt;/p>
+&lt;pre>&lt;code class="language-gemfile" data-lang="gemfile">source 'https://rubygems.org'
+gem 'dotenv', '~&amp;gt; 2.7', '&amp;gt;= 2.7.5'
+gem &amp;quot;mustache&amp;quot;, &amp;quot;~&amp;gt; 1.0&amp;quot;
+&lt;/code>&lt;/pre>&lt;h4 id="globally">Globally&lt;/h4>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">bundle &lt;span style="color:#75715e"># may requires sudo&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="locally">Locally&lt;/h4>
+&lt;p>To install gems at a relative path e.g. at the &lt;code>lib&lt;/code> folder:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">bundle install --path&lt;span style="color:#f92672">=&lt;/span>./lib
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>a &lt;code>.bundle&lt;/code> folder will be generated, together with your &lt;code>Gemfile.lock&lt;/code>.&lt;/p>
+&lt;h3 id="check-the-info-of-a-installed-gem">Check the info of a installed gem&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ bundle info ruby_http_client
+* ruby_http_client &lt;span style="color:#f92672">(&lt;/span>3.5.1&lt;span style="color:#f92672">)&lt;/span>
+Summary: A simple REST client
+Homepage: http://github.com/sendgrid/ruby-http-client
+Path: ~/git/my-folder/lib/ruby/2.6.0/gems/ruby_http_client-3.5.1
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>&lt;em>(cover image from &lt;a href="https://dribbble.com/shots/2232375-Ruby">this dribble&lt;/a>)&lt;/em>&lt;/p></description></item></channel></rss>

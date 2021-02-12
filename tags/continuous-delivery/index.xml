@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>continuous delivery on log from home</title><link>https://blog.eternalrecurrence.space/tags/continuous-delivery/</link><description>Recent content in continuous delivery on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of continuous delivery on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Sun, 20 Sep 2020 14:45:18 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml"/><item><title>Atlassian Bamboo: an Opinionated Approach</title><link>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</link><pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</guid><description>&lt;img src="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />&lt;blockquote>
+&lt;p>This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="preface">Preface&lt;/h1>
+&lt;p>This is an article talking about &lt;strong>my experience (≠ 100% solution. ≠ golden rule on CI/CD)&lt;/strong> on using &lt;a href="https://www.atlassian.com/software/bamboo">Atlassian Bamboo&lt;/a>. It is &lt;strong>a tool for &lt;a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">continuous integration, deployment, and delivery&lt;/a>&lt;/strong>. I use this tool for all the &lt;strong>.NET-based web applications running on the Windows ecosystem&lt;/strong>.&lt;/p>
+&lt;blockquote>
+&lt;p>Note on 2020: &lt;a href="https://bitbucket.org/product/features/pipelines">Bitbucket Pipelines&lt;/a> is a newer service created by Atlassian. If you are building applications other then &lt;a href="https://bitbucket.org/site/master/issues/13452/support-for-native-windows-net-builds-on">Windows&lt;/a>, &lt;a href="https://bitbucket.org/site/master/issues/13719/support-for-macos-ios-in-pipelines">macOS, or iOS&lt;/a> applications then I strongly recommend you to use this instead of Bamboo.&lt;/p>
+&lt;/blockquote>
+&lt;aside class="c-toc">
+&lt;details open>
+&lt;summary title="click to toggle table of contents.">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#deployment-cd">Deployment (CD)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#glossary">Glossary&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#build-ci">Build (CI)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#glossary-1">Glossary&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#git">Git&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>&lt;a href="#deployment-cd-1">Deployment (CD)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#nuget-packages">Nuget Packages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#websites">Websites&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#build-ci-1">Build (CI)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#nuget-packages-1">Nuget Packages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#websites-1">Websites&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;/aside>
+&lt;h1 id="cicd-principles">CI/CD principles&lt;/h1>
+&lt;p>&lt;strong>In my opinion&lt;/strong>, when you start designing your CI/CD workflows:&lt;/p>
+&lt;ol>
+&lt;li>Make things &lt;strong>predictable&lt;/strong>.&lt;/li>
+&lt;li>Think of the &lt;strong>deployment (CD) first&lt;/strong>, then work backward to the &lt;strong>integration (CI)&lt;/strong> part.&lt;/li>
+&lt;li>Use &lt;em>&lt;strong>Gitflow&lt;/strong>&lt;/em> in your source code.&lt;/li>
+&lt;/ol>
+&lt;h1 id="fundamentals-of-bamboo">Fundamentals of Bamboo&lt;/h1>
+&lt;p>The menu in Bamboo (version 6.5.0) contains 3 parts:&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>Projects&lt;/em>,&lt;/li>
+&lt;li>&lt;em>Build&lt;/em> and&lt;/li>
+&lt;li>&lt;em>Deploy&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="./img/image-20200913141147305.png" alt="Build dropdown menu">&lt;/p>
+&lt;p>&lt;img src="./img/image-20200913141246490.png" alt="Deploy dropdown menu">&lt;/p>
+&lt;h2 id="deployment-cd">Deployment (CD)&lt;/h2>
+&lt;p>Here is a typical &lt;strong>deployment project summary&lt;/strong> looks like:&lt;/p>
+&lt;p>&lt;img src="./img/image-20200913132645203.png" alt="A typical deployment project">&lt;/p>
+&lt;p>You can check this out by clicking &lt;strong>Deploy&lt;/strong> &amp;gt; &lt;strong>All Deployment Projects&lt;/strong>. After that, choose one of the item on the list.&lt;/p>
+&lt;h3 id="glossary">Glossary&lt;/h3>
+&lt;p>&lt;em>Artifact&lt;/em>: The content built in the CI part.&lt;/p>
+&lt;p>&lt;em>Deployment Environment&lt;/em>: The place the &lt;em>artifacts&lt;/em> should go to.&lt;/p>
+&lt;p>&lt;em>Release&lt;/em>: A unique (and usually auto-increment) identifier of this deployment.&lt;/p>
+&lt;p>&lt;em>Deployment Project&lt;/em>: A collection of build plans.&lt;/p>
+&lt;h2 id="build-ci">Build (CI)&lt;/h2>
+&lt;p>Here is a typical build dashboard:&lt;/p>
+&lt;p>&lt;img src="./img/image-20200913130048805.png" alt="A typical build dashboard">&lt;/p>
+&lt;p>This is the default front page of Bamboo. You can also check this out by clicking &lt;strong>Build&lt;/strong> &amp;gt; &lt;strong>All Build Plans&lt;/strong>.&lt;/p>
+&lt;h3 id="glossary-1">Glossary&lt;/h3>
+&lt;p>&lt;em>Build&lt;/em>: The build result of the default plan.&lt;/p>
+&lt;p>&lt;em>Build Plan&lt;/em>: Usually it refers to the definitions of all build-related configuratoins. However, sometimes it &lt;em>also&lt;/em> refers to the &lt;strong>default build barnch&lt;/strong> or the &lt;strong>default branch configurations&lt;/strong>.&lt;/p>
+&lt;p>I will try to avoid using the term &lt;em>build plan&lt;/em> in this article as it is a bit confusing. I will use :&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;em>default branch configuratoins&lt;/em> to indicate the default settings of a &lt;em>build plan&lt;/em>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;em>default build branch&lt;/em> to indicate the branch associated to the &lt;em>default branch configuratoins&lt;/em>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When I use the word &lt;em>build plan&lt;/em>, it refers to the item listed under &lt;strong>Plan&lt;/strong> column in the build dashboard.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Build Project&lt;/em>: Similar to &lt;em>Deployment Project&lt;/em>, it&amp;rsquo;s a collection of &lt;em>build plans&lt;/em>.&lt;/p>
+&lt;h2 id="git">Git&lt;/h2>
+&lt;p>From the basic assumption in the &lt;a href="#cicd-principles">CI/CD principles, pt. 3&lt;/a> all the repositories are using &lt;a href="https://nvie.com/posts/a-successful-git-branching-model/">Gitflow&lt;/a>. I will use the following conventions when talking about the CI settings.&lt;/p>
+&lt;p>&lt;em>Default build branch&lt;/em>: git&amp;rsquo;s &lt;code>develop&lt;/code> branch.&lt;/p>
+&lt;p>&lt;em>Build branch&lt;/em>: All the other git&amp;rsquo;s branches, including &lt;code>feature/*&lt;/code>, &lt;code>release/*&lt;/code>, &lt;code>hotfix/*&lt;/code>, &lt;code>master&lt;/code>&lt;/p>
+&lt;p>&lt;em>Master branch&lt;/em>: git&amp;rsquo;s &lt;code>master&lt;/code> branch&lt;/p>
+&lt;p>&lt;em>Linked Repository&lt;/em>: Store all the git repository connection setups for later user in CI/CD steps. It&amp;rsquo;s under &lt;strong>⚙️ (Bamboo Administration)&lt;/strong> &amp;gt; &lt;strong>Linked repositories&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="./img/image-20200919094705047.png" alt="Bamboo Administration > Linked repositories">&lt;/p>
+&lt;p>This is an example for a class library:&lt;/p>
+&lt;p>&lt;img src="./img/image-20200919093103200.png" alt="Plan branches in a class library build plan">&lt;/p>
+&lt;p>And this is an example for website:&lt;/p>
+&lt;p>&lt;img src="./img/image-20200919093317277.png" alt="Plan branches in a website build plan">&lt;/p>
+&lt;p>Next, I will talk about how to &lt;strong>design&lt;/strong> a CD flow, then a CI flow.&lt;/p>
+&lt;h1 id="designing-a-cicd-workflow">Designing a CI/CD workflow&lt;/h1>
+&lt;blockquote>
+&lt;p>Assumption: you are using &lt;a href="https://datasift.github.io/gitflow/IntroducingGitFlow.html">&lt;em>gitflow&lt;/em>&lt;/a> to manage your git repository.&lt;/p>
+&lt;/blockquote>
+&lt;p>In short:&lt;/p>
+&lt;p>&lt;strong>Deployment&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>1 &lt;em>deoloyment project&lt;/em>, many &lt;em>deployment plans&lt;/em>.&lt;/li>
+&lt;li>1 destination, 1 &lt;em>deployment plan&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Integration&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>1 Bitbucket git repository, (usually) 1 Bamboo &lt;em>build plan&lt;/em>
+&lt;ul>
+&lt;li>build the &lt;code>develop&lt;/code> branch using &lt;strong>default plan configuration&lt;/strong>&lt;/li>
+&lt;li>git branch &amp;lt;&amp;ndash;&amp;gt; &lt;em>Branch config&lt;/em> of a build plan&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>1 Bitbucket project, 1Bamboo &lt;em>build project&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;h2 id="deployment-cd-1">Deployment (CD)&lt;/h2>
+&lt;p>All the deployments in my team can be categorized in to 2 types: either a &lt;strong>library&lt;/strong> (i.e. a nuget package) or a &lt;strong>website&lt;/strong> (i.e. an IIS website).&lt;/p>
+&lt;h3 id="nuget-packages">Nuget Packages&lt;/h3>
+&lt;p>My team is using &lt;a href="https://myget.org/">MyGet&lt;/a> to host private packages. So, there is only 1 destination for my &lt;em>artifact&lt;/em> goes.&lt;/p>
+&lt;p>&lt;img src="./img/image-20200913153116958.png" alt="Bamboo class library CD flow">&lt;/p>
+&lt;p>This is how I organize the &lt;em>deployment project&lt;/em>:&lt;/p>
+&lt;p>&lt;img src="./img/image-20200913154357682.png" alt="Class library deployment project setup">&lt;/p>
+&lt;pre>&lt;code>Deployment Project
+├── Production environment: for builds from master
+└── Pre-release environment: all other branches
+&lt;/code>&lt;/pre>&lt;h3 id="websites">Websites&lt;/h3>
+&lt;p>We have 2 web servers for production and other environments has a corresponding web server. All running IIS. On the other hand, some of the websites are hosting under a sub-directory (as a sub-site).&lt;/p>
+&lt;p>Therefore, an &lt;em>artifact&lt;/em> may goes to multiple destinations.&lt;/p>
+&lt;p>In my design, 1 &lt;em>deployment environment&lt;/em> responsibles for 1 destination (i.e. 1 IIS web server).&lt;/p>
+&lt;p>&lt;img src="./img/image-20200913190536806.png" alt="Bamboo website CD flow">&lt;/p>
+&lt;p>So you may ask: why not 1 deployment environment for 1 environment? Here&amp;rsquo;s why:&lt;/p>
+&lt;h4 id="1-to-1-mapping-of-deployment-environment-and-iis-website">1-to-1 mapping of &lt;em>deployment environment&lt;/em> and &lt;em>IIS website&lt;/em>&lt;/h4>
+&lt;h5 id="the-bad">The bad&lt;/h5>
+&lt;p>One of the downside is: It takes longer time to deploy all websites. Consider the case of deploying 2 &lt;em>deployment projects&lt;/em> at the same time, and each project has multiple &lt;em>deployment environments&lt;/em>. The sequence of deployment activities can be:&lt;/p>
+&lt;ol>
+&lt;li>deploy site A to environment A&lt;/li>
+&lt;li>deploy site B to environment A&lt;/li>
+&lt;li>deploy site A to environment B (triggered by activity 1.)&lt;/li>
+&lt;li>deploy site B to environment B (triggered by activity 2.)&lt;/li>
+&lt;/ol>
+&lt;p>Which means I have to wait for the deployment of another website.&lt;/p>
+&lt;h5 id="the-good">The good&lt;/h5>
+&lt;p>The biggest advantage of doing so is that modefying one &lt;em>deployment environment&lt;/em> does not affect any settings of the other &lt;em>deployment environments&lt;/em>. Then, I can do the following things:&lt;/p>
+&lt;ul>
+&lt;li>A/B testing&lt;/li>
+&lt;li>Rollback the version of a specific web server&lt;/li>
+&lt;li>Check out the audit log / deployment history for a particular web server&lt;/li>
+&lt;/ul>
+&lt;p>Moreover, you can see the status of all environments in the &lt;strong>All Deployment Projects&lt;/strong> page (&lt;strong>Deploy&lt;/strong> &amp;gt; &lt;strong>All Deployment Projects&lt;/strong>).&lt;/p>
+&lt;ul>
+&lt;li>If deployment of a particular web server is failed, I am able to find out which server is it easily&lt;/li>
+&lt;li>Plus, I can just re-deploy to that particuler web server&lt;/li>
+&lt;/ul>
+&lt;p>You can create a new &lt;em>deployment environment&lt;/em> by cloning an existing one (from the same &lt;em>deployment project&lt;/em> or from another one). Thus, this is not a tedious task.&lt;/p>
+&lt;p>(I am not sure about the above observation and please do let me know if I got something wrong or there are any better solutions.)&lt;/p>
+&lt;h5 id="my-decision">My decision&lt;/h5>
+&lt;p>This is how I organize the &lt;em>deployment project&lt;/em>:&lt;/p>
+&lt;p>&lt;img src="./img/image-20200913154337848.png" alt="Website deployment project setup">&lt;/p>
+&lt;pre>&lt;code>Deployment Project
+├── Production (A) environment: for builds from master / release
+├── Production (B) environment: for builds from master / release
+├── Staging environment: all other branches
+└── UAT environment: all other branches
+&lt;/code>&lt;/pre>&lt;h2 id="build-ci-1">Build (CI)&lt;/h2>
+&lt;p>Similarly, my team has to build nuget packages, .NET Framework and .NET Core web applications.&lt;/p>
+&lt;p>In my case, the CI part has a close relationship with the &lt;strong>gitflow&lt;/strong>.&lt;/p>
+&lt;h3 id="nuget-packages-1">Nuget Packages&lt;/h3>
+&lt;p>I need to build 2 kinds of &lt;em>artifacts&lt;/em>:&lt;/p>
+&lt;ul>
+&lt;li>Testing package: &lt;strong>Prerelease&lt;/strong>;&lt;/li>
+&lt;li>Production package; &lt;strong>Release&lt;/strong> (used by other solutions/projects in production) deployment.&lt;/li>
+&lt;/ul>
+&lt;h4 id="planbranch-configurations">Plan/Branch configurations&lt;/h4>
+&lt;p>(See the &lt;a href="#default-configurations-develop">Websites&lt;/a> section.)&lt;/p>
+&lt;p>&lt;img src="./img/ci-cd-CI-Nuget.png" alt="Bamboo class library CI flow">&lt;/p>
+&lt;h3 id="websites-1">Websites&lt;/h3>
+&lt;p>I need to build 2-3 kinds of &lt;em>artifacts&lt;/em>:&lt;/p>
+&lt;ul>
+&lt;li>For &lt;strong>UAT&lt;/strong> environment;&lt;/li>
+&lt;li>For &lt;strong>Staging&lt;/strong> environment (this environment is not 24/7 and will be set up when necessary);&lt;/li>
+&lt;li>For &lt;strong>Production&lt;/strong> environment.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="./img/ci-cd-CI-IIS.png" alt="Bamboo website CI flow">&lt;/p>
+&lt;h4 id="default-configurations-develop">Default configurations: &lt;code>develop&lt;/code>&lt;/h4>
+&lt;p>For the default settings in a &lt;em>build plan&lt;/em>, always choose the &lt;code>develop&lt;/code> as the main branch and allow Bamboo to create/remove all the &lt;code>feature/*&lt;/code>, &lt;code>hotfix/*&lt;/code> branches.&lt;/p>
+&lt;h4 id="production-configurations-master">Production configurations: &lt;code>master&lt;/code>&lt;/h4>
+&lt;p>Define a build plan for &lt;code>master&lt;/code> branch. Uncheck &lt;strong>Clean up plan branch automatically&lt;/strong> under &lt;strong>Branch details&lt;/strong> tab to prevent this branch being deleted by Bamboo.&lt;/p>
+&lt;h5 id="note-on-release-branches">Note on &lt;code>release&lt;/code> branches&lt;/h5>
+&lt;p>I ususlly not using &lt;code>release&lt;/code> branch. When I use that, I will set up a build branch &lt;strong>manually&lt;/strong>, just like the &lt;code>master&lt;/code>.&lt;/p>
+&lt;h4 id="staging-configurations-staging">Staging configurations: &lt;code>staging&lt;/code>&lt;/h4>
+&lt;p>Just like the set up of &lt;strong>production configurations&lt;/strong>. However, change the variables for the staging environment.&lt;/p>
+&lt;p>&lt;img src="./img/image-20200920110535916.png" alt="Build branch configuration - Branch details">&lt;/p>
+&lt;p>You may also need to override the &lt;em>default branch configurations&lt;/em> under the &lt;strong>Variables&lt;/strong> tab.&lt;/p>
+&lt;p>&lt;img src="./img/image-20200920110548520.png" alt="Build branch configuration - Variables">&lt;/p>
+&lt;p>You can find these tabs under form the top menu: &lt;strong>Build&lt;/strong> &amp;gt; &lt;strong>All build plans&lt;/strong> &amp;gt; &lt;strong>🖋&lt;/strong> (right end of the plan) &amp;gt; (Choose the plan branch name).&lt;/p></description></item></channel></rss>

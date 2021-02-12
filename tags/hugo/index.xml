@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>hugo on log from home</title><link>https://blog.eternalrecurrence.space/tags/hugo/</link><description>Recent content in hugo on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of hugo on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Fri, 05 Feb 2021 21:33:03 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Improving My Blogging Workflow</title><link>https://blog.eternalrecurrence.space/posts/improving-my-blogging-workflow/</link><pubDate>Fri, 05 Feb 2021 21:33:03 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/improving-my-blogging-workflow/</guid><description>&lt;img src="https://images.unsplash.com/photo-1578861377460-c4536383d637?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />&lt;h2 id="overview">Overview&lt;/h2>
+&lt;aside class="c-toc">
+&lt;details open>
+&lt;summary title="click to toggle table of contents.">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#overview">Overview&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#using-page-bundle-to-group-resouces">Using Page Bundle to Group resouces&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#insert-an-image">Insert an Image&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cover-image">Cover Image&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bonus-git-repository">Bonus: Git Repository&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#script-to-start-a-new-post">Script to start a new post&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#insert-images-to-typora">Insert Images to Typora&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#shell-script-to-launch-everything">Shell Script to launch everything&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;/aside>
+&lt;p>I set up this hugo blog and hosted it on GitHub page. At first, I just want to make it work: &lt;strong>showing some text and images&lt;/strong>. However, I realized that:&lt;/p>
+&lt;ol>
+&lt;li>placing the &lt;strong>images and posts place under different directories&lt;/strong> will make this blog become unmanagable.&lt;/li>
+&lt;li>I cannot see the images while writing a post because of (1). I have to switch to my browser when I want to see if the image has been inserted correctly.&lt;/li>
+&lt;li>&lt;strong>launching the markdown editor and start hugo&lt;/strong> after creating a new file will be a very good idea.&lt;/li>
+&lt;/ol>
+&lt;p>Therefore I use some time to re-organize the image and posts and created a script to help me to start writing a new post.&lt;/p>
+&lt;h2 id="using-page-bundle-to-group-resouces">Using Page Bundle to Group resouces&lt;/h2>
+&lt;p>After reading the Hugo&amp;rsquo;s documentation I think the &lt;a href="https://gohugo.io/content-management/organization/#page-bundles">page-bundles&lt;/a> feature is what I need. For each post with images, I will create a &lt;a href="https://gohugo.io/content-management/page-bundles/">Leaf Bundle&lt;/a> like the following:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">my-blog-post
+├── img
+│ ├── image-1.png
+│ ├── image-2.png
+│ └── image-n.png
+├── index.md
+└── thumbnail.jpg
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="insert-an-image">Insert an Image&lt;/h3>
+&lt;p>For example, the blog post will have a relative url &lt;code>/posts/my-blog-post/&lt;/code>. When I using a markdown editor to write the post, I can place all the images under &lt;code>/img&lt;/code> and use the relative url:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">I can insert an image like this: ![&lt;span style="color:#f92672">image-alt&lt;/span>](&lt;span style="color:#a6e22e">./img/image-2.png&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>By doing so, I can see the image right away and I don&amp;rsquo;t need to do special handling when generating the blog post using Hugo.&lt;/p>
+&lt;h3 id="cover-image">Cover Image&lt;/h3>
+&lt;p>Since the cover image will be placed in the front matter and can be seen in browser only, I place it under the same directory with the blog post (i.e. &lt;code>index.md&lt;/code>). In the blog post:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">---
+&lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">My Blog Post&lt;/span>
+&lt;span style="color:#f92672">cover_image&lt;/span>: &lt;span style="color:#ae81ff">/posts/my-blog-post/thumbnail.jpg&lt;/span>
+---
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>I will make use of the value in thumbnail and combine with the site root to generate an absolute url. The absolute url can then be used in meta data like &lt;code>og:image&lt;/code>. Good for SEO.&lt;/p>
+&lt;h3 id="bonus-git-repository">Bonus: Git Repository&lt;/h3>
+&lt;p>I know this is weird but I split my GitHub page into 2 repositories: the main repo, and a submodule contains all my raw markdown files of my blog posts. I think that will be more organized and I can get all the text files only. Placing the image out of the &lt;code>posts/&lt;/code> folder is kinda breaking this purpose.&lt;/p>
+&lt;p>Once I grouped the image with the markdown files, I can finally keep my content organized again! In short, I created a problem and then solved it 😅&lt;/p>
+&lt;h2 id="script-to-start-a-new-post">Script to start a new post&lt;/h2>
+&lt;p>I love to use &lt;a href="https://typora.io/">Typora&lt;/a> to write my posts. However, it&amp;rsquo;s vary painful to manage the images. If I pasting an image to Typora it will store my image into somewhere out of the git repository. Moving the images back to the repository and changing the image pathes is purly a waste of time.&lt;/p>
+&lt;h3 id="insert-images-to-typora">Insert Images to Typora&lt;/h3>
+&lt;p>Luckily, the image issue is solved once I group the post and image under the same folder. What I have to do is change the image setting in Typora:&lt;/p>
+&lt;p>&lt;img src="./img/image-20210205221146175.png" alt="image-20210205221146175">&lt;/p>
+&lt;p>Choose &lt;strong>Copy image to custom folder&lt;/strong> and set the value as &lt;code>./img&lt;/code>.&lt;/p>
+&lt;h3 id="shell-script-to-launch-everything">Shell Script to launch everything&lt;/h3>
+&lt;p>My current workflow to start a new post:&lt;/p>
+&lt;ol>
+&lt;li>launch Terminal and go to the blog post&amp;rsquo;s repo.&lt;/li>
+&lt;li>create a new markdown file.&lt;/li>
+&lt;li>launch Typora.&lt;/li>
+&lt;li>launch Hugo to see the result.&lt;/li>
+&lt;/ol>
+&lt;p>I automated the above steps using the following script:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="color:#75715e">#!/bin/zsh
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>read -p &lt;span style="color:#e6db74">&amp;#34;Create a new buldled post (e.g. hello-world): &amp;#34;&lt;/span> filename
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -z &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$filename&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>
+&lt;span style="color:#66d9ef">then&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34;Filename cannot be empty. Try again.&amp;#34;&lt;/span>
+&lt;span style="color:#66d9ef">else&lt;/span>
+cd ./blog
+echo &lt;span style="color:#e6db74">&amp;#34; 1. Creating new post... &amp;#34;&lt;/span>
+hugo new posts/&lt;span style="color:#e6db74">${&lt;/span>filename&lt;span style="color:#e6db74">}&lt;/span>/index.md
+echo &lt;span style="color:#e6db74">&amp;#34; 2. Launching Typora... &amp;#34;&lt;/span>
+open -a Typora ./content/posts/&lt;span style="color:#e6db74">${&lt;/span>filename&lt;span style="color:#e6db74">}&lt;/span>/index.md &amp;amp;
+echo &lt;span style="color:#e6db74">&amp;#34; 3. Launching browser... &amp;#34;&lt;/span>
+open http://localhost:1313/posts/&lt;span style="color:#e6db74">${&lt;/span>filename&lt;span style="color:#e6db74">}&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34; 4. Starting dev server... &amp;#34;&lt;/span>
+hugo serve -D
+&lt;span style="color:#66d9ef">fi&lt;/span>%
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To launch an app from Terminal, you can do this:&lt;/p>
+&lt;pre>&lt;code>open -a Typora &amp;amp;
+&lt;/code>&lt;/pre>&lt;p>Remember to have a &lt;code>&amp;amp;&lt;/code> at the end. Otherwise the application will be closed once you close the Terminal!&lt;/p></description></item><item><title>Displaying the Full Content in Hugo's RSS feed</title><link>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</link><pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</guid><description>&lt;h2 id="background">Background&lt;/h2>
+&lt;p>Recently I created a hugo blog and started writing articles (yes, that&amp;rsquo;s the blog you are reading). Later, I found that dev.to can &lt;a href="https://dev.to/settings/publishing-from-rss">publish articles (as draft) from a RSS feed&lt;/a>. In that way I don&amp;rsquo;t have to copy-and-paste my articles manually in order to publish the same item on dev.to!&lt;/p>
+&lt;aside class="c-toc">
+&lt;details open>
+&lt;summary title="click to toggle table of contents.">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#background">Background&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#problem">😨 Problem&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#solution">😀 Solution&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#locating-rssxml">Locating &lt;code>rss.xml&lt;/code>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#rendering-the-full-content">Rendering the full content&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#regenerating-the-site">Regenerating the site&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#bonus-the-difference-between--and---in-hugo">Bonus: The difference between &lt;code>{{&lt;/code> and &lt;code>{{-&lt;/code> in Hugo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;/aside>
+&lt;h2 id="problem">😨 Problem&lt;/h2>
+&lt;p>Although dev.to&amp;rsquo;s puslishing from RSS feed service is great, my Hugo site is not that great (with the basic settings). &lt;strong>When I was trying to sync my RSS feed items to dev.to, all items can be imported but only the beginning part of the content was fetched.&lt;/strong>&lt;/p>
+&lt;p>I know that should be something wrong with the RSS feeds generated by Hugo. The &lt;a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml">default Hugo RSS template&lt;/a> only renders &lt;code>Summary&lt;/code> of an article and my Hugo theme is using that:&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/bemnlam/83b253aef5526c30ca5535c72bd861cc.js">&lt;/script>
+&lt;p>As you can see in &lt;strong>line 73&lt;/strong>, the &lt;a href="https://validator.w3.org/feed/docs/rss2.html">&lt;code>&amp;lt;description&amp;gt;&lt;/code>&lt;/a> in my RSS feeds contain article summary only but not the full content. Is there any ways to change the &lt;code>Summary&lt;/code> here into something else? Something else that represents the &lt;strong>full content&lt;/strong>?&lt;/p>
+&lt;h2 id="solution">😀 Solution&lt;/h2>
+&lt;h3 id="locating-rssxml">Locating &lt;code>rss.xml&lt;/code>&lt;/h3>
+&lt;p>Usually, Hugo templates are placed under &lt;code>{your hugo theme}/layouts/_defualt/&lt;/code>. If such file does not exist, it&amp;rsquo;s time to create one. You can copy-and-paste the code from &lt;a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml">Hugo&amp;rsquo;s github&lt;/a> or run the following &lt;code>curl&lt;/code> command under &lt;code>/layouts/_default&lt;/code> to download it:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl &lt;span style="color:#e6db74">&amp;#34;https://raw.githubusercontent.com/gohugoio/hugo/master/tpl/tplimpl/embedded/templates/_default/rss.xml&amp;#34;&lt;/span> &amp;gt; rss.xml
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="rendering-the-full-content">Rendering the full content&lt;/h3>
+&lt;p>Rendering the full content of is really simple and straight-forward. What you need to do is just replacing this:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">description&lt;/span>&amp;gt;&lt;span style="color:#75715e">{{&lt;/span> &lt;span style="color:#a6e22e">.Summary&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">html&lt;/span> &lt;span style="color:#75715e">}}&lt;/span>&amp;lt;/&lt;span style="color:#f92672">description&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>With this:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">description&lt;/span>&amp;gt;&lt;span style="color:#75715e">{{-&lt;/span> &lt;span style="color:#a6e22e">.Content&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">html&lt;/span> &lt;span style="color:#75715e">-}}&lt;/span>&amp;lt;/&lt;span style="color:#f92672">description&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Caution: use &lt;code>{{-&lt;/code> instead of &lt;code>{{&lt;/code>. Read &lt;a href="#bonus-the-difference-between--and---in-hugo">the bonus part&lt;/a> if you want to know what is the difference.&lt;/p>
+&lt;h3 id="regenerating-the-site">Regenerating the site&lt;/h3>
+&lt;p>Updating the RSS template &lt;strong>will not&lt;/strong> update your &lt;strong>generated content&lt;/strong> automatically. Therefore, you need to re-generate your Hugo site:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You should see the changes in all RSS xml files (from git). After that, push all the code changes, remove all the fetched posts in dev.to and re-fetch them. That&amp;rsquo;s it.&lt;/p>
+&lt;h2 id="bonus-the-difference-between--and---in-hugo">Bonus: The difference between &lt;code>{{&lt;/code> and &lt;code>{{-&lt;/code> in Hugo&lt;/h2>
+&lt;p>You may notice that the template code is changed into &lt;code>{{-&lt;/code> from &lt;code>{{&lt;/code>. As a newbie in Hugo I checked &lt;a href="https://gohugo.io/templates/introduction/#whitespace">the Hugo&amp;rsquo;s official documentation about &lt;em>whitespace&lt;/em>&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>&amp;hellip; the ability to trim the whitespace from either side of a Go tag &amp;hellip;&lt;/p>
+&lt;/blockquote>
+&lt;p>This &lt;code>-&lt;/code> notation is introduced in Go 1.6.&lt;/p>
+&lt;p>The following example (from the documentation):&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;span style="color:#75715e">{{&lt;/span> &lt;span style="color:#a6e22e">.Title&lt;/span> &lt;span style="color:#75715e">}}&lt;/span>
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;span style="color:#75715e">{{-&lt;/span> &lt;span style="color:#a6e22e">.Title&lt;/span> &lt;span style="color:#75715e">-}}&lt;/span>
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which will output:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+Hello, World!
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;Hello, World!&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In other words, that&amp;rsquo;s the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim">&lt;code>trim()&lt;/code>&lt;/a> in JavaScript. That&amp;rsquo;s the &lt;a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.trim">&lt;code>String.Trim()&lt;/code>&lt;/a> in C#.&lt;/p>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>The default RSS feed in Hugo site shows &lt;em>article abstract&lt;/em> only. By defining a custom &lt;code>rss.xml&lt;/code> template and replacing &lt;code>{{ .Summary | html }}&lt;/code> with &lt;code>{{- .Content | html -}}&lt;/code> in the &lt;code>&amp;lt;description&amp;gt;&lt;/code> tag you will get the article&amp;rsquo;s full content in the re-generated RSS xml files.&lt;/p></description></item><item><title>How to add a new Hugo blog post</title><link>https://blog.eternalrecurrence.space/posts/welcome/</link><pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/welcome/</guid><description>&lt;p>Go to &lt;code>blog&lt;/code> folder&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo new posts/name-of-the-new-post.md
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Write your post. Back to &lt;code>blog&lt;/code> folder and then&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo server -D
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can preview your blog locally.&lt;/p>
+&lt;h3 id="deploy-production">Deploy production&lt;/h3>
+&lt;p>Change &lt;code>draft=true&lt;/code> in the blog post and then&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Push to remote &lt;code>master&lt;/code>.&lt;/p>
+&lt;p>Done.&lt;/p></description></item></channel></rss>

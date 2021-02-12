@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Leisure on log from home</title><link>https://blog.eternalrecurrence.space/categories/leisure/</link><description>Recent content in Leisure on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of Leisure on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Fri, 05 Feb 2021 21:33:03 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/categories/leisure/index.xml" rel="self" type="application/rss+xml"/><item><title>Improving My Blogging Workflow</title><link>https://blog.eternalrecurrence.space/posts/improving-my-blogging-workflow/</link><pubDate>Fri, 05 Feb 2021 21:33:03 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/improving-my-blogging-workflow/</guid><description>&lt;img src="https://images.unsplash.com/photo-1578861377460-c4536383d637?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />&lt;h2 id="overview">Overview&lt;/h2>
+&lt;aside class="c-toc">
+&lt;details open>
+&lt;summary title="click to toggle table of contents.">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#overview">Overview&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#using-page-bundle-to-group-resouces">Using Page Bundle to Group resouces&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#insert-an-image">Insert an Image&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cover-image">Cover Image&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bonus-git-repository">Bonus: Git Repository&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#script-to-start-a-new-post">Script to start a new post&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#insert-images-to-typora">Insert Images to Typora&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#shell-script-to-launch-everything">Shell Script to launch everything&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;/aside>
+&lt;p>I set up this hugo blog and hosted it on GitHub page. At first, I just want to make it work: &lt;strong>showing some text and images&lt;/strong>. However, I realized that:&lt;/p>
+&lt;ol>
+&lt;li>placing the &lt;strong>images and posts place under different directories&lt;/strong> will make this blog become unmanagable.&lt;/li>
+&lt;li>I cannot see the images while writing a post because of (1). I have to switch to my browser when I want to see if the image has been inserted correctly.&lt;/li>
+&lt;li>&lt;strong>launching the markdown editor and start hugo&lt;/strong> after creating a new file will be a very good idea.&lt;/li>
+&lt;/ol>
+&lt;p>Therefore I use some time to re-organize the image and posts and created a script to help me to start writing a new post.&lt;/p>
+&lt;h2 id="using-page-bundle-to-group-resouces">Using Page Bundle to Group resouces&lt;/h2>
+&lt;p>After reading the Hugo&amp;rsquo;s documentation I think the &lt;a href="https://gohugo.io/content-management/organization/#page-bundles">page-bundles&lt;/a> feature is what I need. For each post with images, I will create a &lt;a href="https://gohugo.io/content-management/page-bundles/">Leaf Bundle&lt;/a> like the following:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">my-blog-post
+├── img
+│ ├── image-1.png
+│ ├── image-2.png
+│ └── image-n.png
+├── index.md
+└── thumbnail.jpg
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="insert-an-image">Insert an Image&lt;/h3>
+&lt;p>For example, the blog post will have a relative url &lt;code>/posts/my-blog-post/&lt;/code>. When I using a markdown editor to write the post, I can place all the images under &lt;code>/img&lt;/code> and use the relative url:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">I can insert an image like this: ![&lt;span style="color:#f92672">image-alt&lt;/span>](&lt;span style="color:#a6e22e">./img/image-2.png&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>By doing so, I can see the image right away and I don&amp;rsquo;t need to do special handling when generating the blog post using Hugo.&lt;/p>
+&lt;h3 id="cover-image">Cover Image&lt;/h3>
+&lt;p>Since the cover image will be placed in the front matter and can be seen in browser only, I place it under the same directory with the blog post (i.e. &lt;code>index.md&lt;/code>). In the blog post:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">---
+&lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">My Blog Post&lt;/span>
+&lt;span style="color:#f92672">cover_image&lt;/span>: &lt;span style="color:#ae81ff">/posts/my-blog-post/thumbnail.jpg&lt;/span>
+---
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>I will make use of the value in thumbnail and combine with the site root to generate an absolute url. The absolute url can then be used in meta data like &lt;code>og:image&lt;/code>. Good for SEO.&lt;/p>
+&lt;h3 id="bonus-git-repository">Bonus: Git Repository&lt;/h3>
+&lt;p>I know this is weird but I split my GitHub page into 2 repositories: the main repo, and a submodule contains all my raw markdown files of my blog posts. I think that will be more organized and I can get all the text files only. Placing the image out of the &lt;code>posts/&lt;/code> folder is kinda breaking this purpose.&lt;/p>
+&lt;p>Once I grouped the image with the markdown files, I can finally keep my content organized again! In short, I created a problem and then solved it 😅&lt;/p>
+&lt;h2 id="script-to-start-a-new-post">Script to start a new post&lt;/h2>
+&lt;p>I love to use &lt;a href="https://typora.io/">Typora&lt;/a> to write my posts. However, it&amp;rsquo;s vary painful to manage the images. If I pasting an image to Typora it will store my image into somewhere out of the git repository. Moving the images back to the repository and changing the image pathes is purly a waste of time.&lt;/p>
+&lt;h3 id="insert-images-to-typora">Insert Images to Typora&lt;/h3>
+&lt;p>Luckily, the image issue is solved once I group the post and image under the same folder. What I have to do is change the image setting in Typora:&lt;/p>
+&lt;p>&lt;img src="./img/image-20210205221146175.png" alt="image-20210205221146175">&lt;/p>
+&lt;p>Choose &lt;strong>Copy image to custom folder&lt;/strong> and set the value as &lt;code>./img&lt;/code>.&lt;/p>
+&lt;h3 id="shell-script-to-launch-everything">Shell Script to launch everything&lt;/h3>
+&lt;p>My current workflow to start a new post:&lt;/p>
+&lt;ol>
+&lt;li>launch Terminal and go to the blog post&amp;rsquo;s repo.&lt;/li>
+&lt;li>create a new markdown file.&lt;/li>
+&lt;li>launch Typora.&lt;/li>
+&lt;li>launch Hugo to see the result.&lt;/li>
+&lt;/ol>
+&lt;p>I automated the above steps using the following script:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="color:#75715e">#!/bin/zsh
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>read -p &lt;span style="color:#e6db74">&amp;#34;Create a new buldled post (e.g. hello-world): &amp;#34;&lt;/span> filename
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -z &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$filename&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>
+&lt;span style="color:#66d9ef">then&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34;Filename cannot be empty. Try again.&amp;#34;&lt;/span>
+&lt;span style="color:#66d9ef">else&lt;/span>
+cd ./blog
+echo &lt;span style="color:#e6db74">&amp;#34; 1. Creating new post... &amp;#34;&lt;/span>
+hugo new posts/&lt;span style="color:#e6db74">${&lt;/span>filename&lt;span style="color:#e6db74">}&lt;/span>/index.md
+echo &lt;span style="color:#e6db74">&amp;#34; 2. Launching Typora... &amp;#34;&lt;/span>
+open -a Typora ./content/posts/&lt;span style="color:#e6db74">${&lt;/span>filename&lt;span style="color:#e6db74">}&lt;/span>/index.md &amp;amp;
+echo &lt;span style="color:#e6db74">&amp;#34; 3. Launching browser... &amp;#34;&lt;/span>
+open http://localhost:1313/posts/&lt;span style="color:#e6db74">${&lt;/span>filename&lt;span style="color:#e6db74">}&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34; 4. Starting dev server... &amp;#34;&lt;/span>
+hugo serve -D
+&lt;span style="color:#66d9ef">fi&lt;/span>%
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To launch an app from Terminal, you can do this:&lt;/p>
+&lt;pre>&lt;code>open -a Typora &amp;amp;
+&lt;/code>&lt;/pre>&lt;p>Remember to have a &lt;code>&amp;amp;&lt;/code> at the end. Otherwise the application will be closed once you close the Terminal!&lt;/p></description></item><item><title>The Perks of Being a Mac (or FreeBSD) user</title><link>https://blog.eternalrecurrence.space/posts/the-perks-of-being-a-mac-or-freebsd-user/</link><pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid><description>&lt;blockquote>
+&lt;p>🚨 Note: This is not a technical reading. If you want to have some fun and practice your &lt;code>ls&lt;/code> and &lt;code>cat&lt;/code> skills, this article may suit you.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="table-of-contents">Table of Contents&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#misc-file">Misc. files of the OS&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#meaning-of-flowers">The meaning of flowers&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#the-bday-guide">The birthday present guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#mac-is-a-secret-fan-of">Mac is a secret fan of&amp;hellip;&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bonus-recipe">Bonus: the missing recipe&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="misc-file">Misc. Files of the OS&lt;/h2>
+&lt;p>I found some interesting files under &lt;code>/usr/share/misc&lt;/code> of my MacBook:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 3.1K Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> ascii
+-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 374B Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> birthtoken
+-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 2.9K Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> eqnchar
+-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 1.4K Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> flowers
+-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 508B Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> getopt
+-rw-r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 941B Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> mail.help
+-rw-r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 1.3K Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> mail.tildehelp
+-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 310B Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> man.template
+-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 948B Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> mdoc.template
+-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 425B Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> operator
+-r--r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 78K May &lt;span style="color:#ae81ff">27&lt;/span> 11:38 trace.codes
+-rw-r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 13K Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> units.lib
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="meaning-of-flowers">The Meaning of Flowers&lt;/h2>
+&lt;p>&lt;code>/usr/share/misc/flowers&lt;/code> lists out the meaning of flowers&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. Check this out if you are going to buy some flowers but you don&amp;rsquo;t know what you should buy.&lt;/p>
+&lt;pre>&lt;code># Flower : Meaning
+# @(#)flowers 8.1 (Berkeley) 6/8/93
+#
+# Upside down reverses the meaning.
+African violet:Such worth is rare.
+Apple blossom:Preference.
+Bachelor's button:Celibacy.
+Bay leaf:I change but in death.
+Camelia:Reflected loveliness.
+Chrysanthemum, other color:Slighted love.
+Chrysanthemum, red:I love.
+Chrysanthemum, white:Truth.
+Clover:Be mine.
+Crocus:Abuse not.
+Daffodil:Innocence.
+Forget-me-not:True love.
+Fuchsia:Fast.
+Gardenia:Secret, untold love.
+Honeysuckle:Bonds of love.
+Ivy:Friendship, fidelity, marriage.
+Jasmine:Amiability, transports of joy, sensuality.
+Leaves (dead):Melancholy.
+Lilac:Youthful innocence.
+Lilly of the valley:Return of happiness.
+Lilly:Purity, sweetness.
+Magnolia:Dignity, perseverance.
+Marigold:Jealousy.
+Mint:Virtue.
+Orange blossom:Your purity equals your loveliness.
+Orchid:Beauty, magnificence.
+Pansy:Thoughts.
+Peach blossom:I am your captive.
+Petunia:Your presence soothes me.
+Poppy:Sleep.
+Rose, any color:Love.
+Rose, deep red:Bashful shame.
+Rose, single, pink:Simplicity.
+Rose, thornless, any color:Early attachment.
+Rose, white:I am worthy of you.
+Rose, yellow:Decrease of love, rise of jealousy.
+Rosebud, white:Girlhood, and a heart ignorant of love.
+Rosemary:Remembrance.
+Sunflower:Haughtiness.
+Tulip, red:Declaration of love.
+Tulip, yellow:Hopeless love.
+Violet, blue:Faithfulness.
+Violet, white:Modesty.
+Zinnia:Thoughts of absent friends.
+&lt;/code>&lt;/pre>&lt;h2 id="the-bday-guide">The Birthday Present Guide&lt;/h2>
+&lt;p>Check out the &lt;code>/usr/share/misc/birthtoken&lt;/code>&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> and see which gem and flower (looks like someone in Berkeley knows about the flowers really well) you should buy for your friends!&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;em>&amp;ldquo;Oh why you choose this gem and that flower as the present?&amp;quot;&lt;/em>&lt;/p>
+&lt;p>&lt;em>&amp;ldquo;Um&amp;hellip; that&amp;rsquo;s my computer&amp;rsquo;s idea&amp;hellip;&amp;quot;&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="more-about-perl-and-ruby">More About Perl and Ruby&lt;/h3>
+&lt;p>The creator of &lt;a href="https://www.ruby-lang.org">Ruby&lt;/a> chose the name &lt;em>Ruby&lt;/em> because it was &lt;a href="https://ruby-doc.org/docs/ruby-doc-bundle/FAQ/FAQ.html">the birthstone of one of his colleagues&lt;/a> and that is the gem right after Pearl (&lt;a href="https://www.perl.org/">Perl&lt;/a>).&lt;/p>
+&lt;p>&lt;strong>Lesson learnt:&lt;/strong> when you try to name a new language you invented, you should check this file out!&lt;/p>
+&lt;pre>&lt;code># Birthday : Birth Stone : Birth Flower
+# @(#)birthtoken 8.1 (Berkeley) 6/8/93
+January:Garnet:Carnation
+February:Amethyst:Violet
+March:Aquamarine:Jonquil
+April:Diamond:Sweetpea
+May:Emerald:Lily Of The Valley
+June:Pearl:Rose
+July:Ruby:Larkspur
+August:Peridot:Gladiolus
+September:Sapphire:Aster
+October:Opal:Calendula
+November:Topaz:Chrysanthemum
+December:Turquoise:Narcissus
+&lt;/code>&lt;/pre>&lt;h2 id="mac-is-a-secret-fan-of">Mac is a Secret Fan of&amp;hellip;&lt;/h2>
+&lt;p>The &lt;code>/usr/share/calendar&lt;/code> folder contains some useful calendars but this one really catches my eye:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">-rw-r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root wheel 1.4K Dec &lt;span style="color:#ae81ff">14&lt;/span> &lt;span style="color:#ae81ff">2019&lt;/span> calendar.lotr
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a timeline of the important events happened in &lt;em>The Lord Of The Rings&lt;/em>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>:&lt;/p>
+&lt;pre>&lt;code>/*
+* Lord Of The Rings
+*
+* $FreeBSD: src/usr.bin/calendar/calendars/calendar.lotr,v 1.2 2003/10/09 00:31:48 grog Exp $
+*/
+#ifndef _calendar_lotr_
+#define _calendar_lotr_
+01/05 Fellowship enters Moria
+01/09 Fellowship reaches Lorien
+01/17 Passing of Gandalf
+02/07 Fellowship leaves Lorien
+02/17 Death of Boromir
+02/20 Meriadoc &amp;amp; Pippin meet Treebeard
+02/22 Passing of King Elessar
+02/24 Ents destroy Isengard
+02/26 Aragorn takes the Paths of the Dead
+03/05 Frodo &amp;amp; Samwise encounter Shelob
+03/08 Deaths of Denethor &amp;amp; Theoden
+03/18 Destruction of the Ring
+03/29 Flowering of the Mallorn
+04/04 Gandalf visits Bilbo
+04/17 An unexpected party
+04/23 Crowning of King Elessar
+05/19 Arwen leaves Lorien to wed King Elessar
+06/11 Sauron attacks Osgiliath
+06/13 Bilbo returns to Bag End
+06/23 Wedding of Elessar &amp;amp; Arwen
+07/04 Gandalf imprisoned by Saruman
+07/24 The ring comes to Bilbo
+07/26 Bilbo rescued from Wargs by Eagles
+08/03 Funeral of King Theoden
+08/29 Saruman enters the Shire
+09/10 Gandalf escapes from Orthanc
+09/14 Frodo &amp;amp; Bilbo's birthday
+09/15 Black riders enter the Shire
+09/18 Frodo and company rescued by Bombadil
+09/28 Frodo wounded at Weathertop
+10/05 Frodo crosses bridge of Mitheithel
+10/16 Boromir reaches Rivendell
+10/17 Council of Elrond
+10/25 End of War of the Ring
+11/16 Bilbo reaches the Lonely Mountain
+12/05 Death of Smaug
+12/16 Fellowship begins Quest
+#endif /* !_calendar_lotr_ */
+&lt;/code>&lt;/pre>&lt;h2 id="bonus-recipe">Bonus: the missing recipe&lt;/h2>
+&lt;p>In the eariler versions of the macOS, &lt;strong>a hidden cookie recipe&lt;/strong> can be found by typing this command in the Terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Open /usr/share/emacs/22.1/etc/COOKIES
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Unforrunately in the latest macOS this file is gone (together with &lt;code>/usr/share/emacs&lt;/code>). We can only check this out &lt;a href="https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html">on the Apple Open Source website&lt;/a>&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>.&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;a href="https://github.com/lattera/freebsd/blob/master/share/misc/flowers">https://github.com/lattera/freebsd/blob/master/share/misc/flowers&lt;/a> &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>&lt;a href="https://github.com/lattera/freebsd/blob/master/share/misc/birthtoken">https://github.com/lattera/freebsd/blob/master/share/misc/birthtoken&lt;/a> &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3" role="doc-endnote">
+&lt;p>&lt;a href="https://opensource.apple.com/source/misc_cmds/misc_cmds-31/calendar/calendars/calendar.lotr.auto.html">https://opensource.apple.com/source/misc_cmds/misc_cmds-31/calendar/calendars/calendar.lotr.auto.html&lt;/a> &lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:4" role="doc-endnote">
+&lt;p>&lt;a href="https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html">https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html&lt;/a> &lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item></channel></rss>
