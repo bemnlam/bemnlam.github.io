@@ -11,8 +11,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
-    env: 
-      working-directory: ./blog
 
     steps:
       - uses: actions/checkout@v2
@@ -27,10 +25,13 @@ jobs:
           # extended: true
 
       - name: Build
-        run: hugo --minify
+        run:
+          pwd 
+          hugo --minify
+        working-directory: ./blog
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./blog/public
