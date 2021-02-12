@@ -28,6 +28,9 @@ jobs:
         run: hugo --minify --destination ../public
         working-directory: ./blog
 
+      - name: List ./public
+        run: ls -al ./public
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
