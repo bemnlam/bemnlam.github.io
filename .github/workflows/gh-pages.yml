@@ -11,6 +11,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+    env: 
+      working-directory: ./blog
+
     steps:
       - uses: actions/checkout@v2
         with:
