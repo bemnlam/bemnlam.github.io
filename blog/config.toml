@@ -29,7 +29,7 @@ googleAnalytics = "UA-169198494-1"
   author = "Bemn"
   authorwebsite = "https://bemnlam.github.io/"
   avatar = "https://gravatar.com/avatar/feded3a7e7501be7a8ce86fd598b2b6a?s=100"
-  bio = "A HongKonger."
+  bio = "Hong Konger."
   # Logo image. This is displayed ogp image.
   logo = "cover.png"
   favicon = "favicon.ico"
@@ -45,6 +45,7 @@ googleAnalytics = "UA-169198494-1"
   home = ["HTML", "RSS", "JSON"]
 
 [[menu.main]]
+    # identifier = "blog"
     name = "📖 blog"
     url = "/"
     weight = 1
@@ -55,16 +56,23 @@ googleAnalytics = "UA-169198494-1"
 #     weight = 2
 
 [[menu.main]]
+    # parent = "blog"
     name = "🗂 categories"
     url = "/categories"
     weight = 3
 
 [[menu.main]]
+    # parent = "blog"
     name = "🏷 tags"
     url = "/tags"
     weight = 4
 
 [[menu.main]]
     name = "☕️ coffee lab"
-    url = "https://bemnlam.gitlab.io/coffee-lab/"
+    url = "https://coffeelab.eternalrecurrence.space/"
+    weight = 10
+
+[[menu.main]]
+    name = "⚙️ kobo note reader"
+    url = "https://kobo.eternalrecurrence.space/"
     weight = 10
