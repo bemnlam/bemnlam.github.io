@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>tutorial on log from home</title><link>https://blog.eternalrecurrence.space/tags/tutorial/</link><description>Recent content in tutorial on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of tutorial on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Thu, 31 Dec 2020 17:46:38 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Cloudflare for AWS Route 53 Domains</title><link>https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/</link><pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/</guid><description>&lt;img src="https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg" />&lt;h2 id="overview">Overview&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>tutorial on log from home</title><link>https://blog.lofibean.cc/tags/tutorial/</link><description>Recent content in tutorial on log from home</description><image><url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url><title>Favicon of tutorial on log from home</title><link>https://blog.lofibean.cc/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Thu, 31 Dec 2020 17:46:38 +0800</lastBuildDate><atom:link href="https://blog.lofibean.cc/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Cloudflare for AWS Route 53 Domains</title><link>https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/</link><pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate><guid>https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/</guid><description>&lt;img src="https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg" />&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This article shows how to configure Cloudflare for an existing website using AWS Route53.&lt;/p>
 &lt;aside class="c-toc">
 &lt;details open>
@@ -62,13 +62,13 @@
 &lt;p>&lt;img src="./img/image-20201231182416379.png" alt="image-20201231182416379">&lt;/p>
 &lt;h4 id="1-log-in-to-your-registrar-account">1. Log in to your registrar account&lt;/h4>
 &lt;p>In the previous section, you should know which service provider is your domain registrar. Login to your domain registrar and find out the nameserver config. Then, remove the existing nameservers (the entries shown in step 1). For example:&lt;/p>
-&lt;pre>&lt;code>ns1.mydomain.com
+&lt;pre tabindex="0">&lt;code>ns1.mydomain.com
 ns2.mydomain.com
 ns3.mydomain.com
 ns4.mydomain.com
 &lt;/code>&lt;/pre>&lt;h4 id="2-replace-with-cloudflares-nameservers">2. Replace with Cloudflare&amp;rsquo;s nameservers:&lt;/h4>
 &lt;p>When all the existing nameservers are removed, you have to add the Cloudflare nameservers in the domain registrar. For example:&lt;/p>
-&lt;pre>&lt;code>autumn.ns.cloudflare.com
+&lt;pre tabindex="0">&lt;code>autumn.ns.cloudflare.com
 hans.ns.cloudflare.com
 &lt;/code>&lt;/pre>&lt;p>Note: you have to enter the 2 nameservers shown in step 2. Other (Cloudflare) nameservers won&amp;rsquo;t work.&lt;/p>
 &lt;h3 id="verify-nameservers">Verify nameservers&lt;/h3>
@@ -99,7 +99,7 @@ hans.ns.cloudflare.com
 &lt;/ul>
 &lt;h2 id="summary">Summary&lt;/h2>
 &lt;p>To use &lt;strong>Cloudflare&lt;/strong>, you need to understand what a &lt;strong>domain registrar&lt;/strong> is. By changing &lt;strong>nameservers&lt;/strong> in a domain registrar and updating some records related to AWS&amp;rsquo;s infrastructure, we can set up the Cloudflare domain for an existing website using &lt;strong>AWS Route 53&lt;/strong>.&lt;/p>
-&lt;p>&lt;em>This is the end of this article (as well as the year 2020).&lt;/em>&lt;/p></description></item><item><title>Set Up an AWS EC2 with Ubuntu GUI, RDP and more</title><link>https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</link><pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid><description>&lt;img src="https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>&lt;em>This is the end of this article (as well as the year 2020).&lt;/em>&lt;/p></description></item><item><title>Set Up an AWS EC2 with Ubuntu GUI, RDP and more</title><link>https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</link><pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate><guid>https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid><description>&lt;img src="https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p>
 &lt;p>You need to create a AWS account: &lt;a href="https://portal.aws.amazon.com/billing/signup">https://portal.aws.amazon.com/billing/signup&lt;/a>. You may need to provide your credit card information during the signup process.&lt;/p>
 &lt;p>Sign in to your AWS Account and go to the AWS EC2 Console: &lt;a href="https://aws.amazon.com/console/">https://aws.amazon.com/console/&lt;/a>&lt;/p>
@@ -162,19 +162,19 @@ hans.ns.cloudflare.com
 &lt;p>&lt;img src="./img/image-20200702184135610.png" alt="image-20200702184135610">&lt;/p>
 &lt;h5 id="do-a-chmod-on-the-key-file">Do a &lt;code>chmod&lt;/code> on the key file&lt;/h5>
 &lt;p>You need to make sure that the &lt;code>ssh_private_key.pem&lt;/code> downloaded is able to execute. Run &lt;code>chmod&lt;/code> to change the permission:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ ll ~/Downloads/ | grep &lt;span style="color:#e6db74">&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ ll ~/Downloads/ | grep &lt;span style="color:#e6db74">&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span>
 -rw-r--r--@ &lt;span style="color:#ae81ff">1&lt;/span> BEN staff 1.7K Jul &lt;span style="color:#ae81ff">2&lt;/span> 18:41 ssh_private_key.pem
 ❯ chmod &lt;span style="color:#ae81ff">400&lt;/span> ~/Downloads/ssh_private_key.pem
 ❯ ll ~/Downloads/ | grep &lt;span style="color:#e6db74">&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span>
 -r--------@ &lt;span style="color:#ae81ff">1&lt;/span> BEN staff 1.7K Jul &lt;span style="color:#ae81ff">2&lt;/span> 18:41 ssh_private_key.pem
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="connect-to-ec2-via-ssh">Connect to EC2 via SSH&lt;/h2>
 &lt;p>Once you click the &lt;strong>Launch instance&lt;/strong> , you should be able to see your instance in &lt;strong>running&lt;/strong> state in the web console. Then, you can connect to the EC2 via ssh using the &lt;code>pem&lt;/code> key file. Assuming that your DNS name of your EC2 is &lt;code>ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com&lt;/code> and it is running at &lt;code>ap-northeast-1&lt;/code> region, you can connect to it using user &lt;code>ubuntu&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ ssh -i ~/Downloads/ssh_private_key.pem ubuntu@ec2-0-1-2-3.region-name.compute.amazonaws.com
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ ssh -i ~/Downloads/ssh_private_key.pem ubuntu@ec2-0-1-2-3.region-name.compute.amazonaws.com
 The authenticity of host &lt;span style="color:#e6db74">&amp;#39;ec2-0-1-2-3.region-name.compute.amazonaws.com (0.1.2.3)&amp;#39;&lt;/span> can&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>t be established.
 ECDSA key fingerprint is SHA256:8t8ey5IqoiGOKGc9WuDc5SXaYqFHPnKph1mRtzbQNTc.
 Are you sure you want to &lt;span style="color:#66d9ef">continue&lt;/span> connecting &lt;span style="color:#f92672">(&lt;/span>yes/no/&lt;span style="color:#f92672">[&lt;/span>fingerprint&lt;span style="color:#f92672">])&lt;/span>?
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You need to confirm your fingerprint at the first connection attempt.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Welcome to Ubuntu 18.04.4 LTS &lt;span style="color:#f92672">(&lt;/span>GNU/Linux 5.3.0-1023-aws x86_64&lt;span style="color:#f92672">)&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Welcome to Ubuntu 18.04.4 LTS &lt;span style="color:#f92672">(&lt;/span>GNU/Linux 5.3.0-1023-aws x86_64&lt;span style="color:#f92672">)&lt;/span>
 * Documentation: https://help.ubuntu.com
 * Management: https://landscape.canonical.com
 * Support: https://ubuntu.com/advantage
@@ -205,12 +205,12 @@ ubuntu@ip-172-31-4-8:~$
 &lt;p>xrdp provides a graphical login to remote machines using RDP (Microsoft Remote Desktop Protocol)&lt;/p>
 &lt;/blockquote>
 &lt;p>Install the packages:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get update -y
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get update -y
 sudo apt-get install lxde -y
 sudo apt-get install xrdp -y
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="set-a-password-for-your-accout">Set a password for your accout&lt;/h4>
 &lt;p>You need to also set up a password for the &lt;em>ubuntu&lt;/em>. This is for your later use in RDP as RDP only allows you to login an password-protected account.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo passwd ubuntu
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo passwd ubuntu
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="connect-to-ec2-via-remote-desktop">Connect to EC2 via remote desktop&lt;/h3>
 &lt;p>For mac user, you need to download the &lt;a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12">Microsoft Remote Desktop&lt;/a>. If you are using Windows, you should already have the Remote Desktop application preinstalled.&lt;/p>
 &lt;p>&lt;a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12">&lt;img src="./img/image-20201003143752732.png" alt="Download Microsoft Remote Desktop">&lt;/a>&lt;/p>
@@ -223,23 +223,23 @@ sudo apt-get install xrdp -y
 &lt;h2 id="bonus-materials">Bonus Materials&lt;/h2>
 &lt;h3 id="1-install-additional-ibus-input-method">1. Install additional IBus input method&lt;/h3>
 &lt;p>If you want to type Japanese, Chinese, etc. you may need to install an input method. For cangjie, you can install &lt;a href="http://cangjians.github.io/projects/ibus-cangjie/install.html">&lt;strong>Cangjians&lt;/strong>&lt;/a> via the terminal:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get install ibus-cangjie
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get install ibus-cangjie
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-install-midori-browser-from-deb-package">2. Install Midori browser from &lt;code>.deb&lt;/code> package&lt;/h3>
 &lt;blockquote>
 &lt;p>&lt;strong>Midori Browser&lt;/strong> is a browser web light, fast, secure, free software &amp;amp; open source&lt;/p>
 &lt;/blockquote>
 &lt;p>Download .deb file: &lt;a href="https://astian.org/en/midori-browser/download/">https://astian.org/en/midori-browser/download/&lt;/a> or using &lt;code>wget&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cd ~/Downloads
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cd ~/Downloads
 sudo wget -qnc https://packages.astian.org/pool/main/m/midori/midori_9.0.0-1_amd64.deb
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/Downloads$ ll
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/Downloads$ ll
 total &lt;span style="color:#ae81ff">1492&lt;/span>
 drwxr-xr-x &lt;span style="color:#ae81ff">2&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">4096&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 11:29 ./
 drwxr-xr-x &lt;span style="color:#ae81ff">17&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">4096&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 11:22 ../
 -rw-r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root root &lt;span style="color:#ae81ff">1517328&lt;/span> Jan &lt;span style="color:#ae81ff">11&lt;/span> 23:26 midori_9.0.0-1_amd64.deb
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, install the &lt;code>deb&lt;/code> package using &lt;code>dpkg&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dpkg -i midori_9.0.0-1_amd64.deb
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dpkg -i midori_9.0.0-1_amd64.deb
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You may see the &lt;code>dependency problems&lt;/code> like the following:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/Downloads$ sudo dpkg --configure -a
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/Downloads$ sudo dpkg --configure -a
 dpkg: dependency problems prevent configuration of midori:
 midori depends on libpeas-1.0-0 &lt;span style="color:#f92672">(&lt;/span>&amp;gt;&lt;span style="color:#f92672">=&lt;/span> 1.15&lt;span style="color:#f92672">)&lt;/span>; however:
 Package libpeas-1.0-0 is not installed.
@@ -254,12 +254,12 @@ dependency problems - leaving unconfigured
 Errors were encountered &lt;span style="color:#66d9ef">while&lt;/span> processing:
 midori
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case, update the packages and reinstall midori:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dpkg --configure -a
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dpkg --configure -a
 sudo apt-get -f install
 sudo apt-get update
 sudo apt-get install midori
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-set-up-a-swapfile-for-better-performance">3. Set up a &lt;code>swapfile&lt;/code> for better performance&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~$ sudo fallocate -l 1G /swapfile
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~$ sudo fallocate -l 1G /swapfile
 ubuntu@ip-172-31-4-8:~$ sudo chmod &lt;span style="color:#ae81ff">600&lt;/span> /swapfile
 ubuntu@ip-172-31-4-8:~$ sudo mkswap /swapfile
 Setting up swapspace version 1, size &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1024&lt;/span> MiB &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#ae81ff">1073737728&lt;/span> bytes&lt;span style="color:#f92672">)&lt;/span>
@@ -269,8 +269,8 @@ ubuntu@ip-172-31-4-8:~$ sudo swapon --show
 NAME TYPE SIZE USED PRIO
 /swapfile file 1024M 0B -2
 ubuntu@ip-172-31-4-8:~$
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo nano /etc/fstab
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/swapfile swap swap defaults &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo nano /etc/fstab
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/swapfile swap swap defaults &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, reboot the machine.&lt;/p>
 &lt;h3 id="4-use-ec2-as-a-vpn-server">4. Use EC2 as a VPN server&lt;/h3>
 &lt;p>Create a new security group allows all TCP and UDP inbound connections and add this security group to the EC2 instance:&lt;/p>
@@ -279,20 +279,20 @@ ubuntu@ip-172-31-4-8:~$
 &lt;h4 id="install-openvpn-scripts">Install openvpn scripts&lt;/h4>
 &lt;p>&lt;a href="https://github.com/Nyr/openvpn-install">This repo&lt;/a> contains scripts for VPN server set up and profile management. Install it into your EC2:&lt;/p>
 &lt;p>Download the script:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt update
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt update
 sudo apt upgrade -y
 mkdir ~/vpn &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> cd ~/vpn
 wget https://git.io/vpn -O openvpn-install.sh
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/vpn$ ll
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/vpn$ ll
 total &lt;span style="color:#ae81ff">32&lt;/span>
 drwxrwxr-x &lt;span style="color:#ae81ff">2&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">4096&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 12:11 ./
 drwxr-xr-x &lt;span style="color:#ae81ff">19&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">4096&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 12:11 ../
 -rw-rw-r-- &lt;span style="color:#ae81ff">1&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">23085&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 12:11 openvpn-install.sh
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Make the &lt;code>openvpn-install.sh&lt;/code> exectable in your EC2:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chmod +x openvpn-install.sh
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chmod +x openvpn-install.sh
 sudo ./openvpn-install.sh
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Add a new profile by running &lt;code>openvpn-install.sh&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Welcome to this OpenVPN road warrior installer!
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Welcome to this OpenVPN road warrior installer!
 This server is behind NAT. What is the public IPv4 address or hostname?
 Public IPv4 address / hostname &lt;span style="color:#f92672">[&lt;/span>18.183.12.213&lt;span style="color:#f92672">]&lt;/span>:
 Which protocol should OpenVPN use?
@@ -313,11 +313,11 @@ Enter a name &lt;span style="color:#66d9ef">for&lt;/span> the first client:
 Name &lt;span style="color:#f92672">[&lt;/span>client&lt;span style="color:#f92672">]&lt;/span>: demo-ec2-client
 OpenVPN installation is ready to begin.
 Press any key to &lt;span style="color:#66d9ef">continue&lt;/span>...
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Finished!
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Finished!
 The client configuration is available in: /home/ubuntu/demo-ec2-client.ovpn
 New clients can be added by running this script again.
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Use another Terminal to download the &lt;code>.ovpn&lt;/code> file. Assuming that the machine name is &lt;code>ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com&lt;/code> and the generated &lt;code>.ovpn&lt;/code> file is place under &lt;code>~/&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">scp -i sparkle.pem ubuntu@ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com:~/demo-ec2-client.ovpn ~/Downloads/demo-ec2-client.ovpn
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">scp -i sparkle.pem ubuntu@ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com:~/demo-ec2-client.ovpn ~/Downloads/demo-ec2-client.ovpn
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="connect-to-the-vpn">Connect to the VPN&lt;/h4>
 &lt;p>&lt;a href="https://client.pritunl.com/">Pritunl Client&lt;/a> is a easy-to-use OpenVPN client. Downlaod and install it.&lt;/p>
 &lt;p>Launch the client and click &lt;strong>Import Profile&lt;/strong>:&lt;/p>
@@ -325,7 +325,7 @@ New clients can be added by running this script again.
 &lt;p>After that, click the burger menu of the profile and &lt;strong>Connect&lt;/strong>.&lt;/p>
 &lt;hr>
 &lt;p>Reference:&lt;/p>
-&lt;p>&lt;a href="https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html">https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html&lt;/a>&lt;/p></description></item><item><title>Use Gravatar Everywhere</title><link>https://blog.eternalrecurrence.space/posts/use-gravatar-everywhere/</link><pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/use-gravatar-everywhere/</guid><description>&lt;h3 id="what-is-gravatar">What is Gravatar&lt;/h3>
+&lt;p>&lt;a href="https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html">https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html&lt;/a>&lt;/p></description></item><item><title>Use Gravatar Everywhere</title><link>https://blog.lofibean.cc/posts/use-gravatar-everywhere/</link><pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate><guid>https://blog.lofibean.cc/posts/use-gravatar-everywhere/</guid><description>&lt;h3 id="what-is-gravatar">What is Gravatar&lt;/h3>
 &lt;p>Your public profile on the internet, provided by Wordpress. See &lt;a href="https://en.gravatar.com/">https://en.gravatar.com/&lt;/a>.&lt;/p>
 &lt;h3 id="1-upload-an-image-to-your-gravatar-account">1. Upload an image to your gravatar account&lt;/h3>
 &lt;p>If you don&amp;rsquo;t have the gravatar account, create one. Make sure that the email you used to create the account will be the email account you want to link your profile picture.&lt;/p>
@@ -333,17 +333,17 @@ New clients can be added by running this script again.
 &lt;h3 id="2-use-the-image-everywhere">2. Use the image everywhere&lt;/h3>
 &lt;h4 id="get-your-md5-hash-of-email-address">Get your md5 hash of email address&lt;/h4>
 &lt;p>For MacOS user, you should have the md5 utility installed, go to the terminal and check:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ which md5
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ which md5
 /sbin/md5
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, generate the md5 has of your email address:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ md5 -s &lt;span style="color:#e6db74">&amp;#34;myemall@address.com&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ md5 -s &lt;span style="color:#e6db74">&amp;#34;myemall@address.com&amp;#34;&lt;/span>
 MD5 &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;myemall@address.com&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">=&lt;/span> ca49930cff2f87bd37bfe71ce21467f
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The gravatar image url is in this format:&lt;/p>
-&lt;pre>&lt;code>https://gravatar.com/avatar/{your md5 hash}?s={size}
+&lt;pre tabindex="0">&lt;code>https://gravatar.com/avatar/{your md5 hash}?s={size}
 &lt;/code>&lt;/pre>&lt;p>If you want to have a 200px avatar, use &lt;code>https://gravatar.com/avatar/ca49930cff2f87bd37bfe71ce21467f?s=200&lt;/code>&lt;/p>
 &lt;p>use this image url in &lt;code>&amp;lt;img&amp;gt;&lt;/code> tag:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">img&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://gravatar.com/avatar/ca49930cff2f87bd37bfe71ce21467f?s=200&amp;#34;&lt;/span> /&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>And you are good to go!&lt;/p></description></item><item><title>Displaying the Full Content in Hugo's RSS feed</title><link>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</link><pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</guid><description>&lt;h2 id="background">Background&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">img&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://gravatar.com/avatar/ca49930cff2f87bd37bfe71ce21467f?s=200&amp;#34;&lt;/span> /&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And you are good to go!&lt;/p></description></item><item><title>Displaying the Full Content in Hugo's RSS feed</title><link>https://blog.lofibean.cc/posts/displaying-the-full-content-in-hugo-rss-feed/</link><pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate><guid>https://blog.lofibean.cc/posts/displaying-the-full-content-in-hugo-rss-feed/</guid><description>&lt;h2 id="background">Background&lt;/h2>
 &lt;p>Recently I created a hugo blog and started writing articles (yes, that&amp;rsquo;s the blog you are reading). Later, I found that dev.to can &lt;a href="https://dev.to/settings/publishing-from-rss">publish articles (as draft) from a RSS feed&lt;/a>. In that way I don&amp;rsquo;t have to copy-and-paste my articles manually in order to publish the same item on dev.to!&lt;/p>
 &lt;aside class="c-toc">
 &lt;details open>
@@ -373,16 +373,16 @@ MD5 &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&am
 &lt;h2 id="solution">😀 Solution&lt;/h2>
 &lt;h3 id="locating-rssxml">Locating &lt;code>rss.xml&lt;/code>&lt;/h3>
 &lt;p>Usually, Hugo templates are placed under &lt;code>{your hugo theme}/layouts/_defualt/&lt;/code>. If such file does not exist, it&amp;rsquo;s time to create one. You can copy-and-paste the code from &lt;a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml">Hugo&amp;rsquo;s github&lt;/a> or run the following &lt;code>curl&lt;/code> command under &lt;code>/layouts/_default&lt;/code> to download it:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl &lt;span style="color:#e6db74">&amp;#34;https://raw.githubusercontent.com/gohugoio/hugo/master/tpl/tplimpl/embedded/templates/_default/rss.xml&amp;#34;&lt;/span> &amp;gt; rss.xml
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl &lt;span style="color:#e6db74">&amp;#34;https://raw.githubusercontent.com/gohugoio/hugo/master/tpl/tplimpl/embedded/templates/_default/rss.xml&amp;#34;&lt;/span> &amp;gt; rss.xml
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="rendering-the-full-content">Rendering the full content&lt;/h3>
 &lt;p>Rendering the full content of is really simple and straight-forward. What you need to do is just replacing this:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">description&lt;/span>&amp;gt;&lt;span style="color:#75715e">{{&lt;/span> &lt;span style="color:#a6e22e">.Summary&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">html&lt;/span> &lt;span style="color:#75715e">}}&lt;/span>&amp;lt;/&lt;span style="color:#f92672">description&lt;/span>&amp;gt;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">description&lt;/span>&amp;gt;&lt;span style="color:#75715e">{{&lt;/span> &lt;span style="color:#a6e22e">.Summary&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">html&lt;/span> &lt;span style="color:#75715e">}}&lt;/span>&amp;lt;/&lt;span style="color:#f92672">description&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>With this:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">description&lt;/span>&amp;gt;&lt;span style="color:#75715e">{{-&lt;/span> &lt;span style="color:#a6e22e">.Content&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">html&lt;/span> &lt;span style="color:#75715e">-}}&lt;/span>&amp;lt;/&lt;span style="color:#f92672">description&lt;/span>&amp;gt;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">description&lt;/span>&amp;gt;&lt;span style="color:#75715e">{{-&lt;/span> &lt;span style="color:#a6e22e">.Content&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">html&lt;/span> &lt;span style="color:#75715e">-}}&lt;/span>&amp;lt;/&lt;span style="color:#f92672">description&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Caution: use &lt;code>{{-&lt;/code> instead of &lt;code>{{&lt;/code>. Read &lt;a href="#bonus-the-difference-between--and---in-hugo">the bonus part&lt;/a> if you want to know what is the difference.&lt;/p>
 &lt;h3 id="regenerating-the-site">Regenerating the site&lt;/h3>
 &lt;p>Updating the RSS template &lt;strong>will not&lt;/strong> update your &lt;strong>generated content&lt;/strong> automatically. Therefore, you need to re-generate your Hugo site:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You should see the changes in all RSS xml files (from git). After that, push all the code changes, remove all the fetched posts in dev.to and re-fetch them. That&amp;rsquo;s it.&lt;/p>
 &lt;h2 id="bonus-the-difference-between--and---in-hugo">Bonus: The difference between &lt;code>{{&lt;/code> and &lt;code>{{-&lt;/code> in Hugo&lt;/h2>
 &lt;p>You may notice that the template code is changed into &lt;code>{{-&lt;/code> from &lt;code>{{&lt;/code>. As a newbie in Hugo I checked &lt;a href="https://gohugo.io/templates/introduction/#whitespace">the Hugo&amp;rsquo;s official documentation about &lt;em>whitespace&lt;/em>&lt;/a>.&lt;/p>
@@ -391,20 +391,20 @@ MD5 &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&am
 &lt;/blockquote>
 &lt;p>This &lt;code>-&lt;/code> notation is introduced in Go 1.6.&lt;/p>
 &lt;p>The following example (from the documentation):&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 &lt;span style="color:#75715e">{{&lt;/span> &lt;span style="color:#a6e22e">.Title&lt;/span> &lt;span style="color:#75715e">}}&lt;/span>
 &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 &lt;span style="color:#75715e">{{-&lt;/span> &lt;span style="color:#a6e22e">.Title&lt;/span> &lt;span style="color:#75715e">-}}&lt;/span>
 &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Which will output:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 Hello, World!
 &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;Hello, World!&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In other words, that&amp;rsquo;s the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim">&lt;code>trim()&lt;/code>&lt;/a> in JavaScript. That&amp;rsquo;s the &lt;a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.trim">&lt;code>String.Trim()&lt;/code>&lt;/a> in C#.&lt;/p>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>The default RSS feed in Hugo site shows &lt;em>article abstract&lt;/em> only. By defining a custom &lt;code>rss.xml&lt;/code> template and replacing &lt;code>{{ .Summary | html }}&lt;/code> with &lt;code>{{- .Content | html -}}&lt;/code> in the &lt;code>&amp;lt;description&amp;gt;&lt;/code> tag you will get the article&amp;rsquo;s full content in the re-generated RSS xml files.&lt;/p></description></item><item><title>Documentation Makes Easy With MkDocs and GitLab Pages</title><link>https://blog.eternalrecurrence.space/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</link><pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The default RSS feed in Hugo site shows &lt;em>article abstract&lt;/em> only. By defining a custom &lt;code>rss.xml&lt;/code> template and replacing &lt;code>{{ .Summary | html }}&lt;/code> with &lt;code>{{- .Content | html -}}&lt;/code> in the &lt;code>&amp;lt;description&amp;gt;&lt;/code> tag you will get the article&amp;rsquo;s full content in the re-generated RSS xml files.&lt;/p></description></item><item><title>Documentation Makes Easy With MkDocs and GitLab Pages</title><link>https://blog.lofibean.cc/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</link><pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate><guid>https://blog.lofibean.cc/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>I created a static website using &lt;strong>MkDocs&lt;/strong> and deployed to &lt;a href="https://docs.gitlab.com/ee/user/project/pages/">&lt;strong>GitLab Pages&lt;/strong>&lt;/a>. This is what I did: &lt;a href="https://bemn-proof-of-concept.gitlab.io/mkdoc/">https://bemn-proof-of-concept.gitlab.io/mkdoc/&lt;/a>.&lt;/p>
 &lt;h3 id="table-of-contents">Table of Contents&lt;/h3>
 &lt;ul>
@@ -437,7 +437,7 @@ Hello, World!
 &lt;ol>
 &lt;li>&lt;strong>python 3.x&lt;/strong> and &lt;strong>pip&lt;/strong>. Install it via &lt;a href="https://www.python.org/downloads/">executable&lt;/a> from the official website, or using tools like &lt;a href="https://brew.sh/">Homebrew&lt;/a>.&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ python --version
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ python --version
 Python 3.8.2
 $ pip --version
 pip 20.0.2 from /usr/local/lib/python3.8/site-packages/pip &lt;span style="color:#f92672">(&lt;/span>python 3.8&lt;span style="color:#f92672">)&lt;/span>
@@ -447,21 +447,21 @@ pip 20.0.2 from /usr/local/lib/python3.8/site-packages/pip &lt;span style="color
 &lt;/ol>
 &lt;p>(For me, the most difficult part is how to get the python and pip versions right. In Mac the built-in python version is 2.7 but we need python 3 to install &lt;code>pip&lt;/code>.)&lt;/p>
 &lt;h3 id="up-and-run">Up and Run&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ pip install mkdocs
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ pip install mkdocs
 $ mkdocs --version
 mkdocs, version 1.1.2
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Assuming that your project folder is &lt;code>doc-project&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs new doc-project
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs new doc-project
 $ cd doc-project
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>A MkDocs project is then created with the following folder structure:&lt;/p>
-&lt;pre>&lt;code>doc-project
+&lt;pre tabindex="0">&lt;code>doc-project
 ├── docs
 │   └── index.md
 ├── img
 │   └── favicon.ico
 └── mkdocs.yml
 &lt;/code>&lt;/pre>&lt;p>Let&amp;rsquo;s run the site:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs serve
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs serve
 INFO - Building documentation...
 INFO - Cleaning site directory
 INFO - Documentation built in 1.65 seconds
@@ -471,12 +471,12 @@ INFO - Documentation built in 1.65 seconds
 &lt;h3 id="add-a-new-page">Add a new page&lt;/h3>
 &lt;h4 id="the-content">The content&lt;/h4>
 &lt;p>Remember, all the documents should place under &lt;code>docs&lt;/code>. Let&amp;rsquo;s create an Overview page:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cd docs
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cd docs
 $ touch overview.md
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, add some content to &lt;code>overview.md&lt;/code>.&lt;/p>
 &lt;h4 id="the-menu">The menu&lt;/h4>
 &lt;p>If you want the visitors to reach the overview page, you need to add an url in the menu. Let&amp;rsquo;s edit &lt;code>mkdocs.yml&lt;/code>, the site config file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
 &lt;span style="color:#f92672">site_name&lt;/span>: &lt;span style="color:#ae81ff">Doc Project&lt;/span> &lt;span style="color:#75715e">## change your site name here.&lt;/span>
 &lt;span style="color:#f92672">nav&lt;/span>:
 - &lt;span style="color:#f92672">Home&lt;/span>: &lt;span style="color:#ae81ff">index.md&lt;/span>
@@ -487,9 +487,9 @@ $ touch overview.md
 &lt;p>You can apply a custom theme to MkDocs. &lt;a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">This page&lt;/a> contains many themes contributed by the community.&lt;/p>
 &lt;p>In this section, I will apply the &lt;a href="https://github.com/squidfunk/mkdocs-material">Material Design theme&lt;/a> to my MkDocs site.&lt;/p>
 &lt;p>Stop running your site and install the theme by:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ pip install mkdocs-material
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ pip install mkdocs-material
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Update the &lt;code>mkdocs.yml&lt;/code> again:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
 &lt;span style="color:#f92672">site_name&lt;/span>: &lt;span style="color:#ae81ff">Doc Project&lt;/span>
 &lt;span style="color:#f92672">nav&lt;/span>:
 - &lt;span style="color:#f92672">Home&lt;/span>: &lt;span style="color:#ae81ff">index.md&lt;/span>
@@ -502,7 +502,7 @@ $ touch overview.md
 &lt;span style="color:#f92672">primary&lt;/span>: &lt;span style="color:#ae81ff">amber&lt;/span>
 &lt;span style="color:#f92672">accent&lt;/span>: &lt;span style="color:#ae81ff">orange&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Start the site:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs serve
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs serve
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You will see MkDocs is dressing the amber Material Design theme.&lt;/p>
 &lt;p>&lt;img src="./img/02_theming.png" alt="Material Design theme with amber scheme">&lt;/p>
 &lt;h3 id="custom-resources">Custom Resources&lt;/h3>
@@ -510,7 +510,7 @@ $ touch overview.md
 &lt;p>I created a &lt;code>catalog&lt;/code> page which contains a table written in markdown. Also, I want to apply &lt;a href="https://www.datatables.net/">jQuery DataTables&lt;/a> to make the table more interactive. Therefore, I added the related js libraries and related css file to MkDocs. You can see the result &lt;a href="https://bemn-proof-of-concept.gitlab.io/mkdoc/catalog/">here&lt;/a>.&lt;/p>
 &lt;p>&lt;strong>Exercice:&lt;/strong> create a &lt;code>catalog.md&lt;/code> file and add a markdown table in it.&lt;/p>
 &lt;p>Next, add the custom resource sections to the config file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
 &lt;span style="color:#f92672">site_name&lt;/span>: &lt;span style="color:#ae81ff">Doc Project&lt;/span>
 &lt;span style="color:#f92672">nav&lt;/span>:
 - &lt;span style="color:#f92672">Home&lt;/span>: &lt;span style="color:#ae81ff">index.md&lt;/span>
@@ -530,12 +530,12 @@ $ touch overview.md
 &lt;span style="color:#f92672">extra_css&lt;/span>:
 - &lt;span style="color:#ae81ff">https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a custom js file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cd docs
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cd docs
 $ mkdir scripts
 $ cd scripts
 $ touch site.js
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Now in your &lt;code>site.js&lt;/code> file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#a6e22e">$&lt;/span>(document).&lt;span style="color:#a6e22e">ready&lt;/span>( &lt;span style="color:#66d9ef">function&lt;/span> () {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#a6e22e">$&lt;/span>(document).&lt;span style="color:#a6e22e">ready&lt;/span>( &lt;span style="color:#66d9ef">function&lt;/span> () {
 &lt;span style="color:#a6e22e">$&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;table&amp;#39;&lt;/span>).&lt;span style="color:#a6e22e">DataTable&lt;/span>();
 });
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Afer that, you should be able to see an interactive table in the catalog page.&lt;/p>
@@ -544,16 +544,16 @@ $ touch site.js
 &lt;h2 id="gitlab-pages">GitLab Pages&lt;/h2>
 &lt;p>Create a GitLab repository under your personal space or a project group. The url will be something like &lt;code>https://gitlab.com/{username or project group name}/{repo name}&lt;/code>.&lt;/p>
 &lt;p>Clone the repo you created and create the following items:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdir src
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdir src
 $ touch .gitlab-ci.yml
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Place your MkDoc items (i.e. the &lt;code>doc-project&lt;/code> folder) under &lt;code>src&lt;/code>. See the following folder structure:&lt;/p>
-&lt;pre>&lt;code>(root of the repo)
+&lt;pre tabindex="0">&lt;code>(root of the repo)
 ├── .gitlab-ci.yml
 └── src
 └── doc-project
 &lt;/code>&lt;/pre>&lt;h3 id="gitlab-ci-yml">.gitlab-ci.yml&lt;/h3>
 &lt;p>The &lt;code>.gitlab-ci.yml&lt;/code> is a GitLab-specific file. GitLab will read and run the steps in the file. We need to tell GitLab how to generate and deploy our static MkDocs website. In this file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In .gitlab-ci.yml...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In .gitlab-ci.yml...&lt;/span>
 &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">python:3.8-buster&lt;/span> &lt;span style="color:#75715e">## MkDocs requies python.&lt;/span>
 &lt;span style="color:#f92672">pages&lt;/span>:
 &lt;span style="color:#f92672">stage&lt;/span>: &lt;span style="color:#ae81ff">deploy&lt;/span> &lt;span style="color:#75715e">## tell GitLab to deploy the website in this step.&lt;/span>
@@ -572,21 +572,20 @@ $ touch .gitlab-ci.yml
 &lt;span style="color:#75715e"># - master &lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>So basically it tells GitLab to install the tools required under python 3.8 environment and deploy the website after the site is generated.&lt;/p>
 &lt;p>Try to run the following command if you want to generate the site locally:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs build
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs build
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The generated site is located under &lt;code>doc-project/site/&lt;/code> .&lt;/p>
 &lt;p>In order to display the website properly, you need to place the generated site under the &lt;code>public&lt;/code> folder and let GitLab knows the &lt;strong>artifact&lt;/strong> inside is the website you want to deploy.&lt;/p>
 &lt;h3 id="build-and-deploy">Build and Deploy&lt;/h3>
 &lt;p>Push the code to GitLab and the site should build automatically. Check out the status of the build under &lt;strong>CI/CD&lt;/strong> &amp;ndash;&amp;gt; &lt;strong>Pipelines&lt;/strong>.&lt;/p>
-&lt;figure>
-&lt;img src="./img/04_gitlab-ci-cd-panel.png"
-alt="CI/CD panel in GitLab"/> &lt;figcaption>
+&lt;figure>&lt;img src="./img/04_gitlab-ci-cd-panel.png"
+alt="CI/CD panel in GitLab"/>&lt;figcaption>
 &lt;h4>A green tag showing passed for each successfully build.&lt;/h4>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Check out your website now. The url is &lt;code>https://{username or project group name}.gitlab.io/{repo name}/&lt;/code>.&lt;/p>
 &lt;hr>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>In this tutorial, we created a static site with custom theme, styles and js library by using MkDocs. After that, we set up a CI/CD pipeline on GitLab for building and deploying this static site to GitLab Pages.&lt;/p></description></item><item><title>A Tale of Two Caches: Redis and the cache helper</title><link>https://blog.eternalrecurrence.space/posts/a-tale-of-two-caches-redis-and-cache-helper/</link><pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid><description>&lt;h2 id="background">Background&lt;/h2>
+&lt;p>In this tutorial, we created a static site with custom theme, styles and js library by using MkDocs. After that, we set up a CI/CD pipeline on GitLab for building and deploying this static site to GitLab Pages.&lt;/p></description></item><item><title>A Tale of Two Caches: Redis and the cache helper</title><link>https://blog.lofibean.cc/posts/a-tale-of-two-caches-redis-and-cache-helper/</link><pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate><guid>https://blog.lofibean.cc/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid><description>&lt;h2 id="background">Background&lt;/h2>
 &lt;p>Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p>
 &lt;p>I built this &lt;strong>MVC&lt;/strong> web app using &lt;strong>.NET Core 3.1&lt;/strong> and deploy it as an IIS sub-site under the main website (which is a &lt;strong>.NET Framework&lt;/strong> web app running on the IIS).&lt;/p>
 &lt;h3 id="table-of-contents">Table of Contents&lt;/h3>
@@ -615,7 +614,7 @@ alt="CI/CD panel in GitLab"/> &lt;figcaption>
 &lt;h3 id="how">How?&lt;/h3>
 &lt;p>Here are some highlights:&lt;/p>
 &lt;h4 id="redis-nuget">1. NuGet packages&lt;/h4>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;2.1.30&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;2.1.30&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis.Extensions.Core&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;6.1.7&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis.Extensions.Newtonsoft&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;6.1.7&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis.Extensions.AspNetCore&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;6.1.7&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
@@ -623,7 +622,7 @@ alt="CI/CD panel in GitLab"/> &lt;figcaption>
 &lt;p>&lt;code>StackExchange.Redis.Extensions.Core&lt;/code> and &lt;code>StackExchange.Redis.Extensions.AspNetCore&lt;/code> are the useful package to connect/read/write Redis easier. Read &lt;a href="https://stackexchange-redis-extensinos.gitbook.io/stackexchange-redis-extensions/">this documentation&lt;/a> for more details.&lt;/p>
 &lt;h4 id="redis-appsettings">2. appsettings.json&lt;/h4>
 &lt;p>A typical .NET Core project should have an &lt;code>appsettings.json&lt;/code>. Add the following section:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#f92672">&amp;#34;Redis&amp;#34;&lt;/span>: {
 &lt;span style="color:#f92672">&amp;#34;AllowAdmin&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>,
 &lt;span style="color:#f92672">&amp;#34;Ssl&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>,
@@ -641,29 +640,29 @@ alt="CI/CD panel in GitLab"/> &lt;figcaption>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Here, &lt;code>my-secret-redis-host.com&lt;/code> is the Redis host and We are using the database no. &lt;code>0&lt;/code>. You can set multiple hosts. You can see a detailed configuration &lt;a href="https://stackexchange-redis-extensinos.gitbook.io/stackexchange-redis-extensions/configuration/json-configuration">here&lt;/a>.&lt;/p>
 &lt;h4 id="redis-startup">3. Startup.cs&lt;/h4>
 &lt;p>Add the following code in &lt;code>ConfigureServices()&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#66d9ef">var&lt;/span> redisConfiguration = Configuration.GetSection(&lt;span style="color:#e6db74">&amp;#34;Redis&amp;#34;&lt;/span>).Get&amp;lt;RedisConfiguration&amp;gt;();
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#66d9ef">var&lt;/span> redisConfiguration = Configuration.GetSection(&lt;span style="color:#e6db74">&amp;#34;Redis&amp;#34;&lt;/span>).Get&amp;lt;RedisConfiguration&amp;gt;();
 services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(redisConfiguration);
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="redis-cache-service">5. CacheService&lt;/h4>
 &lt;p>I created a &lt;code>CacheService.cs&lt;/code> to help me reading/writing data in Redis. In this service:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#66d9ef">public&lt;/span> CacheService(RedisConfiguration redisConfiguration, ILogger&amp;lt;RedisCacheConnectionPoolManager&amp;gt; poolLogger)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#66d9ef">public&lt;/span> CacheService(RedisConfiguration redisConfiguration, ILogger&amp;lt;RedisCacheConnectionPoolManager&amp;gt; poolLogger)
 {
 &lt;span style="color:#66d9ef">try&lt;/span>
 {
 &lt;span style="color:#66d9ef">var&lt;/span> connectionPoolManager = &lt;span style="color:#66d9ef">new&lt;/span> RedisCacheConnectionPoolManager(redisConfiguration, poolLogger);
-_redisClient = &lt;span style="color:#66d9ef">new&lt;/span> RedisCacheClient(connectionPoolManager, serializer, redisConfiguration);
+&lt;span style="color:#ae81ff">_&lt;/span>redisClient = &lt;span style="color:#66d9ef">new&lt;/span> RedisCacheClient(connectionPoolManager, serializer, redisConfiguration);
 }
 &lt;span style="color:#66d9ef">catch&lt;/span>(Exception ex)
 {
 &lt;span style="color:#75715e">/* something wrong when connection to Redis servers. */&lt;/span>
 }
-_cacheDuration = &lt;span style="color:#ae81ff">300&lt;/span>; &lt;span style="color:#75715e">// cache period in seconds
+&lt;span style="color:#ae81ff">_&lt;/span>cacheDuration = &lt;span style="color:#ae81ff">300&lt;/span>; &lt;span style="color:#75715e">// cache period in seconds
 &lt;/span>&lt;span style="color:#75715e">&lt;/span>}
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>We need a method to write data:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;&lt;span style="color:#66d9ef">bool&lt;/span>&amp;gt; AddAsync(&lt;span style="color:#66d9ef">string&lt;/span> key, &lt;span style="color:#66d9ef">object&lt;/span> &lt;span style="color:#66d9ef">value&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;&lt;span style="color:#66d9ef">bool&lt;/span>&amp;gt; AddAsync(&lt;span style="color:#66d9ef">string&lt;/span> key, &lt;span style="color:#66d9ef">object&lt;/span> &lt;span style="color:#66d9ef">value&lt;/span>)
 {
 &lt;span style="color:#66d9ef">try&lt;/span>
 {
-&lt;span style="color:#66d9ef">bool&lt;/span> added = &lt;span style="color:#66d9ef">await&lt;/span> _redisClient.GetDbFromConfiguration().AddAsync(key, &lt;span style="color:#66d9ef">value&lt;/span>, DateTimeOffset.Now.AddSeconds(_cacheDuration));
+&lt;span style="color:#66d9ef">bool&lt;/span> added = &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>redisClient.GetDbFromConfiguration().AddAsync(key, &lt;span style="color:#66d9ef">value&lt;/span>, DateTimeOffset.Now.AddSeconds(&lt;span style="color:#ae81ff">_&lt;/span>cacheDuration));
 &lt;span style="color:#66d9ef">return&lt;/span> added;
 }
 &lt;span style="color:#66d9ef">catch&lt;/span> (Exception ex)
@@ -673,13 +672,13 @@ _cacheDuration = &lt;span style="color:#ae81ff">300&lt;/span>; &lt;span style="c
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>And we need a method to get cached data:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;T&amp;gt; TryGetAsync&amp;lt;T&amp;gt;(&lt;span style="color:#66d9ef">string&lt;/span> key)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;T&amp;gt; TryGetAsync&amp;lt;T&amp;gt;(&lt;span style="color:#66d9ef">string&lt;/span> key)
 {
 &lt;span style="color:#66d9ef">try&lt;/span>
 {
-&lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#66d9ef">await&lt;/span> _redisClient.GetDbFromConfiguration().ExistsAsync(key))
+&lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>redisClient.GetDbFromConfiguration().ExistsAsync(key))
 {
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> _redisClient.GetDbFromConfiguration().GetAsync&amp;lt;T&amp;gt;(key);
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>redisClient.GetDbFromConfiguration().GetAsync&amp;lt;T&amp;gt;(key);
 }
 &lt;span style="color:#66d9ef">else&lt;/span>
 {
@@ -694,19 +693,19 @@ _cacheDuration = &lt;span style="color:#ae81ff">300&lt;/span>; &lt;span style="c
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>I intentionally name this method &lt;code>TryGetAsync()&lt;/code> because the cache may not exist or already expired when you try to get it from Redis.&lt;/p>
 &lt;p>After that, let&amp;rsquo;s go back to &lt;code>Startup.cs&lt;/code> and register this service in &lt;code>ConfigureService()&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">services.AddTransient&amp;lt;CacheService&amp;gt;();
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">services.AddTransient&amp;lt;CacheService&amp;gt;();
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Remember to register this service &lt;strong>after&lt;/strong> &lt;code>services.AddStackExchangeRedisExtensions()&lt;/code>.&lt;/p>
 &lt;h4 id="redis-controller">5. Controller&lt;/h4>
 &lt;p>Inject the &lt;code>CacheService&lt;/code> to the controller:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> DemoController(CacheService cacheService)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> DemoController(CacheService cacheService)
 {
-_cacheService = cacheService;
+&lt;span style="color:#ae81ff">_&lt;/span>cacheService = cacheService;
 }
 &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Demo(&lt;span style="color:#66d9ef">string&lt;/span> name)
 {
 &lt;span style="color:#66d9ef">var&lt;/span> cacheKey = &lt;span style="color:#e6db74">$&amp;#34;DemoApp:{name}&amp;#34;&lt;/span>;
 &lt;span style="color:#75715e">// Try to get cached value from Redis.
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> cachedResult = &lt;span style="color:#66d9ef">await&lt;/span> _cacheService.TryGetAsync&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt;(cacheKey);
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> cachedResult = &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>cacheService.TryGetAsync&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt;(cacheKey);
 &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#66d9ef">default&lt;/span> != cachedResult)
 {
 &lt;span style="color:#66d9ef">return&lt;/span> View(cachedResult);
@@ -715,7 +714,7 @@ _cacheService = cacheService;
 &lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">var&lt;/span> message = &lt;span style="color:#e6db74">$&amp;#34;Hello, {name}&amp;#34;&lt;/span>;
 &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#66d9ef">null&lt;/span> != sections &amp;amp;&amp;amp; sections.Any())
 {
-&lt;span style="color:#66d9ef">await&lt;/span> _cacheService.AddAsync(cacheKey, message);
+&lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>cacheService.AddAsync(cacheKey, message);
 }
 &lt;span style="color:#66d9ef">return&lt;/span> View(message);
 }
@@ -728,7 +727,7 @@ _cacheService = cacheService;
 &lt;h2 id="cache-tag-helper">Cache Tag Helper&lt;/h2>
 &lt;p>The &lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/cache-tag-helper?view=aspnetcore-3.1">Cache Tag Helper&lt;/a> is a tag that you can use in a &lt;strong>.NET Core MVC&lt;/strong> app. Content encolsed by this &lt;code>&amp;lt;cache&amp;gt;&lt;/code> tag will be cached in the internal cache provider.&lt;/p>
 &lt;h3 id="cache-tag-helper-example">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">cache&lt;/span> &lt;span style="color:#a6e22e">expires-after&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@TimeSpan.FromSeconds(60)&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">cache&lt;/span> &lt;span style="color:#a6e22e">expires-after&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@TimeSpan.FromSeconds(60)&amp;#34;&lt;/span>
 &lt;span style="color:#a6e22e">vary-by-route&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>
 &lt;span style="color:#a6e22e">vary-by-user&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>&amp;gt;
 @System.DateTime.Now
@@ -748,18 +747,18 @@ _cacheService = cacheService;
 &lt;h3 id="successor-of-the-html-helpers">Successor of the HTML helpers?&lt;/h3>
 &lt;p>You can use the &lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1">&lt;strong>Tag Helpers in ASP.NET Core&lt;/strong>&lt;/a>. Yes, the &lt;code>&amp;lt;cache&amp;gt;&lt;/code> Tag Helper is one of the &lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1#built-in-aspnet-core-tag-helpers">built-in Tag Helpers in .NET Core&lt;/a>.&lt;/p>
 &lt;p>In addition, you can use the &lt;a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync?view=aspnetcore-3.1">&lt;code>PartialAsync()&lt;/code> method&lt;/a> to render the partial HTML markup &lt;strong>asynchronously&lt;/strong>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@await Html.PartialAsync(&lt;span style="color:#e6db74">&amp;#34;_PartialName&amp;#34;&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@await Html.PartialAsync(&lt;span style="color:#e6db74">&amp;#34;_PartialName&amp;#34;&lt;/span>)
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;p>&lt;strong>More references on the HTML helpers and Tag Helpers:&lt;/strong>&lt;/p>
 &lt;p>&lt;a href="https://github.com/aspnet/Mvc/issues/4127">What happened to the @helper directive in Razor ?&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://github.com/aspnet/Razor/issues/281">Remove the @helper directive from Razor&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://dannyvanderkraan.wordpress.com/2016/04/19/asp-net-core-1-0-goodbye-html-helpers-and-hello-taghelpers/">ASP.NET Core 1.0: Goodbye HTML helpers and hello TagHelpers!&lt;/a>&lt;/p></description></item><item><title>How to add a new Hugo blog post</title><link>https://blog.eternalrecurrence.space/posts/welcome/</link><pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/welcome/</guid><description>&lt;p>Go to &lt;code>blog&lt;/code> folder&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo new posts/name-of-the-new-post.md
+&lt;p>&lt;a href="https://dannyvanderkraan.wordpress.com/2016/04/19/asp-net-core-1-0-goodbye-html-helpers-and-hello-taghelpers/">ASP.NET Core 1.0: Goodbye HTML helpers and hello TagHelpers!&lt;/a>&lt;/p></description></item><item><title>How to add a new Hugo blog post</title><link>https://blog.lofibean.cc/posts/welcome/</link><pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate><guid>https://blog.lofibean.cc/posts/welcome/</guid><description>&lt;p>Go to &lt;code>blog&lt;/code> folder&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo new posts/name-of-the-new-post.md
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Write your post. Back to &lt;code>blog&lt;/code> folder and then&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo server -D
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo server -D
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can preview your blog locally.&lt;/p>
 &lt;h3 id="deploy-production">Deploy production&lt;/h3>
 &lt;p>Change &lt;code>draft=true&lt;/code> in the blog post and then&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hugo
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Push to remote &lt;code>master&lt;/code>.&lt;/p>
 &lt;p>Done.&lt;/p></description></item></channel></rss>

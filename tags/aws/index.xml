@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>aws on log from home</title><link>https://blog.eternalrecurrence.space/tags/aws/</link><description>Recent content in aws on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of aws on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Thu, 31 Dec 2020 17:46:38 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Cloudflare for AWS Route 53 Domains</title><link>https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/</link><pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/</guid><description>&lt;img src="https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg" />&lt;h2 id="overview">Overview&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>aws on log from home</title><link>https://blog.lofibean.cc/tags/aws/</link><description>Recent content in aws on log from home</description><image><url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url><title>Favicon of aws on log from home</title><link>https://blog.lofibean.cc/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Thu, 31 Dec 2020 17:46:38 +0800</lastBuildDate><atom:link href="https://blog.lofibean.cc/tags/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Cloudflare for AWS Route 53 Domains</title><link>https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/</link><pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate><guid>https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/</guid><description>&lt;img src="https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg" />&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This article shows how to configure Cloudflare for an existing website using AWS Route53.&lt;/p>
 &lt;aside class="c-toc">
 &lt;details open>
@@ -62,13 +62,13 @@
 &lt;p>&lt;img src="./img/image-20201231182416379.png" alt="image-20201231182416379">&lt;/p>
 &lt;h4 id="1-log-in-to-your-registrar-account">1. Log in to your registrar account&lt;/h4>
 &lt;p>In the previous section, you should know which service provider is your domain registrar. Login to your domain registrar and find out the nameserver config. Then, remove the existing nameservers (the entries shown in step 1). For example:&lt;/p>
-&lt;pre>&lt;code>ns1.mydomain.com
+&lt;pre tabindex="0">&lt;code>ns1.mydomain.com
 ns2.mydomain.com
 ns3.mydomain.com
 ns4.mydomain.com
 &lt;/code>&lt;/pre>&lt;h4 id="2-replace-with-cloudflares-nameservers">2. Replace with Cloudflare&amp;rsquo;s nameservers:&lt;/h4>
 &lt;p>When all the existing nameservers are removed, you have to add the Cloudflare nameservers in the domain registrar. For example:&lt;/p>
-&lt;pre>&lt;code>autumn.ns.cloudflare.com
+&lt;pre tabindex="0">&lt;code>autumn.ns.cloudflare.com
 hans.ns.cloudflare.com
 &lt;/code>&lt;/pre>&lt;p>Note: you have to enter the 2 nameservers shown in step 2. Other (Cloudflare) nameservers won&amp;rsquo;t work.&lt;/p>
 &lt;h3 id="verify-nameservers">Verify nameservers&lt;/h3>
@@ -99,7 +99,7 @@ hans.ns.cloudflare.com
 &lt;/ul>
 &lt;h2 id="summary">Summary&lt;/h2>
 &lt;p>To use &lt;strong>Cloudflare&lt;/strong>, you need to understand what a &lt;strong>domain registrar&lt;/strong> is. By changing &lt;strong>nameservers&lt;/strong> in a domain registrar and updating some records related to AWS&amp;rsquo;s infrastructure, we can set up the Cloudflare domain for an existing website using &lt;strong>AWS Route 53&lt;/strong>.&lt;/p>
-&lt;p>&lt;em>This is the end of this article (as well as the year 2020).&lt;/em>&lt;/p></description></item><item><title>Set Up an AWS EC2 with Ubuntu GUI, RDP and more</title><link>https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</link><pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid><description>&lt;img src="https://blog.eternalrecurrence.space/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>&lt;em>This is the end of this article (as well as the year 2020).&lt;/em>&lt;/p></description></item><item><title>Set Up an AWS EC2 with Ubuntu GUI, RDP and more</title><link>https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</link><pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate><guid>https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid><description>&lt;img src="https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg" />&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p>
 &lt;p>You need to create a AWS account: &lt;a href="https://portal.aws.amazon.com/billing/signup">https://portal.aws.amazon.com/billing/signup&lt;/a>. You may need to provide your credit card information during the signup process.&lt;/p>
 &lt;p>Sign in to your AWS Account and go to the AWS EC2 Console: &lt;a href="https://aws.amazon.com/console/">https://aws.amazon.com/console/&lt;/a>&lt;/p>
@@ -162,19 +162,19 @@ hans.ns.cloudflare.com
 &lt;p>&lt;img src="./img/image-20200702184135610.png" alt="image-20200702184135610">&lt;/p>
 &lt;h5 id="do-a-chmod-on-the-key-file">Do a &lt;code>chmod&lt;/code> on the key file&lt;/h5>
 &lt;p>You need to make sure that the &lt;code>ssh_private_key.pem&lt;/code> downloaded is able to execute. Run &lt;code>chmod&lt;/code> to change the permission:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ ll ~/Downloads/ | grep &lt;span style="color:#e6db74">&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ ll ~/Downloads/ | grep &lt;span style="color:#e6db74">&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span>
 -rw-r--r--@ &lt;span style="color:#ae81ff">1&lt;/span> BEN staff 1.7K Jul &lt;span style="color:#ae81ff">2&lt;/span> 18:41 ssh_private_key.pem
 ❯ chmod &lt;span style="color:#ae81ff">400&lt;/span> ~/Downloads/ssh_private_key.pem
 ❯ ll ~/Downloads/ | grep &lt;span style="color:#e6db74">&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span>
 -r--------@ &lt;span style="color:#ae81ff">1&lt;/span> BEN staff 1.7K Jul &lt;span style="color:#ae81ff">2&lt;/span> 18:41 ssh_private_key.pem
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="connect-to-ec2-via-ssh">Connect to EC2 via SSH&lt;/h2>
 &lt;p>Once you click the &lt;strong>Launch instance&lt;/strong> , you should be able to see your instance in &lt;strong>running&lt;/strong> state in the web console. Then, you can connect to the EC2 via ssh using the &lt;code>pem&lt;/code> key file. Assuming that your DNS name of your EC2 is &lt;code>ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com&lt;/code> and it is running at &lt;code>ap-northeast-1&lt;/code> region, you can connect to it using user &lt;code>ubuntu&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ ssh -i ~/Downloads/ssh_private_key.pem ubuntu@ec2-0-1-2-3.region-name.compute.amazonaws.com
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">❯ ssh -i ~/Downloads/ssh_private_key.pem ubuntu@ec2-0-1-2-3.region-name.compute.amazonaws.com
 The authenticity of host &lt;span style="color:#e6db74">&amp;#39;ec2-0-1-2-3.region-name.compute.amazonaws.com (0.1.2.3)&amp;#39;&lt;/span> can&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>t be established.
 ECDSA key fingerprint is SHA256:8t8ey5IqoiGOKGc9WuDc5SXaYqFHPnKph1mRtzbQNTc.
 Are you sure you want to &lt;span style="color:#66d9ef">continue&lt;/span> connecting &lt;span style="color:#f92672">(&lt;/span>yes/no/&lt;span style="color:#f92672">[&lt;/span>fingerprint&lt;span style="color:#f92672">])&lt;/span>?
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You need to confirm your fingerprint at the first connection attempt.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Welcome to Ubuntu 18.04.4 LTS &lt;span style="color:#f92672">(&lt;/span>GNU/Linux 5.3.0-1023-aws x86_64&lt;span style="color:#f92672">)&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Welcome to Ubuntu 18.04.4 LTS &lt;span style="color:#f92672">(&lt;/span>GNU/Linux 5.3.0-1023-aws x86_64&lt;span style="color:#f92672">)&lt;/span>
 * Documentation: https://help.ubuntu.com
 * Management: https://landscape.canonical.com
 * Support: https://ubuntu.com/advantage
@@ -205,12 +205,12 @@ ubuntu@ip-172-31-4-8:~$
 &lt;p>xrdp provides a graphical login to remote machines using RDP (Microsoft Remote Desktop Protocol)&lt;/p>
 &lt;/blockquote>
 &lt;p>Install the packages:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get update -y
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get update -y
 sudo apt-get install lxde -y
 sudo apt-get install xrdp -y
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="set-a-password-for-your-accout">Set a password for your accout&lt;/h4>
 &lt;p>You need to also set up a password for the &lt;em>ubuntu&lt;/em>. This is for your later use in RDP as RDP only allows you to login an password-protected account.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo passwd ubuntu
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo passwd ubuntu
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="connect-to-ec2-via-remote-desktop">Connect to EC2 via remote desktop&lt;/h3>
 &lt;p>For mac user, you need to download the &lt;a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12">Microsoft Remote Desktop&lt;/a>. If you are using Windows, you should already have the Remote Desktop application preinstalled.&lt;/p>
 &lt;p>&lt;a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12">&lt;img src="./img/image-20201003143752732.png" alt="Download Microsoft Remote Desktop">&lt;/a>&lt;/p>
@@ -223,23 +223,23 @@ sudo apt-get install xrdp -y
 &lt;h2 id="bonus-materials">Bonus Materials&lt;/h2>
 &lt;h3 id="1-install-additional-ibus-input-method">1. Install additional IBus input method&lt;/h3>
 &lt;p>If you want to type Japanese, Chinese, etc. you may need to install an input method. For cangjie, you can install &lt;a href="http://cangjians.github.io/projects/ibus-cangjie/install.html">&lt;strong>Cangjians&lt;/strong>&lt;/a> via the terminal:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get install ibus-cangjie
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get install ibus-cangjie
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-install-midori-browser-from-deb-package">2. Install Midori browser from &lt;code>.deb&lt;/code> package&lt;/h3>
 &lt;blockquote>
 &lt;p>&lt;strong>Midori Browser&lt;/strong> is a browser web light, fast, secure, free software &amp;amp; open source&lt;/p>
 &lt;/blockquote>
 &lt;p>Download .deb file: &lt;a href="https://astian.org/en/midori-browser/download/">https://astian.org/en/midori-browser/download/&lt;/a> or using &lt;code>wget&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cd ~/Downloads
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cd ~/Downloads
 sudo wget -qnc https://packages.astian.org/pool/main/m/midori/midori_9.0.0-1_amd64.deb
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/Downloads$ ll
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/Downloads$ ll
 total &lt;span style="color:#ae81ff">1492&lt;/span>
 drwxr-xr-x &lt;span style="color:#ae81ff">2&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">4096&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 11:29 ./
 drwxr-xr-x &lt;span style="color:#ae81ff">17&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">4096&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 11:22 ../
 -rw-r--r-- &lt;span style="color:#ae81ff">1&lt;/span> root root &lt;span style="color:#ae81ff">1517328&lt;/span> Jan &lt;span style="color:#ae81ff">11&lt;/span> 23:26 midori_9.0.0-1_amd64.deb
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, install the &lt;code>deb&lt;/code> package using &lt;code>dpkg&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dpkg -i midori_9.0.0-1_amd64.deb
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dpkg -i midori_9.0.0-1_amd64.deb
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You may see the &lt;code>dependency problems&lt;/code> like the following:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/Downloads$ sudo dpkg --configure -a
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/Downloads$ sudo dpkg --configure -a
 dpkg: dependency problems prevent configuration of midori:
 midori depends on libpeas-1.0-0 &lt;span style="color:#f92672">(&lt;/span>&amp;gt;&lt;span style="color:#f92672">=&lt;/span> 1.15&lt;span style="color:#f92672">)&lt;/span>; however:
 Package libpeas-1.0-0 is not installed.
@@ -254,12 +254,12 @@ dependency problems - leaving unconfigured
 Errors were encountered &lt;span style="color:#66d9ef">while&lt;/span> processing:
 midori
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case, update the packages and reinstall midori:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dpkg --configure -a
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dpkg --configure -a
 sudo apt-get -f install
 sudo apt-get update
 sudo apt-get install midori
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-set-up-a-swapfile-for-better-performance">3. Set up a &lt;code>swapfile&lt;/code> for better performance&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~$ sudo fallocate -l 1G /swapfile
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~$ sudo fallocate -l 1G /swapfile
 ubuntu@ip-172-31-4-8:~$ sudo chmod &lt;span style="color:#ae81ff">600&lt;/span> /swapfile
 ubuntu@ip-172-31-4-8:~$ sudo mkswap /swapfile
 Setting up swapspace version 1, size &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1024&lt;/span> MiB &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#ae81ff">1073737728&lt;/span> bytes&lt;span style="color:#f92672">)&lt;/span>
@@ -269,8 +269,8 @@ ubuntu@ip-172-31-4-8:~$ sudo swapon --show
 NAME TYPE SIZE USED PRIO
 /swapfile file 1024M 0B -2
 ubuntu@ip-172-31-4-8:~$
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo nano /etc/fstab
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/swapfile swap swap defaults &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo nano /etc/fstab
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/swapfile swap swap defaults &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, reboot the machine.&lt;/p>
 &lt;h3 id="4-use-ec2-as-a-vpn-server">4. Use EC2 as a VPN server&lt;/h3>
 &lt;p>Create a new security group allows all TCP and UDP inbound connections and add this security group to the EC2 instance:&lt;/p>
@@ -279,20 +279,20 @@ ubuntu@ip-172-31-4-8:~$
 &lt;h4 id="install-openvpn-scripts">Install openvpn scripts&lt;/h4>
 &lt;p>&lt;a href="https://github.com/Nyr/openvpn-install">This repo&lt;/a> contains scripts for VPN server set up and profile management. Install it into your EC2:&lt;/p>
 &lt;p>Download the script:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt update
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt update
 sudo apt upgrade -y
 mkdir ~/vpn &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> cd ~/vpn
 wget https://git.io/vpn -O openvpn-install.sh
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/vpn$ ll
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ubuntu@ip-172-31-4-8:~/vpn$ ll
 total &lt;span style="color:#ae81ff">32&lt;/span>
 drwxrwxr-x &lt;span style="color:#ae81ff">2&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">4096&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 12:11 ./
 drwxr-xr-x &lt;span style="color:#ae81ff">19&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">4096&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 12:11 ../
 -rw-rw-r-- &lt;span style="color:#ae81ff">1&lt;/span> ubuntu ubuntu &lt;span style="color:#ae81ff">23085&lt;/span> Jul &lt;span style="color:#ae81ff">2&lt;/span> 12:11 openvpn-install.sh
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Make the &lt;code>openvpn-install.sh&lt;/code> exectable in your EC2:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chmod +x openvpn-install.sh
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chmod +x openvpn-install.sh
 sudo ./openvpn-install.sh
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Add a new profile by running &lt;code>openvpn-install.sh&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Welcome to this OpenVPN road warrior installer!
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Welcome to this OpenVPN road warrior installer!
 This server is behind NAT. What is the public IPv4 address or hostname?
 Public IPv4 address / hostname &lt;span style="color:#f92672">[&lt;/span>18.183.12.213&lt;span style="color:#f92672">]&lt;/span>:
 Which protocol should OpenVPN use?
@@ -313,11 +313,11 @@ Enter a name &lt;span style="color:#66d9ef">for&lt;/span> the first client:
 Name &lt;span style="color:#f92672">[&lt;/span>client&lt;span style="color:#f92672">]&lt;/span>: demo-ec2-client
 OpenVPN installation is ready to begin.
 Press any key to &lt;span style="color:#66d9ef">continue&lt;/span>...
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Finished!
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Finished!
 The client configuration is available in: /home/ubuntu/demo-ec2-client.ovpn
 New clients can be added by running this script again.
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Use another Terminal to download the &lt;code>.ovpn&lt;/code> file. Assuming that the machine name is &lt;code>ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com&lt;/code> and the generated &lt;code>.ovpn&lt;/code> file is place under &lt;code>~/&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">scp -i sparkle.pem ubuntu@ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com:~/demo-ec2-client.ovpn ~/Downloads/demo-ec2-client.ovpn
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">scp -i sparkle.pem ubuntu@ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com:~/demo-ec2-client.ovpn ~/Downloads/demo-ec2-client.ovpn
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="connect-to-the-vpn">Connect to the VPN&lt;/h4>
 &lt;p>&lt;a href="https://client.pritunl.com/">Pritunl Client&lt;/a> is a easy-to-use OpenVPN client. Downlaod and install it.&lt;/p>
 &lt;p>Launch the client and click &lt;strong>Import Profile&lt;/strong>:&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>cache on log from home</title><link>https://blog.eternalrecurrence.space/tags/cache/</link><description>Recent content in cache on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of cache on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Thu, 11 Jun 2020 21:06:59 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/cache/index.xml" rel="self" type="application/rss+xml"/><item><title>A Tale of Two Caches: Redis and the cache helper</title><link>https://blog.eternalrecurrence.space/posts/a-tale-of-two-caches-redis-and-cache-helper/</link><pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid><description>&lt;h2 id="background">Background&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>cache on log from home</title><link>https://blog.lofibean.cc/tags/cache/</link><description>Recent content in cache on log from home</description><image><url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url><title>Favicon of cache on log from home</title><link>https://blog.lofibean.cc/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Thu, 11 Jun 2020 21:06:59 +0800</lastBuildDate><atom:link href="https://blog.lofibean.cc/tags/cache/index.xml" rel="self" type="application/rss+xml"/><item><title>A Tale of Two Caches: Redis and the cache helper</title><link>https://blog.lofibean.cc/posts/a-tale-of-two-caches-redis-and-cache-helper/</link><pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate><guid>https://blog.lofibean.cc/posts/a-tale-of-two-caches-redis-and-cache-helper/</guid><description>&lt;h2 id="background">Background&lt;/h2>
 &lt;p>Recently our team started a new project: a showcase page under our main website. The website is read-only and the content won&amp;rsquo;t change frequently so we can have an aggressive caching policy.&lt;/p>
 &lt;p>I built this &lt;strong>MVC&lt;/strong> web app using &lt;strong>.NET Core 3.1&lt;/strong> and deploy it as an IIS sub-site under the main website (which is a &lt;strong>.NET Framework&lt;/strong> web app running on the IIS).&lt;/p>
 &lt;h3 id="table-of-contents">Table of Contents&lt;/h3>
@@ -27,7 +27,7 @@
 &lt;h3 id="how">How?&lt;/h3>
 &lt;p>Here are some highlights:&lt;/p>
 &lt;h4 id="redis-nuget">1. NuGet packages&lt;/h4>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;2.1.30&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;2.1.30&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis.Extensions.Core&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;6.1.7&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis.Extensions.Newtonsoft&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;6.1.7&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;span style="color:#f92672">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#a6e22e">Include=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;StackExchange.Redis.Extensions.AspNetCore&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">Version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;6.1.7&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
@@ -35,7 +35,7 @@
 &lt;p>&lt;code>StackExchange.Redis.Extensions.Core&lt;/code> and &lt;code>StackExchange.Redis.Extensions.AspNetCore&lt;/code> are the useful package to connect/read/write Redis easier. Read &lt;a href="https://stackexchange-redis-extensinos.gitbook.io/stackexchange-redis-extensions/">this documentation&lt;/a> for more details.&lt;/p>
 &lt;h4 id="redis-appsettings">2. appsettings.json&lt;/h4>
 &lt;p>A typical .NET Core project should have an &lt;code>appsettings.json&lt;/code>. Add the following section:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#f92672">&amp;#34;Redis&amp;#34;&lt;/span>: {
 &lt;span style="color:#f92672">&amp;#34;AllowAdmin&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>,
 &lt;span style="color:#f92672">&amp;#34;Ssl&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>,
@@ -53,29 +53,29 @@
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Here, &lt;code>my-secret-redis-host.com&lt;/code> is the Redis host and We are using the database no. &lt;code>0&lt;/code>. You can set multiple hosts. You can see a detailed configuration &lt;a href="https://stackexchange-redis-extensinos.gitbook.io/stackexchange-redis-extensions/configuration/json-configuration">here&lt;/a>.&lt;/p>
 &lt;h4 id="redis-startup">3. Startup.cs&lt;/h4>
 &lt;p>Add the following code in &lt;code>ConfigureServices()&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#66d9ef">var&lt;/span> redisConfiguration = Configuration.GetSection(&lt;span style="color:#e6db74">&amp;#34;Redis&amp;#34;&lt;/span>).Get&amp;lt;RedisConfiguration&amp;gt;();
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#66d9ef">var&lt;/span> redisConfiguration = Configuration.GetSection(&lt;span style="color:#e6db74">&amp;#34;Redis&amp;#34;&lt;/span>).Get&amp;lt;RedisConfiguration&amp;gt;();
 services.AddStackExchangeRedisExtensions&amp;lt;NewtonsoftSerializer&amp;gt;(redisConfiguration);
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="redis-cache-service">5. CacheService&lt;/h4>
 &lt;p>I created a &lt;code>CacheService.cs&lt;/code> to help me reading/writing data in Redis. In this service:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#66d9ef">public&lt;/span> CacheService(RedisConfiguration redisConfiguration, ILogger&amp;lt;RedisCacheConnectionPoolManager&amp;gt; poolLogger)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">&lt;span style="color:#66d9ef">public&lt;/span> CacheService(RedisConfiguration redisConfiguration, ILogger&amp;lt;RedisCacheConnectionPoolManager&amp;gt; poolLogger)
 {
 &lt;span style="color:#66d9ef">try&lt;/span>
 {
 &lt;span style="color:#66d9ef">var&lt;/span> connectionPoolManager = &lt;span style="color:#66d9ef">new&lt;/span> RedisCacheConnectionPoolManager(redisConfiguration, poolLogger);
-_redisClient = &lt;span style="color:#66d9ef">new&lt;/span> RedisCacheClient(connectionPoolManager, serializer, redisConfiguration);
+&lt;span style="color:#ae81ff">_&lt;/span>redisClient = &lt;span style="color:#66d9ef">new&lt;/span> RedisCacheClient(connectionPoolManager, serializer, redisConfiguration);
 }
 &lt;span style="color:#66d9ef">catch&lt;/span>(Exception ex)
 {
 &lt;span style="color:#75715e">/* something wrong when connection to Redis servers. */&lt;/span>
 }
-_cacheDuration = &lt;span style="color:#ae81ff">300&lt;/span>; &lt;span style="color:#75715e">// cache period in seconds
+&lt;span style="color:#ae81ff">_&lt;/span>cacheDuration = &lt;span style="color:#ae81ff">300&lt;/span>; &lt;span style="color:#75715e">// cache period in seconds
 &lt;/span>&lt;span style="color:#75715e">&lt;/span>}
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>We need a method to write data:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;&lt;span style="color:#66d9ef">bool&lt;/span>&amp;gt; AddAsync(&lt;span style="color:#66d9ef">string&lt;/span> key, &lt;span style="color:#66d9ef">object&lt;/span> &lt;span style="color:#66d9ef">value&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;&lt;span style="color:#66d9ef">bool&lt;/span>&amp;gt; AddAsync(&lt;span style="color:#66d9ef">string&lt;/span> key, &lt;span style="color:#66d9ef">object&lt;/span> &lt;span style="color:#66d9ef">value&lt;/span>)
 {
 &lt;span style="color:#66d9ef">try&lt;/span>
 {
-&lt;span style="color:#66d9ef">bool&lt;/span> added = &lt;span style="color:#66d9ef">await&lt;/span> _redisClient.GetDbFromConfiguration().AddAsync(key, &lt;span style="color:#66d9ef">value&lt;/span>, DateTimeOffset.Now.AddSeconds(_cacheDuration));
+&lt;span style="color:#66d9ef">bool&lt;/span> added = &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>redisClient.GetDbFromConfiguration().AddAsync(key, &lt;span style="color:#66d9ef">value&lt;/span>, DateTimeOffset.Now.AddSeconds(&lt;span style="color:#ae81ff">_&lt;/span>cacheDuration));
 &lt;span style="color:#66d9ef">return&lt;/span> added;
 }
 &lt;span style="color:#66d9ef">catch&lt;/span> (Exception ex)
@@ -85,13 +85,13 @@ _cacheDuration = &lt;span style="color:#ae81ff">300&lt;/span>; &lt;span style="c
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>And we need a method to get cached data:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;T&amp;gt; TryGetAsync&amp;lt;T&amp;gt;(&lt;span style="color:#66d9ef">string&lt;/span> key)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;T&amp;gt; TryGetAsync&amp;lt;T&amp;gt;(&lt;span style="color:#66d9ef">string&lt;/span> key)
 {
 &lt;span style="color:#66d9ef">try&lt;/span>
 {
-&lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#66d9ef">await&lt;/span> _redisClient.GetDbFromConfiguration().ExistsAsync(key))
+&lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>redisClient.GetDbFromConfiguration().ExistsAsync(key))
 {
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> _redisClient.GetDbFromConfiguration().GetAsync&amp;lt;T&amp;gt;(key);
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>redisClient.GetDbFromConfiguration().GetAsync&amp;lt;T&amp;gt;(key);
 }
 &lt;span style="color:#66d9ef">else&lt;/span>
 {
@@ -106,19 +106,19 @@ _cacheDuration = &lt;span style="color:#ae81ff">300&lt;/span>; &lt;span style="c
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>I intentionally name this method &lt;code>TryGetAsync()&lt;/code> because the cache may not exist or already expired when you try to get it from Redis.&lt;/p>
 &lt;p>After that, let&amp;rsquo;s go back to &lt;code>Startup.cs&lt;/code> and register this service in &lt;code>ConfigureService()&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">services.AddTransient&amp;lt;CacheService&amp;gt;();
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-cs" data-lang="cs">services.AddTransient&amp;lt;CacheService&amp;gt;();
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Remember to register this service &lt;strong>after&lt;/strong> &lt;code>services.AddStackExchangeRedisExtensions()&lt;/code>.&lt;/p>
 &lt;h4 id="redis-controller">5. Controller&lt;/h4>
 &lt;p>Inject the &lt;code>CacheService&lt;/code> to the controller:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> DemoController(CacheService cacheService)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> DemoController(CacheService cacheService)
 {
-_cacheService = cacheService;
+&lt;span style="color:#ae81ff">_&lt;/span>cacheService = cacheService;
 }
 &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Demo(&lt;span style="color:#66d9ef">string&lt;/span> name)
 {
 &lt;span style="color:#66d9ef">var&lt;/span> cacheKey = &lt;span style="color:#e6db74">$&amp;#34;DemoApp:{name}&amp;#34;&lt;/span>;
 &lt;span style="color:#75715e">// Try to get cached value from Redis.
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> cachedResult = &lt;span style="color:#66d9ef">await&lt;/span> _cacheService.TryGetAsync&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt;(cacheKey);
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> cachedResult = &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>cacheService.TryGetAsync&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt;(cacheKey);
 &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#66d9ef">default&lt;/span> != cachedResult)
 {
 &lt;span style="color:#66d9ef">return&lt;/span> View(cachedResult);
@@ -127,7 +127,7 @@ _cacheService = cacheService;
 &lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">var&lt;/span> message = &lt;span style="color:#e6db74">$&amp;#34;Hello, {name}&amp;#34;&lt;/span>;
 &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#66d9ef">null&lt;/span> != sections &amp;amp;&amp;amp; sections.Any())
 {
-&lt;span style="color:#66d9ef">await&lt;/span> _cacheService.AddAsync(cacheKey, message);
+&lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>cacheService.AddAsync(cacheKey, message);
 }
 &lt;span style="color:#66d9ef">return&lt;/span> View(message);
 }
@@ -140,7 +140,7 @@ _cacheService = cacheService;
 &lt;h2 id="cache-tag-helper">Cache Tag Helper&lt;/h2>
 &lt;p>The &lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/cache-tag-helper?view=aspnetcore-3.1">Cache Tag Helper&lt;/a> is a tag that you can use in a &lt;strong>.NET Core MVC&lt;/strong> app. Content encolsed by this &lt;code>&amp;lt;cache&amp;gt;&lt;/code> tag will be cached in the internal cache provider.&lt;/p>
 &lt;h3 id="cache-tag-helper-example">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">cache&lt;/span> &lt;span style="color:#a6e22e">expires-after&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@TimeSpan.FromSeconds(60)&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">cache&lt;/span> &lt;span style="color:#a6e22e">expires-after&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@TimeSpan.FromSeconds(60)&amp;#34;&lt;/span>
 &lt;span style="color:#a6e22e">vary-by-route&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>
 &lt;span style="color:#a6e22e">vary-by-user&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>&amp;gt;
 @System.DateTime.Now
@@ -160,7 +160,7 @@ _cacheService = cacheService;
 &lt;h3 id="successor-of-the-html-helpers">Successor of the HTML helpers?&lt;/h3>
 &lt;p>You can use the &lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1">&lt;strong>Tag Helpers in ASP.NET Core&lt;/strong>&lt;/a>. Yes, the &lt;code>&amp;lt;cache&amp;gt;&lt;/code> Tag Helper is one of the &lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1#built-in-aspnet-core-tag-helpers">built-in Tag Helpers in .NET Core&lt;/a>.&lt;/p>
 &lt;p>In addition, you can use the &lt;a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync?view=aspnetcore-3.1">&lt;code>PartialAsync()&lt;/code> method&lt;/a> to render the partial HTML markup &lt;strong>asynchronously&lt;/strong>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@await Html.PartialAsync(&lt;span style="color:#e6db74">&amp;#34;_PartialName&amp;#34;&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@await Html.PartialAsync(&lt;span style="color:#e6db74">&amp;#34;_PartialName&amp;#34;&lt;/span>)
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;p>&lt;strong>More references on the HTML helpers and Tag Helpers:&lt;/strong>&lt;/p>
 &lt;p>&lt;a href="https://github.com/aspnet/Mvc/issues/4127">What happened to the @helper directive in Razor ?&lt;/a>&lt;/p>

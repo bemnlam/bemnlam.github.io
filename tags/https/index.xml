@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>https on log from home</title><link>https://blog.eternalrecurrence.space/tags/https/</link><description>Recent content in https on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of https on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Sat, 23 May 2020 17:10:25 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/https/index.xml" rel="self" type="application/rss+xml"/><item><title>A Note on SSL Certificate</title><link>https://blog.eternalrecurrence.space/posts/a-note-on-ssl/</link><pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/a-note-on-ssl/</guid><description>&lt;p>This is a note about the Linkedin learning course &lt;a href="https://www.linkedin.com/learning/ssl-certificates-for-web-developers">SSL Certificates for Web Developers&lt;/a>.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>https on log from home</title><link>https://blog.lofibean.cc/tags/https/</link><description>Recent content in https on log from home</description><image><url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url><title>Favicon of https on log from home</title><link>https://blog.lofibean.cc/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Sat, 23 May 2020 17:10:25 +0800</lastBuildDate><atom:link href="https://blog.lofibean.cc/tags/https/index.xml" rel="self" type="application/rss+xml"/><item><title>A Note on SSL Certificate</title><link>https://blog.lofibean.cc/posts/a-note-on-ssl/</link><pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate><guid>https://blog.lofibean.cc/posts/a-note-on-ssl/</guid><description>&lt;p>This is a note about the Linkedin learning course &lt;a href="https://www.linkedin.com/learning/ssl-certificates-for-web-developers">SSL Certificates for Web Developers&lt;/a>.&lt;/p>
 &lt;h2 id="certificate-and-protocol">Certificate and protocol&lt;/h2>
 &lt;h3 id="what-are-ssltls-stands-for">What are SSL/TLS stands for?&lt;/h3>
 &lt;p>They stands for &lt;em>Secure Socket Layer&lt;/em> and &lt;em>Transport Layer Security&lt;/em>. They are the protocol names.&lt;/p>
@@ -61,7 +61,7 @@
 &lt;h2 id="hsts">HSTS&lt;/h2>
 &lt;p>This can instruct the browser to interact with the server with HTTPS only. Redirect from HTTP to HTTPS is not required. This is achieved by adding a response header (&lt;code>Strict-Transport-Security&lt;/code>).&lt;/p>
 &lt;p>Example response header:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#a6e22e">Strict-Transport-Security: max-age&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">63072000; includeSubDomains; preload&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#a6e22e">Strict-Transport-Security: max-age&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">63072000; includeSubDomains; preload&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="what-hsts-is-protecting-us-from">What HSTS is protecting us from?&lt;/h3>
 &lt;p>The &lt;strong>Man-in-the-Middle TLS Protocol Downgrade Attack.&lt;/strong>&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> In &lt;a href="https://www.praetorian.com/blog/man-in-the-middle-tls-ssl-protocol-downgrade-attack">this example&lt;/a>, the hacker C sends a ARP cache table request to both the client A and server B:
 &lt;img src="https://assets.website-files.com/58866caeabc83d5e7c574c74/5cdc9328fcbd747340785c63_20140811-mitm-attack.png" alt="Manipulating Device ARP Cache Tables">&lt;/p>
@@ -73,13 +73,13 @@
 &lt;hr>
 &lt;ol>
 &lt;li id="fn:1" role="doc-endnote">
-&lt;p>the certificate does not depends on the protocol we use &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>the certificate does not depends on the protocol we use&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:2" role="doc-endnote">
-&lt;p>password is just for the same browsing session. &lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>password is just for the same browsing session.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:3" role="doc-endnote">
-&lt;p>I am not an expert on this area and I tried by best to digest that article and &lt;a href="https://en.m.wikipedia.org/wiki/Downgrade_attack">this wiki&lt;/a> to write the summary. &lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>I am not an expert on this area and I tried by best to digest that article and &lt;a href="https://en.m.wikipedia.org/wiki/Downgrade_attack">this wiki&lt;/a> to write the summary.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/section></description></item></channel></rss>

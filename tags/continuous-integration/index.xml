@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>continuous integration on log from home</title><link>https://blog.eternalrecurrence.space/tags/continuous-integration/</link><description>Recent content in continuous integration on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of continuous integration on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Sun, 20 Sep 2020 14:45:18 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml"/><item><title>Atlassian Bamboo: an Opinionated Approach</title><link>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</link><pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</guid><description>&lt;img src="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>continuous integration on log from home</title><link>https://blog.lofibean.cc/tags/continuous-integration/</link><description>Recent content in continuous integration on log from home</description><image><url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url><title>Favicon of continuous integration on log from home</title><link>https://blog.lofibean.cc/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Sun, 20 Sep 2020 14:45:18 +0800</lastBuildDate><atom:link href="https://blog.lofibean.cc/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml"/><item><title>Atlassian Bamboo: an Opinionated Approach</title><link>https://blog.lofibean.cc/posts/notes-on-atlassian-bamboo/</link><pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate><guid>https://blog.lofibean.cc/posts/notes-on-atlassian-bamboo/</guid><description>&lt;img src="https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80" />&lt;blockquote>
 &lt;p>This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p>
 &lt;/blockquote>
 &lt;h1 id="preface">Preface&lt;/h1>
@@ -124,7 +124,7 @@
 &lt;p>&lt;img src="./img/image-20200913153116958.png" alt="Bamboo class library CD flow">&lt;/p>
 &lt;p>This is how I organize the &lt;em>deployment project&lt;/em>:&lt;/p>
 &lt;p>&lt;img src="./img/image-20200913154357682.png" alt="Class library deployment project setup">&lt;/p>
-&lt;pre>&lt;code>Deployment Project
+&lt;pre tabindex="0">&lt;code>Deployment Project
 ├── Production environment: for builds from master
 └── Pre-release environment: all other branches
 &lt;/code>&lt;/pre>&lt;h3 id="websites">Websites&lt;/h3>
@@ -160,7 +160,7 @@
 &lt;h5 id="my-decision">My decision&lt;/h5>
 &lt;p>This is how I organize the &lt;em>deployment project&lt;/em>:&lt;/p>
 &lt;p>&lt;img src="./img/image-20200913154337848.png" alt="Website deployment project setup">&lt;/p>
-&lt;pre>&lt;code>Deployment Project
+&lt;pre tabindex="0">&lt;code>Deployment Project
 ├── Production (A) environment: for builds from master / release
 ├── Production (B) environment: for builds from master / release
 ├── Staging environment: all other branches

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>mkdocs on log from home</title><link>https://blog.eternalrecurrence.space/tags/mkdocs/</link><description>Recent content in mkdocs on log from home</description><image><url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url><title>Favicon of mkdocs on log from home</title><link>https://blog.eternalrecurrence.space/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Fri, 12 Jun 2020 19:37:00 +0800</lastBuildDate><atom:link href="https://blog.eternalrecurrence.space/tags/mkdocs/index.xml" rel="self" type="application/rss+xml"/><item><title>Documentation Makes Easy With MkDocs and GitLab Pages</title><link>https://blog.eternalrecurrence.space/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</link><pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate><guid>https://blog.eternalrecurrence.space/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>mkdocs on log from home</title><link>https://blog.lofibean.cc/tags/mkdocs/</link><description>Recent content in mkdocs on log from home</description><image><url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url><title>Favicon of mkdocs on log from home</title><link>https://blog.lofibean.cc/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Fri, 12 Jun 2020 19:37:00 +0800</lastBuildDate><atom:link href="https://blog.lofibean.cc/tags/mkdocs/index.xml" rel="self" type="application/rss+xml"/><item><title>Documentation Makes Easy With MkDocs and GitLab Pages</title><link>https://blog.lofibean.cc/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</link><pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate><guid>https://blog.lofibean.cc/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>I created a static website using &lt;strong>MkDocs&lt;/strong> and deployed to &lt;a href="https://docs.gitlab.com/ee/user/project/pages/">&lt;strong>GitLab Pages&lt;/strong>&lt;/a>. This is what I did: &lt;a href="https://bemn-proof-of-concept.gitlab.io/mkdoc/">https://bemn-proof-of-concept.gitlab.io/mkdoc/&lt;/a>.&lt;/p>
 &lt;h3 id="table-of-contents">Table of Contents&lt;/h3>
 &lt;ul>
@@ -31,7 +31,7 @@
 &lt;ol>
 &lt;li>&lt;strong>python 3.x&lt;/strong> and &lt;strong>pip&lt;/strong>. Install it via &lt;a href="https://www.python.org/downloads/">executable&lt;/a> from the official website, or using tools like &lt;a href="https://brew.sh/">Homebrew&lt;/a>.&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ python --version
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ python --version
 Python 3.8.2
 $ pip --version
 pip 20.0.2 from /usr/local/lib/python3.8/site-packages/pip &lt;span style="color:#f92672">(&lt;/span>python 3.8&lt;span style="color:#f92672">)&lt;/span>
@@ -41,21 +41,21 @@ pip 20.0.2 from /usr/local/lib/python3.8/site-packages/pip &lt;span style="color
 &lt;/ol>
 &lt;p>(For me, the most difficult part is how to get the python and pip versions right. In Mac the built-in python version is 2.7 but we need python 3 to install &lt;code>pip&lt;/code>.)&lt;/p>
 &lt;h3 id="up-and-run">Up and Run&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ pip install mkdocs
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ pip install mkdocs
 $ mkdocs --version
 mkdocs, version 1.1.2
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Assuming that your project folder is &lt;code>doc-project&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs new doc-project
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs new doc-project
 $ cd doc-project
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>A MkDocs project is then created with the following folder structure:&lt;/p>
-&lt;pre>&lt;code>doc-project
+&lt;pre tabindex="0">&lt;code>doc-project
 ├── docs
 │   └── index.md
 ├── img
 │   └── favicon.ico
 └── mkdocs.yml
 &lt;/code>&lt;/pre>&lt;p>Let&amp;rsquo;s run the site:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs serve
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs serve
 INFO - Building documentation...
 INFO - Cleaning site directory
 INFO - Documentation built in 1.65 seconds
@@ -65,12 +65,12 @@ INFO - Documentation built in 1.65 seconds
 &lt;h3 id="add-a-new-page">Add a new page&lt;/h3>
 &lt;h4 id="the-content">The content&lt;/h4>
 &lt;p>Remember, all the documents should place under &lt;code>docs&lt;/code>. Let&amp;rsquo;s create an Overview page:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cd docs
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cd docs
 $ touch overview.md
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, add some content to &lt;code>overview.md&lt;/code>.&lt;/p>
 &lt;h4 id="the-menu">The menu&lt;/h4>
 &lt;p>If you want the visitors to reach the overview page, you need to add an url in the menu. Let&amp;rsquo;s edit &lt;code>mkdocs.yml&lt;/code>, the site config file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
 &lt;span style="color:#f92672">site_name&lt;/span>: &lt;span style="color:#ae81ff">Doc Project&lt;/span> &lt;span style="color:#75715e">## change your site name here.&lt;/span>
 &lt;span style="color:#f92672">nav&lt;/span>:
 - &lt;span style="color:#f92672">Home&lt;/span>: &lt;span style="color:#ae81ff">index.md&lt;/span>
@@ -81,9 +81,9 @@ $ touch overview.md
 &lt;p>You can apply a custom theme to MkDocs. &lt;a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">This page&lt;/a> contains many themes contributed by the community.&lt;/p>
 &lt;p>In this section, I will apply the &lt;a href="https://github.com/squidfunk/mkdocs-material">Material Design theme&lt;/a> to my MkDocs site.&lt;/p>
 &lt;p>Stop running your site and install the theme by:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ pip install mkdocs-material
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ pip install mkdocs-material
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Update the &lt;code>mkdocs.yml&lt;/code> again:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
 &lt;span style="color:#f92672">site_name&lt;/span>: &lt;span style="color:#ae81ff">Doc Project&lt;/span>
 &lt;span style="color:#f92672">nav&lt;/span>:
 - &lt;span style="color:#f92672">Home&lt;/span>: &lt;span style="color:#ae81ff">index.md&lt;/span>
@@ -96,7 +96,7 @@ $ touch overview.md
 &lt;span style="color:#f92672">primary&lt;/span>: &lt;span style="color:#ae81ff">amber&lt;/span>
 &lt;span style="color:#f92672">accent&lt;/span>: &lt;span style="color:#ae81ff">orange&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Start the site:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs serve
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs serve
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You will see MkDocs is dressing the amber Material Design theme.&lt;/p>
 &lt;p>&lt;img src="./img/02_theming.png" alt="Material Design theme with amber scheme">&lt;/p>
 &lt;h3 id="custom-resources">Custom Resources&lt;/h3>
@@ -104,7 +104,7 @@ $ touch overview.md
 &lt;p>I created a &lt;code>catalog&lt;/code> page which contains a table written in markdown. Also, I want to apply &lt;a href="https://www.datatables.net/">jQuery DataTables&lt;/a> to make the table more interactive. Therefore, I added the related js libraries and related css file to MkDocs. You can see the result &lt;a href="https://bemn-proof-of-concept.gitlab.io/mkdoc/catalog/">here&lt;/a>.&lt;/p>
 &lt;p>&lt;strong>Exercice:&lt;/strong> create a &lt;code>catalog.md&lt;/code> file and add a markdown table in it.&lt;/p>
 &lt;p>Next, add the custom resource sections to the config file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In mkdocs.yml...&lt;/span>
 &lt;span style="color:#f92672">site_name&lt;/span>: &lt;span style="color:#ae81ff">Doc Project&lt;/span>
 &lt;span style="color:#f92672">nav&lt;/span>:
 - &lt;span style="color:#f92672">Home&lt;/span>: &lt;span style="color:#ae81ff">index.md&lt;/span>
@@ -124,12 +124,12 @@ $ touch overview.md
 &lt;span style="color:#f92672">extra_css&lt;/span>:
 - &lt;span style="color:#ae81ff">https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a custom js file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cd docs
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cd docs
 $ mkdir scripts
 $ cd scripts
 $ touch site.js
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Now in your &lt;code>site.js&lt;/code> file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#a6e22e">$&lt;/span>(document).&lt;span style="color:#a6e22e">ready&lt;/span>( &lt;span style="color:#66d9ef">function&lt;/span> () {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#a6e22e">$&lt;/span>(document).&lt;span style="color:#a6e22e">ready&lt;/span>( &lt;span style="color:#66d9ef">function&lt;/span> () {
 &lt;span style="color:#a6e22e">$&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;table&amp;#39;&lt;/span>).&lt;span style="color:#a6e22e">DataTable&lt;/span>();
 });
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Afer that, you should be able to see an interactive table in the catalog page.&lt;/p>
@@ -138,16 +138,16 @@ $ touch site.js
 &lt;h2 id="gitlab-pages">GitLab Pages&lt;/h2>
 &lt;p>Create a GitLab repository under your personal space or a project group. The url will be something like &lt;code>https://gitlab.com/{username or project group name}/{repo name}&lt;/code>.&lt;/p>
 &lt;p>Clone the repo you created and create the following items:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdir src
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdir src
 $ touch .gitlab-ci.yml
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Place your MkDoc items (i.e. the &lt;code>doc-project&lt;/code> folder) under &lt;code>src&lt;/code>. See the following folder structure:&lt;/p>
-&lt;pre>&lt;code>(root of the repo)
+&lt;pre tabindex="0">&lt;code>(root of the repo)
 ├── .gitlab-ci.yml
 └── src
 └── doc-project
 &lt;/code>&lt;/pre>&lt;h3 id="gitlab-ci-yml">.gitlab-ci.yml&lt;/h3>
 &lt;p>The &lt;code>.gitlab-ci.yml&lt;/code> is a GitLab-specific file. GitLab will read and run the steps in the file. We need to tell GitLab how to generate and deploy our static MkDocs website. In this file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In .gitlab-ci.yml...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#75715e"># In .gitlab-ci.yml...&lt;/span>
 &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">python:3.8-buster&lt;/span> &lt;span style="color:#75715e">## MkDocs requies python.&lt;/span>
 &lt;span style="color:#f92672">pages&lt;/span>:
 &lt;span style="color:#f92672">stage&lt;/span>: &lt;span style="color:#ae81ff">deploy&lt;/span> &lt;span style="color:#75715e">## tell GitLab to deploy the website in this step.&lt;/span>
@@ -166,14 +166,13 @@ $ touch .gitlab-ci.yml
 &lt;span style="color:#75715e"># - master &lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>So basically it tells GitLab to install the tools required under python 3.8 environment and deploy the website after the site is generated.&lt;/p>
 &lt;p>Try to run the following command if you want to generate the site locally:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs build
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ mkdocs build
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The generated site is located under &lt;code>doc-project/site/&lt;/code> .&lt;/p>
 &lt;p>In order to display the website properly, you need to place the generated site under the &lt;code>public&lt;/code> folder and let GitLab knows the &lt;strong>artifact&lt;/strong> inside is the website you want to deploy.&lt;/p>
 &lt;h3 id="build-and-deploy">Build and Deploy&lt;/h3>
 &lt;p>Push the code to GitLab and the site should build automatically. Check out the status of the build under &lt;strong>CI/CD&lt;/strong> &amp;ndash;&amp;gt; &lt;strong>Pipelines&lt;/strong>.&lt;/p>
-&lt;figure>
-&lt;img src="./img/04_gitlab-ci-cd-panel.png"
-alt="CI/CD panel in GitLab"/> &lt;figcaption>
+&lt;figure>&lt;img src="./img/04_gitlab-ci-cd-panel.png"
+alt="CI/CD panel in GitLab"/>&lt;figcaption>
 &lt;h4>A green tag showing passed for each successfully build.&lt;/h4>
 &lt;/figcaption>
 &lt;/figure>
