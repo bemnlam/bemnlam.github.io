@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Bamboo on log from home</title>
-    <link>https://blog.eternalrecurrence.space/tags/bamboo/</link>
+    <link>https://blog.lofibean.cc/tags/bamboo/</link>
     <description>Recent content in Bamboo on log from home</description>
     <image>
       
-      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of Bamboo on log from home</title>
-      <link>https://blog.eternalrecurrence.space/</link>
+      <link>https://blog.lofibean.cc/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sun, 20 Sep 2020 14:45:18 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.eternalrecurrence.space/tags/bamboo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/bamboo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Atlassian Bamboo: an Opinionated Approach</title>
-      <link>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</link>
+      <link>https://blog.lofibean.cc/posts/notes-on-atlassian-bamboo/</link>
       <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
       
-      <guid>https://blog.eternalrecurrence.space/posts/notes-on-atlassian-bamboo/</guid>
+      <guid>https://blog.lofibean.cc/posts/notes-on-atlassian-bamboo/</guid>
       
         <description>&lt;img src=&#34;https://images.unsplash.com/photo-1510707421852-103d8d97c090?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=630&amp;q=80&#34; /&gt;&lt;blockquote&gt;
 &lt;p&gt;This is the introduction related to my experience on using Atlassian Bamboo / MSBuild / MSDeploy / IIS, I will cover the build process / setup in the coming articles.&lt;/p&gt;
@@ -154,7 +154,7 @@
 &lt;p&gt;&lt;img src=&#34;./img/image-20200913153116958.png&#34; alt=&#34;Bamboo class library CD flow&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This is how I organize the &lt;em&gt;deployment project&lt;/em&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./img/image-20200913154357682.png&#34; alt=&#34;Class library deployment project setup&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Deployment Project
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Deployment Project
 ├── Production environment: for builds from master
 └── Pre-release environment: all other branches
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;websites&#34;&gt;Websites&lt;/h3&gt;
@@ -190,7 +190,7 @@
 &lt;h5 id=&#34;my-decision&#34;&gt;My decision&lt;/h5&gt;
 &lt;p&gt;This is how I organize the &lt;em&gt;deployment project&lt;/em&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./img/image-20200913154337848.png&#34; alt=&#34;Website deployment project setup&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Deployment Project
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Deployment Project
 ├── Production (A) environment: for builds from master / release
 ├── Production (B) environment: for builds from master / release
 ├── Staging environment: all other branches

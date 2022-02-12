@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>ssl on log from home</title>
-    <link>https://blog.eternalrecurrence.space/tags/ssl/</link>
+    <link>https://blog.lofibean.cc/tags/ssl/</link>
     <description>Recent content in ssl on log from home</description>
     <image>
       
-      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of ssl on log from home</title>
-      <link>https://blog.eternalrecurrence.space/</link>
+      <link>https://blog.lofibean.cc/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sat, 23 May 2020 17:10:25 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.eternalrecurrence.space/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Note on SSL Certificate</title>
-      <link>https://blog.eternalrecurrence.space/posts/a-note-on-ssl/</link>
+      <link>https://blog.lofibean.cc/posts/a-note-on-ssl/</link>
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
-      <guid>https://blog.eternalrecurrence.space/posts/a-note-on-ssl/</guid>
+      <guid>https://blog.lofibean.cc/posts/a-note-on-ssl/</guid>
       
         <description>&lt;p&gt;This is a note about the Linkedin learning course &lt;a href=&#34;https://www.linkedin.com/learning/ssl-certificates-for-web-developers&#34;&gt;SSL Certificates for Web Developers&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;certificate-and-protocol&#34;&gt;Certificate and protocol&lt;/h2&gt;
@@ -89,7 +89,7 @@
 &lt;h2 id=&#34;hsts&#34;&gt;HSTS&lt;/h2&gt;
 &lt;p&gt;This can instruct the browser to interact with the server with HTTPS only. Redirect from HTTP to HTTPS is not required. This is achieved by adding a response header (&lt;code&gt;Strict-Transport-Security&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;Example response header:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Strict-Transport-Security: max-age&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;63072000; includeSubDomains; preload&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Strict-Transport-Security: max-age&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;63072000; includeSubDomains; preload&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;what-hsts-is-protecting-us-from&#34;&gt;What HSTS is protecting us from?&lt;/h3&gt;
 &lt;p&gt;The &lt;strong&gt;Man-in-the-Middle TLS Protocol Downgrade Attack.&lt;/strong&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; In &lt;a href=&#34;https://www.praetorian.com/blog/man-in-the-middle-tls-ssl-protocol-downgrade-attack&#34;&gt;this example&lt;/a&gt;, the hacker C sends a ARP cache table request to both the client A and server B:
 &lt;img src=&#34;https://assets.website-files.com/58866caeabc83d5e7c574c74/5cdc9328fcbd747340785c63_20140811-mitm-attack.png&#34; alt=&#34;Manipulating Device ARP Cache Tables&#34;&gt;&lt;/p&gt;
@@ -101,13 +101,13 @@
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;the certificate does not depends on the protocol we use &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;the certificate does not depends on the protocol we use&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;password is just for the same browsing session. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;password is just for the same browsing session.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;I am not an expert on this area and I tried by best to digest that article and &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Downgrade_attack&#34;&gt;this wiki&lt;/a&gt; to write the summary. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I am not an expert on this area and I tried by best to digest that article and &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Downgrade_attack&#34;&gt;this wiki&lt;/a&gt; to write the summary.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

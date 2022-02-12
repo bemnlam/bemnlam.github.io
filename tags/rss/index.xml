@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>rss on log from home</title>
-    <link>https://blog.eternalrecurrence.space/tags/rss/</link>
+    <link>https://blog.lofibean.cc/tags/rss/</link>
     <description>Recent content in rss on log from home</description>
     <image>
       
-      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of rss on log from home</title>
-      <link>https://blog.eternalrecurrence.space/</link>
+      <link>https://blog.lofibean.cc/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Fri, 03 Jul 2020 09:53:38 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.eternalrecurrence.space/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Displaying the Full Content in Hugo&#39;s RSS feed</title>
-      <link>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</link>
+      <link>https://blog.lofibean.cc/posts/displaying-the-full-content-in-hugo-rss-feed/</link>
       <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
       
-      <guid>https://blog.eternalrecurrence.space/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
+      <guid>https://blog.lofibean.cc/posts/displaying-the-full-content-in-hugo-rss-feed/</guid>
       
         <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Recently I created a hugo blog and started writing articles (yes, that&amp;rsquo;s the blog you are reading). Later, I found that dev.to can &lt;a href=&#34;https://dev.to/settings/publishing-from-rss&#34;&gt;publish articles (as draft) from a RSS feed&lt;/a&gt;. In that way I don&amp;rsquo;t have to copy-and-paste my articles manually in order to publish the same item on dev.to!&lt;/p&gt;
@@ -58,16 +58,16 @@
 &lt;h2 id=&#34;solution&#34;&gt;😀 Solution&lt;/h2&gt;
 &lt;h3 id=&#34;locating-rssxml&#34;&gt;Locating &lt;code&gt;rss.xml&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Usually, Hugo templates are placed under &lt;code&gt;{your hugo theme}/layouts/_defualt/&lt;/code&gt;. If such file does not exist, it&amp;rsquo;s time to create one. You can copy-and-paste the code from &lt;a href=&#34;https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml&#34;&gt;Hugo&amp;rsquo;s github&lt;/a&gt; or run the following &lt;code&gt;curl&lt;/code&gt; command under &lt;code&gt;/layouts/_default&lt;/code&gt; to download it:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://raw.githubusercontent.com/gohugoio/hugo/master/tpl/tplimpl/embedded/templates/_default/rss.xml&amp;#34;&lt;/span&gt; &amp;gt; rss.xml
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://raw.githubusercontent.com/gohugoio/hugo/master/tpl/tplimpl/embedded/templates/_default/rss.xml&amp;#34;&lt;/span&gt; &amp;gt; rss.xml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;rendering-the-full-content&#34;&gt;Rendering the full content&lt;/h3&gt;
 &lt;p&gt;Rendering the full content of is really simple and straight-forward. What you need to do is just replacing this:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Summary&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;&amp;gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Summary&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With this:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Content&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;-}}&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;&amp;gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Content&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;-}}&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Caution: use &lt;code&gt;{{-&lt;/code&gt; instead of &lt;code&gt;{{&lt;/code&gt;. Read &lt;a href=&#34;#bonus-the-difference-between--and---in-hugo&#34;&gt;the bonus part&lt;/a&gt; if you want to know what is the difference.&lt;/p&gt;
 &lt;h3 id=&#34;regenerating-the-site&#34;&gt;Regenerating the site&lt;/h3&gt;
 &lt;p&gt;Updating the RSS template &lt;strong&gt;will not&lt;/strong&gt; update your &lt;strong&gt;generated content&lt;/strong&gt; automatically. Therefore, you need to re-generate your Hugo site:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You should see the changes in all RSS xml files (from git). After that, push all the code changes, remove all the fetched posts in dev.to and re-fetch them. That&amp;rsquo;s it.&lt;/p&gt;
 &lt;h2 id=&#34;bonus-the-difference-between--and---in-hugo&#34;&gt;Bonus: The difference between &lt;code&gt;{{&lt;/code&gt; and &lt;code&gt;{{-&lt;/code&gt; in Hugo&lt;/h2&gt;
 &lt;p&gt;You may notice that the template code is changed into &lt;code&gt;{{-&lt;/code&gt; from &lt;code&gt;{{&lt;/code&gt;. As a newbie in Hugo I checked &lt;a href=&#34;https://gohugo.io/templates/introduction/#whitespace&#34;&gt;the Hugo&amp;rsquo;s official documentation about &lt;em&gt;whitespace&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
@@ -76,14 +76,14 @@
 &lt;/blockquote&gt;
 &lt;p&gt;This &lt;code&gt;-&lt;/code&gt; notation is introduced in Go 1.6.&lt;/p&gt;
 &lt;p&gt;The following example (from the documentation):&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Title&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;
 &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
 &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color:#75715e&#34;&gt;{{-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Title&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;-}}&lt;/span&gt;
 &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Which will output:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
   Hello, World!
 &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
 &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;Hello, World!&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>route53 on log from home</title>
-    <link>https://blog.eternalrecurrence.space/tags/route53/</link>
+    <link>https://blog.lofibean.cc/tags/route53/</link>
     <description>Recent content in route53 on log from home</description>
     <image>
       
-      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of route53 on log from home</title>
-      <link>https://blog.eternalrecurrence.space/</link>
+      <link>https://blog.lofibean.cc/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Thu, 31 Dec 2020 17:46:38 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.eternalrecurrence.space/tags/route53/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/route53/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Set Up Cloudflare for AWS Route 53 Domains</title>
-      <link>https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/</link>
+      <link>https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/</link>
       <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
       
-      <guid>https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/</guid>
+      <guid>https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/</guid>
       
-        <description>&lt;img src=&#34;https://blog.eternalrecurrence.space/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        <description>&lt;img src=&#34;https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This article shows how to configure Cloudflare for an existing website using AWS Route53.&lt;/p&gt;
 &lt;aside class=&#34;c-toc&#34;&gt;
   &lt;details open&gt;
@@ -91,13 +91,13 @@
 &lt;p&gt;&lt;img src=&#34;./img/image-20201231182416379.png&#34; alt=&#34;image-20201231182416379&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;1-log-in-to-your-registrar-account&#34;&gt;1. Log in to your registrar account&lt;/h4&gt;
 &lt;p&gt;In the previous section, you should know which service provider is your domain registrar. Login to your domain registrar and find out the nameserver config. Then, remove the existing nameservers (the entries shown in step 1). For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ns1.mydomain.com
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ns1.mydomain.com
 ns2.mydomain.com
 ns3.mydomain.com
 ns4.mydomain.com
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;2-replace-with-cloudflares-nameservers&#34;&gt;2. Replace with Cloudflare&amp;rsquo;s nameservers:&lt;/h4&gt;
 &lt;p&gt;When all the existing nameservers are removed, you have to add the Cloudflare nameservers in the domain registrar. For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;autumn.ns.cloudflare.com
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;autumn.ns.cloudflare.com
 hans.ns.cloudflare.com
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note: you have to enter the 2 nameservers shown in step 2. Other (Cloudflare) nameservers won&amp;rsquo;t work.&lt;/p&gt;
 &lt;h3 id=&#34;verify-nameservers&#34;&gt;Verify nameservers&lt;/h3&gt;

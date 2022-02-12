@@ -1,5 +1,5 @@
 # baseURL = "https://bemnlam.github.io/"
-baseURL = "https://blog.eternalrecurrence.space/"
+baseURL = "https://blog.lofibean.cc/"
 languageCode = "en-us"
 title = "log from home"
 theme = "pickles"
@@ -27,7 +27,7 @@ googleAnalytics = "UA-169198494-1"
   gitlab = "bemnlam"
   linkedin = "hmbenlam"
   author = "Bemn"
-  authorwebsite = "https://blog.eternalrecurrence.space/"
+  authorwebsite = "https://blog.lofibean.cc/"
   avatar = "https://gravatar.com/avatar/feded3a7e7501be7a8ce86fd598b2b6a?s=100"
   bio = "Hong Konger."
   # Logo image. This is displayed ogp image.
@@ -69,10 +69,10 @@ googleAnalytics = "UA-169198494-1"
 
 [[menu.main]]
     name = "☕️ coffee lab"
-    url = "https://coffeelab.eternalrecurrence.space/"
+    url = "https://coffeelab.lofibean.cc/"
     weight = 10
 
 [[menu.main]]
     name = "⚙️ kobo note reader"
-    url = "https://kobo.eternalrecurrence.space/"
+    url = "https://kobo.lofibean.cc/"
     weight = 10

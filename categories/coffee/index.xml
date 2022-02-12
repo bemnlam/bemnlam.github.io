@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Coffee on log from home</title>
-    <link>https://blog.eternalrecurrence.space/categories/coffee/</link>
+    <link>https://blog.lofibean.cc/categories/coffee/</link>
     <description>Recent content in Coffee on log from home</description>
     <image>
       
-      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of Coffee on log from home</title>
-      <link>https://blog.eternalrecurrence.space/</link>
+      <link>https://blog.lofibean.cc/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Thu, 31 Dec 2020 20:58:21 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.eternalrecurrence.space/categories/coffee/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/categories/coffee/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>☕️ Notes on City &amp; Guilds International Barista Exam</title>
-      <link>https://blog.eternalrecurrence.space/posts/notes-on-city-n-guilds-barista-exam/</link>
+      <link>https://blog.lofibean.cc/posts/notes-on-city-n-guilds-barista-exam/</link>
       <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
       
-      <guid>https://blog.eternalrecurrence.space/posts/notes-on-city-n-guilds-barista-exam/</guid>
+      <guid>https://blog.lofibean.cc/posts/notes-on-city-n-guilds-barista-exam/</guid>
       
         <description>&lt;img src=&#34;https://images.unsplash.com/photo-1562771335-b1fe8b4ea78f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80&#34; /&gt;&lt;h2 id=&#34;the-exam&#34;&gt;The Exam&lt;/h2&gt;
 &lt;p&gt;I passed the &lt;a href=&#34;https://www.cityandguilds.com/qualifications-and-apprenticeships/hospitality-and-catering/hospitality-and-catering/7102-barista-skills&#34;&gt;&lt;strong&gt;City &amp;amp; Guilds International Barista Skills&lt;/strong&gt;&lt;/a&gt; exam this December and I think that will be a good idea to write down what I&amp;rsquo;ve learnt.&lt;/p&gt;
 &lt;h2 id=&#34;the-notebook&#34;&gt;The Notebook&lt;/h2&gt;
-&lt;p&gt;As a result, this notebook is created 👉 &lt;a href=&#34;https://bemnlam.gitlab.io/coffee-lab/&#34;&gt;https://bemnlam.gitlab.io/coffee-lab/&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;(The notebook is powered by &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&lt;/a&gt; and you can find out how to create a site like that &lt;a href=&#34;https://blog.eternalrecurrence.space/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/&#34;&gt;here&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;As a result, this notebook is created 👉 &lt;a href=&#34;https://coffeelab.lofibean.cc/&#34;&gt;https://coffeelab.lofibean.cc/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(The notebook is powered by &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&lt;/a&gt; and you can find out how to create a site like that &lt;a href=&#34;https://blog.lofibean.cc/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/&#34;&gt;here&lt;/a&gt;.)&lt;/p&gt;
 &lt;p&gt;Enjoy ☕️&lt;/p&gt;
 </description>
       
@@ -38,10 +38,10 @@
     
     <item>
       <title>☕️ Fantastic Beans and Where to Find Them</title>
-      <link>https://blog.eternalrecurrence.space/posts/fantastic-beans-and-where-to-find-them/</link>
+      <link>https://blog.lofibean.cc/posts/fantastic-beans-and-where-to-find-them/</link>
       <pubDate>Thu, 11 Jun 2020 10:39:39 +0800</pubDate>
       
-      <guid>https://blog.eternalrecurrence.space/posts/fantastic-beans-and-where-to-find-them/</guid>
+      <guid>https://blog.lofibean.cc/posts/fantastic-beans-and-where-to-find-them/</guid>
       
         <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;In short: I found some local shops which selling pretty good beans. In Hong Kong.&lt;/em&gt;&lt;/p&gt;
@@ -149,9 +149,8 @@
 &lt;ul&gt;
 &lt;li&gt;Floral, berries, tropical, citrus, sweet&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;
-    &lt;img src=&#34;./img/01_flavor-wheel.JPG&#34;
-         alt=&#34;01_flavor-wheel&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;./img/01_flavor-wheel.JPG&#34;
+         alt=&#34;01_flavor-wheel&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Note: they have a simple wheel indicates the taste on their bean bags!&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -164,10 +163,10 @@
     
     <item>
       <title>☕️ Brewing Coffee</title>
-      <link>https://blog.eternalrecurrence.space/posts/brewing-coffee/</link>
+      <link>https://blog.lofibean.cc/posts/brewing-coffee/</link>
       <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
       
-      <guid>https://blog.eternalrecurrence.space/posts/brewing-coffee/</guid>
+      <guid>https://blog.lofibean.cc/posts/brewing-coffee/</guid>
       
         <description>&lt;p&gt;A note on how to brew coffee.&lt;/p&gt;
 &lt;h2 id=&#34;v60&#34;&gt;V60&lt;/h2&gt;

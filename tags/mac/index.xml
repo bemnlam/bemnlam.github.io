@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>mac on log from home</title>
-    <link>https://blog.eternalrecurrence.space/tags/mac/</link>
+    <link>https://blog.lofibean.cc/tags/mac/</link>
     <description>Recent content in mac on log from home</description>
     <image>
       
-      <url>https://blog.eternalrecurrence.space/android-chrome-512x512.png?v=20201231</url>
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
       
       <title>Favicon of mac on log from home</title>
-      <link>https://blog.eternalrecurrence.space/</link>
+      <link>https://blog.lofibean.cc/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sun, 28 Jun 2020 12:28:38 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.eternalrecurrence.space/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Perks of Being a Mac (or FreeBSD) user</title>
-      <link>https://blog.eternalrecurrence.space/posts/the-perks-of-being-a-mac-or-freebsd-user/</link>
+      <link>https://blog.lofibean.cc/posts/the-perks-of-being-a-mac-or-freebsd-user/</link>
       <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
       
-      <guid>https://blog.eternalrecurrence.space/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid>
+      <guid>https://blog.lofibean.cc/posts/the-perks-of-being-a-mac-or-freebsd-user/</guid>
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;🚨 Note: This is not a technical reading. If you want to have some fun and practice your &lt;code&gt;ls&lt;/code&gt; and &lt;code&gt;cat&lt;/code&gt; skills, this article may suit you.&lt;/p&gt;
@@ -43,7 +43,7 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;misc-file&#34;&gt;Misc. Files of the OS&lt;/h2&gt;
 &lt;p&gt;I found some interesting files under &lt;code&gt;/usr/share/misc&lt;/code&gt; of my MacBook:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;-r--r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel   3.1K Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; ascii
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;-r--r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel   3.1K Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; ascii
 -r--r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel   374B Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; birthtoken
 -r--r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel   2.9K Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; eqnchar
 -r--r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel   1.4K Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; flowers
@@ -57,7 +57,7 @@
 -rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel    13K Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; units.lib
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;meaning-of-flowers&#34;&gt;The Meaning of Flowers&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;/usr/share/misc/flowers&lt;/code&gt; lists out the meaning of flowers&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Check this out if you are going to buy some flowers but you don&amp;rsquo;t know what you should buy.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Flower : Meaning
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Flower : Meaning
 #	@(#)flowers	8.1 (Berkeley) 6/8/93
 #
 # Upside down reverses the meaning.
@@ -114,7 +114,7 @@ Zinnia:Thoughts of absent friends.
 &lt;h3 id=&#34;more-about-perl-and-ruby&#34;&gt;More About Perl and Ruby&lt;/h3&gt;
 &lt;p&gt;The creator of &lt;a href=&#34;https://www.ruby-lang.org&#34;&gt;Ruby&lt;/a&gt; chose the name &lt;em&gt;Ruby&lt;/em&gt; because it was &lt;a href=&#34;https://ruby-doc.org/docs/ruby-doc-bundle/FAQ/FAQ.html&#34;&gt;the birthstone of one of his colleagues&lt;/a&gt; and that is the gem right after Pearl (&lt;a href=&#34;https://www.perl.org/&#34;&gt;Perl&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Lesson learnt:&lt;/strong&gt; when you try to name a new language you invented, you should check this file out!&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Birthday : Birth Stone : Birth Flower
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Birthday : Birth Stone : Birth Flower
 #	@(#)birthtoken	8.1 (Berkeley) 6/8/93
 January:Garnet:Carnation
 February:Amethyst:Violet
@@ -130,9 +130,9 @@ November:Topaz:Chrysanthemum
 December:Turquoise:Narcissus
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;mac-is-a-secret-fan-of&#34;&gt;Mac is a Secret Fan of&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;/usr/share/calendar&lt;/code&gt; folder contains some useful calendars but this one really catches my eye:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel   1.4K Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; calendar.lotr
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root  wheel   1.4K Dec &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; calendar.lotr
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a timeline of the important events happened in &lt;em&gt;The Lord Of The Rings&lt;/em&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/*
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/*
  * Lord Of The Rings
  *
  * $FreeBSD: src/usr.bin/calendar/calendars/calendar.lotr,v 1.2 2003/10/09 00:31:48 grog Exp $
@@ -182,22 +182,22 @@ December:Turquoise:Narcissus
 #endif /* !_calendar_lotr_ */
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;bonus-recipe&#34;&gt;Bonus: the missing recipe&lt;/h2&gt;
 &lt;p&gt;In the eariler versions of the macOS, &lt;strong&gt;a hidden cookie recipe&lt;/strong&gt; can be found by typing this command in the Terminal:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Open /usr/share/emacs/22.1/etc/COOKIES
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Open /usr/share/emacs/22.1/etc/COOKIES
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Unforrunately in the latest macOS this file is gone (together with &lt;code&gt;/usr/share/emacs&lt;/code&gt;). We can only check this out &lt;a href=&#34;https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html&#34;&gt;on the Apple Open Source website&lt;/a&gt;&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/lattera/freebsd/blob/master/share/misc/flowers&#34;&gt;https://github.com/lattera/freebsd/blob/master/share/misc/flowers&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lattera/freebsd/blob/master/share/misc/flowers&#34;&gt;https://github.com/lattera/freebsd/blob/master/share/misc/flowers&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/lattera/freebsd/blob/master/share/misc/birthtoken&#34;&gt;https://github.com/lattera/freebsd/blob/master/share/misc/birthtoken&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lattera/freebsd/blob/master/share/misc/birthtoken&#34;&gt;https://github.com/lattera/freebsd/blob/master/share/misc/birthtoken&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://opensource.apple.com/source/misc_cmds/misc_cmds-31/calendar/calendars/calendar.lotr.auto.html&#34;&gt;https://opensource.apple.com/source/misc_cmds/misc_cmds-31/calendar/calendars/calendar.lotr.auto.html&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://opensource.apple.com/source/misc_cmds/misc_cmds-31/calendar/calendars/calendar.lotr.auto.html&#34;&gt;https://opensource.apple.com/source/misc_cmds/misc_cmds-31/calendar/calendars/calendar.lotr.auto.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html&#34;&gt;https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html&#34;&gt;https://opensource.apple.com/source/emacs/emacs-96/emacs/etc/COOKIES.auto.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
