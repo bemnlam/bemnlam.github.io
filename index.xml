@@ -1,4 +1,115 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>log from home</title><link>https://blog.lofibean.cc/</link><description>Recent content on log from home</description><image><url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url><title>Favicon of log from home</title><link>https://blog.lofibean.cc/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Thu, 25 Feb 2021 17:10:25 +0800</lastBuildDate><atom:link href="https://blog.lofibean.cc/index.xml" rel="self" type="application/rss+xml"/><item><title>【書摘】真確：扭轉十大直覺偏誤，發現事情比你想的美好</title><link>https://blog.lofibean.cc/posts/reading-factfulness/</link><pubDate>Thu, 25 Feb 2021 17:10:25 +0800</pubDate><guid>https://blog.lofibean.cc/posts/reading-factfulness/</guid><description>&lt;img src="https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/079/04/0010790443_bc_01.jpg&amp;v=5b2243fb&amp;w=1200&amp;h=630" />&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>log from home</title><link>https://blog.lofibean.cc/</link><description>Recent content on log from home</description><image><url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url><title>Favicon of log from home</title><link>https://blog.lofibean.cc/</link></image><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; bemnlam</copyright><lastBuildDate>Sun, 13 Feb 2022 14:56:15 +0800</lastBuildDate><atom:link href="https://blog.lofibean.cc/index.xml" rel="self" type="application/rss+xml"/><item><title>VSCode tasks for Hugo</title><link>https://blog.lofibean.cc/posts/vs-code-task/</link><pubDate>Sun, 13 Feb 2022 14:56:15 +0800</pubDate><guid>https://blog.lofibean.cc/posts/vs-code-task/</guid><description>&lt;img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" />&lt;p>This post shows some useful VSCode tasks I set up to run and build Hugo.&lt;/p>
+&lt;aside class="c-toc">
+&lt;details open>
+&lt;summary title="click to toggle table of contents.">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#1-launch-hugo-dev-server">1. Launch Hugo Dev Server&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#2-launch-a-mac-application">2. Launch a Mac Application&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#3-launch-script-requires-user-input">3. Launch Script Requires User Input&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#4-generate-hugo-static-site">4. Generate Hugo Static Site&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;/aside>
+&lt;p>Create a &lt;code>tasks.json&lt;/code> under &lt;code>.vscode&lt;/code>. Launch &lt;code>.vscode/tasks.json&lt;/code> and make sure that you have &lt;code>version&lt;/code>, &lt;code>tasks&lt;/code> and &lt;code>input&lt;/code> :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2.0.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;tasks&amp;#34;&lt;/span>: [],
+&lt;span style="color:#f92672">&amp;#34;input&amp;#34;&lt;/span>: []
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="1-launch-hugo-dev-server">1. Launch Hugo Dev Server&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2.0.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;tasks&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#f92672">&amp;#34;label&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Serve Drafts&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;shell&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;hugo&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;server&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-D&amp;#34;&lt;/span>],
+&lt;span style="color:#f92672">&amp;#34;group&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;kind&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;build&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;isDefault&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;isBackground&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;options&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;cwd&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;${workspaceFolder}/blog&amp;#34;&lt;/span>
+}
+}
+]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Note: change the working directory when necessary. &lt;code>${workspaceFolder}&lt;/code> is the directory contains &lt;code>.vscode&lt;/code> folder&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="2-launch-a-mac-application">2. Launch a Mac Application&lt;/h2>
+&lt;p>For example, I launch Mark Text in mac:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;label&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Launch Mark Text&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;shell&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;open&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [
+&lt;span style="color:#e6db74">&amp;#34;-a&amp;#34;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#34;\&amp;#34;Mark Text\&amp;#34;&amp;#34;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#34;${workspaceFolder}/blog/content/posts&amp;#34;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#34;&amp;amp;&amp;#34;&lt;/span>
+],
+&lt;span style="color:#f92672">&amp;#34;group&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;kind&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;build&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;isDefault&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;isBackground&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;options&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;cwd&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;${workspaceFolder}/blog&amp;#34;&lt;/span>
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="3-launch-script-requires-user-input">3. Launch Script Requires User Input&lt;/h2>
+&lt;p>For example, creating a new post requires user input the file name:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2.0.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;tasks&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#f92672">&amp;#34;label&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;New Post&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;shell&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;hugo&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [
+&lt;span style="color:#e6db74">&amp;#34;new&amp;#34;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#34;posts/${input:postTitlePrompt}/index.md&amp;#34;&lt;/span>
+],
+&lt;span style="color:#f92672">&amp;#34;group&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;kind&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;build&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;isDefault&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;options&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;cwd&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;${workspaceFolder}/blog&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;isBackground&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;problemMatcher&amp;#34;&lt;/span>: []
+},
+    ],
+    &lt;span style="color:#f92672">&amp;#34;input&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#f92672">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;postTitlePrompt&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;description&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Title of the new post&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;promptString&amp;#34;&lt;/span>
+}
+]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case, we have to create a &lt;code>input&lt;/code> task to collect user&amp;rsquo;s input first, and pass that value to the task.&lt;/p>
+&lt;h2 id="4-generate-hugo-static-site">4. Generate Hugo Static Site&lt;/h2>
+&lt;p>Similar to the launc the dev task, we create a task to run &lt;code>hugo build&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;label&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Generate Static Site&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;shell&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;hugo&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;group&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;kind&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;build&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;options&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;cwd&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;${workspaceFolder}/blog&amp;#34;&lt;/span>
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Choose the task to run by &lt;kbd>Command&lt;/kbd> + &lt;kbd>Shift&lt;/kbd> + &lt;kbd>B&lt;/kbd>:&lt;/p>
+&lt;p>&lt;img src="./img/2022-02-13-15-48-35-image.png" alt="">&lt;/p></description></item><item><title>【書摘】真確：扭轉十大直覺偏誤，發現事情比你想的美好</title><link>https://blog.lofibean.cc/posts/reading-factfulness/</link><pubDate>Thu, 25 Feb 2021 17:10:25 +0800</pubDate><guid>https://blog.lofibean.cc/posts/reading-factfulness/</guid><description>&lt;img src="https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/079/04/0010790443_bc_01.jpg&amp;v=5b2243fb&amp;w=1200&amp;h=630" />&lt;blockquote>
 &lt;p>可不可能有一天所有人都有基於事實的世界觀呢？巨大的改變總是難以想像，但絕對有可能，我也相信有一天會實現，原因有兩個：第一，&lt;strong>基於現實的世界觀更有助把人生走好&lt;/strong>，就像準確的導航系統更有助你在城裡找路；第二，大概更重要的是，&lt;strong>基於現實的世界觀讓人更安心&lt;/strong>，比誇大的世界觀來得不會造成壓力與絕望，畢竟誇大的世界觀太負面也太嚇人了。&lt;/p>
 &lt;/blockquote>
 &lt;blockquote>
