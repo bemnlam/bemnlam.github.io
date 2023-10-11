@@ -64,6 +64,11 @@
 # the copyright notice. Configure as per the main menu above.
 
 [[footer]]
+    name = "📖 blog"
+    pageRef = "posts"
+    weight = 10
+
+[[footer]]
     name = "☕️ coffee lab"
     url = "https://coffeelab.lofibean.cc/"
     weight = 10
