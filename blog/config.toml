@@ -1,78 +1,78 @@
-# baseURL = "https://bemnlam.github.io/"
-baseURL = "https://blog.lofibean.cc/"
-languageCode = "en-us"
-title = "log from home"
-theme = "pickles"
-publishDir = ".."
-# Copyright notice. This is displayer in the footer.
-copyright = "&copy; bemnlam"
-# custom_css = "/static/css/custom.css"
+# # baseURL = "https://bemnlam.github.io/"
+# baseURL = "https://blog.lofibean.cc/"
+# languageCode = "en-us"
+# title = "log from home"
+# theme = "pickles"
+# publishDir = ".."
+# # Copyright notice. This is displayer in the footer.
+# copyright = "&copy; bemnlam"
+# # custom_css = "/static/css/custom.css"
 
-# Google Analytics API key.
-googleAnalytics = "UA-169198494-1"
+# # Google Analytics API key.
+# googleAnalytics = "UA-169198494-1"
 
-[markup]
-  [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 2
+# [markup]
+#   [markup.tableOfContents]
+#     endLevel = 3
+#     ordered = false
+#     startLevel = 2
   
-  [markup.goldmark.renderer]
-    unsafe= true
+#   [markup.goldmark.renderer]
+#     unsafe= true
 
-[params]
-  env = "production"
-  paginate = 10
-  github = "bemnlam"
-  gitlab = "bemnlam"
-  linkedin = "hmbenlam"
-  author = "Bemn"
-  authorwebsite = "https://blog.lofibean.cc/"
-  avatar = "https://gravatar.com/avatar/feded3a7e7501be7a8ce86fd598b2b6a?s=100"
-  bio = "Hong Konger."
-  # Logo image. This is displayed ogp image.
-  logo = "cover.png"
-  favicon = "favicon.ico"
-  favicon512 = "android-chrome-512x512.png"
-  # Short subtitle/tagline. This is displayed in the header.
-  subtitle = "Start blogging in the 2020 lockdown. "
-  icon_dark = "🌌"
-  icon_light = "🌅"
-  # Version for static resources
-  ver="20201231"
+# [params]
+#   env = "production"
+#   paginate = 10
+#   github = "bemnlam"
+#   gitlab = "bemnlam"
+#   linkedin = "hmbenlam"
+#   author = "Bemn"
+#   authorwebsite = "https://blog.lofibean.cc/"
+#   avatar = "https://gravatar.com/avatar/feded3a7e7501be7a8ce86fd598b2b6a?s=100"
+#   bio = "Hong Konger."
+#   # Logo image. This is displayed ogp image.
+#   logo = "cover.png"
+#   favicon = "favicon.ico"
+#   favicon512 = "android-chrome-512x512.png"
+#   # Short subtitle/tagline. This is displayed in the header.
+#   subtitle = "Start blogging in the 2020 lockdown. "
+#   icon_dark = "🌌"
+#   icon_light = "🌅"
+#   # Version for static resources
+#   ver="20201231"
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
-[[menu.main]]
-    # identifier = "blog"
-    name = "📖 blog"
-    url = "/"
-    weight = 1
+# [outputs]
+#   home = ["HTML", "RSS", "JSON"]
 
 # [[menu.main]]
-#     name = "About"
-#     url = "/about"
-#     weight = 2
+#     # identifier = "blog"
+#     name = "📖 blog"
+#     url = "/"
+#     weight = 1
 
-[[menu.main]]
-    # parent = "blog"
-    name = "🗂 categories"
-    url = "/categories"
-    weight = 3
+# # [[menu.main]]
+# #     name = "About"
+# #     url = "/about"
+# #     weight = 2
 
-[[menu.main]]
-    # parent = "blog"
-    name = "🏷 tags"
-    url = "/tags"
-    weight = 4
+# [[menu.main]]
+#     # parent = "blog"
+#     name = "🗂 categories"
+#     url = "/categories"
+#     weight = 3
 
-[[menu.main]]
-    name = "☕️ coffee lab"
-    url = "https://coffeelab.lofibean.cc/"
-    weight = 10
+# [[menu.main]]
+#     # parent = "blog"
+#     name = "🏷 tags"
+#     url = "/tags"
+#     weight = 4
 
-[[menu.main]]
-    name = "⚙️ kobo note reader"
-    url = "https://kobo.lofibean.cc/"
-    weight = 10
+# [[menu.main]]
+#     name = "☕️ coffee lab"
+#     url = "https://coffeelab.lofibean.cc/"
+#     weight = 10
+
+# [[menu.main]]
+#     name = "⚙️ kobo note reader"
+#     url = "https://kobo.lofibean.cc/"
+#     weight = 10
