@@ -45,6 +45,18 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      
+      - name: Checkout Theme
+        uses: actions/checkout@v4
+        with:
+          repository: bemnlam/blowfish-mod.git
+          ref: 'hugo-new-version'
+          path: themes/blowfish
+
+      - name: Debug message
+        run: |
+          ls -al
+          ls -al themes
       # - name: Setup Pages
       #   id: pages
       #   uses: actions/configure-pages@v4
