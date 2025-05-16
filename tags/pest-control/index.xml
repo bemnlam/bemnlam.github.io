@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>pest-control on log from home</title>
+    <link>https://blog.lofibean.cc/tags/pest-control/</link>
+    <description>Recent content in pest-control on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of pest-control on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Tue, 16 Feb 2021 19:08:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.lofibean.cc/tags/pest-control/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🐞 Missing Cookie in iframe</title>
+      <link>https://blog.lofibean.cc/posts/missing-cookie-in-iframe/</link>
+      <pubDate>Tue, 16 Feb 2021 19:08:15 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/missing-cookie-in-iframe/</guid>
+      
+        <description>&lt;img src=&#34;https://images.unsplash.com/photo-1596872907520-07fa00b9aa68?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTZ8fGNvb2tpZXxlbnwwfHwwfA%3D%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=720&amp;q=80&#34; /&gt;&lt;aside class=&#34;c-toc&#34;&gt;
+  &lt;details open&gt;
+    &lt;summary title=&#34;click to toggle table of contents.&#34;&gt;Table of Contents&lt;/summary&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#-problem&#34;&gt;😨 Problem&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#its-emptydocumentcookie&#34;&gt;It&amp;rsquo;s empty: &lt;code&gt;Document.cookie&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-cookie-policy&#34;&gt;The cookie policy&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#samesite&#34;&gt;&lt;code&gt;SameSite&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#secure-and-httponly&#34;&gt;&lt;code&gt;Secure&lt;/code&gt; and  &lt;code&gt;HttpOnly&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#-solution-enforcing-cookie-responses-on-iis&#34;&gt;😀 Solution: Enforcing cookie responses on IIS&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#advanced-change-the-config-file-directly&#34;&gt;Advanced: change the config file directly&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#easy-add-an-outbound-rule-in-iis-manager&#34;&gt;Easy: Add an outbound rule in IIS Manager&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#-conslusion&#34;&gt;🎯 Conslusion&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+  &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+&lt;p&gt;There is a internal web application which showing an article from another website in an &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;. In order to read the full article the user has to login to the website (i.e. a special Form cookie is required.)&lt;/p&gt;
+&lt;p&gt;A user reported:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I login to the website in a separated browser tab. I can read the full article. However, when I browing the same item in the internal web app, it requires me to login and I am failed to login (in that &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I cannot reproduce this using my browser (Firefox v85). This issue happens on Chrome v88.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20210216190506550.png&#34; alt=&#34;image-20210216190506550&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;its-emptydocumentcookie&#34;&gt;It&amp;rsquo;s empty: &lt;code&gt;Document.cookie&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;I suspect this is something related to my cookie. I check the cookie using &lt;code&gt;document.cookie&lt;/code&gt; in Dev tool&amp;rsquo;s console. It&amp;rsquo;s empty when I load the website inside the &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;However, &lt;code&gt;document.cookie&lt;/code&gt; should contain something after I login to the website, right?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://bugs.chromium.org/p/chromium/issues/detail?id=1062162&#34;&gt;Here&lt;/a&gt; and &lt;a href=&#34;https://support.google.com/chrome/thread/33543699?hl=en&#34;&gt;here&lt;/a&gt; show the exact same issue reported by other chromium user. Turns out it&amp;rsquo;s about the &lt;strong&gt;updated cookie policy in Chrome&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;the-cookie-policy&#34;&gt;The cookie policy&lt;/h2&gt;
+&lt;p&gt;I inspected the cookie of the website: it&amp;rsquo;s just a cookie with &lt;code&gt;HttpOnly&lt;/code&gt; attribute and othing else. So, something else is missing in the cookie response, right?&lt;/p&gt;
+&lt;h3 id=&#34;samesite&#34;&gt;&lt;code&gt;SameSite&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The modern browsers (e.g. latest Chrome and coming versions of Firefox)  require the developer to define an explicit &lt;code&gt;SameSite&lt;/code&gt; policy.  You can see &lt;a href=&#34;https://web.dev/samesite-cookies-explained/&#34;&gt;SameSite cookies explained&lt;/a&gt; for details and choose the suiteable value.&lt;/p&gt;
+&lt;h3 id=&#34;secure-and-httponly&#34;&gt;&lt;code&gt;Secure&lt;/code&gt; and  &lt;code&gt;HttpOnly&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The cookie has to be served via &lt;code&gt;HTTPS&lt;/code&gt;. Hence, those attributes are also required.&lt;/p&gt;
+&lt;p&gt;I found that &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie&#34;&gt;Set-Cookie - HTTP | MDN&lt;/a&gt; is a good documentation for you to check all the available attributes related to the &lt;code&gt;Set-Cookie&lt;/code&gt;HTTP response header.&lt;/p&gt;
+&lt;p&gt;I know what might be missing now but how can I fix it? The websites are running on &lt;strong&gt;IIS&lt;/strong&gt; and there are &lt;strong&gt;multiple sites&lt;/strong&gt; has the same cookie problem. A quick fix is required and &lt;strong&gt;better don&amp;rsquo;t alter the code&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;-solution-enforcing-cookie-responses-on-iis&#34;&gt;😀 Solution: Enforcing cookie responses on IIS&lt;/h2&gt;
+&lt;h3 id=&#34;advanced-change-the-config-file-directly&#34;&gt;Advanced: change the config file directly&lt;/h3&gt;
+&lt;p&gt;If you feel confident to modify the server config directly, open this file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-batch&#34; data-lang=&#34;batch&#34;&gt;%windir%\System32\inetsrv\config\applicationHost.config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It&amp;rsquo;s a XML file containing the server-level configs.&lt;/p&gt;
+&lt;p&gt;Find the &lt;outboundRules&gt; section under &lt;code&gt;system.webServer &amp;gt; rewrite&lt;/code&gt; If no, create one:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;system.webServer&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;rewrite&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;outboundRules&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;rule&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;AddCookiePolicy&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;match&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;serverVariable=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RESPONSE_Set-Cookie&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pattern=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^(.*)(AUTH)(=.*)$&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;action&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Rewrite&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{R:0};SameSite=None;Secure;HttpOnly&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/rule&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/outboundRules&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/rewrite&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/system.webServer&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;You need to change the regex of the &lt;code&gt;pattern&lt;/code&gt; attribute. I use &lt;code&gt;^(.*)(AUTH)(=.*)$&lt;/code&gt; because there are multiple websites and all the auth cookie names are ended with &lt;code&gt;AUTH&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Make sure that your regex should have a matching group so that you can make use of it in the &lt;code&gt;action&lt;/code&gt; section (i.e. the &lt;code&gt;{R:0}&lt;/code&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Save the file and it&amp;rsquo;s done.&lt;/p&gt;
+&lt;h4 id=&#34;verify-the-config&#34;&gt;Verify the config&lt;/h4&gt;
+&lt;p&gt;Launch the &lt;strong&gt;IIS manager&lt;/strong&gt; and choose the &lt;strong&gt;Configuration Editor&lt;/strong&gt; on the Server level (not website level). Check the configuration collection under &lt;code&gt;system.webServer/rewrite/outboundRules&lt;/code&gt; . You should see the config named &lt;code&gt;AddCookiePolicy&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;easy-add-an-outbound-rule-in-iis-manager&#34;&gt;Easy: Add an outbound rule in IIS Manager&lt;/h3&gt;
+&lt;p&gt;If you want to be safe, launch the &lt;strong&gt;IIS Manager&lt;/strong&gt; and set the rule.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Select the &lt;strong&gt;URL Rewrite&lt;/strong&gt; option at the &lt;strong&gt;Server&lt;/strong&gt; level:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/2039ae6d172ddeba53124f671a3b73eb5ffe8c3c.jpg&#34; alt=&#34;URL Rewrite&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose &lt;strong&gt;Blank rule&lt;/strong&gt; under &lt;strong&gt;Outbound rules&lt;/strong&gt; section. Click &lt;strong&gt;OK&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/93bc4349fa2deb106e44399add0e3f87232f690e.jpg&#34; alt=&#34;Blank rule&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set the matching criteria:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Matching scope: &lt;strong&gt;Server Variable&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Variable name: &lt;code&gt;RESPONSE_Set-Cookie&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Variable value: &lt;strong&gt;Matches the Pattern&lt;/strong&gt; using &lt;strong&gt;Regular Expressions&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pattern: &lt;code&gt;^(.*)(AUTH)(=.*)$&amp;quot; /&amp;gt;&lt;/code&gt;. You should change this regex in order to match your use case.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Ignore case&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;./img/fd001a4e74cd55507e2faf063f26f34f770daf61.jpg&#34; alt=&#34;Matching Criteria&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set the &lt;strong&gt;Action&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Value: &lt;code&gt;{R:0};Secure;SameSite=None;HttpOnly&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Replace existing server variable value&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;./img/97bd46b9980b6de3927f8a2b0f2b528b900a00ce.jpg&#34; alt=&#34;Action&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;strong&gt;Apply&lt;/strong&gt; to enable the rule.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Done.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After I set this outbound rewrite rule for the cookies, I can see the full article loaded inside the &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;. Problem solved.&lt;/p&gt;
+&lt;h2 id=&#34;-conslusion&#34;&gt;🎯 Conslusion&lt;/h2&gt;
+&lt;p&gt;When you dealing with cookies in modern browsers, set the &lt;strong&gt;correct cookie response attributes&lt;/strong&gt; including an explicit &lt;code&gt;SameSite&lt;/code&gt; policy, a &lt;code&gt;HttpOnly&lt;/code&gt; and &lt;code&gt;Secure&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Set-Cookie: {name}={value}; SameSite=None;HttpOnly;Secure
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In order to add those attributes in a &lt;strong&gt;.NET Framework web app running on IIS&lt;/strong&gt;, you can simply define an &lt;strong&gt;outbound rule&lt;/strong&gt; rewrite rule on the server level of the &lt;strong&gt;IIS Manager&lt;/strong&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>🐞 Fixing AjaxControlTookit Unexpected Page Reload in ASP.NET Web Form Application</title>
+      <link>https://blog.lofibean.cc/posts/fixing-ajaxcontroltoolkit-unexpected-page-reload-in-aspnet-webform-application/</link>
+      <pubDate>Fri, 12 Feb 2021 12:44:24 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/fixing-ajaxcontroltoolkit-unexpected-page-reload-in-aspnet-webform-application/</guid>
+      
+        <description>&lt;img src=&#34;https://blog.lofibean.cc/posts/fixing-ajaxcontroltoolkit-unexpected-page-reload-in-aspnet-webform-application/thumbnail.jpg&#34; /&gt;&lt;aside class=&#34;c-toc&#34;&gt;
+  &lt;details open&gt;
+    &lt;summary title=&#34;click to toggle table of contents.&#34;&gt;Table of Contents&lt;/summary&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#-problem&#34;&gt;😨 Problem&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#expected-vs-actual-behavior&#34;&gt;Expected vs Actual Behavior&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#expected&#34;&gt;Expected&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#actual&#34;&gt;Actual&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#-solution-part-1-updating-ajaxcontroltoolkit&#34;&gt;😀 Solution (Part 1): Updating &lt;code&gt;AjaxControlToolkit&lt;/code&gt;&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#nuget-package-update&#34;&gt;Nuget Package Update&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#some-breaking-changes&#34;&gt;Some Breaking Changes&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#different-__dopostback-in-firefox&#34;&gt;Different &lt;code&gt;__doPostBack()&lt;/code&gt; in Firefox?&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#-solution-part-2-adding--aspasyncpostbacktrigger&#34;&gt;😀 Solution (Part 2): Adding  &lt;code&gt;&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code&gt;&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#the-working-code-snippet&#34;&gt;The Working Code Snippet&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+  &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR: see &lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt; and &lt;a href=&#34;#the-working-code-snippet&#34;&gt;the working code snippet&lt;/a&gt; if you want to try it right away.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In my company there is an old Web Form Website running .NET Framework 3.5. I migrated it to an ASP.NET Web Form Application running .NET Framework 4.7.2 few months ago. The website is running just like the old one but recently a user reported that:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;a &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; list which should triggers an AJAX call and refresh part of the page does not work. Instead, the page is reloaded everytime when the item in the &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; list is changed.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I used almost a day to figure out what&amp;rsquo;s (probably) happened and I hope that this article will be helpful to someone in the future who (still) encounter this problem.&lt;/p&gt;
+&lt;h2 id=&#34;expected-vs-actual-behavior&#34;&gt;Expected vs Actual Behavior&lt;/h2&gt;
+&lt;p&gt;There is a &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; containing a &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; list (generated by &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.dropdownlist?view=netframework-4.8&#34;&gt; &lt;code&gt;&amp;lt;asp:DropDownList&amp;gt;&lt;/code&gt;&lt;/a&gt;). When the selected option is changed, an AJAX call will be fired and new items will be fetched. Besides, there is a text area for user to input remarks. A submit button will submit the form.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20210212150215986.png&#34; alt=&#34;image-20210212150215986&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;expected&#34;&gt;Expected&lt;/h3&gt;
+&lt;p&gt;The page will not be reloaded when the selected option is changed. The content in the text area retains.&lt;/p&gt;
+&lt;h3 id=&#34;actual&#34;&gt;Actual&lt;/h3&gt;
+&lt;p&gt;Once the selected option is changed, a form POST is fired (instead of an AJAX call). The content in the text area is therefore being cleaned.&lt;/p&gt;
+&lt;p&gt;This is related to AJAX calls so the first thing I checked was how the AJAX call was initiated.&lt;/p&gt;
+&lt;h2 id=&#34;-solution-part-1-updating-ajaxcontroltoolkit&#34;&gt;😀 Solution (Part 1): Updating &lt;code&gt;AjaxControlToolkit&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;In the &lt;code&gt;.aspx&lt;/code&gt; file I saw a &lt;code&gt;&amp;lt;asp:UpdatePanel&amp;gt;&lt;/code&gt; and a &lt;code&gt;&amp;lt;asp:DropDownList&amp;gt;&lt;/code&gt;. This is the simplified structure of that part:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;asp:UpdatePanel&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;runat=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;server&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ID=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UpdatePanel2&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;UpdateMode=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Conditional&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ChildrenAsTriggers=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;ContentTemplate&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;asp:DropDownList&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;runat=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;server&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ID=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ddItemTypes&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AutoPostBack=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OnSelectedIndexChanged=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ddItemTypes_OnSelectedIndexChanged&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/ContentTemplate&amp;gt;&lt;/span&gt;            
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/asp:UpdatePanel&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;AutoPostBack&lt;/code&gt; is there so the app should use &lt;code&gt;AjaxControlToolkit&lt;/code&gt; to make AJAX calls (I guess that&amp;rsquo;s the standard right?).&lt;/p&gt;
+&lt;h3 id=&#34;nuget-package-update&#34;&gt;Nuget Package Update&lt;/h3&gt;
+&lt;p&gt;I checked the &lt;code&gt;package.config&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;AjaxControlToolkit&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;4.1.50508&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;targetFramework=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net35&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Looks like the &lt;code&gt;targetFramework&lt;/code&gt; is not right. Maybe it&amp;rsquo;s time to update the package too.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;AjaxControlToolkit&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;20.1.0&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;targetFramework=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net472&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;some-breaking-changes&#34;&gt;Some Breaking Changes&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/DevExpress/AjaxControlToolkit&#34;&gt;AjaxControlToolkit&lt;/a&gt; has some breaking changes since version 15+. In short, you need to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Uninstall the old version and install the new version of &lt;a href=&#34;https://www.nuget.org/packages/AjaxControlToolkit&#34;&gt;&lt;code&gt;AjaxControlToolkit&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Change &lt;code&gt;&amp;lt;asp:ToolkitScriptManager&amp;gt;&lt;/code&gt; to &lt;code&gt;&amp;lt;asp:ScriptManager&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remove some unused configs in &lt;code&gt;web.config&lt;/code&gt; (see &lt;a href=&#34;https://github.com/DevExpress/AjaxControlToolkit/wiki/Upgrading-from-v7.x-and-below#3---clean-up-webconfig&#34;&gt;this&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Optional] Install &lt;a href=&#34;https://www.nuget.org/packages/AjaxControlToolkit.HtmlEditor.Sanitizer/&#34;&gt;&lt;code&gt;AjaxControlToolkit.HtmlEditor.Sanitizer&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Change the namespace &lt;code&gt;AjaxControlToolkit.HTMLEditor&lt;/code&gt; to &lt;code&gt;AjaxControlToolkit.HtmlEditor&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Change the namespace &lt;code&gt;AjaxControlToolkit.HTMLEditor.ToolbarButton&lt;/code&gt; to &lt;code&gt;AjaxControlToolkit.HtmlEditor.ToolbarButtons&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You may also read&lt;a href=&#34;https://github.com/DevExpress/AjaxControlToolkit/wiki/Upgrading-from-v7.x-and-below#3---clean-up-webconfig&#34;&gt; the official complete migration guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After I upgrade the Nuget package, the AJAX calls was working partially: It only works on Chromium-base browsers like Chrome and Edge. However, &lt;strong&gt;it does not work on Firefox (85.0) and Safari (14.0.1)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;😐 😐 😐&lt;/p&gt;
+&lt;h3 id=&#34;different-__dopostback-in-firefox&#34;&gt;Different &lt;code&gt;__doPostBack()&lt;/code&gt; in Firefox?&lt;/h3&gt;
+&lt;p&gt;This is what I got from Firefox&amp;rsquo;s dev tool:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20210212140706748.png&#34; alt=&#34;call stack form Firefox image-20210212140706748&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The initiator is from &lt;code&gt;__doPostBack()&lt;/code&gt; in the &lt;code&gt;.aspx&lt;/code&gt; page. In Chrome, it&amp;rsquo;s from &lt;code&gt;ScriptResource.axd&lt;/code&gt;. Below is the expected call stack: the call is an XHR request fired from &lt;code&gt;ScriptResource.axd&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20210212141300293.png&#34; alt=&#34;Expected call stack image-20210212141300293&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Looks like the stack items from bottom to &lt;code&gt;_doPostBack()&lt;/code&gt; are the same.  I therefore dug into &lt;code&gt;_doPostBack()&lt;/code&gt; and eventually found this piece of code in &lt;code&gt;ScriptResource.axd&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;_postBackSettings&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt;) {            
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;form&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;onsubmit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;_onsubmit&lt;/span&gt;;            
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;_originalDoPostBack&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;eventTarget&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;eventArgument&lt;/span&gt;);            
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;form&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;onsubmit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;;            
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;        
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if &lt;code&gt;this._postBackSettings.async&lt;/code&gt; is &lt;code&gt;false&lt;/code&gt;, &lt;code&gt;_originaldoPostBack()&lt;/code&gt; will be called and that is the &lt;code&gt;__doPostBack()&lt;/code&gt; function defined in the &lt;code&gt;.aspx&lt;/code&gt; page. &lt;strong&gt;This will trigger a page reload instead of an AJAX call&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Furthermore, I found that the &lt;code&gt;asyncTarget&lt;/code&gt; in &lt;code&gt;_postBackSettings &lt;/code&gt; is &lt;code&gt;null&lt;/code&gt; but in Chrome that target is the &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; list.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In Firefox (v85.0) the javascript event initiated is somehow keep propagating to a higher level than the &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; list (probably to the form&amp;rsquo;s level) and therefore being treated as a form POST instead of an AJAX call.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;-solution-part-2-adding--aspasyncpostbacktrigger&#34;&gt;😀 Solution (Part 2): Adding  &lt;code&gt;&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;I did some research related to the Firefox-specific page reload and seems none of them were talking about the issue I met. I tried to study the fundamentals of this &lt;strong&gt;PostBack&lt;/strong&gt; behaviour.&lt;/p&gt;
+&lt;p&gt;Finally I got this article &lt;a href=&#34;https://www.aspsnippets.com/Articles/Avoid-Prevent-Page-refresh-PostBack-after-SelectedIndexChanged-is-fired-in-ASPNet-DropDownList.aspx&#34;&gt;&lt;strong&gt;Avoid (Prevent) Page refresh (PostBack) after SelectedIndexChanged is fired in ASP.Net DropDownList&lt;/strong&gt;&lt;/a&gt;. It suggested what I might missing is an &lt;code&gt;asp:AsyncPostBackTrigger&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Also, &lt;a href=&#34;https://stackoverflow.com/questions/728043/how-to-stop-updatepanel-from-causing-whole-page-postback/728061#728061&#34;&gt;this StackOverflow answer&lt;/a&gt; menitoned the &lt;code&gt;asp:AsyncPostBackTrigger&lt;/code&gt; thing.&lt;/p&gt;
+&lt;p&gt;So my understanding is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When using the &lt;code&gt;ScriptManager&lt;/code&gt; (i.e. the one we introduced when updating the &lt;code&gt;AjaxControlToolkit&lt;/code&gt;), we need to define an &lt;code&gt;asp:AsyncPostBackTrigger&lt;/code&gt; &lt;code&gt;Trigger&lt;/code&gt; in order to make the call AJAX.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Therefore, I added a &lt;code&gt;Trigger&lt;/code&gt; section to the &lt;code&gt;.aspx&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Triggers&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;asp:AsyncPostBackTrigger&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ControlID=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ddItemTypes&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EventName=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SelectedIndexChanged&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Triggers&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This &lt;code&gt;Trigger&lt;/code&gt; section should be placed under the same &lt;code&gt;&amp;lt;asp:UpdatePanel&amp;gt;&lt;/code&gt; with the &lt;code&gt;&amp;lt;asp:DropDownList&amp;gt;&lt;/code&gt;. Here is the complete snippet:&lt;/p&gt;
+&lt;h3 id=&#34;the-working-code-snippet&#34;&gt;The Working Code Snippet&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;asp:UpdatePanel&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;runat=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;server&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ID=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UpdatePanel2&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;UpdateMode=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Conditional&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ChildrenAsTriggers=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;ContentTemplate&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;asp:DropDownList&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;runat=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;server&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ID=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ddItemTypes&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AutoPostBack=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OnSelectedIndexChanged=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ddItemTypes_OnSelectedIndexChanged&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/ContentTemplate&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Triggers&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;asp:AsyncPostBackTrigger&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ControlID=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ddItemTypes&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EventName=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SelectedIndexChanged&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Triggers&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/asp:UpdatePanel&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;EventName&lt;/code&gt; is optional here but since I just want this trigger to listen the &lt;code&gt;SelectedIndexChanged&lt;/code&gt; event, I add them all.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;ControlID&lt;/code&gt; has to be an exact match with the &lt;code&gt;ID&lt;/code&gt; of &lt;code&gt;&amp;lt;asp:DropDownList&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After I added the &lt;code&gt;&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code&gt;, all the browsers including Chrome, Edge, Firefox (85.0) and Safari (14.0.1) are working.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;When your .NET 4.5+ ASP.NET Web Form Application using &lt;code&gt;AjaxControlToolkit&lt;/code&gt; does not work as expected and cause the controls like &lt;code&gt;&amp;lt;asp:DropDownList&amp;gt;&lt;/code&gt; cannot fire an AJAX call (but triggers a form POST), make sure that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;AjaxControlToolkit&lt;/code&gt; Nuget package is up to date (and did the proper migration steps &lt;a href=&#34;https://github.com/DevExpress/AjaxControlToolkit/wiki/Upgrading-from-v7.x-and-below#3---clean-up-webconfig&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;&amp;lt;asp:UpdatePanel&amp;gt;&lt;/code&gt; section should contain a &lt;code&gt;&amp;lt;Triggers&amp;gt;&lt;/code&gt; section. In that section there is an &lt;code&gt;&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code&gt; with &lt;code&gt;ControlID&lt;/code&gt; same as the &lt;code&gt;ID&lt;/code&gt; of your control (which is also placed under the same UpdatePanel section).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>🐞 Battling With Gulp and Node</title>
+      <link>https://blog.lofibean.cc/posts/battling-with-gulp-and-node/</link>
+      <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/battling-with-gulp-and-node/</guid>
+      
+        <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+&lt;p&gt;When I was building a website using &lt;code&gt;gulp@^3.9.0&lt;/code&gt; to compile sass on the build server with Node.js v12 installed, it failed.&lt;/p&gt;
+&lt;p&gt;Here are (part of) the errors shown in the console:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-systemverilog&#34; data-lang=&#34;systemverilog&#34;&gt;error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt;	gyp ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; node &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;v v12&lt;span style=&#34;color:#ae81ff&#34;&gt;.18.0&lt;/span&gt;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt;	gyp ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; node&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;gyp &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;v v3&lt;span style=&#34;color:#ae81ff&#34;&gt;.8.0&lt;/span&gt;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt;	gyp ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;not&lt;/span&gt; ok 
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt;	Build failed &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; error code: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;	
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;	npm ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; code ELIFECYCLE
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;	npm ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; errno &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;	npm ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; node&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;sass@&lt;span style=&#34;color:#ae81ff&#34;&gt;4.9.3&lt;/span&gt; postinstall: &lt;span style=&#34;color:#66d9ef&#34;&gt;`node&lt;/span&gt; scripts&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;build.js&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;	npm ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; Exit status &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;	npm ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; 
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;	npm ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; Failed at the node&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;sass@&lt;span style=&#34;color:#ae81ff&#34;&gt;4.9.3&lt;/span&gt; postinstall script.
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;	npm ERR&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; This is probably &lt;span style=&#34;color:#66d9ef&#34;&gt;not&lt;/span&gt; a problem &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; npm. There is likely additional logging &lt;span style=&#34;color:#66d9ef&#34;&gt;output&lt;/span&gt; above.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(OK I know that&amp;rsquo;s not your fault, &lt;code&gt;npm&lt;/code&gt;.) Here is my &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;devDependencies&amp;#34;&lt;/span&gt;: {
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;gulp&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^3.9.0&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;gulp-concat&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^2.6.0&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;gulp-minify-css&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^1.2.4&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;gulp-rename&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^1.2.2&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;gulp-sass&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^4.0.2&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;gulp-sourcemaps&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;*&amp;#34;&lt;/span&gt;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-node-sass&#34;&gt;😐 &lt;code&gt;node-sass&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;I noticed that should be something wrong with &lt;code&gt;node-sass&lt;/code&gt;, which being used in &lt;code&gt;gulp-sass&lt;/code&gt;. I met this issues before and from my experience, &lt;a href=&#34;https://stackoverflow.com/a/45807410/13742790&#34;&gt;&lt;code&gt;node-sass&lt;/code&gt; will try to download the corresponding prebuilt binary&lt;/a&gt; base on your OS or build it locally using &lt;code&gt;python&lt;/code&gt;, &lt;code&gt;MSBuild&lt;/code&gt;, etc&amp;hellip; (That&amp;rsquo;s why you will met lots of questions in Stack Overflow asking &lt;strong&gt;&lt;code&gt;python2&lt;/code&gt; not found when installing &lt;code&gt;node-sass&lt;/code&gt;&lt;/strong&gt; ,  &lt;strong&gt;what&amp;rsquo;s wrong with my &lt;code&gt;node-sass&lt;/code&gt;&lt;/strong&gt; or &lt;strong&gt;I got a panic attack when dealing with &lt;code&gt;node-sass&lt;/code&gt; should I consult a developer or a doctor first?&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;For this &lt;code&gt;node-sass&lt;/code&gt; issue, &lt;a href=&#34;https://hisk.io/how-to-fix-node-js-gyp-err-cant-find-python-executable-python-on-windows/&#34;&gt;you can try to run this on Windows&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;npm install --global --production windows-build-tools
+npm install node-gyp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or try to delete &lt;code&gt;package-lock.json&lt;/code&gt; and &lt;code&gt;node_modules&lt;/code&gt; first and do a &lt;code&gt;npm install&lt;/code&gt; if you can install all packages successfully on let say Mac OS but failed on Windows.&lt;/p&gt;
+&lt;p&gt;👆Those tricks saved me most of the time.&lt;/p&gt;
+&lt;h4 id=&#34;i-just-want-to-get-my-css-files-back-and-you-told-me-i-have-to-install-this-and-that-and-download-node-npm-python-ms-build-tools-some-prebuilt-binaries-are-you-serious-node-sass&#34;&gt;&lt;del&gt;I just want to get my css files back and you told me I have to install this and that and download node npm python ms build tools some prebuilt binaries? Are you serious, node-sass?&lt;/del&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;-referenceerror-primordials-is-not-defined&#34;&gt;😑 ReferenceError: primordials is not defined&lt;/h3&gt;
+&lt;p&gt;After the &lt;code&gt;node-sass&lt;/code&gt; issue was solved, the build server ran the build jobs again and got these errors:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-systemverilog&#34; data-lang=&#34;systemverilog&#34;&gt;error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	fs.js:&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	} &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; primordials;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	    &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	ReferenceError: primordials is &lt;span style=&#34;color:#66d9ef&#34;&gt;not&lt;/span&gt; defined
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	    at fs.js:&lt;span style=&#34;color:#ae81ff&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;
+## ( blah blah blah ) ##
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	    at Module._compile (internal&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;modules&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;cjs&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;loader.js:&lt;span style=&#34;color:#ae81ff&#34;&gt;1138&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;)
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	    at Object.Module._extensions..js (internal&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;modules&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;cjs&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;loader.js:&lt;span style=&#34;color:#ae81ff&#34;&gt;1158&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	    at Module.load (internal&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;modules&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;cjs&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;loader.js:&lt;span style=&#34;color:#ae81ff&#34;&gt;986&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;)
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	    at Function.Module._load (internal&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;modules&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;cjs&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;loader.js:&lt;span style=&#34;color:#ae81ff&#34;&gt;879&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt;)
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	    at Module.require (internal&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;modules&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;cjs&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;loader.js:&lt;span style=&#34;color:#ae81ff&#34;&gt;1026&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt;)
+error	&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Jun&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;	    at require (internal&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;modules&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;cjs&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;helpers.js:&lt;span style=&#34;color:#ae81ff&#34;&gt;72&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/a/55926692/13742790&#34;&gt;This answer from Stack Overflow&lt;/a&gt; states that it is due to Node.js v12 does not compatible with Gulp v3 &lt;strong&gt;and you need to upgrade Gulp to v4&lt;/strong&gt;. I know &lt;strong&gt;I should&lt;/strong&gt; do that but I also know that I will meet the &lt;a href=&#34;https://github.com/sindresorhus/del/issues/45&#34;&gt;Did you forget to signal async completion?&lt;/a&gt; issue which also will cause an epic fail of the build &lt;strong&gt;unless I re-write the gulp tasks&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t want to change my &lt;code&gt;gulpfile.js&lt;/code&gt; and I don&amp;rsquo;t want to upgrade &lt;code&gt;gulp&lt;/code&gt;. Not now.  That&amp;rsquo;s why I started searching for a solution without changing any configurations of the build server as well as the gulp setup in the project.&lt;/p&gt;
+&lt;h2 id=&#34;-solution-adding-a-npm-shrinkwrapjson&#34;&gt;😀 Solution: adding a &lt;code&gt;npm-shrinkwrap.json&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Eventually I &lt;a href=&#34;https://stackoverflow.com/questions/55921442/how-to-fix-referenceerror-primordials-is-not-defined-in-node/58394828#58394828&#34;&gt;found a solution&lt;/a&gt; on how to handle this &amp;ldquo;Gulp VS Node&amp;rdquo; situation. What we need is create a &lt;code&gt;npm-shrinkwrap.json&lt;/code&gt; file under the same directory with &lt;code&gt;package.json&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The content of the json file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;graceful-fs&amp;#34;&lt;/span&gt;: {
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;4.2.3&amp;#34;&lt;/span&gt;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that I can build the project and finish all the gulp tasks without errors 🎉.&lt;/p&gt;
+&lt;h3 id=&#34;-so-whats-going-on&#34;&gt;🤔 So, what&amp;rsquo;s going on?&lt;/h3&gt;
+&lt;p&gt;From the npm&amp;rsquo;s official documentation on the &lt;a href=&#34;https://docs.npmjs.com/cli/shrinkwrap&#34;&gt;&lt;code&gt;npm-shrinkwrap&lt;/code&gt; command&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This command repurposes package-lock.json into a publishable npm-shrinkwrap.json or simply creates a new one. The file created and updated by this command will then take precedence over any other existing or future package-lock.json files.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And from the documentation on the &lt;a href=&#34;https://docs.npmjs.com/files/shrinkwrap.json&#34;&gt;&lt;code&gt;npm-shrinkwrap.json&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip; Additionally, if both &lt;code&gt;package-lock.json&lt;/code&gt; and &lt;code&gt;npm-shrinkwrap.json&lt;/code&gt; are present in a package root, &lt;code&gt;package-lock.json&lt;/code&gt; will be ignored in favor of this file.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In other words, this file has a &lt;em&gt;higher priority&lt;/em&gt; then &lt;code&gt;package-lock.json&lt;/code&gt;. However, why this file can solve the build error?&lt;/p&gt;
+&lt;h4 id=&#34;thefs-module&#34;&gt;The&lt;code&gt;fs&lt;/code&gt; module&lt;/h4&gt;
+&lt;p&gt;Node&amp;rsquo;s &lt;code&gt;fs&lt;/code&gt; module got some changes since &lt;strong&gt;v11.15&lt;/strong&gt; which cause the &lt;code&gt;graceful-fs@^3.0.0&lt;/code&gt; package does not work anymore. Unfortunately, &lt;code&gt;gulp@3.9.1&lt;/code&gt; depends on  &lt;code&gt;graceful-fs@^3.0.0&lt;/code&gt;. As a result, running the gulp tasks on Node.js v12 will cause the &lt;code&gt;primordials is not defined&lt;/code&gt; error.&lt;/p&gt;
+&lt;h4 id=&#34;the-fix&#34;&gt;The fix&lt;/h4&gt;
+&lt;p&gt;After we added the &lt;code&gt;npm-shrinkwrap.json&lt;/code&gt;, from my understanding it locked down the version of package(s) used by the execution environment to the version stated in that file (and ignore the setup in &lt;code&gt;package-lock.json&lt;/code&gt;.In the above case, the &lt;code&gt;npm-shrinkwrap.json&lt;/code&gt; tells Node.js 12 use &lt;code&gt;graceful-fs@4.2.3&lt;/code&gt; instead of &lt;code&gt;graceful-fs@^3.0.0&lt;/code&gt;. This combination works. Meanwhile, the &lt;code&gt;gulp&lt;/code&gt; package will still reference to the &lt;code&gt;package.json&lt;/code&gt; and &lt;code&gt;package-lock.json&lt;/code&gt; file and use the &lt;code&gt;graceful-fs@^3.0.0&lt;/code&gt; package. This combination also works.&lt;/p&gt;
+&lt;h2 id=&#34;-conclusion&#34;&gt;🎯 Conclusion&lt;/h2&gt;
+&lt;p&gt;I got some build errors when using &lt;code&gt;gulp@^3.9.0&lt;/code&gt; and &lt;code&gt;gulp-sass&lt;/code&gt; under Node.js 12. After I delete the &lt;code&gt;package-lock.json&lt;/code&gt; and  re-run &lt;code&gt;npm install&lt;/code&gt;, the sass problem solved. Next, I added a &lt;code&gt;npm-shrinkwrap.json&lt;/code&gt; to (temporarily) solve the incompatable issue with old gulp running on new Node.js.&lt;/p&gt;
+&lt;h4 id=&#34;can-i-call-this-the-node-version-of-dependency-hell1&#34;&gt;&lt;del&gt;Can I call this the Node version of &lt;strong&gt;dependency hell&lt;/strong&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;?&lt;/del&gt;&lt;/h4&gt;
+&lt;h6 id=&#34;-references&#34;&gt;🔗 references:&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mejiblog.com/gulp-error/&#34;&gt;ReferenceError: primordials is not defined の解決方法【備忘録】&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mejiblog.com/gulpfile-change/&#34;&gt;Task function must be specified 解決方法【備忘録】&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mafintosh/prebuildify-ci/issues/5#issuecomment-550867124&#34;&gt;Node 12: Errors with &amp;lsquo;primordials is not defined&amp;rsquo; #5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.icetutor.com/how-to-fix-referenceerror-primordials-is-not-defined-error/&#34;&gt;How to fix “ReferenceError: primordials is not defined” error&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.m.wikipedia.org/wiki/Dependency_hell&#34;&gt;https://en.m.wikipedia.org/wiki/Dependency_hell&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>🐞 GitVersioning: &#39;ThisAssembly&#39; Is Inaccessible Due to Its Protection Level</title>
+      <link>https://blog.lofibean.cc/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
+      
+        <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+&lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error CS0122: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ThisAssembly&amp;#39;&lt;/span&gt; is inaccessible due to its protection level
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I tried to install the package across all the projects in the same solution. It didn&amp;rsquo;t work.&lt;/p&gt;
+&lt;p&gt;I tried to uninstall and re-ininstall the package. It didn&amp;rsquo;t work.&lt;/p&gt;
+&lt;h2 id=&#34;-solution&#34;&gt;😀 Solution&lt;/h2&gt;
+&lt;h3 id=&#34;csproj&#34;&gt;.csproj&lt;/h3&gt;
+&lt;p&gt;Turns out there is something missing in my &lt;code&gt;.csproj&lt;/code&gt; file. I missed an &lt;code&gt;&amp;lt;Import&amp;gt;&lt;/code&gt; tag at the end of the file, just before the &lt;code&gt;&amp;lt;/Target&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Project=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Condition=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Exists(&amp;#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&amp;#39;)&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And in the &lt;code&gt;EnsureNuGetPackageBuildImports&lt;/code&gt; target, add the following line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Error&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Condition=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;!Exists(&amp;#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&amp;#39;)&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;$([System.String]::Format(&amp;#39;$(ErrorText)&amp;#39;, &amp;#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&amp;#39;))&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In addition, the 1st &lt;code&gt;&amp;lt;PropertyGroup&amp;gt;&lt;/code&gt; should contain a pair of  &lt;code&gt;NuGetPackageImportStamp&lt;/code&gt; tag:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;NuGetPackageImportStamp&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/NuGetPackageImportStamp&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;assemblyinfocs&#34;&gt;&lt;code&gt;AssemblyInfo.cs&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;I also removed the following lines in &lt;code&gt;Properties/AssemblyInfo.cs&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;[assembly: AssemblyVersion(&amp;#34;1.0.0.0&amp;#34;)]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;[assembly: AssemblyFileVersion(&amp;#34;1.0.0.0&amp;#34;)]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;versionjson&#34;&gt;&lt;code&gt;version.json&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;At the root directory of the &lt;strong&gt;project&lt;/strong&gt;, I added a &lt;code&gt;version.json&lt;/code&gt; file with the following content:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;$schema&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/master/src/NerdBank.GitVersioning/version.schema.json&amp;#34;&lt;/span&gt;,
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.0.0&amp;#34;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, &lt;code&gt;ThisAssembly&lt;/code&gt; is back and I can read the git version info successfully.&lt;/p&gt;
+&lt;h6 id=&#34;-references&#34;&gt;🔗 references:&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/Nerdbank.GitVersioning/blob/master/doc/dotnet.md&#34;&gt;https://github.com/dotnet/Nerdbank.GitVersioning/blob/master/doc/dotnet.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/Nerdbank.GitVersioning/issues/449&#34;&gt;https://github.com/dotnet/Nerdbank.GitVersioning/issues/449&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/Nerdbank.GitVersioning/issues/404&#34;&gt;https://github.com/dotnet/Nerdbank.GitVersioning/issues/404&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;-cover-image-grace-hoppers-operational-logbook-for-the-harvard-mark-ii-computerhttpswwwbusinessinsidercomauharvard-mark-i-grace-hopper-bug-2015-7&#34;&gt;🖼 cover image: &lt;a href=&#34;https://www.businessinsider.com.au/harvard-mark-i-grace-hopper-bug-2015-7&#34;&gt;Grace Hopper’s operational logbook for the Harvard Mark II computer&lt;/a&gt;&lt;/h6&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

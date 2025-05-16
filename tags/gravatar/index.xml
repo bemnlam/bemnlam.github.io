@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>gravatar on log from home</title>
+    <link>https://blog.lofibean.cc/tags/gravatar/</link>
+    <description>Recent content in gravatar on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of gravatar on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Sat, 18 Jul 2020 12:01:56 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.lofibean.cc/tags/gravatar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Use Gravatar Everywhere</title>
+      <link>https://blog.lofibean.cc/posts/use-gravatar-everywhere/</link>
+      <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/use-gravatar-everywhere/</guid>
+      
+        <description>&lt;h3 id=&#34;what-is-gravatar&#34;&gt;What is Gravatar&lt;/h3&gt;
+&lt;p&gt;Your public profile on the internet, provided by Wordpress. See &lt;a href=&#34;https://en.gravatar.com/&#34;&gt;https://en.gravatar.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;1-upload-an-image-to-your-gravatar-account&#34;&gt;1. Upload an image to your gravatar account&lt;/h3&gt;
+&lt;p&gt;If you don&amp;rsquo;t have the gravatar account, create one. Make sure that the email you used to create the account will be the email account you want to link your profile picture.&lt;/p&gt;
+&lt;p&gt;After that, upload your profile picture to gravatar.&lt;/p&gt;
+&lt;h3 id=&#34;2-use-the-image-everywhere&#34;&gt;2. Use the image everywhere&lt;/h3&gt;
+&lt;h4 id=&#34;get-your-md5-hash-of-email-address&#34;&gt;Get your md5 hash of email address&lt;/h4&gt;
+&lt;p&gt;For MacOS user, you should have the md5 utility installed, go to the terminal and check:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;❯ which md5
+/sbin/md5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, generate the md5 has of your email address:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;❯ md5 -s &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;myemall@address.com&amp;#34;&lt;/span&gt;
+MD5 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;myemall@address.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ca49930cff2f87bd37bfe71ce21467f
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The gravatar image url is in this format:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://gravatar.com/avatar/{your md5 hash}?s={size}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you want to have a 200px avatar, use &lt;code&gt;https://gravatar.com/avatar/ca49930cff2f87bd37bfe71ce21467f?s=200&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;use this image url in &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://gravatar.com/avatar/ca49930cff2f87bd37bfe71ce21467f?s=200&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And you are good to go!&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

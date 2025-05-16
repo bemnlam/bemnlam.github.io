@@ -1,27 +1,118 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>cryptography on log from home</title>
-    <link>https://bemnlam.github.io/tags/cryptography/</link>
+    <link>https://blog.lofibean.cc/tags/cryptography/</link>
     <description>Recent content in cryptography on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of cryptography on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Sat, 23 May 2020 17:10:25 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Note on SSL Certificate</title>
-      <link>https://bemnlam.github.io/posts/a-note-on-ssl/</link>
+      <link>https://blog.lofibean.cc/posts/a-note-on-ssl/</link>
       <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/a-note-on-ssl/</guid>
-      <description>This is a note about the Linkedin learning course SSL Certificates for Web Developers.
-Certificate and protocol What are SSL/TLS stands for? They stands for Secure Socket Layer and Transport Layer Security. They are the protocol names.
-What is HTTPS, and why we are using it? Https[ecure], a protocol on top of HTTP to secure the integrity of the data sending form the user to server.
-What is a certificate, and what is it for?</description>
+      <guid>https://blog.lofibean.cc/posts/a-note-on-ssl/</guid>
+      
+        <description>&lt;p&gt;This is a note about the Linkedin learning course &lt;a href=&#34;https://www.linkedin.com/learning/ssl-certificates-for-web-developers&#34;&gt;SSL Certificates for Web Developers&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;certificate-and-protocol&#34;&gt;Certificate and protocol&lt;/h2&gt;
+&lt;h3 id=&#34;what-are-ssltls-stands-for&#34;&gt;What are SSL/TLS stands for?&lt;/h3&gt;
+&lt;p&gt;They stands for &lt;em&gt;Secure Socket Layer&lt;/em&gt; and &lt;em&gt;Transport Layer Security&lt;/em&gt;. They are the protocol names.&lt;/p&gt;
+&lt;h3 id=&#34;what-is-https-and-why-we-are-using-it&#34;&gt;What is HTTPS, and why we are using it?&lt;/h3&gt;
+&lt;p&gt;Https[ecure], a protocol on top of HTTP to secure the integrity of the data sending form the user to server.&lt;/p&gt;
+&lt;h3 id=&#34;what-is-a-certificate-and-what-is-it-for&#34;&gt;What is a certificate, and what is it for?&lt;/h3&gt;
+&lt;p&gt;A certificate &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; (&lt;code&gt;.crt&lt;/code&gt;, &lt;code&gt;.cer&lt;/code&gt;) certifies &lt;strong&gt;the ownership of a public key&lt;/strong&gt;. A certificate contains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;organization,&lt;/li&gt;
+&lt;li&gt;issuer (e.g. the Certificate Authority / Self-signed),&lt;/li&gt;
+&lt;li&gt;valid period,&lt;/li&gt;
+&lt;li&gt;url,&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;state / country&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These information can be used to identify the certificate owner.&lt;/p&gt;
+&lt;p&gt;The public key is used to &lt;strong&gt;encrypt&lt;/strong&gt;/&lt;del&gt;decrypt&lt;/del&gt; the communication between computers.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;cryptography&#34;&gt;Cryptography&lt;/h2&gt;
+&lt;h3 id=&#34;asymmetric-vs-symmetric&#34;&gt;Asymmetric VS. Symmetric&lt;/h3&gt;
+&lt;p&gt;Asymmetric cryptography requies a pair of keys. The &lt;em&gt;Public key&lt;/em&gt; is used to encrypt messages while the &lt;em&gt;private key&lt;/em&gt; is for decryption.&lt;/p&gt;
+&lt;p&gt;In symmetric cryptography, both ends use the same password to encrypt + decrypt messages.&lt;/p&gt;
+&lt;h3 id=&#34;why-are-we-using-both-technologies-and-how&#34;&gt;Why are we using both technologies? And how?&lt;/h3&gt;
+&lt;p&gt;In short: For the balance of security and speed, we use asymmetric cryptography to establish secure connection (&lt;em&gt;handshake&lt;/em&gt;) and use symmetric cryptography for the data transmission.&lt;/p&gt;
+&lt;h4 id=&#34;the-handshake&#34;&gt;The Handshake&lt;/h4&gt;
+&lt;p&gt;The end user and the server use the same password to encrypt + decrypt the messages. This password is sent from a server to a user by following steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Validate the certificate&amp;hellip;
+&lt;ol&gt;
+&lt;li&gt;User makes a request to a web server.&lt;/li&gt;
+&lt;li&gt;Web server responds with its &lt;em&gt;public key&lt;/em&gt; certificate.&lt;/li&gt;
+&lt;li&gt;User checks if the &lt;em&gt;public key&lt;/em&gt; certificate is valid.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;If the certificate from web server is valid&amp;hellip;
+&lt;ol&gt;
+&lt;li&gt;User encrypts the password using server&amp;rsquo;s public key, and send to web server.&lt;/li&gt;
+&lt;li&gt;Server decrypts with its private key.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After that, a secure connection is established and they shared the &lt;em&gt;same&lt;/em&gt; password &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;types-of-certificate&#34;&gt;Types of certificate&lt;/h2&gt;
+&lt;h3 id=&#34;self-signed&#34;&gt;Self-signed&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Intra-communications between systems under same organization.&lt;/li&gt;
+&lt;li&gt;Local development&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ca&#34;&gt;CA&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Subdomain: tied to 1 domain (e.g. &lt;code&gt;www.mydoma.in&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Wildcard: tied to a groups of subdomains (e.g. &lt;code&gt;*.mydoma.in&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Multi-domain: (e.g. &lt;code&gt;mydoma.in&lt;/code&gt;, &lt;code&gt;myweb.site&lt;/code&gt;, &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;acme-automatic-certificate-management-environment&#34;&gt;ACME (Automatic Certificate Management Environment)&lt;/h2&gt;
+&lt;p&gt;To configuring Let&amp;rsquo;s Encrypt&amp;rsquo;s ACME on server, we can make use of the &lt;a href=&#34;https://certbot.eff.org/&#34;&gt;CertBot&lt;/a&gt;. For IIS, use &lt;a href=&#34;https://certifytheweb.com/&#34;&gt;Certify&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;heading&#34;&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;hsts&#34;&gt;HSTS&lt;/h2&gt;
+&lt;p&gt;This can instruct the browser to interact with the server with HTTPS only. Redirect from HTTP to HTTPS is not required. This is achieved by adding a response header (&lt;code&gt;Strict-Transport-Security&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Example response header:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Strict-Transport-Security: max-age&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;63072000; includeSubDomains; preload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;what-hsts-is-protecting-us-from&#34;&gt;What HSTS is protecting us from?&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;Man-in-the-Middle TLS Protocol Downgrade Attack.&lt;/strong&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; In &lt;a href=&#34;https://www.praetorian.com/blog/man-in-the-middle-tls-ssl-protocol-downgrade-attack&#34;&gt;this example&lt;/a&gt;, the hacker C sends a ARP cache table request to both the client A and server B:
+&lt;img src=&#34;https://assets.website-files.com/58866caeabc83d5e7c574c74/5cdc9328fcbd747340785c63_20140811-mitm-attack.png&#34; alt=&#34;Manipulating Device ARP Cache Tables&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now the traffic from A to B is going through C, a typical &lt;strong&gt;Man-in-the-Middle attack&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The next step is C try to have a &lt;strong&gt;downgrade&lt;/strong&gt; on the TLS version. Since the browsers are backward-compatible on older TLS versions, C can therefore to make the version downgraded to the negotiated version in the handshake process. C can then intercept and decrypt the messages by making use of the security vulnerabilities of eariler TLS.&lt;/p&gt;
+&lt;h3 id=&#34;hsts-preloading&#34;&gt;HSTS Preloading&lt;/h3&gt;
+&lt;p&gt;Avoid redirection of the first request too: &lt;a href=&#34;https://hstspreload.org/&#34;&gt;https://hstspreload.org/&lt;/a&gt;&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;the certificate does not depends on the protocol we use&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;password is just for the same browsing session.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;I am not an expert on this area and I tried by best to digest that article and &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Downgrade_attack&#34;&gt;this wiki&lt;/a&gt; to write the summary.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+      
     </item>
     
   </channel>

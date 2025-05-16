@@ -1,0 +1,74 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Serve Drafts",
+            "type": "shell",
+            "command": "hugo",
+            "args": ["server", "-D"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}/blog"
+            }
+        },
+        {
+            "label": "Launch Mark Text",
+            "type": "shell",
+            "command": "open",
+            "args": [
+                "-a",
+                "\"Mark Text\"",
+                "${workspaceFolder}/blog/content/posts",
+                "&"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}/blog"
+            }
+        },
+        {
+            "label": "New Post",
+            "type": "shell",
+            "command": "hugo",
+            "args": [
+                "new",
+                "posts/${input:postTitlePrompt}/index.md"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/blog"
+            },
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate Static Site",
+            "type": "shell",
+            "command": "hugo",
+            "group": {
+                "kind": "build"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/blog"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "postTitlePrompt",
+            "description": "Title of the new post",
+            "type": "promptString"
+        }
+    ]
+}

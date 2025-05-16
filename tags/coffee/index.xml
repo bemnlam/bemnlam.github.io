@@ -1,27 +1,189 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>coffee on log from home</title>
-    <link>https://bemnlam.github.io/tags/coffee/</link>
+    <link>https://blog.lofibean.cc/tags/coffee/</link>
     <description>Recent content in coffee on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of coffee on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Sun, 17 May 2020 21:10:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 20:58:21 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/coffee/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/coffee/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>☕️ Notes on City &amp; Guilds International Barista Exam</title>
+      <link>https://blog.lofibean.cc/posts/notes-on-city-n-guilds-barista-exam/</link>
+      <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/notes-on-city-n-guilds-barista-exam/</guid>
+      
+        <description>&lt;img src=&#34;https://images.unsplash.com/photo-1562771335-b1fe8b4ea78f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80&#34; /&gt;&lt;h2 id=&#34;the-exam&#34;&gt;The Exam&lt;/h2&gt;
+&lt;p&gt;I passed the &lt;a href=&#34;https://www.cityandguilds.com/qualifications-and-apprenticeships/hospitality-and-catering/hospitality-and-catering/7102-barista-skills&#34;&gt;&lt;strong&gt;City &amp;amp; Guilds International Barista Skills&lt;/strong&gt;&lt;/a&gt; exam this December and I think that will be a good idea to write down what I&amp;rsquo;ve learnt.&lt;/p&gt;
+&lt;h2 id=&#34;the-notebook&#34;&gt;The Notebook&lt;/h2&gt;
+&lt;p&gt;As a result, this notebook is created 👉 &lt;a href=&#34;https://coffeelab.lofibean.cc/&#34;&gt;https://coffeelab.lofibean.cc/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(The notebook is powered by &lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;MkDocs&lt;/a&gt; and you can find out how to create a site like that &lt;a href=&#34;https://blog.lofibean.cc/posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/&#34;&gt;here&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;Enjoy ☕️&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>☕️ Fantastic Beans and Where to Find Them</title>
+      <link>https://blog.lofibean.cc/posts/fantastic-beans-and-where-to-find-them/</link>
+      <pubDate>Thu, 11 Jun 2020 10:39:39 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/fantastic-beans-and-where-to-find-them/</guid>
+      
+        <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;In short: I found some local shops which selling pretty good beans. In Hong Kong.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;During the 2020 pandamic, it&amp;rsquo;s not easy to buy beans overseas. However, it gave me a great opportunity to search for some good beans in Hong Kong. Plus, I have more time to stay at home and brew coffee as the company started the WFH policy from Feb.&lt;/p&gt;
+&lt;aside class=&#34;c-toc&#34;&gt;
+  &lt;details open&gt;
+    &lt;summary title=&#34;click to toggle table of contents.&#34;&gt;Table of Contents&lt;/summary&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#background&#34;&gt;Background&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#update-history&#34;&gt;Update history&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-my-little-coffee&#34;&gt;1. My Little Coffee&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#beans&#34;&gt;Beans&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#drip-bags&#34;&gt;Drip bags&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#equipments&#34;&gt;Equipments&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-brew-note-coffee-roaster&#34;&gt;2. Brew Note Coffee Roaster&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#beans-1&#34;&gt;Beans&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#subscription-plans&#34;&gt;Subscription plans&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+  &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h3 id=&#34;update-history&#34;&gt;Update history&lt;/h3&gt;
+&lt;p&gt;🏷 2020-09-12:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added new beans I tried.&lt;/li&gt;
+&lt;li&gt;Added new equipments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;I will keep searching for new beans and new local shops in the coming days.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-my-little-coffee&#34;&gt;1. My Little Coffee&lt;/h2&gt;
+&lt;p&gt;📍:  Shop 102, Ho King Shopping Centre, Mong Kok, Kowloon, Hong Kong &lt;a href=&#34;https://goo.gl/maps/tmvvYoYdbwdXHT1Q8&#34;&gt;(map)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🕑: 14:00 - 21:00&lt;/p&gt;
+&lt;p&gt;🔗: &lt;a href=&#34;https://www.instagram.com/mylittlecoffee/&#34; title=&#34;@mylittlecoffee&#34;&gt;IG&lt;/a&gt; | &lt;a href=&#34;https://www.facebook.com/MYLITTLECOFFEE.HK&#34; title=&#34;@MYLITTLECOFFEE.HK&#34;&gt;FB&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.994368201023!2d114.16981291454812!3d22.31605274796321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400c6eba8f7f1%3A0xcda642d8b7eb4c2e!2z5aW95pmv5ZWG5qWt5Lit5b-D!5e0!3m2!1szh-TW!2ses!4v1591843734940!5m2!1szh-TW!2ses&#34; width=&#34;720&#34; height=&#34;300&#34; frameborder=&#34;0&#34; style=&#34;border:0;&#34; allowfullscreen=&#34;true&#34; aria-hidden=&#34;false&#34; tabindex=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;p&gt;The shop sells whole beans, drip bags and a lot of coffee equipment. You can also request the shopkeeper to gring the beans too.&lt;/p&gt;
+&lt;p&gt;I bought their beans twice a week. Here are some beans that I&amp;rsquo;ve tried and the labels of each kind of bean.&lt;/p&gt;
+&lt;h3 id=&#34;beans&#34;&gt;Beans&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;🌞 El Salvador, Finca La Primera&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nutty, brown sugar, citrus, sweet aftertaste.&lt;/li&gt;
+&lt;li&gt;Variety: Bourbon, 1200m ~ 1600m&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;🌊 Ethiopia Guji Shakisso Abiyot Boru Galle Dagaa Grade 1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Great acidity &amp;amp; full mouth feel with notes like raisin, blackberry, dark choco., plum &amp;amp; honey-like sweetness.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;🌊 Colombia Hulla Mariano Leal Bourbon&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Strong &amp;amp; vibrant aroma, good structure with tasting notes like green apple, vanilla, dark choco. &amp;amp; apricot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;🌊 Kenya Nyala AB Top Microlot&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pleasant &amp;amp; complex acidity, brown sugar in aroma, pomegranate, apple citrus &amp;amp; black currant finish.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;🌊 Yirgacheffe Dumerso G1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tangerine, grape, Earl Grey, smooth, long-lasting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;(?) Bohemian Rhapsody&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nutty, winy, berries, cranberry, balance, sweet, rich &amp;amp; mellow. Smooth&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;🍷 Yunnan (Brandy Fermentation)&lt;/strong&gt; : This one is super interesting and addictive. Strong brandy / rum taste.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Foral, brandy winey, black berry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;drip-bags&#34;&gt;Drip bags&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The shop also grinds their beans and sell it as drop bags (~$75/10 bags). Suitable for people who want to drink their own choice in the office.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;equipments&#34;&gt;Equipments&lt;/h3&gt;
+&lt;h4 id=&#34;coffee-filter&#34;&gt;Coffee filter&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;KONO&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;While V60 is dominating the market (I also using plastic V60. Cheap, robust, simple), this shop don&amp;rsquo;t sell V60. Instead, KONO filter is all over the shop.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shop.r10s.jp/ultramix/cabinet/item17/md-41_1.jpg&#34; alt=&#34;a typical KONO filter&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Clever Cup&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;They sold clever cup recently. In my opinion, it is a french press but looks like a drip coffee filter. You can also use it as a typical coffee filter if you want.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.hiconsumption.com/wp-content/uploads/2015/04/Clever-Coffee-Maker.jpg&#34; alt=&#34;a typical clever cup&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Vietnamese&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Once apon a time I drank the vietnamese coffee from a local restaurant and it used this coffee filter to brew a dark and strong coffee and mixed with condensed milk. (So strong that I got a headache afterwards X.X)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.webstaurantstore.com/images/products/extra_large/58984/99644.jpg&#34; alt=&#34;a typical vietnamese coffee filter&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;grinders&#34;&gt;Grinders&lt;/h4&gt;
+&lt;p&gt;(TBC)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-brew-note-coffee-roaster&#34;&gt;2. Brew Note Coffee Roaster&lt;/h2&gt;
+&lt;p&gt;📍: G/F, 19 Fort Street, North Point, Hong Kong Island, Hong Kong &lt;a href=&#34;https://goo.gl/maps/FH97kAU441xBLEsv5&#34;&gt;(map)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🕑: 08:30 - 19:00&lt;/p&gt;
+&lt;p&gt;🔗: &lt;a href=&#34;https://brewnotecoffee.com/&#34;&gt;Website&lt;/a&gt; | &lt;a href=&#34;https://www.instagram.com/brewnotecoffee/,&#34; title=&#34;@brewnotecoffee&#34;&gt;IG&lt;/a&gt; | &lt;a href=&#34;https://www.facebook.com/brewnotecoffee/&#34; title=&#34;@brewnotecoffee&#34;&gt;FB&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1935.6125276425794!2d114.19573503377934!3d22.29003915191319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404010391cc2fef%3A0xca430d4451503bfe!2sBrew%20Note%20Coffee%20Roaster!5e0!3m2!1szh-TW!2ses!4v1591849727090!5m2!1szh-TW!2ses&#34; width=&#34;720&#34; height=&#34;300&#34; frameborder=&#34;0&#34; style=&#34;border:0;&#34; allowfullscreen=&#34;&#34; aria-hidden=&#34;false&#34; tabindex=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;p&gt;This is also a restaurant so you can taste their coffee with delicious food. Ocassionally the shop will held cultural talks.&lt;/p&gt;
+&lt;p&gt;The shop is selling one of the lightest roasted whole beans in the city. I bought the Ethiopia Guji beans a long time ago and tasted the Americano in the shop. Both stunning.&lt;/p&gt;
+&lt;h3 id=&#34;beans-1&#34;&gt;Beans&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;🌞 Ethiopia Guji Oxygen Free&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Floral, berries, tropical, citrus, sweet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&#34;./img/01_flavor-wheel.JPG&#34;
+         alt=&#34;01_flavor-wheel&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Note: they have a simple wheel indicates the taste on their bean bags!&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;subscription-plans&#34;&gt;Subscription plans&lt;/h3&gt;
+&lt;p&gt;It also provides different coffee subscription plans. The &lt;a href=&#34;https://brewnotecoffee.com/&#34;&gt;website&lt;/a&gt; shows the details of the beans and the plans.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>☕️ Brewing Coffee</title>
-      <link>https://bemnlam.github.io/posts/brewing-coffee/</link>
+      <link>https://blog.lofibean.cc/posts/brewing-coffee/</link>
       <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/brewing-coffee/</guid>
-      <description>A note on how to brew coffee.
-V60 ☕️ How to Brew V60 with UK Brewers Cup Champion, Sang Ho Park | Comprehensive Guide
-  ☕️ A Coffee Brewing Theory &amp;ldquo;4:6 method&amp;rdquo; Invented by Tetsu Kasuya_ World Brewers Cup 2016 Champion
-  </description>
+      <guid>https://blog.lofibean.cc/posts/brewing-coffee/</guid>
+      
+        <description>&lt;p&gt;A note on how to brew coffee.&lt;/p&gt;
+&lt;h2 id=&#34;v60&#34;&gt;V60&lt;/h2&gt;
+&lt;p&gt;☕️ &lt;a href=&#34;https://www.youtube.com/watch?v=LmGKqzV7hQE&#34;&gt;How to Brew V60 with UK Brewers Cup Champion, Sang Ho Park | Comprehensive Guide&lt;/a&gt;&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/LmGKqzV7hQE&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;☕️ &lt;a href=&#34;https://www.youtube.com/watch?v=wmCW8xSWGZY&#34;&gt;A Coffee Brewing Theory &amp;ldquo;4:6 method&amp;rdquo; Invented by Tetsu Kasuya_ World Brewers Cup 2016 Champion&lt;/a&gt;&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/wmCW8xSWGZY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
     
   </channel>

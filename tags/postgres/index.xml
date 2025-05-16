@@ -1,28 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>postgres on log from home</title>
-    <link>https://bemnlam.github.io/tags/postgres/</link>
+    <link>https://blog.lofibean.cc/tags/postgres/</link>
     <description>Recent content in postgres on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of postgres on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
     <lastBuildDate>Thu, 16 Apr 2020 20:01:15 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating a User With Limited Privileges in Postgres</title>
-      <link>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
+      <link>https://blog.lofibean.cc/posts/creating-a-user-with-limited-privileges-in-postgres/</link>
       <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
-      <description>This post showing how to create a user with limited privileges in PostgreSQL.
-Situation I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.
-Code Let say the user you want to create is webapp_user:
-CREATE USER webapp_user WITH ENCRYPTED PASSWORD &amp;#39;secure_passw0rd&amp;#39;; Grant the right to all public tables:
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO webapp_user; Connect the database using webapp_user in the web app.</description>
+      <guid>https://blog.lofibean.cc/posts/creating-a-user-with-limited-privileges-in-postgres/</guid>
+      
+        <description>&lt;p&gt;This post showing how to create a user with limited privileges in PostgreSQL.&lt;/p&gt;
+&lt;h2 id=&#34;situation&#34;&gt;Situation&lt;/h2&gt;
+&lt;p&gt;I created a web app. It reads data from a PostgreSQL database. I want to create a user with read-only privilege and connect to the database.&lt;/p&gt;
+&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
+&lt;p&gt;Let say the user you want to create is &lt;code&gt;webapp_user&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;USER&lt;/span&gt; webapp_user &lt;span style=&#34;color:#66d9ef&#34;&gt;WITH&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ENCRYPTED&lt;/span&gt; PASSWORD &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;secure_passw0rd&amp;#39;&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Grant the right to all public tables:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;GRANT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ALL&lt;/span&gt; TABLES &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SCHEMA&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TO&lt;/span&gt; webapp_user;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Connect the database using &lt;code&gt;webapp_user&lt;/code&gt; in the web app.&lt;/p&gt;
+&lt;h2 id=&#34;i-want-more-power&#34;&gt;I want more power&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;Now my web app is not read-only anymore. Users can create/delete some entries in the tables too.&lt;/p&gt;
+&lt;h3 id=&#34;code-1&#34;&gt;Code&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;GRANT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;INSERT&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;UPDATE&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;DELETE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ALL&lt;/span&gt; TABLES &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SCHEMA&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TO&lt;/span&gt; webapp_user;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Looks simple and cool! But why I got the &lt;strong&gt;&lt;code&gt;permission denied for sequence XXX_id_seq to YYY&lt;/code&gt;&lt;/strong&gt; error while inserting new records to the tables?&lt;/p&gt;
+&lt;p&gt;If your table has an &lt;em&gt;auto-increment&lt;/em&gt; field then you need some extra privileges: the privileges to use the sequence-related functions (e.g. &lt;code&gt;currval&lt;/code&gt; and &lt;code&gt;nextval&lt;/code&gt;)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;GRANT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;USAGE&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ALL&lt;/span&gt; SEQUENCES &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SCHEMA&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;to&lt;/span&gt; webapp_user;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Example of an &lt;em&gt;auto-increment&lt;/em&gt; field: the id of the table&lt;/p&gt;
+&lt;h3 id=&#34;extra&#34;&gt;Extra&lt;/h3&gt;
+&lt;p&gt;What if I just want to apply the privilege(s) to a special table?&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;GRANT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;INSERT&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;UPDATE&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;DELETE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; special_table &lt;span style=&#34;color:#66d9ef&#34;&gt;TO&lt;/span&gt; webapp_user;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;Reference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.techonthenet.com/postgresql/grant_revoke.php&#34;&gt;Grant Privileges on Table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/q/9325017&#34;&gt;ERROR: permission denied for sequence cities_id_seq using Postgres&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;(this blog post also available on &lt;a href=&#34;https://dev.to/bemnlam/creating-a-user-with-limited-privileges-in-postgres-5ee7/edit&#34;&gt;dev.to&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+</description>
+      
     </item>
     
   </channel>

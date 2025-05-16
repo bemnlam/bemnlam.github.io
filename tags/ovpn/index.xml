@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>ovpn on log from home</title>
+    <link>https://blog.lofibean.cc/tags/ovpn/</link>
+    <description>Recent content in ovpn on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of ovpn on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Sat, 03 Oct 2020 13:40:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.lofibean.cc/tags/ovpn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Set Up an AWS EC2 with Ubuntu GUI, RDP and more</title>
+      <link>https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/</guid>
+      
+        <description>&lt;img src=&#34;https://blog.lofibean.cc/posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This is an guide on how to set up a AWS EC2 free tier with GUI. The EC2 instance will be able to connect via Remote Desktop Protocol (RDP) or SSH.&lt;/p&gt;
+&lt;p&gt;You need to create a AWS account: &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup&#34;&gt;https://portal.aws.amazon.com/billing/signup&lt;/a&gt;. You may need to provide your credit card information during the signup process.&lt;/p&gt;
+&lt;p&gt;Sign in to your AWS Account and go to the AWS EC2 Console: &lt;a href=&#34;https://aws.amazon.com/console/&#34;&gt;https://aws.amazon.com/console/&lt;/a&gt;&lt;/p&gt;
+&lt;aside class=&#34;c-toc&#34;&gt;
+  &lt;details open&gt;
+    &lt;summary title=&#34;click to toggle table of contents.&#34;&gt;Table of Contents&lt;/summary&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#overview&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#create-an-aws-ec2&#34;&gt;Create an AWS EC2&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#set-up-the-security-groups&#34;&gt;Set up the security groups&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#choose-the-os-instance-type-and-storage&#34;&gt;Choose the OS, instance type and storage&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#create-and-download-a-pem-key-file&#34;&gt;Create and download a &lt;code&gt;.pem&lt;/code&gt; key file&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#connect-to-ec2-via-ssh&#34;&gt;Connect to EC2 via SSH&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#install-a-gui-and-rdp&#34;&gt;Install a GUI and RDP&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#gui-lxde&#34;&gt;GUI: &lt;code&gt;LXDE&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#rdp-xrdp&#34;&gt;RDP: &lt;code&gt;XRDP&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#connect-to-ec2-via-remote-desktop&#34;&gt;Connect to EC2 via remote desktop&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#bonus-materials&#34;&gt;Bonus Materials&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#1-install-additional-ibus-input-method&#34;&gt;1. Install additional IBus input method&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#2-install-midori-browser-from-deb-package&#34;&gt;2. Install Midori browser from &lt;code&gt;.deb&lt;/code&gt; package&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#3-set-up-a-swapfile-for-better-performance&#34;&gt;3. Set up a &lt;code&gt;swapfile&lt;/code&gt; for better performance&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#4-use-ec2-as-a-vpn-server&#34;&gt;4. Use EC2 as a VPN server&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+  &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;create-an-aws-ec2&#34;&gt;Create an AWS EC2&lt;/h2&gt;
+&lt;h3 id=&#34;set-up-the-security-groups&#34;&gt;Set up the security groups&lt;/h3&gt;
+&lt;p&gt;I suggest you define the security groups before setting up the instance. Setting up the security groups will give you a better understanding on what inbound/outbound traffic is allowed in the instances you are going to create.&lt;/p&gt;
+&lt;p&gt;Choose &lt;strong&gt;Security Groups&lt;/strong&gt; at the left menu of your &lt;strong&gt;EC2 Dashboard&lt;/strong&gt;. Create 2 security groups:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;rdp&lt;/code&gt;: Allow inbound traffic via port &lt;code&gt;3389&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ssh&lt;/code&gt;: Allow inbound traffic via port &lt;code&gt;22&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Allow all outbound traffic&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;choose-the-os-instance-type-and-storage&#34;&gt;Choose the OS, instance type and storage&lt;/h3&gt;
+&lt;p&gt;Choose &lt;strong&gt;Services&lt;/strong&gt; &amp;gt; &lt;strong&gt;EC2&lt;/strong&gt; from the menu. At the &lt;strong&gt;EC2 Dashboard&lt;/strong&gt;, choose &lt;strong&gt;Instances&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Click the &lt;strong&gt;Launch Instance&lt;/strong&gt; and choose the suitable AMI (Amazon Machine Image). Here I choose a &lt;code&gt;t2.micro&lt;/code&gt; instance with &lt;code&gt;Ubuntu Server 18.04 LTS&lt;/code&gt; image. &lt;strong&gt;Remember also choose the suitable Storage&lt;/strong&gt; as not all kinds of storage are free. In this example I set up a &lt;code&gt;30GB General Purpose&lt;/code&gt; storage.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702183719536.png&#34; alt=&#34;Image: Ubuntu Server 18.04 LTS&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702183754512.png&#34; alt=&#34;Instance Type: t2.micro&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702183909326.png&#34; alt=&#34;Click Review and Launch&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702183922739.png&#34; alt=&#34;Storage: 30GB General Purpose&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;allow-ssh-and-rdp-connections&#34;&gt;Allow SSH and RDP connections&lt;/h4&gt;
+&lt;p&gt;Choose the security groups created in the previous step:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702184007198.png&#34; alt=&#34;Security Group: allow SSH and RDP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702184046233.png&#34; alt=&#34;image-20200702184046233&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-and-download-a-pem-key-file&#34;&gt;Create and download a &lt;code&gt;.pem&lt;/code&gt; key file&lt;/h3&gt;
+&lt;p&gt;You should create this key file. If you don&amp;rsquo;t create this and link it to the instance, you will not be able to connect to the instance via SSH or RDP. Here we create a new key file named &lt;code&gt;ssh_private_key&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After that, click &lt;strong&gt;Download Key Pair&lt;/strong&gt; and keep the key file save.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702184135610.png&#34; alt=&#34;image-20200702184135610&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;do-a-chmod-on-the-key-file&#34;&gt;Do a &lt;code&gt;chmod&lt;/code&gt; on the key file&lt;/h5&gt;
+&lt;p&gt;You need to make sure that the &lt;code&gt;ssh_private_key.pem&lt;/code&gt; downloaded is able to execute. Run &lt;code&gt;chmod&lt;/code&gt; to change the permission:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;❯ ll ~/Downloads/ | grep &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span&gt;
+-rw-r--r--@ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; BEN  staff   1.7K Jul  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 18:41 ssh_private_key.pem
+
+❯ chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;400&lt;/span&gt; ~/Downloads/ssh_private_key.pem
+
+❯ ll ~/Downloads/ | grep &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ssh_private_key.pem&amp;#34;&lt;/span&gt;
+-r--------@ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; BEN  staff   1.7K Jul  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 18:41 ssh_private_key.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;connect-to-ec2-via-ssh&#34;&gt;Connect to EC2 via SSH&lt;/h2&gt;
+&lt;p&gt;Once you click the &lt;strong&gt;Launch instance&lt;/strong&gt; , you should be able to see your instance in &lt;strong&gt;running&lt;/strong&gt; state in the web console. Then, you can connect to the EC2 via ssh using the &lt;code&gt;pem&lt;/code&gt; key file. Assuming that your DNS name of your EC2 is &lt;code&gt;ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com&lt;/code&gt; and it is running at &lt;code&gt;ap-northeast-1&lt;/code&gt; region, you can connect to it using user &lt;code&gt;ubuntu&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;❯ ssh -i ~/Downloads/ssh_private_key.pem ubuntu@ec2-0-1-2-3.region-name.compute.amazonaws.com
+The authenticity of host &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ec2-0-1-2-3.region-name.compute.amazonaws.com (0.1.2.3)&amp;#39;&lt;/span&gt; can&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;t be established.
+ECDSA key fingerprint is SHA256:8t8ey5IqoiGOKGc9WuDc5SXaYqFHPnKph1mRtzbQNTc.
+Are you sure you want to &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt; connecting &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;yes/no/&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;fingerprint&lt;span style=&#34;color:#f92672&#34;&gt;])&lt;/span&gt;?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You need to confirm your fingerprint at the first connection attempt.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Welcome to Ubuntu 18.04.4 LTS &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;GNU/Linux 5.3.0-1023-aws x86_64&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Jul  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 10:54:37 UTC &lt;span style=&#34;color:#ae81ff&#34;&gt;2020&lt;/span&gt;
+
+  System load:  0.0               Processes:           &lt;span style=&#34;color:#ae81ff&#34;&gt;90&lt;/span&gt;
+  Usage of /:   3.7% of 29.02GB   Users logged in:     &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+  Memory usage: 16%               IP address &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; eth0: 172.31.4.8
+  Swap usage:   0%
+
+&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; packages can be updated.
+&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; updates are security updates.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;user &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;root&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;, use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sudo &amp;lt;command&amp;gt;&amp;#34;&lt;/span&gt;.
+See &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;man sudo_root&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; details.
+
+ubuntu@ip-172-31-4-8:~$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;install-a-gui-and-rdp&#34;&gt;Install a GUI and RDP&lt;/h2&gt;
+&lt;h3 id=&#34;gui-lxde&#34;&gt;GUI: &lt;code&gt;LXDE&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;I choose &lt;strong&gt;LXDE&lt;/strong&gt; as the GUI of the ubuntu server: &lt;a href=&#34;https://lxde.sourceforge.net/about.html&#34;&gt;https://lxde.sourceforge.net/about.html&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;LXDE is a new project aimed to provide a new desktop environment which is lightweight and fast&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;rdp-xrdp&#34;&gt;RDP: &lt;code&gt;XRDP&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;xrdp is an open-source Remote Desktop Protocol server: &lt;a href=&#34;http://xrdp.org&#34;&gt;http://xrdp.org&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;xrdp provides a graphical login to remote machines using RDP (Microsoft Remote Desktop Protocol)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Install the packages:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get update -y
+sudo apt-get install lxde -y
+sudo apt-get install xrdp -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;set-a-password-for-your-accout&#34;&gt;Set a password for your accout&lt;/h4&gt;
+&lt;p&gt;You need to also set up a password for the &lt;em&gt;ubuntu&lt;/em&gt;. This is for your later use in RDP as RDP only allows you to login an password-protected account.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo passwd ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;connect-to-ec2-via-remote-desktop&#34;&gt;Connect to EC2 via remote desktop&lt;/h3&gt;
+&lt;p&gt;For mac user, you need to download the &lt;a href=&#34;https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12&#34;&gt;Microsoft Remote Desktop&lt;/a&gt;. If you are using Windows, you should already have the Remote Desktop application preinstalled.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12&#34;&gt;&lt;img src=&#34;./img/image-20201003143752732.png&#34; alt=&#34;Download Microsoft Remote Desktop&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Launch the app and click &lt;strong&gt;Add PC&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702192027044.png&#34; alt=&#34;Add PC in Microsoft Remote Desktop&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Set the PC name (i.e. the DNS name of your machine):&lt;img src=&#34;./img/image-20200702192128973.png&#34; alt=&#34;Set PC name&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Login with user &lt;code&gt;ubuntu&lt;/code&gt; and the password you set in the previous step.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702192239827.png&#34; alt=&#34;Connect&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;bonus-materials&#34;&gt;Bonus Materials&lt;/h2&gt;
+&lt;h3 id=&#34;1-install-additional-ibus-input-method&#34;&gt;1. Install additional IBus input method&lt;/h3&gt;
+&lt;p&gt;If you want to type Japanese, Chinese, etc. you may need to install an input method. For cangjie, you can install &lt;a href=&#34;http://cangjians.github.io/projects/ibus-cangjie/install.html&#34;&gt;&lt;strong&gt;Cangjians&lt;/strong&gt;&lt;/a&gt; via the terminal:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get install ibus-cangjie
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-install-midori-browser-from-deb-package&#34;&gt;2. Install Midori browser from &lt;code&gt;.deb&lt;/code&gt; package&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Midori Browser&lt;/strong&gt; is a browser web light, fast, secure, free software &amp;amp; open source&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Download .deb file: &lt;a href=&#34;https://astian.org/en/midori-browser/download/&#34;&gt;https://astian.org/en/midori-browser/download/&lt;/a&gt; or using &lt;code&gt;wget&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cd ~/Downloads
+sudo wget -qnc https://packages.astian.org/pool/main/m/midori/midori_9.0.0-1_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ubuntu@ip-172-31-4-8:~/Downloads$ ll
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;1492&lt;/span&gt;
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; ubuntu ubuntu    &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Jul  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 11:29 ./
+drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;17&lt;/span&gt; ubuntu ubuntu    &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Jul  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 11:22 ../
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root   root   &lt;span style=&#34;color:#ae81ff&#34;&gt;1517328&lt;/span&gt; Jan &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt; 23:26 midori_9.0.0-1_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, install the &lt;code&gt;deb&lt;/code&gt; package using &lt;code&gt;dpkg&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dpkg -i midori_9.0.0-1_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You may see the &lt;code&gt;dependency problems&lt;/code&gt; like the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ubuntu@ip-172-31-4-8:~/Downloads$ sudo dpkg --configure -a
+dpkg: dependency problems prevent configuration of midori:
+ midori depends on libpeas-1.0-0 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 1.15&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;; however:
+  Package libpeas-1.0-0 is not installed.
+ midori depends on libxml2-utils; however:
+  Package libxml2-utils is not installed.
+ midori depends on gstreamer1.0-plugins-bad; however:
+  Package gstreamer1.0-plugins-bad is not installed.
+ midori depends on gstreamer1.0-libav; however:
+  Package gstreamer1.0-libav is not installed.
+
+dpkg: error processing package midori &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;--configure&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:
+ dependency problems - leaving unconfigured
+Errors were encountered &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; processing:
+ midori
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this case, update the packages and reinstall midori:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dpkg --configure -a
+sudo apt-get -f install
+sudo apt-get update
+sudo apt-get install midori
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-set-up-a-swapfile-for-better-performance&#34;&gt;3. Set up a &lt;code&gt;swapfile&lt;/code&gt; for better performance&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ubuntu@ip-172-31-4-8:~$ sudo fallocate -l 1G /swapfile
+ubuntu@ip-172-31-4-8:~$ sudo chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; /swapfile
+ubuntu@ip-172-31-4-8:~$ sudo mkswap /swapfile
+Setting up swapspace version 1, size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1024&lt;/span&gt; MiB &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1073737728&lt;/span&gt; bytes&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+no label, UUID&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;9a121c2c-cd6f-48bf-b928-e550095a3efd
+ubuntu@ip-172-31-4-8:~$ sudo swapon /swapfile
+ubuntu@ip-172-31-4-8:~$ sudo swapon --show
+NAME      TYPE  SIZE USED PRIO
+/swapfile file 1024M   0B   -2
+ubuntu@ip-172-31-4-8:~$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo nano /etc/fstab
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/swapfile swap swap defaults &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, reboot the machine.&lt;/p&gt;
+&lt;h3 id=&#34;4-use-ec2-as-a-vpn-server&#34;&gt;4. Use EC2 as a VPN server&lt;/h3&gt;
+&lt;p&gt;Create a new security group allows all TCP and UDP inbound connections and add this security group to the EC2 instance:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702200459525.png&#34; alt=&#34;EC2 instance inbound rules&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20200702200555846.png&#34; alt=&#34;Assign a security group&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;install-openvpn-scripts&#34;&gt;Install openvpn scripts&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Nyr/openvpn-install&#34;&gt;This repo&lt;/a&gt; contains scripts for VPN server set up and profile management. Install it into your EC2:&lt;/p&gt;
+&lt;p&gt;Download the script:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt update
+sudo apt upgrade -y
+mkdir ~/vpn &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; cd ~/vpn
+wget https://git.io/vpn -O openvpn-install.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ubuntu@ip-172-31-4-8:~/vpn$ ll
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;
+drwxrwxr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; ubuntu ubuntu  &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Jul  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 12:11 ./
+drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt; ubuntu ubuntu  &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Jul  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 12:11 ../
+-rw-rw-r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ubuntu ubuntu &lt;span style=&#34;color:#ae81ff&#34;&gt;23085&lt;/span&gt; Jul  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 12:11 openvpn-install.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Make the &lt;code&gt;openvpn-install.sh&lt;/code&gt; exectable in your EC2:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;chmod +x openvpn-install.sh
+sudo ./openvpn-install.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add a new profile by running &lt;code&gt;openvpn-install.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Welcome to this OpenVPN road warrior installer!
+
+This server is behind NAT. What is the public IPv4 address or hostname?
+Public IPv4 address / hostname &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;18.183.12.213&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;:
+
+Which protocol should OpenVPN use?
+   1&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; UDP &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;recommended&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+   2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; TCP
+Protocol &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+
+What port should OpenVPN listen to?
+Port &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1194&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;:
+
+Select a DNS server &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; the clients:
+   1&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; Current system resolvers
+   2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; Google
+   3&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; 1.1.1.1
+   4&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; OpenDNS
+   5&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; Quad9
+   6&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; AdGuard
+DNS server &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+
+Enter a name &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; the first client:
+Name &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;client&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: demo-ec2-client
+
+OpenVPN installation is ready to begin.
+Press any key to &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Finished!
+
+The client configuration is available in: /home/ubuntu/demo-ec2-client.ovpn
+New clients can be added by running this script again.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Use another Terminal to download the &lt;code&gt;.ovpn&lt;/code&gt; file. Assuming that the machine name is &lt;code&gt;ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com&lt;/code&gt; and the generated &lt;code&gt;.ovpn&lt;/code&gt; file is place under &lt;code&gt;~/&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;scp -i sparkle.pem ubuntu@ec2-0-1-2-3.ap-northeast-1.compute.amazonaws.com:~/demo-ec2-client.ovpn ~/Downloads/demo-ec2-client.ovpn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;connect-to-the-vpn&#34;&gt;Connect to the VPN&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://client.pritunl.com/&#34;&gt;Pritunl Client&lt;/a&gt; is a easy-to-use OpenVPN client. Downlaod and install it.&lt;/p&gt;
+&lt;p&gt;Launch the client and click &lt;strong&gt;Import Profile&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/screenshot.png&#34; alt=&#34;Import ovpn profile&#34;&gt;&lt;/p&gt;
+&lt;p&gt;After that, click the burger menu of the profile and &lt;strong&gt;Connect&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Reference:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html&#34;&gt;https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

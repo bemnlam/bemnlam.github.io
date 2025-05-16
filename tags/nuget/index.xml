@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>nuget on log from home</title>
+    <link>https://blog.lofibean.cc/tags/nuget/</link>
+    <description>Recent content in nuget on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of nuget on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Thu, 25 Jun 2020 17:10:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.lofibean.cc/tags/nuget/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🐞 GitVersioning: &#39;ThisAssembly&#39; Is Inaccessible Due to Its Protection Level</title>
+      <link>https://blog.lofibean.cc/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level/</guid>
+      
+        <description>&lt;h2 id=&#34;-problem&#34;&gt;😨 Problem&lt;/h2&gt;
+&lt;p&gt;After I installed the &lt;strong&gt;&lt;a href=&#34;https://www.nuget.org/packages/Nerdbank.GitVersioning&#34;&gt;Nerdbank.GitVersioning&lt;/a&gt;&lt;/strong&gt; Nuget package in my .NET MVC app, the following error came out when I want to get the version using &lt;code&gt;ThisAssembly.AssemblyInformationalVersion&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error CS0122: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ThisAssembly&amp;#39;&lt;/span&gt; is inaccessible due to its protection level
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I tried to install the package across all the projects in the same solution. It didn&amp;rsquo;t work.&lt;/p&gt;
+&lt;p&gt;I tried to uninstall and re-ininstall the package. It didn&amp;rsquo;t work.&lt;/p&gt;
+&lt;h2 id=&#34;-solution&#34;&gt;😀 Solution&lt;/h2&gt;
+&lt;h3 id=&#34;csproj&#34;&gt;.csproj&lt;/h3&gt;
+&lt;p&gt;Turns out there is something missing in my &lt;code&gt;.csproj&lt;/code&gt; file. I missed an &lt;code&gt;&amp;lt;Import&amp;gt;&lt;/code&gt; tag at the end of the file, just before the &lt;code&gt;&amp;lt;/Target&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Project=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Condition=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Exists(&amp;#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&amp;#39;)&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And in the &lt;code&gt;EnsureNuGetPackageBuildImports&lt;/code&gt; target, add the following line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Error&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Condition=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;!Exists(&amp;#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&amp;#39;)&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;$([System.String]::Format(&amp;#39;$(ErrorText)&amp;#39;, &amp;#39;..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets&amp;#39;))&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In addition, the 1st &lt;code&gt;&amp;lt;PropertyGroup&amp;gt;&lt;/code&gt; should contain a pair of  &lt;code&gt;NuGetPackageImportStamp&lt;/code&gt; tag:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;NuGetPackageImportStamp&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/NuGetPackageImportStamp&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;assemblyinfocs&#34;&gt;&lt;code&gt;AssemblyInfo.cs&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;I also removed the following lines in &lt;code&gt;Properties/AssemblyInfo.cs&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;[assembly: AssemblyVersion(&amp;#34;1.0.0.0&amp;#34;)]&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;[assembly: AssemblyFileVersion(&amp;#34;1.0.0.0&amp;#34;)]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;versionjson&#34;&gt;&lt;code&gt;version.json&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;At the root directory of the &lt;strong&gt;project&lt;/strong&gt;, I added a &lt;code&gt;version.json&lt;/code&gt; file with the following content:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;$schema&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/master/src/NerdBank.GitVersioning/version.schema.json&amp;#34;&lt;/span&gt;,
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.0.0&amp;#34;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, &lt;code&gt;ThisAssembly&lt;/code&gt; is back and I can read the git version info successfully.&lt;/p&gt;
+&lt;h6 id=&#34;-references&#34;&gt;🔗 references:&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/Nerdbank.GitVersioning/blob/master/doc/dotnet.md&#34;&gt;https://github.com/dotnet/Nerdbank.GitVersioning/blob/master/doc/dotnet.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/Nerdbank.GitVersioning/issues/449&#34;&gt;https://github.com/dotnet/Nerdbank.GitVersioning/issues/449&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/Nerdbank.GitVersioning/issues/404&#34;&gt;https://github.com/dotnet/Nerdbank.GitVersioning/issues/404&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;-cover-image-grace-hoppers-operational-logbook-for-the-harvard-mark-ii-computerhttpswwwbusinessinsidercomauharvard-mark-i-grace-hopper-bug-2015-7&#34;&gt;🖼 cover image: &lt;a href=&#34;https://www.businessinsider.com.au/harvard-mark-i-grace-hopper-bug-2015-7&#34;&gt;Grace Hopper’s operational logbook for the Harvard Mark II computer&lt;/a&gt;&lt;/h6&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

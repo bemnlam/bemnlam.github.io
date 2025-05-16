@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>cloudflare on log from home</title>
+    <link>https://blog.lofibean.cc/tags/cloudflare/</link>
+    <description>Recent content in cloudflare on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of cloudflare on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; bemnlam</copyright>
+    <lastBuildDate>Thu, 31 Dec 2020 17:46:38 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.lofibean.cc/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Set Up Cloudflare for AWS Route 53 Domains</title>
+      <link>https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/</link>
+      <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/</guid>
+      
+        <description>&lt;img src=&#34;https://blog.lofibean.cc/posts/set-up-cloudflare-for-route53-domains/thumbnail.jpg&#34; /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This article shows how to configure Cloudflare for an existing website using AWS Route53.&lt;/p&gt;
+&lt;aside class=&#34;c-toc&#34;&gt;
+  &lt;details open&gt;
+    &lt;summary title=&#34;click to toggle table of contents.&#34;&gt;Table of Contents&lt;/summary&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#overview&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#domain-registrar&#34;&gt;Domain Registrar&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#what-about-aws-route53&#34;&gt;What about AWS Route53?&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#cloudflare-account&#34;&gt;Cloudflare Account&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#add-a-domain&#34;&gt;Add a domain&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#change-your-nameservers&#34;&gt;Change your nameservers&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#verify-nameservers&#34;&gt;Verify nameservers&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#updating-dns-records&#34;&gt;Updating DNS Records&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#application-load-balancers&#34;&gt;(Application) Load Balancers&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#amazon-ses&#34;&gt;Amazon SES&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+  &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;domain-registrar&#34;&gt;Domain Registrar&lt;/h2&gt;
+&lt;p&gt;In my opinion, &lt;strong&gt;domain registrar is the most confusing part when you configure Cloudflare&lt;/strong&gt;. To check the details of your domain, use the &lt;a href=&#34;https://lookup.icann.org/lookup&#34;&gt;&lt;strong&gt;Domain Name Registration Data Lookup&lt;/strong&gt;&lt;/a&gt;. Here is the lookup result of &lt;code&gt;gitlab.com&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20201231180715529.png&#34; alt=&#34;image-20201231180715529&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Registrar Information section contains the information where you should change the nameservers in the next step.&lt;/p&gt;
+&lt;h3 id=&#34;what-about-aws-route53&#34;&gt;What about AWS Route53?&lt;/h3&gt;
+&lt;p&gt;Route53 can be a domain registrar OR just managing the hosted zone. If you see AWS is the Registrar in this lookup, then you should update the config in AWS Route53.&lt;/p&gt;
+&lt;h5 id=&#34;example-1-domain-purchased-from-godaddy&#34;&gt;Example 1: Domain purchased from GoDaddy&lt;/h5&gt;
+&lt;p&gt;For example, if you purchased your domain in &lt;strong&gt;GoDaddy&lt;/strong&gt; and having a &lt;strong&gt;hosted zone&lt;/strong&gt; in &lt;strong&gt;AWS Route 53&lt;/strong&gt; (That&amp;rsquo;s my case), &lt;strong&gt;GoDaddy is therefore your domain registrar and you should login GoDaddy&amp;rsquo;s account to change the nameserver, NOT AWS Route 53&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&#34;example-2-domain-purchased-from-aws-route-53&#34;&gt;Example 2: Domain purchased from AWS Route 53&lt;/h5&gt;
+&lt;p&gt;Unfortunately, You can purchased a domain in AWS Route 53 too. In this case, &lt;strong&gt;AWS Route 53 is your domain registrar&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You should change the nameservers in &lt;a href=&#34;https://console.aws.amazon.com/route53/&#34;&gt;the Route 53 console&lt;/a&gt; &amp;gt; &lt;strong&gt;Registered Domains&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;what-about-ns-record&#34;&gt;What about NS Record?&lt;/h4&gt;
+&lt;p&gt;Changing a &lt;code&gt;NS Record&lt;/code&gt; is not the same as changing a &lt;code&gt;nameserver&lt;/code&gt;. From the article &lt;a href=&#34;https://www.cloudflare.com/learning/dns/dns-records/dns-ns-record/&#34;&gt;DNS NS record&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The NS record indicates which DNS server is authoritative.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, a &lt;code&gt;NS Record&lt;/code&gt; is similar to &lt;code&gt;MX Record&lt;/code&gt;, &lt;code&gt;CNAME Record&lt;/code&gt;, &lt;code&gt;A Record&lt;/code&gt;, etc. They are all the items under the domain.&lt;/p&gt;
+&lt;p&gt;Nameserver of the domain is at a higher level and it&amp;rsquo;s controled by the domain registrar.&lt;/p&gt;
+&lt;h2 id=&#34;cloudflare-account&#34;&gt;Cloudflare Account&lt;/h2&gt;
+&lt;h3 id=&#34;add-a-domain&#34;&gt;Add a domain&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s free to create a Cloudflare account: &lt;a href=&#34;https://dash.cloudflare.com/sign-up&#34;&gt;https://dash.cloudflare.com/sign-up&lt;/a&gt;. Cloudflare also offer paid plans and I won&amp;rsquo;t discuss them in this article.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20201231175523687.png&#34; alt=&#34;image-20201231175523687&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20201231175540349.png&#34; alt=&#34;image-20201231175540349&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Choose the free plan and then click &lt;strong&gt;Continue&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After that, Cloudflare will do a DNS scan for the domain you&amp;rsquo;ve entered. Click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Not all the recoreds captured are correct. You will need to add/delete/update some of them later.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;change-your-nameservers&#34;&gt;Change your nameservers&lt;/h3&gt;
+&lt;p&gt;The last step of setup is changing the nameservers. You will see the following instruction:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/image-20201231182416379.png&#34; alt=&#34;image-20201231182416379&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1-log-in-to-your-registrar-account&#34;&gt;1. Log in to your registrar account&lt;/h4&gt;
+&lt;p&gt;In the previous section, you should know which service provider is your domain registrar. Login to your domain registrar and find out the nameserver config. Then, remove the existing nameservers (the entries shown in step 1). For example:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ns1.mydomain.com
+ns2.mydomain.com
+ns3.mydomain.com
+ns4.mydomain.com
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;2-replace-with-cloudflares-nameservers&#34;&gt;2. Replace with Cloudflare&amp;rsquo;s nameservers:&lt;/h4&gt;
+&lt;p&gt;When all the existing nameservers are removed, you have to add the Cloudflare nameservers in the domain registrar. For example:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;autumn.ns.cloudflare.com
+hans.ns.cloudflare.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note: you have to enter the 2 nameservers shown in step 2. Other (Cloudflare) nameservers won&amp;rsquo;t work.&lt;/p&gt;
+&lt;h3 id=&#34;verify-nameservers&#34;&gt;Verify nameservers&lt;/h3&gt;
+&lt;p&gt;Again, lookup the domain details using  &lt;a href=&#34;https://lookup.icann.org/lookup&#34;&gt;&lt;strong&gt;Domain Name Registration Data Lookup&lt;/strong&gt;&lt;/a&gt;. This time you should check the details in the &lt;strong&gt;Domain Information&lt;/strong&gt; section.&lt;/p&gt;
+&lt;p&gt;You should see the nameservers are replaced with the Cloudflare&amp;rsquo;s nameservers.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;strong&gt;Changing nameservers is quick&lt;/strong&gt; and you should be able to see the updated records within 5 minutes.&lt;/p&gt;
+&lt;p&gt;On the other hand, changing the &lt;strong&gt;records&lt;/strong&gt; under this domain may take a longer time (e.g. 24-48 hours).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Do not mix them up&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You may click the &lt;strong&gt;Done, check nameservers&lt;/strong&gt; button once you finished changing the nameservers in your domain registrar.&lt;/p&gt;
+&lt;h2 id=&#34;updating-dns-records&#34;&gt;Updating DNS Records&lt;/h2&gt;
+&lt;p&gt;As mentioned in the above, we have to change some of the records in Cloudflare.&lt;/p&gt;
+&lt;h3 id=&#34;application-load-balancers&#34;&gt;(Application) Load Balancers&lt;/h3&gt;
+&lt;p&gt;You need to replace those A Records into CNAME Records.&lt;/p&gt;
+&lt;p&gt;In AWS Route 53 the load balancer records are in the forms of alias. Cloudflare will fetch the A Records of the load balancers.&lt;/p&gt;
+&lt;p&gt;Get the CNAME of your load balancer under &lt;strong&gt;AWS EC2 Console&lt;/strong&gt; &amp;gt; &lt;strong&gt;Load balancers&lt;/strong&gt; &amp;gt; Select your load balancer and see the details. After that, delete the A Record in Cloudflare and add a new CNAME record for your load balancer.&lt;/p&gt;
+&lt;p&gt;I used to keep the A Record in Cloudflare and it does work for few days. After that, the IP of that load balancer changed and the website cannot be connected.&lt;/p&gt;
+&lt;h3 id=&#34;amazon-ses&#34;&gt;Amazon SES&lt;/h3&gt;
+&lt;p&gt;I also found that the SPF and DKIM records for Amazon SES does not created in Cloudflare too. In this case you need to create those records manually in Cloudflare. Just follow the instruction provided by Amazon then you will know how to do:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-spf.html&#34;&gt;Authenticating Email with SPF in Amazon SES&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-dkim.html&#34;&gt;Authenticating Email with DKIM in Amazon SES&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;To use &lt;strong&gt;Cloudflare&lt;/strong&gt;, you need to understand what a &lt;strong&gt;domain registrar&lt;/strong&gt; is. By changing &lt;strong&gt;nameservers&lt;/strong&gt; in a domain registrar and updating some records related to AWS&amp;rsquo;s infrastructure, we can set up the Cloudflare domain for an existing website using &lt;strong&gt;AWS Route 53&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is the end of this article (as well as the year 2020).&lt;/em&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

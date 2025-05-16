@@ -1,150 +1,682 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Tags on log from home</title>
-    <link>https://bemnlam.github.io/tags/</link>
+    <link>https://blog.lofibean.cc/tags/</link>
     <description>Recent content in Tags on log from home</description>
+    <image>
+      
+      <url>https://blog.lofibean.cc/android-chrome-512x512.png?v=20201231</url>
+      
+      <title>Favicon of Tags on log from home</title>
+      <link>https://blog.lofibean.cc/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; bemnlam</copyright>
-    <lastBuildDate>Sat, 23 May 2020 17:10:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Feb 2021 17:10:25 +0800</lastBuildDate>
     
-	<atom:link href="https://bemnlam.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.lofibean.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>cryptography</title>
-      <link>https://bemnlam.github.io/tags/cryptography/</link>
-      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      <title>book</title>
+      <link>https://blog.lofibean.cc/tags/book/</link>
+      <pubDate>Thu, 25 Feb 2021 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/cryptography/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/book/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>https</title>
-      <link>https://bemnlam.github.io/tags/https/</link>
-      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      <title>factfuless</title>
+      <link>https://blog.lofibean.cc/tags/factfuless/</link>
+      <pubDate>Thu, 25 Feb 2021 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/https/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/factfuless/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>security</title>
-      <link>https://bemnlam.github.io/tags/security/</link>
-      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      <title>書摘</title>
+      <link>https://blog.lofibean.cc/tags/%E6%9B%B8%E6%91%98/</link>
+      <pubDate>Thu, 25 Feb 2021 17:10:25 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/security/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/%E6%9B%B8%E6%91%98/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>ssl</title>
-      <link>https://bemnlam.github.io/tags/ssl/</link>
-      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      <title>cookie</title>
+      <link>https://blog.lofibean.cc/tags/cookie/</link>
+      <pubDate>Tue, 16 Feb 2021 19:08:15 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/ssl/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/cookie/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>coffee</title>
-      <link>https://bemnlam.github.io/tags/coffee/</link>
-      <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
+      <title>iframe</title>
+      <link>https://blog.lofibean.cc/tags/iframe/</link>
+      <pubDate>Tue, 16 Feb 2021 19:08:15 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/coffee/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/iframe/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>v60</title>
-      <link>https://bemnlam.github.io/tags/v60/</link>
-      <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
+      <title>iis</title>
+      <link>https://blog.lofibean.cc/tags/iis/</link>
+      <pubDate>Tue, 16 Feb 2021 19:08:15 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/v60/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/iis/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>pocket-digest</title>
-      <link>https://bemnlam.github.io/tags/pocket-digest/</link>
-      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      <title>pest-control</title>
+      <link>https://blog.lofibean.cc/tags/pest-control/</link>
+      <pubDate>Tue, 16 Feb 2021 19:08:15 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/pocket-digest/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/pest-control/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>self management</title>
-      <link>https://bemnlam.github.io/tags/self-management/</link>
-      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      <title>AjaxControlToolkit</title>
+      <link>https://blog.lofibean.cc/tags/ajaxcontroltoolkit/</link>
+      <pubDate>Fri, 12 Feb 2021 12:44:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/self-management/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/ajaxcontroltoolkit/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>work</title>
-      <link>https://bemnlam.github.io/tags/work/</link>
-      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      <title>aspnet</title>
+      <link>https://blog.lofibean.cc/tags/aspnet/</link>
+      <pubDate>Fri, 12 Feb 2021 12:44:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/work/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/aspnet/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>Fredkin&#39;s paradox</title>
-      <link>https://bemnlam.github.io/tags/fredkins-paradox/</link>
-      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      <title>AsyncPostBackTrigger</title>
+      <link>https://blog.lofibean.cc/tags/asyncpostbacktrigger/</link>
+      <pubDate>Fri, 12 Feb 2021 12:44:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/fredkins-paradox/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/asyncpostbacktrigger/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>佛雷德金悖論</title>
-      <link>https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</link>
-      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      <title>postback</title>
+      <link>https://blog.lofibean.cc/tags/postback/</link>
+      <pubDate>Fri, 12 Feb 2021 12:44:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/postback/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
-      <title>選擇困難</title>
-      <link>https://bemnlam.github.io/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</link>
-      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      <title>webform</title>
+      <link>https://blog.lofibean.cc/tags/webform/</link>
+      <pubDate>Fri, 12 Feb 2021 12:44:24 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>postgres</title>
-      <link>https://bemnlam.github.io/tags/postgres/</link>
-      <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
+      <guid>https://blog.lofibean.cc/tags/webform/</guid>
       
-      <guid>https://bemnlam.github.io/tags/postgres/</guid>
-      <description></description>
+        <description></description>
+      
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://bemnlam.github.io/tags/hugo/</link>
-      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
+      <link>https://blog.lofibean.cc/tags/hugo/</link>
+      <pubDate>Fri, 05 Feb 2021 21:33:03 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/hugo/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/hugo/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>barista</title>
+      <link>https://blog.lofibean.cc/tags/barista/</link>
+      <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/barista/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>city-n-guilds</title>
+      <link>https://blog.lofibean.cc/tags/city-n-guilds/</link>
+      <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/city-n-guilds/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>coffee</title>
+      <link>https://blog.lofibean.cc/tags/coffee/</link>
+      <pubDate>Thu, 31 Dec 2020 20:58:21 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/coffee/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://blog.lofibean.cc/tags/aws/</link>
+      <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/aws/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>cloudflare</title>
+      <link>https://blog.lofibean.cc/tags/cloudflare/</link>
+      <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/cloudflare/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>route53</title>
+      <link>https://blog.lofibean.cc/tags/route53/</link>
+      <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/route53/</guid>
+      
+        <description></description>
+      
     </item>
     
     <item>
       <title>tutorial</title>
-      <link>https://bemnlam.github.io/tags/tutorial/</link>
-      <pubDate>Thu, 16 Apr 2020 10:55:25 +0800</pubDate>
+      <link>https://blog.lofibean.cc/tags/tutorial/</link>
+      <pubDate>Thu, 31 Dec 2020 17:46:38 +0800</pubDate>
       
-      <guid>https://bemnlam.github.io/tags/tutorial/</guid>
-      <description></description>
+      <guid>https://blog.lofibean.cc/tags/tutorial/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ec2</title>
+      <link>https://blog.lofibean.cc/tags/ec2/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/ec2/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ovpn</title>
+      <link>https://blog.lofibean.cc/tags/ovpn/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/ovpn/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>rdp</title>
+      <link>https://blog.lofibean.cc/tags/rdp/</link>
+      <pubDate>Sat, 03 Oct 2020 13:40:48 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/rdp/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Bamboo</title>
+      <link>https://blog.lofibean.cc/tags/bamboo/</link>
+      <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/bamboo/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>continuous delivery</title>
+      <link>https://blog.lofibean.cc/tags/continuous-delivery/</link>
+      <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/continuous-delivery/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>continuous integration</title>
+      <link>https://blog.lofibean.cc/tags/continuous-integration/</link>
+      <pubDate>Sun, 20 Sep 2020 14:45:18 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/continuous-integration/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>cheatsheet</title>
+      <link>https://blog.lofibean.cc/tags/cheatsheet/</link>
+      <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/cheatsheet/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>https://blog.lofibean.cc/tags/ruby/</link>
+      <pubDate>Tue, 15 Sep 2020 08:40:48 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/ruby/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>gravatar</title>
+      <link>https://blog.lofibean.cc/tags/gravatar/</link>
+      <pubDate>Sat, 18 Jul 2020 12:01:56 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/gravatar/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>rss</title>
+      <link>https://blog.lofibean.cc/tags/rss/</link>
+      <pubDate>Fri, 03 Jul 2020 09:53:38 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/rss/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>easter-egg</title>
+      <link>https://blog.lofibean.cc/tags/easter-egg/</link>
+      <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/easter-egg/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>https://blog.lofibean.cc/tags/mac/</link>
+      <pubDate>Sun, 28 Jun 2020 12:28:38 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/mac/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>gulp</title>
+      <link>https://blog.lofibean.cc/tags/gulp/</link>
+      <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/gulp/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>gulp-sass</title>
+      <link>https://blog.lofibean.cc/tags/gulp-sass/</link>
+      <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/gulp-sass/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>node-sass</title>
+      <link>https://blog.lofibean.cc/tags/node-sass/</link>
+      <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/node-sass/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>https://blog.lofibean.cc/tags/nodejs/</link>
+      <pubDate>Sat, 27 Jun 2020 16:03:12 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/nodejs/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>.NET</title>
+      <link>https://blog.lofibean.cc/tags/.net/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/.net/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>csharp</title>
+      <link>https://blog.lofibean.cc/tags/csharp/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/csharp/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>nuget</title>
+      <link>https://blog.lofibean.cc/tags/nuget/</link>
+      <pubDate>Thu, 25 Jun 2020 17:10:24 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/nuget/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>gitlab</title>
+      <link>https://blog.lofibean.cc/tags/gitlab/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/gitlab/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://blog.lofibean.cc/tags/markdown/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/markdown/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>mkdocs</title>
+      <link>https://blog.lofibean.cc/tags/mkdocs/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/mkdocs/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.lofibean.cc/tags/python/</link>
+      <pubDate>Fri, 12 Jun 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/python/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>.NET Core</title>
+      <link>https://blog.lofibean.cc/tags/.net-core/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/.net-core/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>cache</title>
+      <link>https://blog.lofibean.cc/tags/cache/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/cache/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://blog.lofibean.cc/tags/redis/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/redis/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>tag-helpers</title>
+      <link>https://blog.lofibean.cc/tags/tag-helpers/</link>
+      <pubDate>Thu, 11 Jun 2020 21:06:59 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/tag-helpers/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>cryptography</title>
+      <link>https://blog.lofibean.cc/tags/cryptography/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/cryptography/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>https</title>
+      <link>https://blog.lofibean.cc/tags/https/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/https/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>linkedin-digest</title>
+      <link>https://blog.lofibean.cc/tags/linkedin-digest/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/linkedin-digest/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.lofibean.cc/tags/security/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/security/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>https://blog.lofibean.cc/tags/ssl/</link>
+      <pubDate>Sat, 23 May 2020 17:10:25 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/ssl/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>v60</title>
+      <link>https://blog.lofibean.cc/tags/v60/</link>
+      <pubDate>Sun, 17 May 2020 21:10:25 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/v60/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>pocket-digest</title>
+      <link>https://blog.lofibean.cc/tags/pocket-digest/</link>
+      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/pocket-digest/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>self management</title>
+      <link>https://blog.lofibean.cc/tags/self-management/</link>
+      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/self-management/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>work</title>
+      <link>https://blog.lofibean.cc/tags/work/</link>
+      <pubDate>Sun, 17 May 2020 13:33:52 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/work/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Fredkin&#39;s paradox</title>
+      <link>https://blog.lofibean.cc/tags/fredkins-paradox/</link>
+      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/fredkins-paradox/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>佛雷德金悖論</title>
+      <link>https://blog.lofibean.cc/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</link>
+      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/%E4%BD%9B%E9%9B%B7%E5%BE%B7%E9%87%91%E6%82%96%E8%AB%96/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>選擇困難</title>
+      <link>https://blog.lofibean.cc/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</link>
+      <pubDate>Sun, 17 May 2020 12:41:12 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/%E9%81%B8%E6%93%87%E5%9B%B0%E9%9B%A3/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>postgres</title>
+      <link>https://blog.lofibean.cc/tags/postgres/</link>
+      <pubDate>Thu, 16 Apr 2020 20:01:15 +0800</pubDate>
+      
+      <guid>https://blog.lofibean.cc/tags/postgres/</guid>
+      
+        <description></description>
+      
     </item>
     
   </channel>

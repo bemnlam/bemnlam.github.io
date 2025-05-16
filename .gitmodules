@@ -1,6 +1,7 @@
-[submodule "blog/themes/pickles"]
-	path = blog/themes/pickles
-	url = https://github.com/bemnlam/hugo_theme_pickles
 [submodule "blog/content"]
 	path = blog/content
 	url = https://github.com/bemnlam/blog_posts.git
+[submodule "blog/themes/blowfish"]
+	path = blog/themes/blowfish
+	url = https://github.com/bemnlam/blowfish-mod.git
+	branch = main
