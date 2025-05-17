@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dev",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "open http://localhost:1313",
+            "preLaunchTask": "Serve Drafts",
+            "postDebugTask": "Terminate All Tasks"
+        }
+    ]
+}

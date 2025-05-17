@@ -5,24 +5,45 @@
             "label": "Serve Drafts",
             "type": "shell",
             "command": "hugo",
-            "args": ["server", "-D"],
+            "args": [
+                "serve", "-D", 
+                "--source", "blog",
+                "--contentDir", "../content",
+                "--themesDir", "../.themes",
+                "--destination", "../public"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "isBackground": true,
+            "problemMatcher": {
+                "pattern": [
+                    {
+                        "regexp": ".",
+                        "file": 1,
+                        "location": 2,
+                        "message": 0
+                    }
+                ],
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": "Web Server is available at .*"
+                }
+            },
             "options": {
-                "cwd": "${workspaceFolder}/blog"
+                "cwd": "${workspaceFolder}"
             }
         },
         {
-            "label": "Launch Mark Text",
+            "label": "Launch Obsidian",
             "type": "shell",
             "command": "open",
             "args": [
                 "-a",
-                "\"Mark Text\"",
-                "${workspaceFolder}/blog/content/posts",
+                "\"Obsidian\"",
+                "${workspaceFolder}/content",
                 "&"
             ],
             "group": {
@@ -31,7 +52,7 @@
             },
             "isBackground": true,
             "options": {
-                "cwd": "${workspaceFolder}/blog"
+                "cwd": "${workspaceFolder}"
             }
         },
         {
@@ -62,9 +83,22 @@
             "options": {
                 "cwd": "${workspaceFolder}/blog"
             }
+        },
+        {
+            "label": "Terminate All Tasks",
+            "command": "echo ${input:terminate}",
+            "type": "shell",
+            "problemMatcher": []
         }
+
     ],
     "inputs": [
+        {
+            "id": "terminate",
+            "type": "command",
+            "command": "workbench.action.tasks.terminate",
+            "args": "terminateAll"
+        },
         {
             "id": "postTitlePrompt",
             "description": "Title of the new post",
