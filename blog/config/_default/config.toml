@@ -17,6 +17,8 @@ buildFuture = false
 
 googleAnalytics = "G-W6W2GD998G"
 
+ignoreFiles = [ "\\[template\\]\\.md$" ]
+
 [imaging]
   anchor = 'Center'
 
