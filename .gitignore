@@ -1,5 +1,8 @@
 drafts
 public
+blog/public
+.archived
+.themes
 
 # General
 .DS_Store
@@ -28,3 +31,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+### keep
+!content/.gitkeep
+!themes/.gitkeep

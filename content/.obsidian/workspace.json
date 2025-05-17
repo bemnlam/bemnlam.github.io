@@ -1,0 +1,188 @@
+{
+  "main": {
+    "id": "047752966b17c658",
+    "type": "split",
+    "children": [
+      {
+        "id": "a71061d90a1b6d4f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d15cc232ee6055c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/[template].md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "[template]"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7ab1b11f92d9c569",
+    "type": "split",
+    "children": [
+      {
+        "id": "15bb497da7f92271",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3c6e4b7f387eed99",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b8e9826230c264d3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "102bf640b5edeb22",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4502ff0ef2b09043",
+    "type": "split",
+    "children": [
+      {
+        "id": "7d9fc19a74e5388e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "775cb5ae0cf93c9e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "d4577ac1a8b75ec5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "ff862ed2b9699bbf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "db4710cf5057d758",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "3c6e4b7f387eed99",
+  "lastOpenFiles": [
+    "protecting-azure-app-service-with-authentication-settings",
+    "posts/[template] 1.md",
+    "posts/[template].md",
+    "2020-05-23.md",
+    "posts/template.md",
+    "posts/blog.md",
+    "posts/testing-v2-template/index.md",
+    "posts/testing-v2-template/img",
+    "posts/testing-v2-template",
+    "template.md",
+    "posts/bamboo-not-enough-space/index.md",
+    "posts/adding-audio-to-your-web-app-the-complete-guide/index.md",
+    "posts/avoid-multiple-lifecycle-hooks-in-azure-devops-deployment-job/index.md",
+    "posts/welcome.md",
+    "posts/a-note-on-ssl.md",
+    "posts/a-tale-of-two-caches-redis-and-cache-helper/index.md"
+  ]
+}
