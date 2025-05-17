@@ -2,6 +2,7 @@ drafts
 public
 blog/public
 .archived
+.themes
 
 # General
 .DS_Store

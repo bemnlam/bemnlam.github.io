@@ -11,19 +11,23 @@ then
    echo "Filename cannot be empty. Try again."
 
 else
-
-    cd ./blog
-
     echo "${COLOR}   1. Creating new post...    ${NC}"
-    hugo new posts/${filename}/index.md
+    mkdir content/posts/${filename}
+    mkdir content/posts/${filename}/img
 
-    echo "${COLOR}   2. Launching Typora...     ${NC}"
-    open -a Typora ./content/posts/${filename}/index.md &
+    hugo new content \
+        --source blog \
+        --kind blog \
+        --contentDir ../content \
+        --themesDir ../.themes \
+        posts/${filename}/index.md
 
     echo "${COLOR}   3. Launching browser...    ${NC}"
     open http://localhost:1313/posts/${filename}
 
-    echo "${COLOR}   4. Starting dev server...  ${NC}"
-    hugo serve -D
+    echo "${COLOR}   1. Launching Obsidian...    ${NC}"
+    open -a Obsidian ./content &
 
+    echo "${COLOR}   4. Starting dev server...  ${NC}"
+    sh hugo-dev.sh
 fi
