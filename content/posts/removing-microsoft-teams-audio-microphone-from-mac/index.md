@@ -10,12 +10,12 @@ tags:
 thumbnail: /posts/{{file_name}}/feature.jpg
 ---
 
-I came across with a wired issue when having FaceTime call recently. 
+I came across with a werid issue when having FaceTime calls recently. 
 1. When a FaceTime call is made, people cannot hear my voice. 
 2. Check the microphone settings in the dropdown of the top menu bar FaceTime icon and turns out it connect to a microphone named "Microsoft Teams Audio" by default every time. 
 3. I need to switch to use another microphone in order to get my voice back.
 
-There is a discussion thread on Apple Community, such as [this one](https://discussions.apple.com/thread/256044430?sortBy=rank). One of the answer suggest to remove that audio device from **Audio MIDI Setup**. However, it can't be removed because the "-" button is grey out. Some users reported this virtual microphone is still there after Teams has been uninstalled.
+There is a discussion thread on Apple Community, such as [this one](https://discussions.apple.com/thread/256044430?sortBy=rank). One of the answer suggests to remove that audio device from **Audio MIDI Setup**. However, it can't be removed because the "-" button is grey out. Some users reported this virtual microphone is still there after Teams has been uninstalled.
 
 The solution that works for me is to delete **MSTeamsAudioDevice.driver**. under `/Library/Audio/Plug-Ins/HAL`.
 
