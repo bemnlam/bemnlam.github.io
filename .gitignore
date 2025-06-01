@@ -35,3 +35,6 @@ Temporary Items
 ### keep
 !content/.gitkeep
 !themes/.gitkeep
+
+### ignore obsidian workspace settings
+.obsidian/workspace.json
