@@ -4,21 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "a71061d90a1b6d4f",
+        "id": "ed7f8ace3a9c8158",
         "type": "tabs",
         "children": [
           {
-            "id": "d15cc232ee6055c1",
+            "id": "9b6adfdaf60e582e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/random-thoughts-on-jony-s-conversation/index.md",
+                "file": "posts/removing-microsoft-teams-audio-microphone-from-mac/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "index"
+            }
+          },
+          {
+            "id": "fb67712c13907c32",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "posts/removing-microsoft-teams-audio-microphone-from-mac/feature.jpg"
+              },
+              "icon": "lucide-image",
+              "title": "feature"
             }
           }
         ]
@@ -94,7 +106,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/random-thoughts-on-jony-s-conversation/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks"
             }
           },
           {
@@ -141,20 +152,31 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "posts/removing-microsoft-teams-audio-microphone-from-mac/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of index"
+            }
+          },
+          {
+            "id": "50ff6c2e23d5628f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,13 +189,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3c6e4b7f387eed99",
+  "active": "50ff6c2e23d5628f",
   "lastOpenFiles": [
-    "posts/random-thoughts-on-jony-s-conversation/feature.png",
+    "Restricted Access to an Azure App Service API endpoints using Managed Identity, App Registration and Authentication Settings.md",
+    "posts/removing-microsoft-teams-audio-microphone-from-mac/feature.jpg",
+    "posts/removing-microsoft-teams-audio-microphone-from-mac/index.md",
+    "posts/removing-microsoft-teams-audio-microphone-from-mac",
+    "posts/adding-audio-to-your-web-app-the-complete-guide/feature.avif",
+    "posts/fantastic-beans-and-where-to-find-them/feature.avif",
+    "posts/vs-code-task/img/2022-02-13-15-48-35-image.png",
+    "posts/[template].md",
+    "posts/adding-audio-to-your-web-app-the-complete-guide/index.md",
     "posts/random-thoughts-on-jony-s-conversation/index.md",
+    "posts/random-thoughts-on-jony-s-conversation/feature.png",
+    "posts/random-thoughts-on-jony-s-conversation",
     "posts/why-you-should-manage-your-energy-not-your-time.md",
     "posts/welcome.md",
-    "posts/vs-code-task/img/2022-02-13-15-48-35-image.png",
     "posts/vs-code-task/index.md",
     "posts/vs-code-task/img",
     "posts/vs-code-task/feature.avif",
@@ -189,18 +220,13 @@
     "posts/setting-up-nginx-for-local-development/index.md",
     "posts/setting-up-nginx-for-local-development/feature.jpg",
     "posts/setting-up-nginx-for-local-development",
-    "posts/set-up-cloudflare-for-route53-domains/img/image-20201231182416379.png",
-    "posts/set-up-cloudflare-for-route53-domains/img/image-20201231180715529.png",
-    "posts/set-up-cloudflare-for-route53-domains/img/image-20201231175612557.png",
     "posts/set-up-cloudflare-for-route53-domains/index.md",
     "posts/set-up-cloudflare-for-route53-domains/img",
     "posts/set-up-cloudflare-for-route53-domains",
     "posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/index.md",
     "posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/img",
-    "posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more",
     "posts/ruby-cheatsheet.md",
     "posts/reading-factfulness/index.md",
-    "posts/reading-factfulness/img",
     "posts/notes-on-city-n-guilds-barista-exam.md",
     "posts/notes-on-bamboo-preface.md",
     "posts/notes-on-atlassian-bamboo/index.md",
@@ -209,10 +235,6 @@
     "posts/learning-react-componentdidmount/index.md",
     "posts/learning-angular--eslint/index.md",
     "posts/improving-my-blogging-workflow/index.md",
-    "posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level.md",
-    "posts/fredkins-paradox.md",
-    "posts/fixing-ajaxcontroltoolkit-unexpected-page-reload-in-aspnet-webform-application/index.md",
-    "posts/fantastic-beans-and-where-to-find-them/index.md",
-    "posts/documentation-makes-easy-with-mkdocs-and-gitlab-pages/index.md"
+    "posts/git-versioning-this-assembly-is-inaccessible-due-to-its-protection-level.md"
   ]
 }
