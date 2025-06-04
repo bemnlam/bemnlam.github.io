@@ -4,33 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "ed7f8ace3a9c8158",
+        "id": "461940b8f36c1547",
         "type": "tabs",
         "children": [
           {
-            "id": "9b6adfdaf60e582e",
+            "id": "d3f0d46ff3e7ad9c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "posts/removing-microsoft-teams-audio-microphone-from-mac/index.md",
-                "mode": "source",
-                "source": false
+                "aFile": "content/.obsidian/workspace.json",
+                "bFile": "content/.obsidian/workspace.json",
+                "aRef": "HEAD",
+                "bRef": ""
               },
-              "icon": "lucide-file",
-              "title": "index"
-            }
-          },
-          {
-            "id": "fb67712c13907c32",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "posts/removing-microsoft-teams-audio-microphone-from-mac/feature.jpg"
-              },
-              "icon": "lucide-image",
-              "title": "feature"
+              "icon": "diff",
+              "title": "Diff: workspace.json"
             }
           }
         ]
@@ -189,44 +178,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "50ff6c2e23d5628f",
+  "active": "d3f0d46ff3e7ad9c",
   "lastOpenFiles": [
-    "Restricted Access to an Azure App Service API endpoints using Managed Identity, App Registration and Authentication Settings.md",
-    "posts/removing-microsoft-teams-audio-microphone-from-mac/feature.jpg",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/feature.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250601170021.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603214934.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/demo-result-succeeded.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603222120.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603222114.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-succeeded.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-browse.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-step3.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-step2.png",
+    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings",
+    "posts/random-thoughts-on-jony-s-conversation/index.md",
+    "posts/[template].md",
+    "posts/reading-factfulness/index.md",
     "posts/removing-microsoft-teams-audio-microphone-from-mac/index.md",
     "posts/removing-microsoft-teams-audio-microphone-from-mac",
-    "posts/adding-audio-to-your-web-app-the-complete-guide/feature.avif",
-    "posts/fantastic-beans-and-where-to-find-them/feature.avif",
-    "posts/vs-code-task/img/2022-02-13-15-48-35-image.png",
-    "posts/[template].md",
     "posts/adding-audio-to-your-web-app-the-complete-guide/index.md",
-    "posts/random-thoughts-on-jony-s-conversation/index.md",
-    "posts/random-thoughts-on-jony-s-conversation/feature.png",
     "posts/random-thoughts-on-jony-s-conversation",
     "posts/why-you-should-manage-your-energy-not-your-time.md",
     "posts/welcome.md",
     "posts/vs-code-task/index.md",
     "posts/vs-code-task/img",
-    "posts/vs-code-task/feature.avif",
     "posts/vs-code-task",
     "posts/use-gravatar-everywhere/index.md",
-    "posts/use-gravatar-everywhere/feature.jpg",
     "posts/use-gravatar-everywhere",
     "posts/understanding-csp-for-azure-app-service/index.md",
-    "posts/understanding-csp-for-azure-app-service/feature.jpg",
-    "posts/understanding-csp-for-azure-app-service/DALL·E 2024-04-24 09.18.50 - A flat Corporate Memphis style illustration suitable for a technology article cover. Depict Azure App Service and Angular Apps in a modern digital set.webp",
     "posts/understanding-csp-for-azure-app-service",
     "posts/the-perks-of-being-a-mac-or-freebsd-user.md",
     "posts/setting-up-nginx-for-local-development/index.md",
-    "posts/setting-up-nginx-for-local-development/feature.jpg",
     "posts/setting-up-nginx-for-local-development",
     "posts/set-up-cloudflare-for-route53-domains/index.md",
     "posts/set-up-cloudflare-for-route53-domains/img",
     "posts/set-up-cloudflare-for-route53-domains",
     "posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/index.md",
-    "posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/img",
     "posts/ruby-cheatsheet.md",
-    "posts/reading-factfulness/index.md",
     "posts/notes-on-city-n-guilds-barista-exam.md",
     "posts/notes-on-bamboo-preface.md",
     "posts/notes-on-atlassian-bamboo/index.md",
