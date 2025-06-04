@@ -1,6 +1,6 @@
 ---
 title: Restricted Access on Azure App Service API endpoints using Managed Identity, App Registration and Authentication Settings
-date: 2025-06-04T00:55:00
+date: 2025-06-04T00:00:00
 draft: false
 summary: Secure internal Azure App Service APIs using Managed Identity, App Registration, and built-in Authentication settings.
 categories:
@@ -158,7 +158,7 @@ Next, we will show some key code snippets on Caller. We will also create and dep
 
 A minimal example for caller and callee applications can be found in this GitHub:
 
-{{< github repo="bemnlam/azure-managed-identity-auth " showThumbnail=true >}}
+{{< github repo="bemnlam/azure-managed-identity-auth" >}}
 
 Here are some key points I want to highlight:
 ## Caller
@@ -229,7 +229,7 @@ Make sure sure that Azure is configured properly and let the Caller(s) know your
 
 Checkout the minimal GitHub repository:
 
-{{< github repo="bemnlam/azure-managed-identity-auth " showThumbnail=true >}}
+{{< github repo="bemnlam/azure-managed-identity-auth" >}}
 
 If you the following tools installed:
 - [.NET SDK](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
