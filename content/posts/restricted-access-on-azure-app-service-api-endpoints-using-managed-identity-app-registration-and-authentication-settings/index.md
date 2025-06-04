@@ -69,9 +69,9 @@ Caller need to provide the identities and audiences to Callee in order to add th
 ### For an Azure App Service
 
 1. Go to Caller's Azure App Service. In the left menu, choose **Settings** > **Identity**
-2. Turn on the **system assigned managed identity**: ![[caller-system-mi.png]]
+2. Turn on the **system assigned managed identity**: ![img/caller-system-mi.png](img/caller-system-mi.png)
 3. Keep the **Object (principal) ID**
-4. Alternatively, you can choose user-assigned managed identity Object (principal) ID and assign the identity created: ![[caller-user-mi-step1.png]] ![[caller-user-mi-step2.png]]
+4. Alternatively, you can choose user-assigned managed identity Object (principal) ID and assign the identity created: ![img/caller-user-mi-step1.png](img/caller-user-mi-step1.png) ![img/caller-user-mi-step2.png](img/caller-user-mi-step2.png)
 
 ### For an Azure Virtual Desktop instance
 You will need to find out the **Object (Principal) ID** of the AVD instance.
@@ -121,7 +121,7 @@ Create an App Service called e.g. `poc-web-callee`.
 
 ### Azure App Service
 1. Go to Callee's Azure Web Service. In the left menu, choose **Settings** > **Authentication**
-2. Click **Add provider**. Choose **Microsoft**. ![[callee-auth-step1.png]] ![[callee-auth-step2.png]]
+2. Click **Add provider**. Choose **Microsoft**. ![img/callee-auth-step1.png](img/callee-auth-step1.png) ![img/callee-auth-step2.png](img/callee-auth-step2.png)
 3. Fill in the details:
 	1. **Choose a tenant for your application and its users**: *Workforce configuration (current tenant)*
 	2. App registration
@@ -144,7 +144,7 @@ Create an App Service called e.g. `poc-web-callee`.
 		2. **Unauthenticated requests**: *HTTP 401 Unauthorized: recommended for APIs*
 		3. **Token store**: checked
 4. Click **Add** to add the identity provider
-5. Click the **Edit** button next to Authentication settings, or the edit icon next to the identity provider to change the settings once it's created: ![[callee-auth-step3.png]]
+5. Click the **Edit** button next to Authentication settings, or the edit icon next to the identity provider to change the settings once it's created: ![img/callee-auth-step3.png](img/callee-auth-step3.png)
 
 The table below summarizes the information we need to configure the Callee's Authentication settings:
 
@@ -237,10 +237,10 @@ If you the following tools installed:
 - [Azure CLI](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
 ## Callee
 - Open `poc-callee` in VS Code
-- In VS Code, open the Command Palette and select **Azure: Deploy to Web App...** ![[callee-deploy-step1.png]]
-- Choose **poc-callee**, add config and choose the Azure App Service: ![[callee-deploy-step2.png]] ![[callee-deploy-step3.png]]
-- Expected result for a successful deployment:![[callee-deploy-succeeded.png]]
-- Open Command Palette and select **Azure App Service: Browse Website**: ![[callee-deploy-browse.png]]
+- In VS Code, open the Command Palette and select **Azure: Deploy to Web App...** ![img/callee-deploy-step1.png](img/callee-deploy-step1.png)
+- Choose **poc-callee**, add config and choose the Azure App Service: ![img/callee-deploy-step2.png](img/callee-deploy-step2.png) ![img/callee-deploy-step3.png](img/callee-deploy-step3.png)
+- Expected result for a successful deployment:![img/callee-deploy-succeeded.png](img/callee-deploy-succeeded.png)
+- Open Command Palette and select **Azure App Service: Browse Website**: ![img/callee-deploy-browse.png](img/callee-deploy-browse.png)
 - You should see a webpage with a message `You do not have permission to view this directory or page`. That is expected because you don't have a valid access token.
 ## Caller
 - Open `poc-caller` in VS Code
@@ -248,10 +248,10 @@ If you the following tools installed:
 	- **CalleeApi**: the root url of the Callee e.g. *https://{callee-app-name}-{random-hash}.{region}-01.azurewebsites.net/*
 	- **CalleeAppRegistrationId**: the App Registration ID of the Callee
 	- **ManagedIdentity**: Caller's user/system-assigned managed identity Object (Principal) ID
-- Choose **poc-caller**, add the config and choose the Azure App Service: ![[caller-deploy-step1.png]]
-- Expected result for a successful deployment: ![[caller-deploy-succeeded.png]]
+- Choose **poc-caller**, add the config and choose the Azure App Service: ![img/caller-deploy-step1.png](img/caller-deploy-step1.png)
+- Expected result for a successful deployment: ![img/caller-deploy-succeeded.png](img/caller-deploy-succeeded.png)
 - Choose **Azure App Service: Browse Website** in Command Palette. You should be able to see a Swagger UI.
-- Call `GET /remote-ping` endpoint and you should see a 200 response. The response body should contains a greeting message and a token: ![[demo-result-succeeded.png]]
+- Call `GET /remote-ping` endpoint and you should see a 200 response. The response body should contains a greeting message and a token: ![img/demo-result-succeeded.png](img/demo-result-succeeded.png)
 
 # Local Development
 If you want to run Caller locally, and call the Callee API endpoints which hosting on Azure, you will need to:

@@ -446,4 +446,5 @@ The key to launch the browser debugging session from VSCode is to define a corre
 - Vite: `.*VITE v.*`
 - Rsbuild: `.*Rsbuild v.*`
 
-You can also see the complete example, including the sample Vite app, the sample Rsbuild app, together with the tasks.json and launch.json in this GitHub repository: [vscode-debugging-sample](https://github.com/bemnlam/vscode-debugging-sample).
+You can also see the complete example, including the sample Vite app, the sample Rsbuild app, together with the tasks.json and launch.json in this GitHub repository: 
+{{< github repo="bemnlam/vscode-debugging-sample" >}}
