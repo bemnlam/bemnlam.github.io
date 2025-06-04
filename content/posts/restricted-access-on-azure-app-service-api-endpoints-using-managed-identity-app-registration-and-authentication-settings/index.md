@@ -153,6 +153,7 @@ The table below summarizes the information we need to configure the Callee's Aut
 | Azure       | App service's managed identity | Callee's app registration ID           |
 | AVD         | Machine's managed identity     | Callee's app registration ID           |
 | Developer   | Personal access token          | `https://management.core.windoes.net/` |
+
 Next, we will show some key code snippets on Caller. We will also create and deploy the sample Caller and Callee applications to show the authentication in action.
 # Source code
 
@@ -192,6 +193,7 @@ You need to choose different credential provider under different environments.
 | AVD (Azure Virtual Desktop)      | [ManagedIdentityCredential()](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.managedidentitycredential.-ctor?view=azure-dotnet#azure-identity-managedidentitycredential-ctor) | An AVD as a Azure resource under the same subscription should have a system assigned managed identity.                                            |
 | Visual Studio with Azure Account | [VisualStudioCredential()](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.visualstudiocredential?view=azure-dotnet)                                                           | Use the identity same as the user signed in in Visual Studio so that the Callee knows the Caller's identity.                                      |
 | Mac                              | [AzureCliCredential](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.azureclicredential?view=azure-dotnet)                                                                     | This is one of the clients you can use in Mac.                                                                                                    |
+
 #### Note on DefaultAzureCredential and ChainedTokenCredential
 I prefer using [ChainedTokenCredential](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.chainedtokencredential?view=azure-dotnet), which allows me to choose which credential(s) to use, and define the attempt sequence that fits my requirement.
 
@@ -200,6 +202,7 @@ You may also consider using [DefaultAzureCredential](https://learn.microsoft.com
 2. you may not know which credential is picked eventually, unless you configure and inspect the logs
 
 For example, if a developer signed in to Azure account in Visual Studio on an Azure Virtual Desktop instance, `DefaultAzureCredential` will attempt to authenticate with `ManagedIdentityCredential` before `VisualStudioCredential`. If the app want to use developer's personal identity over machine's identity, this will not work as expected.
+
 ### Access Token
 The scope of the access token which Caller is going to generate is the Callee's app ID. Get an access token and add it as the Bearer authorization token when making API request to the Callee:
 
