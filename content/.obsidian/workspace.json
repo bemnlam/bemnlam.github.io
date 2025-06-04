@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b4ef3a26c5931f52",
+        "id": "5614d75464259427",
         "type": "tabs",
         "children": [
           {
-            "id": "8fe3f5d7c79a16f7",
+            "id": "8e55369f98706eb7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/creating-a-user-with-limited-privileges-in-postgres.md",
+                "file": "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "creating-a-user-with-limited-privileges-in-postgres"
+              "title": "index"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dev.to",
+                "query": "rest",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -178,8 +178,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b8e9826230c264d3",
+  "active": "8e55369f98706eb7",
   "lastOpenFiles": [
+    "posts/creating-a-user-with-limited-privileges-in-postgres.md",
     "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
     "posts/debugging-nodejs-apps-using-vscode/index.md",
     "posts/setting-up-nginx-for-local-development/index.md",
@@ -224,7 +225,6 @@
     "posts/note-on-angular-template-change-detection-viewchild/index.md",
     "posts/missing-cookie-in-iframe/index.md",
     "posts/learning-react-componentdidmount/index.md",
-    "posts/learning-angular--eslint/index.md",
-    "posts/improving-my-blogging-workflow/index.md"
+    "posts/learning-angular--eslint/index.md"
   ]
 }
