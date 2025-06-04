@@ -4,22 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "461940b8f36c1547",
+        "id": "c208cf74e5aa77cd",
         "type": "tabs",
         "children": [
           {
-            "id": "d3f0d46ff3e7ad9c",
+            "id": "0692a7a136efd809",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "content/.obsidian/workspace.json",
-                "bFile": "content/.obsidian/workspace.json",
-                "aRef": "HEAD",
-                "bRef": ""
+                "file": "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: workspace.json"
+              "icon": "lucide-file",
+              "title": "index"
             }
           }
         ]
@@ -178,20 +177,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d3f0d46ff3e7ad9c",
+  "active": "3c6e4b7f387eed99",
   "lastOpenFiles": [
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/feature.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250601170021.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603214934.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/demo-result-succeeded.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603222120.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603222114.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-succeeded.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-browse.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-step3.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-step2.png",
-    "restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/feature.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250601170021.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603214934.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/demo-result-succeeded.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603222120.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603222114.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-succeeded.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-browse.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-step3.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/callee-deploy-step2.png",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings",
     "posts/random-thoughts-on-jony-s-conversation/index.md",
     "posts/[template].md",
     "posts/reading-factfulness/index.md",
