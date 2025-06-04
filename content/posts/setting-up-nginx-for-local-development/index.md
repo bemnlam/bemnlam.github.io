@@ -183,7 +183,8 @@ Also, requests with Url prefix `https://localhost:3001/api` will be proxied to t
 
 ## Github Examples
 
-An example React app: [https://github.com/bemnlam/vite-preset](https://github.com/bemnlam/vite-preset)
+An example React app: 
+{{< github repo="bemnlam/vite-preset" >}}
 
 You can also find the example Nginx config here: [https://github.com/bemnlam/vite-preset/blob/master/public/local-ssl.conf](https://github.com/bemnlam/vite-preset/blob/master/public/local-ssl.conf)
 
