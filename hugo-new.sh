@@ -16,10 +16,7 @@ else
     mkdir content/posts/${filename}/img
 
     hugo new content \
-        --source blog \
         --kind blog \
-        --contentDir ../content \
-        --themesDir ../.themes \
         posts/${filename}/index.md
 
     echo "${COLOR}   3. Launching browser...    ${NC}"
@@ -29,5 +26,5 @@ else
     open -a Obsidian ./content &
 
     echo "${COLOR}   4. Starting dev server...  ${NC}"
-    sh hugo-dev.sh
+    hugo server -D
 fi
