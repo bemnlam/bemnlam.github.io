@@ -15,7 +15,7 @@
               "state": {
                 "file": "posts/accessing-calibre-anywhere/index.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "index"
@@ -180,18 +180,18 @@
   },
   "active": "8e55369f98706eb7",
   "lastOpenFiles": [
+    "posts/accessing-calibre-anywhere/img/20260628153401.png",
+    "posts/accessing-calibre-anywhere/img/20260628143210.png",
+    "posts/accessing-calibre-anywhere/index.md",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151309.png",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151253.png",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151239.png",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151100.png",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151042.png",
-    "posts/accessing-calibre-anywhere/index.md",
-    "posts/accessing-calibre-anywhere/img/Pasted image 20260628143210.png",
     "posts/accessing-calibre-anywhere/img",
     "Pasted image 20260628153507.png",
-    "posts/accessing-calibre-anywhere/img/Pasted image 20260628153401.png",
-    "posts/accessing-calibre-anywhere/img/Pasted image 20260628153345.png",
-    "posts/accessing-calibre-anywhere/img/Pasted image 20260628143805.png",
+    "posts/accessing-calibre-anywhere/img/20260628153345.png",
+    "posts/accessing-calibre-anywhere/img/20260628143805.png",
     "posts/a-tale-of-two-caches-redis-and-cache-helper/index.md",
     "posts/avoid-multiple-lifecycle-hooks-in-azure-devops-deployment-job/index.md",
     "posts/adding-audio-to-your-web-app-the-complete-guide/index.md",
