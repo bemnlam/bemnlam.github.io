@@ -1,7 +1,7 @@
 ---
 title: Accessing Calibre from Anywhere Using Cloudflare Tunnel
 summary: Access your Calibre library outside your home network — set it up once with Cloudflare Tunnel
-date: 2026-06-28T14:00:00-05:00
+date: 2026-06-28T16:12:00-05:00
 draft: false
 categories:
   - Dev
@@ -17,20 +17,7 @@ However, the content server is only accessible within the same WiFi network, mea
 
 Cloudflare Tunnel makes your Calibre Content Server accessible from anywhere by tunnelling a public domain traffic to the server that runs on your machine locally, if you have a custom domain.
 
-
-```mermaid
-sequenceDiagram
-	actor user
-	participant browser
-	participant cloudflare
-	participant macbook
-	
-	user->>browser: visit https://calibre.myhost.com
-	browser->>cloudflare: DNS and cloudflared routing
-	cloudflare->>macbook: reach http://localhost:8080, Calibre's default content server
-	macbook->>browser: serve Calibre's default content server via defined host
-	browser->>user: read ebooks via Calibre's content server
-```
+[![](https://mermaid.ink/img/pako:eNqFUTtvwjAQ_ivWLV1CmkdDggcWmLuwVVmMfRCriZ06Ni1F_PfaIQioKnWI5Lv77nvkTsC1QKAw4IdDxXEt2d6wrla1ZdxqQ9yAJlQ9M1Zy2TNlydbozz_avNVO7Fpm8PekY3yr9Xtohy9wzpbLiYaSgxykJY21_UCfnzlr5dZg3B0bPdiY69HNBPZrNxlK1q8bwpS4kxbEaGel2oelW9vvTSYoMch4M8p5tVZ7vSBEq6RKIrK6qD8NROCOudbH0sqiD-HVD5fQE9N9hHH477JPysJIKu8ziD4mcyOVtycIBoFhxN9IH8kggg5Nx6Tw9zvVipAabIMd1kD9c3JQQ63OHsqc1Zuj4kCtcRiB_0v7BuiOtYOvXC-YvR7_CvGne9P6vgR6gi-gszTNqrhM53lSFYu8LCI4Ai3SuCjSssgXi7JKsjJ_OUfwPRJk8bxM0zyZl4syr4oqi2Bvgu_JCyqBZqWdskDT5PwDUSzoow?type=png)](https://mermaid.live/edit#pako:eNqFUTtPwzAQ_ivWLSwh5EGaxEMXmFnYUBbXvjYWiV0cGyhV_zvnECggJIZIvsf3yh1BWoXAYcKngEbirRY7J8bOdF5Ibx0LE7pY7YXzWuq9MJ5tnH35oy0HG9R2EA5_T0YhN9Y-xnb8Iufler3QcPasJ-1Z7_1-4ldXUgx64zAdD72dfCrt7GZZJthZhrPbu3smjPomrZizwWuzi6Bzm3CLCc4cCtnPcqQ2WNKLQrzJmixhNx_qFxNTuBVhoFjWeKQQpP78EXph-h5hHv4LpqQijrQhn1H0Z7IwU5E9xTAKTPP-mfQnGSQwohuFVnS_Y2cY68D3OGIHnJ6Lgw46c6JVEby9PxgJ3LuACdBf2vXAt2KYqAp7Jfzn8b-6dLsHa8dPCJXAj_AK_DLPiyat81WZNVVb1lUCB-BVnlZVXldl29ZNVtTl9SmBt5mgSFd1npfZqsjrrK2v2yKBnYvOFzdoFLobG4wnntM7NtTo6g)
 
 ### Assumptions
 1. you own a domain `myhost.com` and it's managed by Cloudflare.
@@ -38,10 +25,10 @@ sequenceDiagram
 3. the tunnel you are about to create is `Calibre`.
 
 Sign in to the dashboard https://dash.cloudflare.com. Choose **Networking** > **Tunnel** at the left menu. Click **+ Create Tunnel**:
-![[Pasted image 20260628143210.png]]
+![20260628143210.png](img/20260628143210.png)
 
 Name your tunnel (case-sensitive), then click **Create Tunnel**:
-![[Pasted image 20260628143238.png]]
+![20260628143238.png](img/20260628143238.png)
 
 Follow the instruction to set up tunnel service on your machine. For me as a Mac user, I install cloudflared via homebrew:
 
@@ -61,7 +48,7 @@ If you want to run cloudflared manually (a foreground process):
 cloudflared tunnel run --token <the token>
 ```
 
-![[Pasted image 20260628143805.png]]
+![20260628143805.png](img/20260628143805.png)
 
 You should see a "Tunnel connected successfully" message if connection is established. Click **Continue**
 
@@ -157,10 +144,10 @@ Modify the plist file `/Library/LaunchDaemons/com.cloudflare.cloudflared.plist`,
 
 Add DNS record
 click **"+ add route**:
-![[Pasted image 20260628153345.png]]
+![20260628153345.png](20260628153345.png)
 
 choose **published application**:
-![[Pasted image 20260628153401.png]]
+![20260628153401.png](20260628153401.png)
 
 fill in the subdomain (`calibre`) and service URL (`http://localhost:8080`)
 You should see a "Route added successfully" message
