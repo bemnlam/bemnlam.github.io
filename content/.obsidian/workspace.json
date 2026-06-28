@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
+                "file": "posts/accessing-calibre-anywhere/index.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "index"
@@ -74,12 +74,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 370.5
   },
   "right": {
     "id": "4502ff0ef2b09043",
@@ -161,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -169,6 +168,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -180,23 +180,28 @@
   },
   "active": "8e55369f98706eb7",
   "lastOpenFiles": [
-    "posts/creating-a-user-with-limited-privileges-in-postgres.md",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628151309.png",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628151253.png",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628151239.png",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628151100.png",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628151042.png",
+    "posts/accessing-calibre-anywhere/index.md",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628143210.png",
+    "posts/accessing-calibre-anywhere/img",
+    "Pasted image 20260628153507.png",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628153401.png",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628153345.png",
+    "posts/accessing-calibre-anywhere/img/Pasted image 20260628143805.png",
+    "posts/a-tale-of-two-caches-redis-and-cache-helper/index.md",
+    "posts/avoid-multiple-lifecycle-hooks-in-azure-devops-deployment-job/index.md",
+    "posts/adding-audio-to-your-web-app-the-complete-guide/index.md",
     "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
+    "posts/accessing-calibre-anywhere",
+    "posts/creating-a-user-with-limited-privileges-in-postgres.md",
     "posts/debugging-nodejs-apps-using-vscode/index.md",
     "posts/setting-up-nginx-for-local-development/index.md",
-    "posts/adding-audio-to-your-web-app-the-complete-guide/index.md",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/feature.png",
     "posts/bamboo-not-enough-space/index.md",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/img/caller-system-mi.png",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/img/demo-result-succeeded.png",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/img/callee-auth-step1.png",
     "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/img",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250601170021.png",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603214934.png",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603222120.png",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/Pasted image 20250603222114.png",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/img/callee-deploy-succeeded.png",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/img/callee-deploy-browse.png",
     "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings",
     "posts/random-thoughts-on-jony-s-conversation/index.md",
     "posts/[template].md",
@@ -214,17 +219,11 @@
     "posts/understanding-csp-for-azure-app-service/index.md",
     "posts/understanding-csp-for-azure-app-service",
     "posts/the-perks-of-being-a-mac-or-freebsd-user.md",
-    "posts/setting-up-nginx-for-local-development",
     "posts/set-up-cloudflare-for-route53-domains/index.md",
-    "posts/set-up-cloudflare-for-route53-domains/img",
     "posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/index.md",
     "posts/ruby-cheatsheet.md",
     "posts/notes-on-city-n-guilds-barista-exam.md",
     "posts/notes-on-bamboo-preface.md",
-    "posts/notes-on-atlassian-bamboo/index.md",
-    "posts/note-on-angular-template-change-detection-viewchild/index.md",
-    "posts/missing-cookie-in-iframe/index.md",
-    "posts/learning-react-componentdidmount/index.md",
-    "posts/learning-angular--eslint/index.md"
+    "posts/notes-on-atlassian-bamboo/index.md"
   ]
 }
