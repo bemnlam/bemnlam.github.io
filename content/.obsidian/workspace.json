@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/accessing-calibre-anywhere/index.md",
+                "file": "posts/forty-for-a-lifetime/index.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "index"
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byCreatedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -160,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -180,22 +180,25 @@
   },
   "active": "8e55369f98706eb7",
   "lastOpenFiles": [
+    "posts/forty-for-a-lifetime/feature.jpg",
+    "posts/accessing-calibre-anywhere/index.md",
+    "posts/improving-my-blogging-workflow/index.md",
+    "posts/forty-for-a-lifetime/index.md",
+    "posts/forty-for-a-lifetime/pexels-photo-12366087.jpg",
+    "posts/accessing-calibre-anywhere/feature.jpg",
+    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
+    "posts/forty-for-a-lifetime",
     "posts/accessing-calibre-anywhere/img/20260628153401.png",
     "posts/accessing-calibre-anywhere/img/20260628143210.png",
-    "posts/accessing-calibre-anywhere/index.md",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151309.png",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151253.png",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151239.png",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151100.png",
     "posts/accessing-calibre-anywhere/img/Pasted image 20260628151042.png",
     "posts/accessing-calibre-anywhere/img",
-    "Pasted image 20260628153507.png",
-    "posts/accessing-calibre-anywhere/img/20260628153345.png",
-    "posts/accessing-calibre-anywhere/img/20260628143805.png",
     "posts/a-tale-of-two-caches-redis-and-cache-helper/index.md",
     "posts/avoid-multiple-lifecycle-hooks-in-azure-devops-deployment-job/index.md",
     "posts/adding-audio-to-your-web-app-the-complete-guide/index.md",
-    "posts/restricted-access-on-azure-app-service-api-endpoints-using-managed-identity-app-registration-and-authentication-settings/index.md",
     "posts/accessing-calibre-anywhere",
     "posts/creating-a-user-with-limited-privileges-in-postgres.md",
     "posts/debugging-nodejs-apps-using-vscode/index.md",
@@ -217,13 +220,10 @@
     "posts/use-gravatar-everywhere/index.md",
     "posts/use-gravatar-everywhere",
     "posts/understanding-csp-for-azure-app-service/index.md",
-    "posts/understanding-csp-for-azure-app-service",
     "posts/the-perks-of-being-a-mac-or-freebsd-user.md",
     "posts/set-up-cloudflare-for-route53-domains/index.md",
     "posts/set-up-an-aws-ec2-with-ubuntu-gui-rdp-and-more/index.md",
     "posts/ruby-cheatsheet.md",
-    "posts/notes-on-city-n-guilds-barista-exam.md",
-    "posts/notes-on-bamboo-preface.md",
-    "posts/notes-on-atlassian-bamboo/index.md"
+    "posts/notes-on-city-n-guilds-barista-exam.md"
   ]
 }
